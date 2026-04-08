@@ -1,0 +1,5 @@
+{
+  "name": "ResourceCalc Mobile",
+  "description": "A mobile-optimized resource calculator for construction norms and work items.",
+  "requestFramePermissions": []
+}
