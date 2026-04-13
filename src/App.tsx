@@ -3,60 +3,43 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import QuickCalculator from './components/QuickCalculator';
 import Norms from './components/Norms';
 import { Calculator, Library, Info } from 'lucide-react';
 import { Norm } from './types';
 
-const INITIAL_NORMS: Norm[] = [
-  {
-    id: 1,
-    description: "Earthwork in excavation in all types of soil",
-    unit: "m3",
-    basis_quantity: 10,
-    type: 'DOR',
-    ref_ss: "Clause 601",
-    resources: [
-      { name: "Unskilled Labour", quantity: 2.5, unit: "md", resource_type: 'Labour' },
-      { name: "Excavator", quantity: 0.5, unit: "hr", resource_type: 'Equipment' }
-    ]
-  },
-  {
-    id: 2,
-    description: "Stone masonry work in 1:4 cement sand mortar",
-    unit: "m3",
-    basis_quantity: 1,
-    type: 'DUDBC',
-    ref_ss: "Clause 12.1",
-    resources: [
-      { name: "Skilled Labour", quantity: 1.2, unit: "md", resource_type: 'Labour' },
-      { name: "Unskilled Labour", quantity: 2.0, unit: "md", resource_type: 'Labour' },
-      { name: "Stone", quantity: 1.1, unit: "m3", resource_type: 'Material' },
-      { name: "Cement", quantity: 2.5, unit: "bags", resource_type: 'Material' },
-      { name: "Sand", quantity: 0.35, unit: "m3", resource_type: 'Material' }
-    ]
-  },
-  {
-    id: 3,
-    description: "PCC 1:2:4 for reinforced concrete work",
-    unit: "m3",
-    basis_quantity: 1,
-    type: 'DUDBC',
-    ref_ss: "Clause 10.2",
-    resources: [
-      { name: "Skilled Labour", quantity: 0.8, unit: "md", resource_type: 'Labour' },
-      { name: "Unskilled Labour", quantity: 1.5, unit: "md", resource_type: 'Labour' },
-      { name: "Cement", quantity: 6.5, unit: "bags", resource_type: 'Material' },
-      { name: "Sand", quantity: 0.45, unit: "m3", resource_type: 'Material' },
-      { name: "Aggregate", quantity: 0.9, unit: "m3", resource_type: 'Material' }
-    ]
-  }
-];
-
 export default function App() {
   const [activeTab, setActiveTab] = useState<'calc' | 'norms' | 'about'>('calc');
-  const [norms, setNorms] = useState<Norm[]>(INITIAL_NORMS);
+  const [norms, setNorms] = useState<Norm[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  // Load norms from API when app starts
+  useEffect(() => {
+    fetchNorms();
+  }, []);
+
+  const fetchNorms = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/api/norms');
+      if (response.ok) {
+        const data = await response.json();
+        setNorms(data);
+      }
+    } catch (error) {
+      console.error('Error fetching norms:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-[#F8F9FA] flex items-center justify-center">
+        <p className="text-black/40">Loading norms...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#F8F9FA] pb-20">

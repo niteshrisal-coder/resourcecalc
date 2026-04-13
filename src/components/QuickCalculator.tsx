@@ -3,37 +3,6 @@ import { Calculator, Search, Info, Zap, ChevronRight, X, ArrowLeft } from 'lucid
 import { Norm, Rate } from '../types';
 import { motion, AnimatePresence } from 'motion/react';
 
-// Mock data for immediate preview
-const MOCK_NORMS: Norm[] = [
-  {
-    id: 1,
-    description: "Earthwork in excavation in all types of soil",
-    unit: "m3",
-    basis_quantity: 10,
-    type: 'DOR',
-    ref_ss: "Clause 601",
-    resources: [
-      { name: "Unskilled Labour", quantity: 2.5, unit: "md", resource_type: 'Labour' },
-      { name: "Excavator", quantity: 0.5, unit: "hr", resource_type: 'Equipment' }
-    ]
-  },
-  {
-    id: 2,
-    description: "Stone masonry work in 1:4 cement sand mortar",
-    unit: "m3",
-    basis_quantity: 1,
-    type: 'DUDBC',
-    ref_ss: "Clause 12.1",
-    resources: [
-      { name: "Skilled Labour", quantity: 1.2, unit: "md", resource_type: 'Labour' },
-      { name: "Unskilled Labour", quantity: 2.0, unit: "md", resource_type: 'Labour' },
-      { name: "Stone", quantity: 1.1, unit: "m3", resource_type: 'Material' },
-      { name: "Cement", quantity: 2.5, unit: "bags", resource_type: 'Material' },
-      { name: "Sand", quantity: 0.35, unit: "m3", resource_type: 'Material' }
-    ]
-  }
-];
-
 export default function QuickCalculator({ norms }: { norms: Norm[] }) {
   const [search, setSearch] = useState('');
   const [selectedNorm, setSelectedNorm] = useState<Norm | null>(null);
@@ -43,11 +12,25 @@ export default function QuickCalculator({ norms }: { norms: Norm[] }) {
   const calculateResourceBreakdown = (norm: Norm, inputQuantity: number) => {
     const scaleFactor = inputQuantity / (norm.basis_quantity || 1);
     
-    return norm.resources.map(resource => ({
-      ...resource,
-      scaledQuantity: Math.round(resource.quantity * scaleFactor * 100) / 100,
-      scaleFactor
-    }));
+    return norm.resources.map(resource => {
+      if (resource.is_percentage) {
+        // Percentage resources: show the percentage value, not scaled by quantity
+        return {
+          ...resource,
+          scaledQuantity: resource.quantity, // Keep as percentage (e.g., 3)
+          displayUnit: '%',
+          scaleFactor: 1
+        };
+      } else {
+        // Fixed resources: scale by quantity
+        return {
+          ...resource,
+          scaledQuantity: Math.round(resource.quantity * scaleFactor * 100) / 100,
+          displayUnit: resource.unit,
+          scaleFactor
+        };
+      }
+    });
   };
 
   const filteredNorms = norms.filter(n =>
@@ -110,7 +93,7 @@ export default function QuickCalculator({ norms }: { norms: Norm[] }) {
                 <p className="font-bold text-sm leading-tight">{selectedNorm.description}</p>
               </div>
               <div className="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-500">
-                <Edit size={14} />
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
               </div>
             </div>
           ) : (
@@ -139,7 +122,7 @@ export default function QuickCalculator({ norms }: { norms: Norm[] }) {
             <input
               type="number"
               value={quantity}
-              onChange={(e) => setQuantity(parseFloat(e.target.value) || 0)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setQuantity(parseFloat(e.target.value) || 0)}
               className="w-full text-4xl font-bold font-mono bg-[#F5F5F0] border-none rounded-2xl p-4 focus:ring-2 focus:ring-emerald-500/20 transition-all"
               placeholder="0.00"
             />
@@ -186,13 +169,28 @@ export default function QuickCalculator({ norms }: { norms: Norm[] }) {
                             <div key={idx} className="bg-white p-4 rounded-2xl border border-black/5 shadow-sm flex items-center justify-between">
                               <div className="flex-1 pr-4">
                                 <p className="font-bold text-sm">{item.name}</p>
-                                <p className="text-[10px] text-black/30">Basis: {item.quantity} {item.unit}</p>
+                                {item.is_percentage ? (
+                                  <p className="text-[10px] text-purple-600 font-bold">Percentage of {item.percentage_base || 'Labour'} cost</p>
+                                ) : (
+                                  <p className="text-[10px] text-black/30">Basis: {item.quantity} {item.unit}</p>
+                                )}
                               </div>
                               <div className="text-right">
-                                <p className={`text-lg font-bold font-mono text-${group.color}-600`}>
-                                  {item.scaledQuantity.toLocaleString()}
-                                </p>
-                                <p className="text-[10px] font-bold text-black/30 uppercase">{item.unit}</p>
+                                {item.is_percentage ? (
+                                  <>
+                                    <p className="text-lg font-bold font-mono text-purple-600">
+                                      {item.scaledQuantity}%
+                                    </p>
+                                    <p className="text-[10px] font-bold text-black/30 uppercase">of {item.percentage_base || 'Labour'}</p>
+                                  </>
+                                ) : (
+                                  <>
+                                    <p className={`text-lg font-bold font-mono text-${group.color}-600`}>
+                                      {item.scaledQuantity.toLocaleString()}
+                                    </p>
+                                    <p className="text-[10px] font-bold text-black/30 uppercase">{item.displayUnit}</p>
+                                  </>
+                                )}
                               </div>
                             </div>
                           ))}
@@ -252,7 +250,7 @@ export default function QuickCalculator({ norms }: { norms: Norm[] }) {
                   placeholder="Search work items..."
                   className="w-full pl-12 pr-4 py-3 bg-[#F5F5F0] border-none rounded-2xl focus:ring-2 focus:ring-emerald-500/20 transition-all text-sm"
                   value={search}
-                  onChange={(e) => setSearch(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
                 />
               </div>
             </div>
@@ -291,24 +289,5 @@ export default function QuickCalculator({ norms }: { norms: Norm[] }) {
         )}
       </AnimatePresence>
     </div>
-  );
-}
-
-function Edit(props: any) {
-  return (
-    <svg 
-      {...props} 
-      xmlns="http://www.w3.org/2000/svg" 
-      width="24" 
-      height="24" 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
-      strokeLinejoin="round"
-    >
-      <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/>
-    </svg>
   );
 }
