@@ -11,12 +11,24 @@ export interface Resource {
 
 export interface Norm {
   id: number;
+  sNo?: string;
   description: string;
   unit: string;
   basis_quantity: number;
   type: 'DOR' | 'DUDBC';
   ref_ss?: string;
   resources: Resource[];
+}
+
+export interface BoqResource {
+  name: string;
+  quantity: number;
+}
+
+export interface BoqItem {
+  id: number;
+  description: string;
+  resources: BoqResource[];
 }
 
 export interface Rate {

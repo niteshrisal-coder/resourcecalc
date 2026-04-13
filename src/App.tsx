@@ -1,93 +1,85 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import { useState, useEffect } from 'react';
 import QuickCalculator from './components/QuickCalculator';
 import Norms from './components/Norms';
-import { Calculator, Library, Info } from 'lucide-react';
+import BOQ from './components/BOQ';
+import { Calculator, Library, Info, ClipboardList } from 'lucide-react';
 import { Norm } from './types';
+import { getNorms } from './utils/storage';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<'calc' | 'norms' | 'about'>('calc');
+  const [activeTab, setActiveTab] = useState<'calc' | 'norms' | 'boq' | 'about'>('calc');
   const [norms, setNorms] = useState<Norm[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // Load norms from API when app starts
   useEffect(() => {
-    fetchNorms();
+    const loadedNorms = getNorms();
+    setNorms(loadedNorms);
+    setLoading(false);
   }, []);
-
-  const fetchNorms = async () => {
-    try {
-      const response = await fetch('http://localhost:5000/api/norms');
-      if (response.ok) {
-        const data = await response.json();
-        setNorms(data);
-      }
-    } catch (error) {
-      console.error('Error fetching norms:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#F8F9FA] flex items-center justify-center">
-        <p className="text-black/40">Loading norms...</p>
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <p className="text-white/50">Loading...</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#F8F9FA] pb-20">
+    <div className="min-h-screen bg-black pb-20 text-white">
       {activeTab === 'calc' && <QuickCalculator norms={norms} />}
-      {activeTab === 'norms' && <Norms norms={norms} setNorms={setNorms} />}
+      {activeTab === 'norms' && <Norms norms={norms} />}
+      {activeTab === 'boq' && <BOQ norms={norms} />}
       {activeTab === 'about' && (
         <div className="p-8 max-w-md mx-auto space-y-6">
-          <h1 className="text-3xl font-bold italic tracking-tighter">About ResourceCalc</h1>
-          <div className="bg-white p-6 rounded-3xl border border-black/5 shadow-sm space-y-4">
-            <p className="text-sm text-black/60 leading-relaxed">
-              ResourceCalc is a professional tool designed for civil engineers and contractors to quickly estimate resource requirements based on standard norms (DOR & DUDBC).
+          <h1 className="text-3xl font-bold italic tracking-tighter text-white">About ResourceCalc</h1>
+          <div className="bg-zinc-900 p-6 rounded-3xl border border-zinc-800 shadow-sm space-y-4">
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              ResourceCalc is a professional tool for civil engineers to quickly estimate resource requirements based on standard norms (DOR & DUDBC).
             </p>
             <div className="space-y-2">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-black/40">Features</h3>
-              <ul className="text-sm space-y-1 text-black/60">
+              <h3 className="text-xs font-bold uppercase tracking-widest text-zinc-500">Features</h3>
+              <ul className="text-sm space-y-1 text-zinc-400">
                 <li>• Instant resource breakdown</li>
                 <li>• DOR & DUDBC Norms Library</li>
-                <li>• Mobile-first professional UI</li>
-                <li>• Offline-ready calculations</li>
+                <li>• BOQ Calculator with resource summary</li>
+                <li>• Works completely offline</li>
+                <li>• Mobile-friendly design</li>
               </ul>
             </div>
           </div>
         </div>
       )}
 
-      {/* Global Bottom Navigation */}
-      <nav className="fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-md border-t border-black/5 px-8 py-4 z-40">
+      <nav className="fixed bottom-0 left-0 right-0 bg-black/90 backdrop-blur-md border-t border-zinc-800 px-4 py-2 z-40">
         <div className="max-w-md mx-auto flex items-center justify-around">
           <button 
             onClick={() => setActiveTab('calc')}
-            className={`flex flex-col items-center gap-1 transition-colors ${activeTab === 'calc' ? 'text-emerald-500' : 'text-black/20'}`}
+            className={`flex flex-col items-center gap-0.5 transition-colors ${activeTab === 'calc' ? 'text-emerald-500' : 'text-zinc-600'}`}
           >
             <Calculator size={20} />
-            <span className="text-[10px] font-bold uppercase tracking-tighter">Calc</span>
+            <span className="text-[9px] font-bold uppercase tracking-tighter">Calc</span>
           </button>
           <button 
             onClick={() => setActiveTab('norms')}
-            className={`flex flex-col items-center gap-1 transition-colors ${activeTab === 'norms' ? 'text-emerald-500' : 'text-black/20'}`}
+            className={`flex flex-col items-center gap-0.5 transition-colors ${activeTab === 'norms' ? 'text-emerald-500' : 'text-zinc-600'}`}
           >
             <Library size={20} />
-            <span className="text-[10px] font-bold uppercase tracking-tighter">Library</span>
+            <span className="text-[9px] font-bold uppercase tracking-tighter">Norms</span>
+          </button>
+          <button 
+            onClick={() => setActiveTab('boq')}
+            className={`flex flex-col items-center gap-0.5 transition-colors ${activeTab === 'boq' ? 'text-emerald-500' : 'text-zinc-600'}`}
+          >
+            <ClipboardList size={20} />
+            <span className="text-[9px] font-bold uppercase tracking-tighter">BOQ</span>
           </button>
           <button 
             onClick={() => setActiveTab('about')}
-            className={`flex flex-col items-center gap-1 transition-colors ${activeTab === 'about' ? 'text-emerald-500' : 'text-black/20'}`}
+            className={`flex flex-col items-center gap-0.5 transition-colors ${activeTab === 'about' ? 'text-emerald-500' : 'text-zinc-600'}`}
           >
             <Info size={20} />
-            <span className="text-[10px] font-bold uppercase tracking-tighter">About</span>
+            <span className="text-[9px] font-bold uppercase tracking-tighter">About</span>
           </button>
         </div>
       </nav>

@@ -1,0 +1,1349 @@
+[
+
+  {
+    "id": 2001,
+    "sNo": "20.1",
+    "description": "Providing and laying of Plain Cement Concrete M10 (1:3:6) in Foundation - Mechanical Means",
+    "unit": "cum",
+    "basis_quantity": 15,
+    "type": "DOR",
+    "ref_ss": "2000",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 2, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 22, "unit": "day", "resource_type": "Labour" },
+      { "name": "40 mm Aggregate", "quantity": 13.5, "unit": "cum", "resource_type": "Material" },
+      { "name": "Coarse Sand", "quantity": 6.75, "unit": "cum", "resource_type": "Material" },
+      { "name": "Cement", "quantity": 3.45, "unit": "tonne", "resource_type": "Material" },
+      { "name": "Water", "quantity": 2, "unit": "KL", "resource_type": "Material" },
+      { "name": "Concrete Mixer", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Generator", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+    ]
+  },
+  {
+    "id": 2002,
+    "sNo": "20.1",
+    "description": "Providing and laying of Plain Cement Concrete M10 (1:3:6) in Foundation - Manual Means",
+    "unit": "cum",
+    "basis_quantity": 15,
+    "type": "DOR",
+    "ref_ss": "2000",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 33, "unit": "day", "resource_type": "Labour" },
+      { "name": "40 mm Aggregate", "quantity": 13.5, "unit": "cum", "resource_type": "Material" },
+      { "name": "Coarse Sand", "quantity": 6.75, "unit": "cum", "resource_type": "Material" },
+      { "name": "Cement", "quantity": 3.45, "unit": "tonne", "resource_type": "Material" },
+      { "name": "Water", "quantity": 2, "unit": "KL", "resource_type": "Material" }
+    ]
+  },
+
+  {
+    "id": 2003,
+    "sNo": "20.2 A",
+    "description": "Plain Cement Concrete PCC Grade M 15 in Foundation",
+    "unit": "cum",
+    "basis_quantity": 15,
+    "type": "DOR",
+    "ref_ss": "2000",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 30, "unit": "day", "resource_type": "Labour" },
+      { "name": "Cement", "quantity": 4.13, "unit": "tonne", "resource_type": "Material" },
+      { "name": "Coarse Sand", "quantity": 6.75, "unit": "cum", "resource_type": "Material" },
+      { "name": "40 mm Aggregate", "quantity": 8.1, "unit": "cum", "resource_type": "Material" },
+      { "name": "20 mm Aggregate", "quantity": 4.05, "unit": "cum", "resource_type": "Material" },
+      { "name": "10 mm Aggregate", "quantity": 1.35, "unit": "cum", "resource_type": "Material" },
+      { "name": "Water", "quantity": 2, "unit": "KL", "resource_type": "Material" },
+      { "name": "Concrete Mixer", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Generator", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+    ]
+  },
+  {
+    "id": 2004,
+    "sNo": "20.2B",
+    "description": "Plain Cement Concrete PCC Grade M 20 in Foundation",
+    "unit": "cum",
+    "basis_quantity": 15,
+    "type": "DOR",
+    "ref_ss": "2000",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 30, "unit": "day", "resource_type": "Labour" },
+      { "name": "Cement", "quantity": 5.16, "unit": "tonne", "resource_type": "Material" },
+      { "name": "Coarse Sand", "quantity": 6.75, "unit": "cum", "resource_type": "Material" },
+      { "name": "40 mm Aggregate", "quantity": 5.4, "unit": "cum", "resource_type": "Material" },
+      { "name": "20 mm Aggregate", "quantity": 5.4, "unit": "cum", "resource_type": "Material" },
+      { "name": "10 mm Aggregate", "quantity": 2.7, "unit": "cum", "resource_type": "Material" },
+      { "name": "Water", "quantity": 2.5, "unit": "KL", "resource_type": "Material" },
+      { "name": "Concrete Mixer", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Generator", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+    ]
+  },
+  {
+    "id": 2005,
+    "sNo": "20.2C",
+    "description": "Reinforced Cement Concrete RCC Grade M 20",
+    "unit": "cum",
+    "basis_quantity": 15,
+    "type": "DOR",
+    "ref_ss": "2000",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 30, "unit": "day", "resource_type": "Labour" },
+      { "name": "Cement", "quantity": 5.21, "unit": "tonne", "resource_type": "Material" },
+      { "name": "Coarse Sand", "quantity": 6.75, "unit": "cum", "resource_type": "Material" },
+      { "name": "20 mm Aggregate", "quantity": 8.1, "unit": "cum", "resource_type": "Material" },
+      { "name": "10 mm Aggregate", "quantity": 5.4, "unit": "cum", "resource_type": "Material" },
+      { "name": "Water", "quantity": 2.5, "unit": "KL", "resource_type": "Material" },
+      { "name": "Concrete Mixer", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Generator", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+    ]
+  },
+  {
+    "id": 2006,
+    "sNo": "20.2D",
+    "description": "Plain Cement Concrete PCC Grade M 25",
+    "unit": "cum",
+    "basis_quantity": 15,
+    "type": "DOR",
+    "ref_ss": "2000",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 30, "unit": "day", "resource_type": "Labour" },
+      { "name": "Cement", "quantity": 5.99, "unit": "tonne", "resource_type": "Material" },
+      { "name": "Coarse Sand", "quantity": 6.75, "unit": "cum", "resource_type": "Material" },
+      { "name": "40 mm Aggregate", "quantity": 5.4, "unit": "cum", "resource_type": "Material" },
+      { "name": "20 mm Aggregate", "quantity": 5.4, "unit": "cum", "resource_type": "Material" },
+      { "name": "10 mm Aggregate", "quantity": 2.7, "unit": "cum", "resource_type": "Material" },
+      { "name": "Water", "quantity": 3, "unit": "KL", "resource_type": "Material" },
+      { "name": "Concrete Mixer", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Generator", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+    ]
+  },
+  {
+    "id": 2007,
+    "sNo": "20.2E",
+    "description": "Reinforced Cement Concrete RCC Grade M 25",
+    "unit": "cum",
+    "basis_quantity": 15,
+    "type": "DOR",
+    "ref_ss": "2000",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 30, "unit": "day", "resource_type": "Labour" },
+      { "name": "Cement", "quantity": 6.05, "unit": "tonne", "resource_type": "Material" },
+      { "name": "Coarse Sand", "quantity": 6.75, "unit": "cum", "resource_type": "Material" },
+      { "name": "20 mm Aggregate", "quantity": 8.1, "unit": "cum", "resource_type": "Material" },
+      { "name": "10 mm Aggregate", "quantity": 5.4, "unit": "cum", "resource_type": "Material" },
+      { "name": "Water", "quantity": 3, "unit": "KL", "resource_type": "Material" },
+      { "name": "Concrete Mixer", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Generator", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+    ]
+  },
+  {
+    "id": 2008,
+    "sNo": "20.2F",
+    "description": "Plain Cement Concrete PCC Grade M 30",
+    "unit": "cum",
+    "basis_quantity": 15,
+    "type": "DOR",
+    "ref_ss": "2000",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 30, "unit": "day", "resource_type": "Labour" },
+      { "name": "Cement", "quantity": 6.08, "unit": "tonne", "resource_type": "Material" },
+      { "name": "Coarse Sand", "quantity": 6.75, "unit": "cum", "resource_type": "Material" },
+      { "name": "40 mm Aggregate", "quantity": 5.4, "unit": "cum", "resource_type": "Material" },
+      { "name": "20 mm Aggregate", "quantity": 5.4, "unit": "cum", "resource_type": "Material" },
+      { "name": "10 mm Aggregate", "quantity": 2.7, "unit": "cum", "resource_type": "Material" },
+      { "name": "Water", "quantity": 3, "unit": "KL", "resource_type": "Material" },
+      { "name": "Concrete Mixer", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Generator", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+    ]
+  },
+  {
+    "id": 2009,
+    "sNo": "20.2G",
+    "description": "Reinforced Cement Concrete RCC Grade M 30",
+    "unit": "cum",
+    "basis_quantity": 15,
+    "type": "DOR",
+    "ref_ss": "2000",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 30, "unit": "day", "resource_type": "Labour" },
+      { "name": "Cement", "quantity": 6.1, "unit": "tonne", "resource_type": "Material" },
+      { "name": "Coarse Sand", "quantity": 6.75, "unit": "cum", "resource_type": "Material" },
+      { "name": "20 mm Aggregate", "quantity": 8.1, "unit": "cum", "resource_type": "Material" },
+      { "name": "10 mm Aggregate", "quantity": 5.4, "unit": "cum", "resource_type": "Material" },
+      { "name": "Water", "quantity": 3, "unit": "KL", "resource_type": "Material" },
+      { "name": "Concrete Mixer", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Generator", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+    ]
+  },
+{
+  "id": 2010,
+  "sNo": "20.2H",
+  "description": "RCC Grade M 35",
+  "unit": "cum",
+  "basis_quantity": 15,
+  "type": "DOR",
+  "ref_ss": "2000",
+  "resources": [
+    {
+      "name": "Skilled Labour",
+      "quantity": 3,
+      "unit": "day",
+      "resource_type": "Labour"
+    },
+    {
+      "name": "Unskilled Labour",
+      "quantity": 30,
+      "unit": "day",
+      "resource_type": "Labour"
+    },
+    {
+      "name": "Cement",
+      "quantity": 6.33,
+      "unit": "tonne",
+      "resource_type": "Material"
+    },
+    {
+      "name": "Coarse sand",
+      "quantity": 6.75,
+      "unit": "cum",
+      "resource_type": "Material"
+    },
+    {
+      "name": "20 mm Aggregate",
+      "quantity": 8.1,
+      "unit": "cum",
+      "resource_type": "Material"
+    },
+    {
+      "name": "10 mm Aggregate",
+      "quantity": 5.4,
+      "unit": "cum",
+      "resource_type": "Material"
+    },
+    {
+      "name": "Cost of water",
+      "quantity": 3,
+      "unit": "KL",
+      "resource_type": "Material"
+    },
+    {
+      "name": "Admixture",
+      "unit": "kg",
+      "resource_type": "Material",
+      "is_percentage": true,
+      "percentage_base": "Cement"
+    },
+    {
+      "name": "Concrete mixer",
+      "quantity": 6,
+      "unit": "hour",
+      "resource_type": "Equipment"
+    },
+    {
+      "name": "Generator",
+      "quantity": 6,
+      "unit": "hour",
+      "resource_type": "Equipment"
+    },
+    {
+      "name": "Formwork",
+      "unit": "percent",
+      "resource_type": "Material",
+      "is_percentage": true,
+      "percentage_base": "Labour, Material, and Equipment"
+    }
+  ]
+},
+{
+  "id": 2011,
+  "sNo": "20.3",
+  "description": "Providing and laying, fitting and placing un-coated Mild steel / HYSD reinforcement complete in foundation as per drawing and technical specification",
+  "unit": "tonne",
+  "basis_quantity": 1,
+  "type": "DOR",
+  "ref_ss": "2014",
+  "resources": [
+    { "name": "Skilled Labour / Blacksmith", "quantity": 4, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 9, "unit": "day", "resource_type": "Labour" },
+    { "name": "MS Bars", "quantity": 1.1, "unit": "tonne", "resource_type": "Material" },
+    { "name": "Binding Wire", "quantity": 8, "unit": "Kg", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 2012,
+  "sNo": "20.5",
+  "description": "Providing and laying, fitting and placing HYSD bar reinforcement in sub-structure complete as per Drawing and Technical Specifications",
+  "unit": "tonne",
+  "basis_quantity": 1,
+  "type": "DOR",
+  "ref_ss": "2014",
+  "resources": [
+    { "name": "Skilled Labour (Blacksmith)", "quantity": 4, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 9, "unit": "day", "resource_type": "Labour" },
+    { "name": "HYSD Bars", "quantity": 1.1, "unit": "tonne", "resource_type": "Material" },
+    { "name": "Binding Wire", "quantity": 8, "unit": "kg", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 2013,
+  "sNo": "20.6",
+  "description": "Providing and laying, fitting and placing Mild steel reinforcement complete in sub-structure as per drawing and Technical Specification",
+  "unit": "tonne",
+  "basis_quantity": 1,
+  "type": "DOR",
+  "ref_ss": "2014",
+  "resources": [
+    { "name": "Skilled Labour (Blacksmith)", "quantity": 4, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 10, "unit": "day", "resource_type": "Labour" },
+    { "name": "MS Bars", "quantity": 1.15, "unit": "tonne", "resource_type": "Material" },
+    { "name": "Binding Wire", "quantity": 9, "unit": "kg", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 2014,
+  "sNo": "20.9",
+  "description": "Providing and laying, fitting and placing HYSD bar reinforcement in super-structure complete as per drawing and technical specifications",
+  "unit": "tonne",
+  "basis_quantity": 1,
+  "type": "DOR",
+  "ref_ss": "2014",
+  "resources": [
+    { "name": "Skilled Labour (Blacksmith)", "quantity": 4, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+    { "name": "HYSD Bars", "quantity": 1.1, "unit": "tonne", "resource_type": "Material" },
+    { "name": "Binding Wire", "quantity": 8, "unit": "kg", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 901,
+  "sNo": "9.1 I A",
+  "description": "Roadway Excavation in all types of soil as per drawing and technical specification, including removal of stumps and other deleterious matter, with all lifts and lead as per Drawing and instruction of the Engineer(Manual Means)",
+  "unit": "cum",
+  "basis_quantity": 12,
+  "type": "DOR",
+  "ref_ss": "905",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 8, "unit": "day", "resource_type": "Labour" },
+    { "name": "Doko, Thunse etc.", "quantity": 3, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+  ]
+},
+{
+  "id": 902,
+  "sNo": "9.1 I B",
+  "description": "Roadway Excavation in all types of soil  as per Drawing and technical specifications including removal of stumps and other deleterious matter, all lifts and lead as per Drawing and instruction of the Engineer( Mechanical Means)",
+  "unit": "cum",
+  "basis_quantity": 360,
+  "type": "DOR",
+  "ref_ss": "905",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
+    { "name": "Hydraulic Excavator", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": 903,
+  "sNo": "9.1 II A",
+  "description": "Roadway Excavation in ordinary rock by Manual Means as per Drawing and Technical specification, including all lift and lead as per Drawing and instruction of the Engineer",
+  "unit": "cum",
+  "basis_quantity": 60,
+  "type": "DOR",
+  "ref_ss": "905",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 50, "unit": "day", "resource_type": "Labour" },
+    { "name": "Doko, Thunse etc.", "quantity": 3, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+  ]
+},
+{
+  "id": 904,
+  "sNo": "9.1 II B",
+  "description": "Roadway Excavation in ordinary rock by Mechanical Means as per Drawing and Technical specification, including all lift and lead as per Drawing and instruction of the Engineer",
+  "unit": "cum",
+  "basis_quantity": 120,
+  "type": "DOR",
+  "ref_ss": "905",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
+    { "name": "Hydraulic Excavator", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": 905,
+  "sNo": "9.1 III A",
+  "description": "Roadway Excavation in hard rock with mechanical drilling, including blasting and breaking, and disposal of cut road within all lifts and leads as per Drawing and instruction of the Engineer",
+  "unit": "cum",
+  "basis_quantity": 90,
+  "type": "DOR",
+  "ref_ss": "905",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 20, "unit": "day", "resource_type": "Labour" },
+    { "name": "Driller", "quantity": 3, "unit": "day", "resource_type": "Labour" },
+    { "name": "Blaster", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+    { "name": "Gelatin", "quantity": 32, "unit": "kg", "resource_type": "Material" },
+    { "name": "Electric Detonators", "quantity": 126, "unit": "nos", "resource_type": "Material" },
+    { "name": "Fuse Wire", "quantity": 180, "unit": "meter", "resource_type": "Material" },
+    { "name": "Credit for excavated rock for use", "quantity": -45, "unit": "cum", "resource_type": "Material" },
+    { "name": "Dozer", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+    { "name": "Jack Hammer / Rock Drill", "quantity": 30, "unit": "hour", "resource_type": "Equipment" },
+    { "name": "Air Compressor", "quantity": 12, "unit": "hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": 906,
+  "sNo": "9.1 III B",
+  "description": "Roadway excavation in hard rock with manual drilling, blasting, breaking, lifts and leads all complete as per Drawing and instruction of the Engineer",
+  "unit": "cum",
+  "basis_quantity": 90,
+  "type": "DOR",
+  "ref_ss": "905",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 150, "unit": "day", "resource_type": "Labour" },
+    { "name": "Blaster", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+    { "name": "Gelatin", "quantity": 32, "unit": "kg", "resource_type": "Material" },
+    { "name": "Electric Detonators", "quantity": 126, "unit": "nos", "resource_type": "Material" },
+    { "name": "Fuse Wire", "quantity": 180, "unit": "meter", "resource_type": "Material" },
+    { "name": "Credit for excavated rock for use", "quantity": -45, "unit": "cum", "resource_type": "Material" },
+    { "name": "Crow bar and other T&P", "quantity": 3, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+  ]
+},
+{
+  "id": 907,
+  "sNo": "9.1 IV A",
+  "description": "Roadway Excavation in hard rock with rock breakers, including breaking rock, lifts and lead for disposal as per Drawing and Technical Specifications - Mechanical method, lead upto 30 m(Blasting Prohibited)",
+  "unit": "cum",
+  "basis_quantity": 16,
+  "type": "DOR",
+  "ref_ss": "905",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 10, "unit": "day", "resource_type": "Labour" },
+    { "name": "Hydraulic Excavator with rock breaker attachment", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+    { "name": "Credit for excavated rock for use", "quantity": -8, "unit": "cum", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 908,
+  "sNo": "9.1 IV B",
+  "description": "Roadway Excavation in hard rock (blasting prohibited) manually chiseling including breaking rock, lifts and lead for disposal as per Drawing and Technical Specifications",
+  "unit": "cum",
+  "basis_quantity": 16,
+  "type": "DOR",
+  "ref_ss": "905",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 2, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 58, "unit": "day", "resource_type": "Labour" },
+    { "name": "Blacksmith", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+    { "name": "Crow bar and other T&P", "quantity": 3, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" },
+    { "name": "Credit for excavated rock for use", "quantity": -8, "unit": "cum", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 909,
+  "sNo": "9.1 IV C",
+  "description": "Roadway Excavation in hard rock (blasting prohibited) manually with use of chemical, including breaking rock, disposal within all lifts and lead as per Drawing and Technical Specifications",
+  "unit": "cum",
+  "basis_quantity": 16,
+  "type": "DOR",
+  "ref_ss": "905",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 2, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 16, "unit": "day", "resource_type": "Labour" },
+    { "name": "Chemical", "quantity": 80, "unit": "kg", "resource_type": "Material" },
+    { "name": "Credit for excavated rock for use", "quantity": -8, "unit": "cum", "resource_type": "Material" },
+    { "name": "Crow bar and other T&P", "quantity": 3, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+  ]
+},
+{
+  "id": 910,
+  "sNo": "9.1 V",
+  "description": "Roadway Excavation in marshy soil as per Drawing and Technical Specifications",
+  "unit": "cum",
+  "basis_quantity": 300,
+  "type": "DOR",
+  "ref_ss": "905",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 4, "unit": "day", "resource_type": "Labour" },
+    { "name": "Hydraulic Excavator", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+    { "name": "Tipper", "quantity": 18, "unit": "hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": 911,
+  "sNo": "9.2",
+  "description": "Removal of unserviceable soil including excavation, loading and disposal upto 1000 meters lead as per Drawing and Technical Specifications",
+  "unit": "cum",
+  "basis_quantity": 360,
+  "type": "DOR",
+  "ref_ss": "905",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 4, "unit": "day", "resource_type": "Labour" },
+    { "name": "Excavator", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+    { "name": "Tipper", "quantity": 18, "unit": "hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": 912,
+  "sNo": "9.9 A",
+  "description": "Providing, laying, spreading and compacting embankment with roadway cutting material and compact to the required density as per Drawing and Technical Specifications (Manually)",
+  "unit": "cum",
+  "basis_quantity": 100,
+  "type": "DOR",
+  "ref_ss": "909,910",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 2, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 50, "unit": "day", "resource_type": "Labour" },
+    { "name": "Water", "quantity": 24, "unit": "KL", "resource_type": "Material" },
+    { "name": "Vibratory Roller", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": 913,
+  "sNo": "9.9 B",
+  "description": "Providing, laying, spreading and compacting embankment with roadway cutting material and compact to the required density as per Drawing and Technical Specifications (With machine)",
+  "unit": "cum",
+  "basis_quantity": 300,
+  "type": "DOR",
+  "ref_ss": "909,910",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 10, "unit": "day", "resource_type": "Labour" },
+    { "name": "Water", "quantity": 72, "unit": "KL", "resource_type": "Material" },
+    { "name": "Dozer", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+    { "name": "Motor Grader", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+    { "name": "Vibratory Roller", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": 914,
+  "sNo": "9.10",
+  "description": "Providing and laying of rock fill embankment with broken hard rock fragments of size not exceeding 300 mm laid in layers not exceeding 500 mm thick including filling of surface voids with stone spalls, blinding top layer with granular Material, rolled to required density all complete as per Drawing and Technical Specifications",
+  "unit": "cum",
+  "basis_quantity": 150,
+  "type": "DOR",
+  "ref_ss": "900",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 10, "unit": "day", "resource_type": "Labour" },
+    { "name": "Water", "quantity": 12, "unit": "KL", "resource_type": "Material" },
+    { "name": "Dozer", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+    { "name": "Vibratory Road Roller", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": 915,
+  "sNo": "9.11 A",
+  "description": "Providing suitable material and Back filling behind abutment, wing wall and return wall with Granular Material complete as per Drawing and Technical Specifications",
+  "unit": "cum",
+  "basis_quantity": 10,
+  "type": "DOR",
+  "ref_ss": "908",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 0.2, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 5, "unit": "day", "resource_type": "Labour" },
+    { "name": "Granular Material", "quantity": 11, "unit": "cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 1, "unit": "KL", "resource_type": "Material" },
+    { "name": "Plate Compactor/Power Rammer", "quantity": 2.5, "unit": "hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": 916,
+  "sNo": "9.11 B",
+  "description": "Providing suitable material and Back filling behind abutment, wing wall and return wall with Sandy Material complete as per Drawing and Technical Specifications",
+  "unit": "cum",
+  "basis_quantity": 10,
+  "type": "DOR",
+  "ref_ss": "908",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 0.2, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 5, "unit": "day", "resource_type": "Labour" },
+    { "name": "Sand", "quantity": 12, "unit": "cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 1, "unit": "KL", "resource_type": "Material" },
+    { "name": "Plate Compactor/Power Rammer", "quantity": 2.5, "unit": "hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": 917,
+  "sNo": "9.11 C",
+  "description": "Providing suitable material and Back filling behind abutment, wing wall and return wall with Locally available Material including compaction by tamping rod (with watering) complete as per Drawing and Technical Specifications",
+  "unit": "cum",
+  "basis_quantity": 10,
+  "type": "DOR",
+  "ref_ss": "908",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 0.2, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 5, "unit": "day", "resource_type": "Labour" },
+    { "name": "Compensation for Locally available Material", "quantity": 12, "unit": "cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 1, "unit": "KL", "resource_type": "Material" },
+    { "name": "Tamping", "quantity": 3, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+  ]
+},
+{
+  "id": 918,
+  "sNo": "9.11 D",
+  "description": "Providing suitable material and Back filling behind abutment, wing wall and return wall with Locally available Material without watering and compaction by tamping rod complete as per Drawing and Technical Specifications",
+  "unit": "cum",
+  "basis_quantity": 10,
+  "type": "DOR",
+  "ref_ss": "908",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 0.2, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 4, "unit": "day", "resource_type": "Labour" },
+    { "name": "Locally available Material", "quantity": 12, "unit": "cum", "resource_type": "Material" },
+    { "name": "Tamping", "quantity": 3, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+  ]
+},
+{
+  "id": 919,
+  "sNo": "9.12",
+  "description": "Providing and laying of Filter media with granular Material/stone crushed aggregates to a thickness of not less than 600 mm with smaller size towards the soil and bigger size towards the wall and provided over the entire surface behind abutment, wing wall and return wall to the full height compacted to a firm condition complete as per drawing and Technical Specification",
+  "unit": "cum",
+  "basis_quantity": 10,
+  "type": "DOR",
+  "ref_ss": "909,910",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 10, "unit": "day", "resource_type": "Labour" },
+    { "name": "Filter Media", "quantity": 12, "unit": "cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 1, "unit": "KL", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 920,
+  "sNo": "9.13",
+  "description": "Providing and filling sand in Foundation Trenches as per Drawing & Technical Specification",
+  "unit": "cum",
+  "basis_quantity": 1,
+  "type": "DOR",
+  "ref_ss": "908",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 0.01, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 0.3, "unit": "day", "resource_type": "Labour" },
+    { "name": "Sand", "quantity": 1.2, "unit": "cum", "resource_type": "Material" }
+  ]
+},
+
+  {
+    "id": 1001,
+    "sNo": "10.1 A",
+    "description": "Scarifying the existing road surface to a depth of 50 mm and disposal of scarified Material with all lifts and leads as per Drawing and Technical Specifications - Manual Means",
+    "unit": "sqm",
+    "basis_quantity": 600,
+    "type": "DOR",
+    "ref_ss": "1003",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 15, "unit": "day", "resource_type": "Labour" },
+      { "name": "Tractor-trolley / Truck", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+    ]
+  },
+  {
+    "id": 1002,
+    "sNo": "10.1 B",
+    "description": "Scarifying the existing granular road surface to a depth of 50 mm and disposal of scarified Material with all lifts and leads within Right of way as per Drawing and Technical Specifications",
+    "unit": "sqm",
+    "basis_quantity": 600,
+    "type": "DOR",
+    "ref_ss": "1003",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" }
+    ]
+  },
+  {
+    "id": 1003,
+    "sNo": "10.2 A",
+    "description": "Scarifying the existing road surface to a depth of 50 mm and disposal of scarified Material with all lifts and lead as per Drawing and Technical Specifications - Mechanical Means on Granular Surface",
+    "unit": "sqm",
+    "basis_quantity": 600,
+    "type": "DOR",
+    "ref_ss": "1003",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 6, "unit": "day", "resource_type": "Labour" },
+      { "name": "Tractor with Ripper", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+    ]
+  },
+  {
+    "id": 1004,
+    "sNo": "10.2 B",
+    "description": "Scarifying the existing bituminous road surface to a depth of 50 mm and disposal of scarified Material with all lifts and lead as per Drawing and Technical Specifications - Mechanical Means",
+    "unit": "sqm",
+    "basis_quantity": 3000,
+    "type": "DOR",
+    "ref_ss": "1003",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 6, "unit": "day", "resource_type": "Labour" },
+      { "name": "Tractor with Ripper", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Loader", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Tipper", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+    ]
+  },
+  {
+    "id": 1005,
+    "sNo": "10.3",
+    "description": "Providing and laying sub-grade and earthen shoulders with approved Material obtained from borrow pits with all lifts & leads as per Drawing and Technical Specifications (Capping Layer)",
+    "unit": "cum",
+    "basis_quantity": 600,
+    "type": "DOR",
+    "ref_ss": "1004",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 6, "unit": "day", "resource_type": "Labour" },
+      { "name": "Water", "quantity": 72, "unit": "KL", "resource_type": "Material" },
+      { "name": "Capping Layer Material", "quantity": 750, "unit": "cum", "resource_type": "Material" },
+      { "name": "Motor Grader", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Vibratory Roller", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+    ]
+  },
+  {
+    "id": 1006,
+    "sNo": "10.4 Case I",
+    "description": "Compacting original ground supporting sub-grade - Loosening of the ground upto a level of 500 mm below the sub-grade level, watered, graded and compacted in layers as per Drawing and Technical Specifications",
+    "unit": "cum",
+    "basis_quantity": 600,
+    "type": "DOR",
+    "ref_ss": "1003,1005",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 5, "unit": "day", "resource_type": "Labour" },
+      { "name": "Water", "quantity": 24, "unit": "KL", "resource_type": "Material" },
+      { "name": "Tractor with Ripper Attachment", "quantity": 12, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Motor Grader", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Vibratory Roller", "quantity": 12, "unit": "hour", "resource_type": "Equipment" }
+    ]
+  },
+  {
+    "id": 1007,
+    "sNo": "10.4 Case II",
+    "description": "Compacting original ground supporting embankment - Loosening, leveling and compacting to facilitate placement of first layer of embankment, scarified to a depth of 150 mm, mixed with water at OMC and compacted by rolling as per Drawing and Technical Specifications",
+    "unit": "cum",
+    "basis_quantity": 600,
+    "type": "DOR",
+    "ref_ss": "1003,1005",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 4, "unit": "day", "resource_type": "Labour" },
+      { "name": "Water", "quantity": 24, "unit": "KL", "resource_type": "Material" },
+      { "name": "Tractor with Ripper Attachment", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Vibratory Road Roller", "quantity": 12, "unit": "hour", "resource_type": "Equipment" }
+    ]
+  },
+  {
+    "id": 1008,
+    "sNo": "10.6 A",
+    "description": "Lime Stabilization for Improving Sub-grade - Providing, laying and spreading available soil with 3% slaked lime, mixing, grading and compacting at OMC to desired density - By Mechanical Means",
+    "unit": "cum",
+    "basis_quantity": 300,
+    "type": "DOR",
+    "ref_ss": "1006",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 2, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+      { "name": "Lime", "quantity": 15.75, "unit": "tonne", "resource_type": "Material" },
+      { "name": "Water", "quantity": 72, "unit": "KL", "resource_type": "Material" },
+      { "name": "Tractor with Ripper and Rotator", "quantity": 12, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Motor Grader", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Vibratory Roller", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+    ]
+  },
+  {
+    "id": 1009,
+    "sNo": "10.6 B",
+    "description": "Lime Stabilization for Improving Sub-grade - Providing, laying and spreading available soil with 3% slaked lime, mixing, grading and compacting at OMC to desired density - By Manual Means",
+    "unit": "cum",
+    "basis_quantity": 150,
+    "type": "DOR",
+    "ref_ss": "1006",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 50, "unit": "day", "resource_type": "Labour" },
+      { "name": "Lime", "quantity": 8, "unit": "tonne", "resource_type": "Material" },
+      { "name": "Water", "quantity": 36, "unit": "KL", "resource_type": "Material" },
+      { "name": "Vibratory Roller", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+    ]
+  },
+  {
+    "id": 1010,
+    "sNo": "10.6 C",
+    "description": "Cement Stabilization / Ecological Road pavement - Providing, laying and spreading available soil with 5% cement and 25% sand, mixing, grading and compacting at OMC to form sub grade/dust free road pavement",
+    "unit": "cum",
+    "basis_quantity": 125,
+    "type": "DOR",
+    "ref_ss": "1006",
+    "resources": [
+      { "name": "Engineer", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 2, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 30, "unit": "day", "resource_type": "Labour" },
+      { "name": "Cement", "quantity": 12, "unit": "tonne", "resource_type": "Material" },
+      { "name": "Sand", "quantity": 32, "unit": "cum", "resource_type": "Material" },
+      { "name": "Water", "quantity": 12, "unit": "KL", "resource_type": "Material" },
+      { "name": "Tractor with Ripper and Rotator", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Motor Grader", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Vibratory Roller", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Smooth Wheel Roller", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+    ]
+  },
+  {
+    "id": 1011,
+    "sNo": "10.7",
+    "description": "Polymer based Stabilization - Providing, laying and spreading Polymer based stabilizer, mixing, grading and compacting to form a layer of sub grade",
+    "unit": "cum",
+    "basis_quantity": 200,
+    "type": "DOR",
+    "ref_ss": "1006",
+    "resources": [
+      { "name": "Engineer", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 2, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 10, "unit": "day", "resource_type": "Labour" },
+      { "name": "Polymer based Admixture", "quantity": 32, "unit": "Lit", "resource_type": "Material" },
+      { "name": "Water", "quantity": 20, "unit": "KL", "resource_type": "Material" },
+      { "name": "Tractor with Ripper and Rotator", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Motor Grader", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Smooth Wheel Roller", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+    ]
+  },
+  {
+    "id": 1012,
+    "sNo": "10.8",
+    "description": "Providing and laying of hand pack Stone soling with 150 to 200 mm thick stones and packing with smaller stone on prepared surface",
+    "unit": "cum",
+    "basis_quantity": 5,
+    "type": "DOR",
+    "ref_ss": "1000",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 6, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+      { "name": "Stone", "quantity": 6, "unit": "cum", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": 1013,
+    "sNo": "10.9",
+    "description": "Providing and laying of hand pack Cobble Stone (approx size 10 cm x 9 cm x 9 cm) with granular material bedding on prepared surface",
+    "unit": "sqm",
+    "basis_quantity": 5,
+    "type": "DOR",
+    "ref_ss": "1000",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 0.1, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 2, "unit": "day", "resource_type": "Labour" },
+      { "name": "Stone", "quantity": 0.6, "unit": "cum", "resource_type": "Material" }
+    ]
+  },
+
+  {
+    "id": 1201,
+    "sNo": "12.1 A",
+    "description": "Providing and laying granular Sub-Base Material on prepared surface, mixing at OMC, and compacting to achieve the desired density - By Mechanical Means",
+    "unit": "cum",
+    "basis_quantity": 300,
+    "type": "DOR",
+    "ref_ss": "1201",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 2, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+      { "name": "Sub-base Material S1 type or S2 type", "quantity": 384, "unit": "cum", "resource_type": "Material" },
+      { "name": "Water", "quantity": 18, "unit": "KL", "resource_type": "Material" },
+      { "name": "Motor Grader", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Vibratory Roller", "quantity": 12, "unit": "hour", "resource_type": "Equipment" },
+      { "name": "Tractor / Loader", "quantity": 12, "unit": "hour", "resource_type": "Equipment" }
+    ]
+  },
+  {
+    "id": 1202,
+    "sNo": "12.1 B",
+    "description": "Providing and laying granular Sub-Base Material on prepared surface, mixing at OMC, and compacting to achieve the desired density - By Manual Means",
+    "unit": "cum",
+    "basis_quantity": 200,
+    "type": "DOR",
+    "ref_ss": "1201",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 2, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 60, "unit": "day", "resource_type": "Labour" },
+      { "name": "Sub-base Material S1 type or S2 type", "quantity": 256, "unit": "cum", "resource_type": "Material" },
+      { "name": "Water", "quantity": 23, "unit": "KL", "resource_type": "Material" },
+      { "name": "Vibratory Roller", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+    ]
+  },
+
+  {
+    "id": 2501,
+    "sNo": "25.1 A",
+    "description": "Providing and laying Brick Masonry Work in Cement mortar (1:2) in Foundation / structure complete excluding Pointing and Plastering",
+    "unit": "cum",
+    "basis_quantity": 5,
+    "type": "DOR",
+    "ref_ss": "2500",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 6, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+      { "name": "Bricks Ist Class", "quantity": 2800, "unit": "nos", "resource_type": "Material" },
+      { "name": "Cement", "quantity": 0.8, "unit": "tonne", "resource_type": "Material" },
+      { "name": "Sand", "quantity": 1.12, "unit": "cum", "resource_type": "Material" },
+      { "name": "Water", "quantity": 0.1, "unit": "KL", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": 2502,
+    "sNo": "25.1 B",
+    "description": "Providing and laying Brick Masonry Work in Cement mortar (1:3) in Foundation / structure complete excluding Pointing and Plastering",
+    "unit": "cum",
+    "basis_quantity": 5,
+    "type": "DOR",
+    "ref_ss": "2500",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 6, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+      { "name": "Bricks Ist Class", "quantity": 2800, "unit": "nos", "resource_type": "Material" },
+      { "name": "Cement", "quantity": 0.61, "unit": "tonne", "resource_type": "Material" },
+      { "name": "Sand", "quantity": 1.26, "unit": "cum", "resource_type": "Material" },
+      { "name": "Water", "quantity": 0.1, "unit": "KL", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": 2503,
+    "sNo": "25.1 C",
+    "description": "Providing and laying Brick Masonry Work in Cement mortar (1:4) in Foundation / structure complete excluding Pointing and Plastering",
+    "unit": "cum",
+    "basis_quantity": 5,
+    "type": "DOR",
+    "ref_ss": "2500",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 6, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+      { "name": "Bricks Ist Class", "quantity": 2800, "unit": "nos", "resource_type": "Material" },
+      { "name": "Cement", "quantity": 0.48, "unit": "tonne", "resource_type": "Material" },
+      { "name": "Sand", "quantity": 1.35, "unit": "cum", "resource_type": "Material" },
+      { "name": "Water", "quantity": 0.1, "unit": "KL", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": 2504,
+    "sNo": "25.1 D",
+    "description": "Providing and laying Brick Masonry Work in Cement mortar (1:6) in Foundation / structure complete excluding Pointing and Plastering",
+    "unit": "cum",
+    "basis_quantity": 5,
+    "type": "DOR",
+    "ref_ss": "2500",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 6, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+      { "name": "Bricks Ist Class", "quantity": 2800, "unit": "nos", "resource_type": "Material" },
+      { "name": "Cement", "quantity": 0.35, "unit": "tonne", "resource_type": "Material" },
+      { "name": "Sand", "quantity": 1.45, "unit": "cum", "resource_type": "Material" },
+      { "name": "Water", "quantity": 0.1, "unit": "KL", "resource_type": "Material" }
+    ]
+  },
+
+  {
+    "id": 2505,
+    "sNo": "25.2 A",
+    "description": "Providing and laying Brick masonry work in superstructure/sub-structure complete excluding pointing and plastering - Cement Mortar 1:2",
+    "unit": "cum",
+    "basis_quantity": 5,
+    "type": "DOR",
+    "ref_ss": "2500",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 6, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+      { "name": "Bricks Ist Class", "quantity": 2800, "unit": "nos", "resource_type": "Material" },
+      { "name": "Cement", "quantity": 0.61, "unit": "tonne", "resource_type": "Material" },
+      { "name": "Sand", "quantity": 1.26, "unit": "cum", "resource_type": "Material" },
+      { "name": "Water", "quantity": 0.1, "unit": "KL", "resource_type": "Material" },
+      { "name": "Scaffolding", "quantity": 5, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour and Material" }
+    ]
+  },
+  {
+    "id": 2506,
+    "sNo": "25.2 B",
+    "description": "Providing and laying Brick masonry work in superstructure/sub-structure complete excluding pointing and plastering - Cement Mortar 1:3",
+    "unit": "cum",
+    "basis_quantity": 5,
+    "type": "DOR",
+    "ref_ss": "2500",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 7, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 14, "unit": "day", "resource_type": "Labour" },
+      { "name": "Bricks Ist Class", "quantity": 2800, "unit": "nos", "resource_type": "Material" },
+      { "name": "Cement", "quantity": 0.61, "unit": "tonne", "resource_type": "Material" },
+      { "name": "Sand", "quantity": 1.26, "unit": "cum", "resource_type": "Material" },
+      { "name": "Water", "quantity": 0.1, "unit": "KL", "resource_type": "Material" },
+      { "name": "Scaffolding", "quantity": 5, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour and Material" }
+    ]
+  },
+  {
+    "id": 2507,
+    "sNo": "25.2 C",
+    "description": "Providing and laying Brick masonry work in superstructure/sub-structure complete excluding pointing and plastering - Cement Mortar 1:4",
+    "unit": "cum",
+    "basis_quantity": 5,
+    "type": "DOR",
+    "ref_ss": "2500",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 7, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 14, "unit": "day", "resource_type": "Labour" },
+      { "name": "Bricks Ist Class", "quantity": 2800, "unit": "nos", "resource_type": "Material" },
+      { "name": "Cement", "quantity": 0.48, "unit": "tonne", "resource_type": "Material" },
+      { "name": "Sand", "quantity": 1.35, "unit": "cum", "resource_type": "Material" },
+      { "name": "Water", "quantity": 0.1, "unit": "KL", "resource_type": "Material" },
+      { "name": "Scaffolding", "quantity": 5, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour and Material" }
+    ]
+  },
+  {
+    "id": 2508,
+    "sNo": "25.2 D",
+    "description": "Providing and laying Brick masonry work in superstructure/sub-structure complete excluding pointing and plastering - Cement Mortar 1:6",
+    "unit": "cum",
+    "basis_quantity": 5,
+    "type": "DOR",
+    "ref_ss": "2500",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 7, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 14, "unit": "day", "resource_type": "Labour" },
+      { "name": "Bricks Ist Class", "quantity": 2800, "unit": "nos", "resource_type": "Material" },
+      { "name": "Cement", "quantity": 0.35, "unit": "tonne", "resource_type": "Material" },
+      { "name": "Sand", "quantity": 1.45, "unit": "cum", "resource_type": "Material" },
+      { "name": "Water", "quantity": 0.1, "unit": "KL", "resource_type": "Material" },
+      { "name": "Scaffolding", "quantity": 5, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour and Material" }
+    ]
+  },
+  {
+    "id": 2509,
+    "sNo": "25.3",
+    "description": "Providing and applying Pointing with cement mortar (1:3) on brick work in structure as per Technical Specifications",
+    "unit": "sqm",
+    "basis_quantity": 100,
+    "type": "DOR",
+    "ref_ss": "2500",
+    "resources": [
+      { "name": "Skilled Labour", "quantity": 10, "unit": "day", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+      { "name": "Cement", "quantity": 0.15, "unit": "tonne", "resource_type": "Material" },
+      { "name": "Sand", "quantity": 0.32, "unit": "cum", "resource_type": "Material" },
+      { "name": "Water", "quantity": 1, "unit": "KL", "resource_type": "Material" }
+    ]
+  }
+,
+{
+  "id": 2510,
+  "sNo": "25.4 A",
+  "description": "Providing and applying 12.5 mm thick Plaster with cement mortar (1:2) on brick work structure as per Technical Specifications",
+  "unit": "sqm",
+  "basis_quantity": 10,
+  "type": "DOR",
+  "ref_ss": "2500",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 10, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+    { "name": "Cement", "quantity": 0.96, "unit": "tonne", "resource_type": "Material" },
+    { "name": "Sand", "quantity": 1.38, "unit": "cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 0.3, "unit": "KL", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 2511,
+  "sNo": "25.4 B",
+  "description": "Providing and applying 12.5 mm thick Plaster with cement mortar (1:3) on brick work structure as per Technical Specifications",
+  "unit": "sqm",
+  "basis_quantity": 10,
+  "type": "DOR",
+  "ref_ss": "2500",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 10, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+    { "name": "Cement", "quantity": 0.72, "unit": "tonne", "resource_type": "Material" },
+    { "name": "Sand", "quantity": 1.5, "unit": "cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 0.2, "unit": "KL", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 2512,
+  "sNo": "25.4 C",
+  "description": "Providing and applying 12.5 mm thick Plaster with cement mortar (1:4) on brick work structure as per Technical Specifications",
+  "unit": "sqm",
+  "basis_quantity": 10,
+  "type": "DOR",
+  "ref_ss": "2500",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 10, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+    { "name": "Cement", "quantity": 0.58, "unit": "tonne", "resource_type": "Material" },
+    { "name": "Sand", "quantity": 1.6, "unit": "cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 0.17, "unit": "KL", "resource_type": "Material" },
+    { "name": "Scaffolding", "quantity": 5, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour and Material" }
+  ]
+},
+{
+  "id": 2513,
+  "sNo": "25.5",
+  "description": "Providing and laying weep holes in Brick works / Masonry / Plain / Reinforced concrete abutment, wing wall / return wall with 100 mm dia HDPE pipe as per Drawing and Technical Specifications",
+  "unit": "meter",
+  "basis_quantity": 30,
+  "type": "DOR",
+  "ref_ss": "2500",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+    { "name": "AC pipe 100 mm dia (including wastage @ 5%)", "quantity": 31.5, "unit": "meter", "resource_type": "Material" },
+    { "name": "MS Clamp", "quantity": 30, "unit": "nos", "resource_type": "Material" },
+    { "name": "Collar for AC pipe", "quantity": 10, "unit": "nos", "resource_type": "Material" },
+    { "name": "Cement", "quantity": 0.02, "unit": "tonne", "resource_type": "Material" },
+    { "name": "Sand", "quantity": 0.06, "unit": "cum", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 2601,
+  "sNo": "26.1",
+  "description": "Providing and laying of dry Stone Masonry Work as per Drawing and Technical Specifications",
+  "unit": "cum",
+  "basis_quantity": 5,
+  "type": "DOR",
+  "ref_ss": "2602,2603,2608",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 4, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 8, "unit": "day", "resource_type": "Labour" },
+    { "name": "Stone", "quantity": 5.75, "unit": "cum", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 2602,
+  "sNo": "26.2",
+  "description": "Providing and laying of Random rubble stone Masonry in mud Mortar as per Drawing and Technical Specifications",
+  "unit": "cum",
+  "basis_quantity": 5,
+  "type": "DOR",
+  "ref_ss": "2602,2603,2608",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 6, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+    { "name": "Stone", "quantity": 5.75, "unit": "cum", "resource_type": "Material" },
+    { "name": "Mud (Clay)", "quantity": 2, "unit": "cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 1, "unit": "KL", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 2603,
+  "sNo": "26.3 A",
+  "description": "Providing and laying of Stone Masonry Work in Cement Mortar 1:3 in Foundation complete as per Drawing and Technical Specifications",
+  "unit": "cum",
+  "basis_quantity": 5,
+  "type": "DOR",
+  "ref_ss": "2602,2603,2607",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 7, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 14, "unit": "day", "resource_type": "Labour" },
+    { "name": "Stone", "quantity": 5.75, "unit": "cum", "resource_type": "Material" },
+    { "name": "Cement", "quantity": 0.79, "unit": "tonne", "resource_type": "Material" },
+    { "name": "Sand", "quantity": 1.63, "unit": "cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 1, "unit": "KL", "resource_type": "Material" },
+    { "name": "Concrete mixer or other tools", "quantity": 5, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+  ]
+},
+{
+  "id": 2604,
+  "sNo": "26.3 B",
+  "description": "Providing and laying of Stone Masonry Work in Cement Mortar 1:4 in Foundation complete as per Drawing and Technical Specifications",
+  "unit": "cum",
+  "basis_quantity": 5,
+  "type": "DOR",
+  "ref_ss": "2602,2603,2607",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 7, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 14, "unit": "day", "resource_type": "Labour" },
+    { "name": "Stone", "quantity": 5.75, "unit": "cum", "resource_type": "Material" },
+    { "name": "Cement", "quantity": 0.62, "unit": "tonne", "resource_type": "Material" },
+    { "name": "Sand", "quantity": 1.74, "unit": "cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 1, "unit": "KL", "resource_type": "Material" },
+    { "name": "Concrete mixer or other tools", "quantity": 5, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+  ]
+},
+{
+  "id": 2605,
+  "sNo": "26.3 C",
+  "description": "Providing and laying of Stone Masonry Work in Cement Mortar 1:6 in Foundation complete as per Drawing and Technical Specifications",
+  "unit": "cum",
+  "basis_quantity": 5,
+  "type": "DOR",
+  "ref_ss": "2602,2603,2607",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 7, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 14, "unit": "day", "resource_type": "Labour" },
+    { "name": "Stone", "quantity": 5.75, "unit": "cum", "resource_type": "Material" },
+    { "name": "Cement", "quantity": 0.45, "unit": "tonne", "resource_type": "Material" },
+    { "name": "Sand", "quantity": 2.08, "unit": "cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 1, "unit": "KL", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 2606,
+  "sNo": "26.4 A",
+  "description": "Providing and laying Stone Masonry work in cement mortar 1:3 in structure - Random Rubble Masonry as per drawing and Technical Specifications",
+  "unit": "cum",
+  "basis_quantity": 5,
+  "type": "DOR",
+  "ref_ss": "2607",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 7, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 20, "unit": "day", "resource_type": "Labour" },
+    { "name": "Stone", "quantity": 5.75, "unit": "cum", "resource_type": "Material" },
+    { "name": "Cement", "quantity": 0.84, "unit": "tonne", "resource_type": "Material" },
+    { "name": "Sand", "quantity": 1.73, "unit": "cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 1, "unit": "KL", "resource_type": "Material" },
+    { "name": "Scaffolding", "quantity": 5, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour and Material" }
+  ]
+},
+{
+  "id": 2607,
+  "sNo": "26.4 B",
+  "description": "Providing and laying Stone Masonry work in cement mortar 1:3 in structure - Coursed rubble Masonry (first sort) as per drawing and Technical Specifications",
+  "unit": "cum",
+  "basis_quantity": 5,
+  "type": "DOR",
+  "ref_ss": "2606",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 8, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 22, "unit": "day", "resource_type": "Labour" },
+    { "name": "Stone (sorted)", "quantity": 5.75, "unit": "cum", "resource_type": "Material" },
+    { "name": "Cement", "quantity": 0.77, "unit": "tonne", "resource_type": "Material" },
+    { "name": "Sand", "quantity": 1.58, "unit": "cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 1, "unit": "KL", "resource_type": "Material" },
+    { "name": "Scaffolding", "quantity": 5, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour and Material" }
+  ]
+},
+{
+  "id": 2608,
+  "sNo": "26.5 A",
+  "description": "Providing and laying Stone Masonry work in cement mortar 1:4 in structure - Random Rubble Masonry (coursed/uncoursed) as per Drawing and Technical Specifications",
+  "unit": "cum",
+  "basis_quantity": 5,
+  "type": "DOR",
+  "ref_ss": "2607",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 7, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 20, "unit": "day", "resource_type": "Labour" },
+    { "name": "Stone", "quantity": 5.75, "unit": "cum", "resource_type": "Material" },
+    { "name": "Cement", "quantity": 0.66, "unit": "tonne", "resource_type": "Material" },
+    { "name": "Sand", "quantity": 1.85, "unit": "cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 1, "unit": "KL", "resource_type": "Material" },
+    { "name": "Scaffolding", "quantity": 5, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour and Material" }
+  ]
+},
+{
+  "id": 2609,
+  "sNo": "26.5 B",
+  "description": "Providing and laying Stone Masonry work in cement mortar 1:4 in structure - Coursed rubble Masonry (first sort) as per Drawing and Technical Specifications",
+  "unit": "cum",
+  "basis_quantity": 5,
+  "type": "DOR",
+  "ref_ss": "2606",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 8, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 22, "unit": "day", "resource_type": "Labour" },
+    { "name": "Stone (sorted)", "quantity": 5.75, "unit": "cum", "resource_type": "Material" },
+    { "name": "Cement", "quantity": 0.6, "unit": "tonne", "resource_type": "Material" },
+    { "name": "Sand", "quantity": 1.68, "unit": "cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 1, "unit": "KL", "resource_type": "Material" },
+    { "name": "Scaffolding", "quantity": 5, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour and Material" }
+  ]
+},
+{
+  "id": 2610,
+  "sNo": "26.6 A",
+  "description": "Providing and laying Stone Masonry work in cement mortar 1:6 in structure - Random Rubble Masonry (coursed/uncoursed) as per Drawing and Technical Specifications",
+  "unit": "cum",
+  "basis_quantity": 5,
+  "type": "DOR",
+  "ref_ss": "2607",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 7, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 20, "unit": "day", "resource_type": "Labour" },
+    { "name": "Stone", "quantity": 5.75, "unit": "cum", "resource_type": "Material" },
+    { "name": "Cement", "quantity": 0.48, "unit": "tonne", "resource_type": "Material" },
+    { "name": "Sand", "quantity": 1.98, "unit": "cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 1, "unit": "KL", "resource_type": "Material" },
+    { "name": "Scaffolding", "quantity": 5, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour and Material" }
+  ]
+},
+{
+  "id": 2611,
+  "sNo": "26.6 B",
+  "description": "Providing and laying Stone Masonry work in cement mortar 1:6 in structure - Coursed rubble Masonry (first sort) as per Drawing and Technical Specifications",
+  "unit": "cum",
+  "basis_quantity": 5,
+  "type": "DOR",
+  "ref_ss": "2606",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 8, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 22, "unit": "day", "resource_type": "Labour" },
+    { "name": "Stone (sorted)", "quantity": 5.75, "unit": "cum", "resource_type": "Material" },
+    { "name": "Cement", "quantity": 0.44, "unit": "tonne", "resource_type": "Material" },
+    { "name": "Sand", "quantity": 1.8, "unit": "cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 1, "unit": "KL", "resource_type": "Material" },
+    { "name": "Scaffolding", "quantity": 5, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour and Material" }
+  ]
+},
+{
+  "id": 2612,
+  "sNo": "26.7 A",
+  "description": "Providing and Pointing with cement mortar (1:3) on masonry work in structure as per Technical Specifications",
+  "unit": "sqm",
+  "basis_quantity": 100,
+  "type": "DOR",
+  "ref_ss": "2600",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 9, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 9, "unit": "day", "resource_type": "Labour" },
+    { "name": "Cement", "quantity": 0.31, "unit": "tonne", "resource_type": "Material" },
+    { "name": "Sand", "quantity": 0.63, "unit": "cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 0.05, "unit": "KL", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 2613,
+  "sNo": "26.7 B",
+  "description": "Providing and Pointing with cement mortar (1:2) on masonry work in structure as per Technical Specifications",
+  "unit": "sqm",
+  "basis_quantity": 100,
+  "type": "DOR",
+  "ref_ss": "2600",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 9, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 9, "unit": "day", "resource_type": "Labour" },
+    { "name": "Cement", "quantity": 0.4, "unit": "tonne", "resource_type": "Material" },
+    { "name": "Sand", "quantity": 0.56, "unit": "cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 0.07, "unit": "KL", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 2614,
+  "sNo": "26.7 C",
+  "description": "Providing and Pointing with cement mortar (1:1) on masonry work in structure as per Technical Specifications",
+  "unit": "sqm",
+  "basis_quantity": 100,
+  "type": "DOR",
+  "ref_ss": "2600",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 9, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 9, "unit": "day", "resource_type": "Labour" },
+    { "name": "Cement", "quantity": 0.61, "unit": "tonne", "resource_type": "Material" },
+    { "name": "Sand", "quantity": 0.42, "unit": "cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 0.1, "unit": "KL", "resource_type": "Material" }
+  ]
+}
+
+
+]
