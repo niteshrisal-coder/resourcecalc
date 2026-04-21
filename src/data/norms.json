@@ -1343,7 +1343,3186 @@
     { "name": "Sand", "quantity": 0.42, "unit": "cum", "resource_type": "Material" },
     { "name": "Water", "quantity": 0.1, "unit": "KL", "resource_type": "Material" }
   ]
-}
+},
+{
+  "id": 10101,
+  "sNo": "1.01",
+  "description": "Cutting of tree, branch & log etc. (12-30 cm girth above 1.00 m from G.L.) with lead upto 15 m",
+  "unit": "Nos",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "A1 (1-1A)",
+  "resources": [
+    { "name": "Unskilled Labour", "quantity": 0.13, "unit": "Nos", "resource_type": "Labour" }
+  ]
+},
+{
+  "id": 10102,
+  "sNo": "1.02",
+  "description": "Cutting of tree, branch & log etc. (31-60 cm girth above 1.00 m from G.L.) with lead upto 15 m",
+  "unit": "Nos",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "A1 (1-1B)",
+  "resources": [
+    { "name": "Unskilled Labour", "quantity": 0.39, "unit": "Nos", "resource_type": "Labour" }
+  ]
+},
+{
+  "id": 10103,
+  "sNo": "1.03",
+  "description": "Cutting of tree, branch & log etc. (61-120 cm girth above 1.00 m from G.L.) with lead upto 15 m",
+  "unit": "Nos",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "A1 (1-1C)",
+  "resources": [
+    { "name": "Unskilled Labour", "quantity": 0.98, "unit": "Nos", "resource_type": "Labour" }
+  ]
+},
+{
+  "id": 10104,
+  "sNo": "1.04",
+  "description": "Removing of tree root (12-30 cm girth above 1.00 m from G.L.) with lead upto 15 m",
+  "unit": "Nos",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "A2 (1-2A)",
+  "resources": [
+    { "name": "Unskilled Labour", "quantity": 0.4, "unit": "Nos", "resource_type": "Labour" }
+  ]
+},
+{
+  "id": 10105,
+  "sNo": "1.05",
+  "description": "Removing of tree root (31-60 cm girth above 1.00 m from G.L.) with lead upto 15 m",
+  "unit": "Nos",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "A2 (1-2B)",
+  "resources": [
+    { "name": "Unskilled Labour", "quantity": 0.53, "unit": "Nos", "resource_type": "Labour" }
+  ]
+},
+{
+  "id": 10106,
+  "sNo": "1.06",
+  "description": "Removing of tree root (61-120 cm girth above 1.00 m from G.L.) with lead upto 15 m",
+  "unit": "Nos",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "A2 (1-2C)",
+  "resources": [
+    { "name": "Unskilled Labour", "quantity": 2.52, "unit": "Nos", "resource_type": "Labour" }
+  ]
+},
+{
+  "id": 10107,
+  "sNo": "1.07",
+  "description": "Cutting of grass, taking of root & cutting of raised soil & site leveling with all complete",
+  "unit": "sqm",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "A3",
+  "resources": [
+    { "name": "Unskilled Labour", "quantity": 0.23, "unit": "Nos", "resource_type": "Labour" }
+  ]
+},
+{
+  "id": 10108,
+  "sNo": "1.08",
+  "description": "Site clearance cutting & removing the herbs, levelling the surface before construction work",
+  "unit": "sqm",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "A4",
+  "resources": [
+    { "name": "Unskilled Labour", "quantity": 0.01, "unit": "Nos", "resource_type": "Labour" }
+  ]
+},
+{
+  "id": 10109,
+  "sNo": "1.09",
+  "description": "Soil test, digging bore hole, sample collection & testing all complete( Soft Soil, 12m depth) ",
+  "unit": "Nos",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "A7",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
+{ "name": "Expert", "quantity": 4, "unit": "Nos", "resource_type": "Labour" },
+{ "name": "Helper", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Collection Bag", "quantity": 15, "unit": "Nos", "resource_type": "Material" },
+{ "name": "Necessary Material with Auger", "quantity": 8, "unit": "hour", "resource_type": "Equipment" }
 
 
-]
+  ]
+},
+{
+  "id": 10201,
+  "sNo": "2.01",
+  "description": "Earthwork in excavation in Soft/medium type soils in foundation including 10m hauling distance and 1.5 m lift manually all complete",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "B1 (2-1)",
+  "resources": [
+    { "name": "Unskilled Labour", "quantity": 0.7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Tools & Plants", "quantity": 3, "unit": "%", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+  ]
+},
+{
+  "id": 10202,
+  "sNo": "2.02",
+  "description": "Earthwork in excavation in gravel type soils in foundation including 10m hauling distance and 1.5 m lift manually all complete",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "B1 (2-2)",
+  "resources": [
+    { "name": "Unskilled Labour", "quantity": 0.8, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Tools & Plants", "quantity": 3, "unit": "%", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+  ]
+},
+{
+  "id": 10203,
+  "sNo": "2.03",
+  "description": "Earth filling (Earth transported from 10 Km surrounding) work in every 15 cm layer with watering & lead upto 10 m & proper manual compaction",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "B2 (2-25A)",
+  "resources": [
+    { "name": "Unskilled Labour", "quantity": 0.5, "unit": "Nos", "resource_type": "Labour" },
+{ "name": "Mud", "quantity": 1.5, "unit": "Cum", "resource_type": "Material" },
+{ "name": "Water", "quantity": 5, "unit": "Ltr", "resource_type": "Material" }
+
+  ]
+},
+
+{
+  "id": 10205,
+  "sNo": "2.05",
+  "description": "Earth filling (Earth transported from 10 Km surrounding) work in every 15 cm layer without watering & proper manual compaction",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "B2 (2-25B)",
+  "resources": [
+    { "name": "Unskilled Labour", "quantity": 0.25, "unit": "Nos", "resource_type": "Labour" },
+{ "name": "Mud", "quantity": 1.3, "unit": "Cum", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10207,
+  "sNo": "2.07",
+  "description": "Sand filling work with watering & proper manual compaction( 10m Lead)",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "B3 (2-42A)",
+  "resources": [
+    { "name": "Unskilled Labour", "quantity": 0.7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Sand Local", "quantity": 1.1, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 5, "unit": "Cum", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10208,
+  "sNo": "2.08",
+  "description": "Gravel Sand mixed (50% aggregate + 50% sand) filling work with proper manual compaction",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "B3 (2-42B)",
+  "resources": [
+    { "name": "Unskilled Labour", "quantity": 0.75, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Gravel (Sand Mixed)", "quantity": 1.1, "unit": "Cum", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10209,
+  "sNo": "2.09",
+  "description": "Pumping of water from foundation or trench",
+  "unit": "Ltr",
+  "basis_quantity": 5000,
+  "type": "DUDBC",
+  "ref_ss": "B4 (2-34)",
+  "resources": [
+    { "name": "Water Pump with all lubricant", "quantity": 0.5, "unit": "Hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": 10210,
+  "sNo": "2.11",
+  "description": "Compaction of filled earth by 8-10 MT roller in 20 cm layer",
+  "unit": "Cum",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "B5",
+  "resources": [
+    { "name": "Road Roller 8-10 MT with fuel", "quantity": 1.67, "unit": "Hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": 10211,
+  "sNo": "2.12",
+  "description": "Compaction of filled earth by 1 MT Hand roller in 20/20 cm layer",
+  "unit": "Cum",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "B6",
+  "resources": [
+    { "name": "Unskilled Labour", "quantity": 53, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Road Hand Roller 1 MT with fuel", "quantity": 1.67, "unit": "Hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": 10212,
+  "sNo": "2.13",
+  "description": "Earth work excavation in foundation in SOFT SOIL using 0.80 cum capacity Hydraulic Excavator",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "B7",
+  "resources": [
+    { "name": "Hydraulic Excavator 0.80 Cum", "quantity": 0.0104, "unit": "Hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": 10213,
+  "sNo": "2.14",
+  "description": "Earth work excavation in foundation in HARD SOIL using 0.80 cum capacity Hydraulic Excavator",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "B7",
+  "resources": [
+    { "name": "Hydraulic Excavator 0.80 Cum", "quantity": 0.0125, "unit": "Hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": 10214,
+  "sNo": "2.16",
+  "description": "Earth work excavation in foundation in SOFT SOIL using 1.32 cum capacity Hydraulic Excavator",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "B7",
+  "resources": [
+    { "name": "Hydraulic Excavator 1.32 Cum", "quantity": 0.0069, "unit": "Hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": 10215,
+  "sNo": "2.17",
+  "description": "Earth work excavation in foundation in HARD SOIL using 1.32 cum capacity Hydraulic Excavator",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "B7",
+  "resources": [
+    { "name": "Hydraulic Excavator 1.32 Cum", "quantity": 0.0084, "unit": "Hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": 10301,
+  "sNo": "3.01",
+  "description": "First class chimney brick masonry work in (1:3) cement sand mortar in Ground Floor",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "C2(5-1-B1 & 5-2A)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour (Scaffolding)", "quantity": 0.2, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
+    { "name": "Cement", "quantity": 0.13, "unit": "MT", "resource_type": "Material" },
+    { "name": "Sand", "quantity": 0.27, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 150, "unit": "Ltr", "resource_type": "Material" },
+    { "name": "Scaffolding Material", "quantity": 3, "unit": "%", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+  ]
+},
+{
+  "id": 10302,
+  "sNo": "3.02",
+  "description": "First class chimney brick masonry work in (1:3) cement sand mortar in First Floor",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "C2(5-1-B1 & 5-2B)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 0.7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
+    { "name": "Cement", "quantity": 0.13, "unit": "MT", "resource_type": "Material" },
+    { "name": "Sand", "quantity": 0.27, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 150, "unit": "Ltr", "resource_type": "Material" },
+    { "name": "Scaffolding Material", "quantity": 3, "unit": "%", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+  ]
+},
+{
+  "id": 10303,
+  "sNo": "3.03",
+  "description": "First class chimney brick masonry work in (1:3) cement sand mortar in Second Floor",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "C2(5-1-B1 & 5-2B)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 1.4, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
+    { "name": "Cement", "quantity": 0.13, "unit": "MT", "resource_type": "Material" },
+    { "name": "Sand Crusher", "quantity": 0.27, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 150, "unit": "Ltr", "resource_type": "Material" },
+    { "name": "Scaffolding Material", "quantity": 3, "unit": "%", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+  ]
+},
+{
+  "id": 10304,
+  "sNo": "3.04",
+  "description": "First class chimney brick masonry work in (1:4) cement sand mortar in Ground Floor",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "C2(5-1-B2 & 5-2A)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour (Scaffolding)", "quantity": 0.2, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
+    { "name": "Cement", "quantity": 0.1, "unit": "MT", "resource_type": "Material" },
+    { "name": "Sand Crusher", "quantity": 0.28, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 130, "unit": "Ltr", "resource_type": "Material" },
+    { "name": "Scaffolding Material", "quantity": 3, "unit": "%", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+  ]
+},
+{
+  "id": 10305,
+  "sNo": "3.05",
+  "description": "First class chimney brick masonry work in (1:4) cement sand mortar in First Floor",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "C25-1-B2 & 5-2B",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 0.7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
+    { "name": "Cement", "quantity": 0.1, "unit": "MT", "resource_type": "Material" },
+    { "name": "Sand Crusher", "quantity": 0.28, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 130, "unit": "Ltr", "resource_type": "Material" },
+    { "name": "Scaffolding Material", "quantity": 3, "unit": "%", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+  ]
+},
+{
+  "id": 10306,
+  "sNo": "3.06",
+  "description": "First class chimney brick masonry work in (1:4) cement sand mortar in Second Floor",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "C2(5-1-B2 & 5-2B)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 1.4, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
+    { "name": "Cement", "quantity": 0.1, "unit": "MT", "resource_type": "Material" },
+    { "name": "Sand Crusher", "quantity": 0.28, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 130, "unit": "Ltr", "resource_type": "Material" },
+    { "name": "Scaffolding Material", "quantity": 3, "unit": "%", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+  ]
+},
+{
+  "id": 10307,
+  "sNo": "3.07",
+  "description": "First class chimney brick masonry work in (1:6) cement sand mortar in Ground Floor",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "C2(5-1-B3 & 5-2A)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour (Scaffolding)", "quantity": 0.2, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
+    { "name": "Cement", "quantity": 0.07, "unit": "MT", "resource_type": "Material" },
+    { "name": "Sand Crusher", "quantity": 0.3, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 100, "unit": "Ltr", "resource_type": "Material" },
+    { "name": "Scaffolding Material", "quantity": 3, "unit": "%", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+  ]
+},
+{
+  "id": 10308,
+  "sNo": "3.08",
+  "description": "First class chimney brick masonry work in (1:6) cement sand mortar in First Floor",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "C2(5-1-B3 & 5-2B)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 0.7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
+    { "name": "Cement", "quantity": 0.07, "unit": "MT", "resource_type": "Material" },
+    { "name": "Sand Crusher", "quantity": 0.3, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 100, "unit": "Ltr", "resource_type": "Material" },
+    { "name": "Scaffolding Material", "quantity": 3, "unit": "%", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+  ]
+},
+{
+  "id": 10309,
+  "sNo": "3.09",
+  "description": "First class chimney brick masonry work in (1:6) cement sand mortar in Second Floor",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "C2(5-1-B3 & 5-2B)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 1.4, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
+    { "name": "Cement", "quantity": 0.07, "unit": "MT", "resource_type": "Material" },
+    { "name": "Sand Crusher", "quantity": 0.3, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 100, "unit": "Ltr", "resource_type": "Material" },
+    { "name": "Scaffolding Material", "quantity": 3, "unit": "%", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+  ]
+},
+{
+  "id": 10310,
+  "sNo": "3.10",
+  "description": "First class chimney brick masonry work in mud mortar in Ground Floor",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "C2(5-1-B6 & 5-2A)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 1.7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour (Scaffolding)", "quantity": 0.2, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
+    { "name": "Mud", "quantity": 0.42, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 100, "unit": "Ltr", "resource_type": "Material" },
+    { "name": "Scaffolding Material", "quantity": 3, "unit": "%", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+  ]
+},
+{
+  "id": 10311,
+  "sNo": "3.11",
+  "description": "First class chimney brick masonry work in mud mortar in First Floor",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "C2(5-1-B6 & 5-2B)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 1.7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 0.7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
+    { "name": "Mud", "quantity": 0.42, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 100, "unit": "Ltr", "resource_type": "Material" },
+    { "name": "Scaffolding Material", "quantity": 3, "unit": "%", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+  ]
+},
+{
+  "id": 10312,
+  "sNo": "3.12",
+  "description": "First class chimney brick masonry work in mud mortar in Second Floor",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "C2(5-1-B6 & 5-2B)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 1.7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 1.4, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
+    { "name": "Mud", "quantity": 0.42, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 100, "unit": "Ltr", "resource_type": "Material" },
+    { "name": "Scaffolding Material", "quantity": 3, "unit": "%", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+  ]
+},
+{
+  "id": 10313,
+  "sNo": "3.13",
+  "description": "साह्रो ब्लक स्टोन उपलब्ध गर्ने, सिमेन्ट मसला तयार गरी मसलामा ५ मि. उचाई सम्म गारो लगाउने काम पुरा, १० मि. सम्म ढुवानी समेत। सिमेन्ट मसला (१:३)",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "C6(6-1-1A)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Cement", "quantity": 0.194, "unit": "MT", "resource_type": "Material" },
+    { "name": "Sand Crusher", "quantity": 0.42, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Stone Block", "quantity": 1, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Stone Bond", "quantity": 0.1, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 120, "unit": "Ltr", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10314,
+  "sNo": "3.14",
+  "description": "साह्रो ब्लक स्टोन उपलब्ध गर्ने, सिमेन्ट मसला तयार गरी मसलामा ५ मि. उचाई सम्म गारो लगाउने काम पुरा, १० मि. सम्म ढुवानी समेत। सिमेन्ट मसला (१:४)",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "C6(6-1-1B)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Cement", "quantity": 0.159, "unit": "MT", "resource_type": "Material" },
+    { "name": "Sand Crusher", "quantity": 0.45, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Stone Block", "quantity": 1, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Stone Bond", "quantity": 0.1, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 100, "unit": "Ltr", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10315,
+  "sNo": "3.15",
+  "description": "साह्रो ब्लक स्टोन उपलब्ध गर्ने, सिमेन्ट मसला तयार गरी मसलामा ५ मि. उचाई सम्म गारो लगाउने काम पुरा, १० मि. सम्म ढुवानी समेत। सिमेन्ट मसला (१:६)",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "C6(6-1-1C)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Cement", "quantity": 0.106, "unit": "MT", "resource_type": "Material" },
+    { "name": "Sand Crusher", "quantity": 0.47, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Stone Block", "quantity": 1, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Stone Bond", "quantity": 0.1, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 70, "unit": "Ltr", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10316,
+  "sNo": "3.16",
+  "description": "R.R. stone masonry work for dry wall",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "C6(6-2-1)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Stone Block", "quantity": 1, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Stone Bond", "quantity": 0.1, "unit": "Cum", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10317,
+  "sNo": "3.17",
+  "description": "R.R. stone masonry work in mud mortar",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "C6(6-2-2)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2.25, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Stone Block", "quantity": 1, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Stone Bond", "quantity": 0.1, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Mud Soil", "quantity": 0.42, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 70, "unit": "Ltr", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10318,
+  "sNo": "3.18",
+  "description": "जगको खाडलमा ढुङ्गा भर्ने र लेभल गर्ने काम। ३० मि. सम्म ढुवानी समेत",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "C10(6-5)",
+  "resources": [
+    { "name": "Unskilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Stone Block", "quantity": 1, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Stone Bond", "quantity": 0.2, "unit": "Cum", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10319,
+  "sNo": "3.19",
+  "description": "Hollow Concrete Block (150x200x200 mm) Masonry Work in 1:4 cement sand mortar",
+  "unit": "sqm",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "C13",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 0.25, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 0.25, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Hollow Concrete Block 150x200x200 mm", "quantity": 19, "unit": "Nos", "resource_type": "Material" },
+    { "name": "Cement", "quantity": 0.014, "unit": "MT", "resource_type": "Material" },
+    { "name": "Sand", "quantity": 0.044, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 12, "unit": "Ltr", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10401,
+  "sNo": "4.01",
+  "description": "P.C.C. (1:4:8) work in foundation, wall",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "D1(7-2B)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 4, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Cement", "quantity": 0.17, "unit": "MT", "resource_type": "Material" },
+    { "name": "40 mm Aggregate", "quantity": 0.65, "unit": "Cum", "resource_type": "Material" },
+    { "name": "20 mm Aggregate", "quantity": 0.24, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Sand Crusher", "quantity": 0.47, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 100, "unit": "Ltr", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10402,
+  "sNo": "4.02",
+  "description": "P.C.C. (1:3:6) work in foundation, wall ",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "D1(7-2C)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 4, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Cement", "quantity": 0.22, "unit": "MT", "resource_type": "Material" },
+    { "name": "40 mm Aggregate", "quantity": 0.65, "unit": "Cum", "resource_type": "Material" },
+    { "name": "20 mm Aggregate - River bed", "quantity": 0.24, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Sand Crusher", "quantity": 0.47, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 120, "unit": "Ltr", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10404,
+  "sNo": "4.03",
+  "description": "P.C.C. (1:2:4) work in foundation, wall ",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "D1(7-2D)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 4, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Cement", "quantity": 0.32, "unit": "MT", "resource_type": "Material" },
+    { "name": "40 mm Aggregate ", "quantity": 0.52, "unit": "Cum", "resource_type": "Material" },
+    { "name": "20 mm Aggregate ", "quantity": 0.22, "unit": "Cum", "resource_type": "Material" },
+    { "name": "10 mm Aggregate ", "quantity": 0.11, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Sand Crusher", "quantity": 0.445, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 150, "unit": "Ltr", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10405,
+  "sNo": "4.04",
+  "description": "P.C.C. (1:2:4) for R.C.C. work in slab, beam etc ",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "D2(7-4A)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 0.8, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Cement", "quantity": 0.32, "unit": "MT", "resource_type": "Material" },
+    { "name": "40 mm Aggregate ", "quantity": 0.52, "unit": "Cum", "resource_type": "Material" },
+    { "name": "20 mm Aggregate ", "quantity": 0.22, "unit": "Cum", "resource_type": "Material" },
+    { "name": "10 mm Aggregate ", "quantity": 0.11, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Sand Crusher", "quantity": 0.445, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 150, "unit": "Ltr", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10406,
+  "sNo": "4.05",
+  "description": "P.C.C. (1:1½:3) for R.C.C. work in slab, beam etc ",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "D2(7-4B)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 0.8, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Cement", "quantity": 0.4, "unit": "MT", "resource_type": "Material" },
+    { "name": "20 mm Aggregate ", "quantity": 0.57, "unit": "Cum", "resource_type": "Material" },
+    { "name": "10 mm Aggregate ", "quantity": 0.29, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Sand Crusher", "quantity": 0.425, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 200, "unit": "Ltr", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10407,
+  "sNo": "4.06",
+  "description": "P.C.C. (1:1:2) for R.C.C. work in slab, beam etc ",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "D2(7-4C)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 0.8, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Cement", "quantity": 0.61, "unit": "MT", "resource_type": "Material" },
+    { "name": "20 mm Aggregate ", "quantity": 0.64, "unit": "Cum", "resource_type": "Material" },
+    { "name": "10 mm Aggregate ", "quantity": 0.21, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Sand Crusher", "quantity": 0.425, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 300, "unit": "Ltr", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10408,
+  "sNo": "4.07",
+  "description": "P.C.C. (1:3:6) work (USED MACHINE) in foundation, wall",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "D3(A)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 0.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 3.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Cement", "quantity": 0.22, "unit": "MT", "resource_type": "Material" },
+    { "name": "40 mm Aggregate ", "quantity": 0.65, "unit": "Cum", "resource_type": "Material" },
+    { "name": "20 mm Aggregate ", "quantity": 0.24, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Sand Crusher", "quantity": 0.425, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 100, "unit": "Ltr", "resource_type": "Material" },
+    { "name": "Mixture Machine (0.20-0.28 Cum)", "quantity": 0.6, "unit": "Hour", "resource_type": "Equipment" },
+    { "name": "Vibrator", "quantity": 0.25, "unit": "Hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": 10409,
+  "sNo": "4.08",
+  "description": "P.C.C. (1:2:4) work (USED MACHINE) in foundation, wall ",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "D3(B)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 0.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 3.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Cement", "quantity": 0.32, "unit": "MT", "resource_type": "Material" },
+    { "name": "40 mm Aggregate ", "quantity": 0.52, "unit": "Cum", "resource_type": "Material" },
+    { "name": "20 mm Aggregate ", "quantity": 0.33, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Sand Crusher", "quantity": 0.445, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 130, "unit": "Ltr", "resource_type": "Material" },
+    { "name": "Mixture Machine (0.20-0.28 Cum)", "quantity": 0.6, "unit": "Hour", "resource_type": "Equipment" },
+    { "name": "Vibrator", "quantity": 0.25, "unit": "Hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": 10410,
+  "sNo": "4.09",
+  "description": "P.C.C. (1:1½:3) for R.C.C. work (USED MACHINE) in slab, beam etc ",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "D4(A)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 0.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 3.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Cement", "quantity": 0.4, "unit": "MT", "resource_type": "Material" },
+    { "name": "20 mm Aggregate ", "quantity": 0.57, "unit": "Cum", "resource_type": "Material" },
+    { "name": "10 mm Aggregate ", "quantity": 0.29, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Sand Crusher", "quantity": 0.425, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 200, "unit": "Ltr", "resource_type": "Material" },
+    { "name": "Mixture Machine (0.20-0.28 Cum)", "quantity": 0.6, "unit": "Hour", "resource_type": "Equipment" },
+    { "name": "Vibrator", "quantity": 0.25, "unit": "Hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": 10411,
+  "sNo": "4.10",
+  "description": "P.C.C. (1:1:2) for R.C.C. work (USED MACHINE) in slab, beam etc ",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "D4(B)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 0.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 3.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Cement", "quantity": 0.61, "unit": "MT", "resource_type": "Material" },
+    { "name": "20 mm Aggregate ", "quantity": 0.64, "unit": "Cum", "resource_type": "Material" },
+    { "name": "10 mm Aggregate ", "quantity": 0.21, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Sand Crusher", "quantity": 0.425, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Water", "quantity": 300, "unit": "Ltr", "resource_type": "Material" },
+    { "name": "Mixture Machine (0.20-0.28 Cum)", "quantity": 0.6, "unit": "Hour", "resource_type": "Equipment" },
+    { "name": "Vibrator", "quantity": 0.25, "unit": "Hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": 10427,
+  "sNo": "4.22(A)",
+  "description": "P.C.C. work (Ready Mix Concrete) in Slab, Beam ",
+  "unit": "Cum",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "D6",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 0.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 3.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Design Grade Ready Mix Concrete", "quantity": 1, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Vibrator", "quantity": 0.25, "unit": "Hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": 10428,
+  "sNo": "4.23",
+  "description": "Torsteel reinforcement bar for R.C.C. work with cutting, bending, binding & laying with all complete",
+  "unit": "MT",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "D9(7-5)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 12, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 12, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "TOR/TMT Reinforcement Bar", "quantity": 1.05, "unit": "MT", "resource_type": "Material" },
+    { "name": "Binding Wire", "quantity": 10, "unit": "Kg", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10501,
+  "sNo": "5.01",
+  "description": "Form work shuttering & centering (COLUMN) with used local wood",
+  "unit": "Sqm",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "E1(8-3A)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 3.748, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 5.622, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Local Wood", "quantity": 0.07, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Killa", "quantity": 2.5, "unit": "Kg", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10502,
+  "sNo": "5.02",
+  "description": "Form work shuttering & centering (COLUMN) with used plywood",
+  "unit": "Sqm",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "E2(51B)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1.574, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2.361, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Ply Board 19 mm thick", "quantity": 0.693, "unit": "Sqm", "resource_type": "Material" },
+    { "name": "Local Wood", "quantity": 0.019, "unit": "Cum", "resource_type": "Material" },
+    { "name": "MS Black Pipe (MNB 50-M)", "quantity": 0.54, "unit": "Nos", "resource_type": "Material" },
+    { "name": "Killa", "quantity": 2.5, "unit": "Kg", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10503,
+  "sNo": "5.03",
+  "description": "Form work shuttering & centering (BEAM - up to 0.30 m depth) with used local wood",
+  "unit": "Sqm",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "E3(8-4A)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 4, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 6, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Local Wood", "quantity": 0.07, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Killa", "quantity": 2.5, "unit": "Kg", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10504,
+  "sNo": "5.04",
+  "description": "Form work shuttering & centering (BEAM - 0.30 to 0.80 m depth) with used local wood",
+  "unit": "Sqm",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "E4(8-4B)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 2.67, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 4, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Local Wood", "quantity": 0.07, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Killa", "quantity": 2.5, "unit": "Kg", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10505,
+  "sNo": "5.05",
+  "description": "Form work shuttering & centering (BEAM) with used plywood( 19 mm thick) ",
+  "unit": "Sqm",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "E5(51A)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 2.67, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 4, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Ply Board 19 mm thick", "quantity": 1.65, "unit": "Sqm", "resource_type": "Material" },
+    { "name": "Local Wood", "quantity": 0.04, "unit": "Cum", "resource_type": "Material" },
+    { "name": "MS Black Pipe (MNB 50-M)", "quantity": 0.4, "unit": "Nos", "resource_type": "Material" },
+    { "name": "Killa", "quantity": 2.5, "unit": "Kg", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10506,
+  "sNo": "5.06",
+  "description": "Form work shuttering & centering with MS pipe (prop), plyboard for slab etc",
+  "unit": "Sqm",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "E6(8-4A)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 17.2, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 25.7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Ply Board 19 mm thick", "quantity": 16.5, "unit": "Sqm", "resource_type": "Material" },
+    { "name": "Local Wood", "quantity": 0.232, "unit": "Cum", "resource_type": "Material" },
+    { "name": "MS Black Pipe (MNB 50-M)", "quantity": 4.4, "unit": "Nos", "resource_type": "Material" },
+    { "name": "Killa", "quantity": 25, "unit": "Kg", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10508,
+  "sNo": "5.07",
+  "description": "Trench work open type form work (up to 1.50 m)",
+  "unit": "Sqm",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "E12(8-13A)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 0.25, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 0.25, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Local Wood", "quantity": 0.105, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Local Wood", "quantity": 0.2545, "unit": "Cum", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10509,
+  "sNo": "5.08",
+  "description": "Trench work open type form work (1.50 to 3.00 m)",
+  "unit": "Sqm",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "E12(8-13B)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 0.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Local Wood", "quantity": 0.105, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Local Wood", "quantity": 0.2545, "unit": "Cum", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 10510,
+  "sNo": "5.09",
+  "description": "Trench work open type form work (above 3.00 m)",
+  "unit": "Sqm",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "E13(8-13C)",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 1.75, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Local Wood", "quantity": 0.105, "unit": "Cum", "resource_type": "Material" },
+    { "name": "Local Wood", "quantity": 0.2545, "unit": "Cum", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "F1",
+  "sNo": "F1",
+  "description": "माल सामान उपलब्ध गरी सि.जि.आई. सिट (जस्ता पाताको) छाना छाउने काम पूरा",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "9-1",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.100, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 1.250, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "जस्ता पाता २४ गेज ( ०.५० मि.मि )", "quantity": 12.000, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "८ मि.मि. नटबोल्ट", "quantity": 30.000, "unit": "संख्या", "resource_type": "Material" },
+    { "name": "जे हुक", "quantity": 25.000, "unit": "संख्या", "resource_type": "Material" },
+    { "name": "बिटुमिन वासर", "quantity": 55.000, "unit": "संख्या", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "F2",
+  "sNo": "F2",
+  "description": "माल सामान उपलब्ध गरी जि.आई. प्लेन सिटको धुरी बनाई जडान गर्ने काम पुरा ।",
+  "unit": "१० र.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "9-2",
+  "resources": [
+    { "name": "सिपालु", "quantity": 2.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 3.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "प्लेन सिट २४ गेज (०.५० मि.मि)", "quantity": 12.000, "unit": "मि.", "resource_type": "Material" },
+    { "name": "आवश्यक नट बोल्ट", "quantity": null, "unit": "संख्या", "resource_type": "Material", "note": "अन्दाजी" }
+  ]
+},
+  {
+    "id": "F3",
+    "sNo": "F3",
+    "description": "माल सामान उपलब्ध गरी रंगिन सि.जि.आई. सिटको छाना छाउने काम पूरा",
+    "unit": "१० व.मि.",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": "९-१",
+    "resources": [
+      { "name": "सिपालु", "quantity": 1.100, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 1.250, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "रंगिन जस्ता पाता", "quantity": 12.000, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "८ मि.मि. नटबोल्ट", "quantity": 30.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "जे हुक", "quantity": 25.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "बिटुमिन वासर", "quantity": 55.000, "unit": "संख्या", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "F4",
+    "sNo": "F4",
+    "description": "माल सामान उपलब्ध गरी रंगिन जि.आई. प्लेन सिटको धुरी बनाई जडान गर्ने काम पूरा ।",
+    "unit": "१० र.मि.",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": "९-२",
+    "resources": [
+      { "name": "सिपालु", "quantity": 2.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 3.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "रंगिन प्लेन सिट ०.५० मि.मि", "quantity": 12.000, "unit": "मि.", "resource_type": "Material" },
+      { "name": "आवश्यक नट बोल्ट", "quantity": null, "unit": "संख्या", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "F5",
+    "sNo": "F5",
+    "description": "माल सामान उपलब्ध गरी प्लेन.जि.आई. सिटको छाना छाउने काम पूरा",
+    "unit": "१० व.मि.",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": "९-१",
+    "resources": [
+      { "name": "सिपालु", "quantity": 1.100, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 1.250, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "प्लेन पाता (०.५० मि.मि )", "quantity": 12.000, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "८ मि.मि. नटबोल्ट", "quantity": 30.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "जे हुक", "quantity": 25.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "बिटुमिन वासर", "quantity": 55.000, "unit": "संख्या", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "F6",
+    "sNo": "F6",
+    "description": "माल सामान उपलब्ध गरी रंगिन प्लेन.जि.आई. सिटको छाना छाउने काम पूरा",
+    "unit": "१० व.मि.",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": "९-१",
+    "resources": [
+      { "name": "सिपालु", "quantity": 1.100, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 1.250, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "रंगिन प्लेन पाता", "quantity": 12.000, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "८ मि.मि. नटबोल्ट", "quantity": 30.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "जे हुक", "quantity": 25.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "बिटुमिन वासर", "quantity": 55.000, "unit": "संख्या", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "F7",
+    "sNo": "F7",
+    "description": "१५० मि.मि. चौडा ४५० मि.मि. सम्मको जी.आई.प्लेन सिटको गटर बनाई वर्षातको पानीको पाइपमा जोड्ने, ४०x३ मि.मि. को फलामे ब्राकेट, नटबोल्ट, वाशर लगाउने समेत काम पूरा",
+    "unit": "१० मि",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": "९-१",
+    "resources": [
+      { "name": "सिपालु", "quantity": 1.35, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 2.00, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "प्लेन पाता", "quantity": 13.50, "unit": "र.मि.", "resource_type": "Material" },
+      { "name": "ब्राकेट", "quantity": 32.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "वाशर", "quantity": 48.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "बोल्ट", "quantity": 48.000, "unit": "संख्या", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "F8",
+    "sNo": "F8",
+    "description": "१५० मि.मि. चौडा ४५० मि.मि. सम्मको रंगिन जी.आई.प्लेन सिटको गटर बनाई वर्षातको पानीको पाइपमा जोड्ने ४०x३ मि.मि. को फलामे ब्राकेट, नटबोल्ट, वाशर लगाउने समेत काम पूरा",
+    "unit": "१० मि",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": "९-१",
+    "resources": [
+      { "name": "सिपालु", "quantity": 1.35, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 2.00, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "रंगिन प्लेन पाता", "quantity": 13.50, "unit": "र.मि.", "resource_type": "Material" },
+      { "name": "ब्राकेट", "quantity": 32.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "वाशर", "quantity": 48.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "बोल्ट", "quantity": 48.000, "unit": "संख्या", "resource_type": "Material" }
+    ]
+  },
+
+  {
+    "id": "F9",
+    "sNo": "F9",
+    "description": "मालसामान उपलब्ध गरी स्लेट छाना छाउने काम ।",
+    "unit": "१० व.मि.",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": "९-५",
+    "resources": [
+      { "name": "सिपालु", "quantity": 4.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 5.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "स्लेट", "quantity": 24.000, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "किला", "quantity": null, "unit": "केजी", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "F10",
+    "sNo": "F10",
+    "description": "मालसामान उपलब्ध गरी क्ले टायलको छाना छाउने काम ।",
+    "unit": "१० व.मि.",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": "९-६",
+    "resources": [
+      { "name": "सिपालु", "quantity": 0.500, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 1.500, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "टायल", "quantity": 125.000, "unit": "संख्या", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "F11",
+    "sNo": "F11",
+    "description": "मालसामान उपलब्ध गरी क्ले टायलको धुरी लगाउने काम ।",
+    "unit": "१० र.मि.",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": "९-७",
+    "resources": [
+      { "name": "सिपालु", "quantity": 0.500, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.500, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "धुरी", "quantity": 50.000, "unit": "संख्या", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "F12",
+    "sNo": "F12",
+    "description": "मालसामान उपलब्ध गरी १० से.मि. मोटाईको लाईम कक्रिट टेरेस्ड छानाको काम (१:१:३)",
+    "unit": "१० व.मि.",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": "९-८",
+    "resources": [
+      { "name": "सिपालु", "quantity": 1.500, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 12.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ईटा रोडा", "quantity": 1.250, "unit": "घ.मि.", "resource_type": "Material" },
+      { "name": "चुना", "quantity": 1.500, "unit": "के.जी.", "resource_type": "Material" },
+      { "name": "सुर्खी (छानेको)", "quantity": 0.400, "unit": "घ.मि.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "F13-a",
+    "sNo": "F13",
+    "description": "मालसामान उपलब्ध गरी बाँसको फ्रेम बनाई खरको छाना छाउने काम पुरा । ८ से.मि. मोटाईको",
+    "unit": "१० व.मि.",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": "९-९",
+    "resources": [
+      { "name": "सिपालु", "quantity": 1.500, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 1.500, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "खर", "quantity": 83.000, "unit": "बन्डल", "resource_type": "Material" },
+      { "name": "बाँस", "quantity": 30.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "डोरी", "quantity": 3.500, "unit": "के.जी.", "resource_type": "Material" },
+      { "name": "चटाई", "quantity": 12.000, "unit": "व.मि.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "F13-b",
+    "sNo": "F13",
+    "description": "मालसामान उपलब्ध गरी बाँसको फ्रेम बनाई खरको छाना छाउने काम पुरा । १५ से.मि. मोटाईको",
+    "unit": "१० व.मि.",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": "९-९",
+    "resources": [
+      { "name": "सिपालु", "quantity": 2.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 2.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "खर", "quantity": 166.000, "unit": "बन्डल", "resource_type": "Material" },
+      { "name": "बाँस", "quantity": 40.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "डोरी", "quantity": 5.000, "unit": "के.जी.", "resource_type": "Material" },
+      { "name": "चटाई", "quantity": 12.000, "unit": "व.मि.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "F14",
+    "sNo": "F14",
+    "description": "मालसामान उपलब्ध गरी कोरुगेटेड फाइबर ग्लास पाताको छाना छाउने काम पुरा",
+    "unit": "१० व.मि.",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": "९-१०",
+    "resources": [
+      { "name": "सिपालु", "quantity": 1.100, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 1.250, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "जस्ता पाता २२x२४ गेज", "quantity": 12.000, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "८ मि.मि. नटबोल्ट", "quantity": 30.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "जे हुक", "quantity": 25.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "बिटुमिन वासर", "quantity": 55.000, "unit": "संख्या", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "F15",
+    "sNo": "F15",
+    "description": "मालसामान उपलब्ध गरी फाइबर ग्लास प्लेन सिटको धुरी बनाई जडान गर्ने काम पुरा ।",
+    "unit": "१० मि",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": "९-११",
+    "resources": [
+      { "name": "सिपालु", "quantity": 2.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 3.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "प्लेन सिट", "quantity": 12.000, "unit": "मि.", "resource_type": "Material" },
+      { "name": "आवश्यक नट बोल्ट", "quantity": null, "unit": "संख्या", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "F16",
+    "sNo": "F16",
+    "description": "माल सामान उपलब्ध गरी रंगिन सि.जि.आई. सिटको छाना छाउने काम पूरा",
+    "unit": "१० व.मि.",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": "९-१",
+    "resources": [
+      { "name": "सिपालु", "quantity": 1.100, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 1.250, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "रंगिन जस्ता पाता", "quantity": 12.000, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "८ मि.मि. नटबोल्ट", "quantity": 30.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "जे हुक", "quantity": 25.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "बिटुमिन वासर", "quantity": 55.000, "unit": "संख्या", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "F17",
+    "sNo": "F17",
+    "description": "माल सामान उपलब्ध गरी रंगिन जि.आई. प्लेन सिटको धुरी बनाई जडान गर्ने काम पूरा ।",
+    "unit": "१० मि",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": "९-२",
+    "resources": [
+      { "name": "सिपालु", "quantity": 2.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 3.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "रंगिन प्लेन सिट", "quantity": 12.000, "unit": "मि.", "resource_type": "Material" },
+      { "name": "आवश्यक नट बोल्ट", "quantity": null, "unit": "संख्या", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "F18",
+    "sNo": "F18",
+    "description": "माल सामान उपलब्ध गरी सिमेन्ट बालुवा (१:४) स्क्रीडमा रंगिन सिमेन्ट कक्रिट टायल जडान गर्ने काम पूरा ।",
+    "unit": "१० मि",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": null,
+    "resources": [
+      { "name": "सिपालु", "quantity": 1.00, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 2.00, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "सिमेन्ट", "quantity": 0.024, "unit": "मे.ट.", "resource_type": "Material" },
+      { "name": "बालुवा", "quantity": 0.090, "unit": "घ.मि.", "resource_type": "Material" },
+      { "name": "कक्रिट टायल", "quantity": 175.00, "unit": "संख्या", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "F19",
+    "sNo": "F19",
+    "description": "अग्राख काठको विम, दलिन आदि बनाई जोड्ने काम ।",
+    "unit": "घ.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "१०-१७",
+    "resources": [
+      { "name": "सिपालु", "quantity": 17.650, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 1.760, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "अग्राख काठ", "quantity": 1.050, "unit": "घ.मि.", "resource_type": "Material" },
+      { "name": "किला", "quantity": null, "unit": "के.जि.", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "F20",
+    "sNo": "F20",
+    "description": "२५ मि.मि. अग्राख काठको ईभ्सबोर्ड (मुठल) बनाई जोड्ने ।",
+    "unit": "१० व.मि.",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": "१०-१९",
+    "resources": [
+      { "name": "सिपालु", "quantity": 1.430, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.143, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "अग्राख काठ", "quantity": 0.235, "unit": "घ.मि.", "resource_type": "Material" },
+      { "name": "किला", "quantity": null, "unit": "के.जि.", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "F21",
+    "sNo": "F21",
+    "description": "अग्राख काठको कैंची (ट्रस) बनाई जोड्ने काम ।",
+    "unit": "घ.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": null,
+    "resources": [
+      { "name": "सिपालु", "quantity": 17.650, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 26.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "अग्राख काठ", "quantity": 1.050, "unit": "घ.मि.", "resource_type": "Material" },
+      { "name": "फलामे सलिपात", "quantity": null, "unit": "संख्या", "resource_type": "Material", "note": "अन्दाजी" },
+      { "name": "नटबोल्ट", "quantity": null, "unit": "संख्या", "resource_type": "Material", "note": "अन्दाजी" },
+      { "name": "किला", "quantity": null, "unit": "के.जि.", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "F22",
+    "sNo": "F22",
+    "description": "छानामा २ मि.मि. बाक्लो यू.पि.भि.सि. पाता लगाउने काम क्लिप तथा पेच आदि समेत पूरा",
+    "unit": "१० व.मि.",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": null,
+    "resources": [
+      { "name": "सिपालु", "quantity": 1.50, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 1.00, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "२ मि.मि. पाता", "quantity": 12.00, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "क्लिप", "quantity": 14.00, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "पेचकिला", "quantity": 28.00, "unit": "संख्या", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "F23",
+    "sNo": "F23",
+    "description": "छानामा ३ मि.मि. बाक्लो यू.पि.भि.सि. पाता लगाउने काम क्लिप तथा पेच आदि समेत पूरा",
+    "unit": "१० व.मि.",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": null,
+    "resources": [
+      { "name": "सिपालु", "quantity": 1.50, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 1.00, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "३ मि.मि. पाता", "quantity": 12.00, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "क्लिप", "quantity": 14.00, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "पेचकिला", "quantity": 28.00, "unit": "संख्या", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "G1",
+    "sNo": "G1",
+    "description": "अग्राख काठको चौकोस बनाई जोड्ने काम ।",
+    "unit": "घ.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "१०-१",
+    "resources": [
+      { "name": "सिपालु", "quantity": 34.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 3.400, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "अग्राख काठ", "quantity": 1.100, "unit": "घ.मि.", "resource_type": "Material" },
+      { "name": "होल्डफास्ट", "quantity": 12.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "पेच", "quantity": 144.000, "unit": "संख्या", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "G2",
+    "sNo": "G2",
+    "description": "३८ मि.मि. बाक्लो अग्राखको फ्रेम हाली डिला खापा बनाउने काम । खापाको नाप: १.०७ X १.९८२ . २.११४ वमि.",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "१०-२",
+    "resources": [
+      { "name": "सिपालु", "quantity": 10.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 1.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "अग्राख काठ", "quantity": 0.084, "unit": "घ.मि.", "resource_type": "Material" },
+      { "name": "१००मिमि कब्जा", "quantity": 6.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "१५०मिमि छेसकिनी", "quantity": 1.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "३००मिमि छेसकिनी", "quantity": 1.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "२५०मिमि लकिंग सेट", "quantity": 1.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "ह्याण्डल", "quantity": 2.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "पेचकिला", "quantity": null, "unit": "संख्या", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "G3-1",
+    "sNo": "G3",
+    "description": "३८ मि.मि.X ७५ मि.मि. साल काठको फ्रेम बनाई ऐना खापा बनाउने काम (खापाको नाप : १.८२९ X १.२२ . २.२३ व. मि.) (३ मि.मि. ऐना जडान गर्ने काम)",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "१०-३",
+    "resources": [
+      { "name": "सिपालु", "quantity": 1.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.900, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "साल काठ", "quantity": 0.049, "unit": "घ.मि.", "resource_type": "Material" },
+      { "name": "३ मि.मि.ऐना", "quantity": 1.085, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "७५मि.मि.कब्जा", "quantity": 8.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "१००मि.मि. छेसकिनी", "quantity": 4.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "ह्याण्डल", "quantity": 2.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "पेचकिला", "quantity": null, "unit": "संख्या", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "G3-2",
+    "sNo": "G3",
+    "description": "३८ मि.मि.X ७५ मि.मि. साल काठको फ्रेम बनाई ऐना खापा बनाउने काम (खापाको नाप : १.८२९ X १.२२ . २.२३ व. मि.) (४ मि.मि. ऐना जडान गर्ने काम)",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "१०-४",
+    "resources": [
+      { "name": "सिपालु", "quantity": 1.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.900, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "साल काठ", "quantity": 0.049, "unit": "घ.मि.", "resource_type": "Material" },
+      { "name": "४ मि.मि.ऐना", "quantity": 1.085, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "७५मि.मि.कब्जा", "quantity": 8.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "१००मिमि छेसकिनी", "quantity": 4.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "ह्याण्डल", "quantity": 2.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "पेचकिला", "quantity": null, "unit": "संख्या", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "G3-3",
+    "sNo": "G3",
+    "description": "३८ मि.मि.X ७५ मि.मि. साल काठको फ्रेम बनाई ऐना खापा बनाउने काम (खापाको नाप : १.८२९ X १.२२ . २.२३ व. मि.) (६ मि.मि. ऐना जडान गर्ने काम)",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "१०-६",
+    "resources": [
+      { "name": "सिपालु", "quantity": 1.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.900, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "साल काठ", "quantity": 0.049, "unit": "घ.मि.", "resource_type": "Material" },
+      { "name": "५.५ मि.मि. ऐना", "quantity": 1.085, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "७५मि.मि.कब्जा", "quantity": 8.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "१००मिमि छेसकिनी", "quantity": 4.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "ह्याण्डल", "quantity": 2.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "पेचकिला", "quantity": null, "unit": "संख्या", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "G4-a",
+    "sNo": "G4",
+    "description": "३८ मि.मि. बाक्लो अग्राख काठको फ्रेममा फ्लस खापा बनाउने काम (खापाको नाप : १.०९२ X २.०५८ . २.२४५ व. मि.) (३ मि.मि. कमर्सियल प्लाईउड दुबै तर्फ)",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "१०-७",
+    "resources": [
+      { "name": "सिपालु", "quantity": 7.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.700, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "अग्राख काठ", "quantity": 0.0346, "unit": "घ.मि.", "resource_type": "Material" },
+      { "name": "कमर्सियल प्लाईउड", "quantity": 4.650, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "१००मि.मि. कब्जा", "quantity": 3.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "१५०मिमि छेसकिनी", "quantity": 2.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "मोर्टिस लक", "quantity": 1.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "पेचकिला", "quantity": null, "unit": "संख्या", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "G4-b",
+    "sNo": "G4",
+    "description": "३८ मि.मि. बाक्लो अग्राख काठको फ्रेममा फ्लस खापा बनाउने काम (खापाको नाप : १.०९२ X २.०५८ . २.२४५ व. मि.) (३ मि.मि. टिक प्लाईउड दुबै तर्फ)",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "१०-८",
+    "resources": [
+      { "name": "सिपालु", "quantity": 7.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.700, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "अग्राख काठ", "quantity": 0.0346, "unit": "घ.मि.", "resource_type": "Material" },
+      { "name": "३ मि.मि टिक प्लाईउड", "quantity": 4.650, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "१००मि.मि. कब्जा", "quantity": 3.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "१५०मिमि छेसकिनी", "quantity": 2.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "मोर्टिस लक", "quantity": 1.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "पेचकिला", "quantity": null, "unit": "संख्या", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "G4-c",
+    "sNo": "G4",
+    "description": "३८ मि.मि. बाक्लो अग्राख काठको फ्रेममा फ्लस खापा बनाउने काम (खापाको नाप : १.०९२ X २.०५८ . २.२४५ व. मि.) (जि.आइ.प्लेन सिट दुबैतर्फ)",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "१०-९",
+    "resources": [
+      { "name": "सिपालु", "quantity": 7.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.700, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "अग्राख काठ", "quantity": 0.0346, "unit": "घ.मि.", "resource_type": "Material" },
+      { "name": "१८गेज प्लेन सिट", "quantity": 4.650, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "१००मि.मि. कब्जा", "quantity": 3.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "१५०मिमि छेसकिनी", "quantity": 2.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "मोर्टिस लक", "quantity": 1.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "ह्याण्डल", "quantity": 1.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "पेचकिला", "quantity": null, "unit": "संख्या", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "G4-d",
+    "sNo": "G4",
+    "description": "३८ मि.मि. बाक्लो अग्राख काठको फ्रेममा फ्लस खापा बनाउने काम (खापाको नाप : १.०९२ X २.०५८ . २.२४५ व. मि.) जि.आई मस्किटो प्रुफ पावर मेस (२४ गेज)",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "१०-१०",
+    "resources": [
+      { "name": "सिपालु", "quantity": 5.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.500, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "अग्राख काठ", "quantity": 0.026, "unit": "घ.मि.", "resource_type": "Material" },
+      { "name": "जि आई वायर मेस", "quantity": 2.130, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "१००मिमि कब्जा", "quantity": 3.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "१५०मिमि छेसकिनी", "quantity": 2.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "ह्याण्डल", "quantity": 2.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "स्प्रिङ", "quantity": 1.000, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "पेचकिला", "quantity": null, "unit": "संख्या", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+
+  {
+    "id": "G5-a",
+    "sNo": "G5",
+    "description": "चौकोसमा बिभिन्न मोटाईको ऐनामा काठको लिस्टी लगाई जड्ने काम । (३ मि.मि. ऐना)",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "१०-११ क",
+    "resources": [
+      { "name": "सिपालु", "quantity": 0.060, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.006, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "३ मि.मि. ऐना", "quantity": 1.000, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "काठको लिस्टी", "quantity": 4.050, "unit": "मि.", "resource_type": "Material" },
+      { "name": "किला", "quantity": null, "unit": "के.जि.", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "G5-b",
+    "sNo": "G5",
+    "description": "चौकोसमा बिभिन्न मोटाईको ऐनामा काठको लिस्टी लगाई जड्ने काम । (४ मि.मि. ऐना)",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "१०-११ ख",
+    "resources": [
+      { "name": "सिपालु", "quantity": 0.060, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.006, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "४ मि.मि. ऐना", "quantity": 1.000, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "काठको लिस्टी", "quantity": 4.050, "unit": "मि.", "resource_type": "Material" },
+      { "name": "किला", "quantity": null, "unit": "के.जि.", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "G5-c",
+    "sNo": "G5",
+    "description": "चौकोसमा बिभिन्न मोटाईको ऐनामा काठको लिस्टी लगाई जड्ने काम । (६ मि.मि. ऐना)",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "१०-११ घ",
+    "resources": [
+      { "name": "सिपालु", "quantity": 0.060, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.006, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "६ मि.मि. ऐना", "quantity": 1.000, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "काठको लिस्टी", "quantity": 4.050, "unit": "मि.", "resource_type": "Material" },
+      { "name": "किला", "quantity": null, "unit": "के.जि.", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+
+  {
+    "id": "G6",
+    "sNo": "G6",
+    "description": "चौकोसमा ३ मि.मि. कमर्सियल प्लाईउड काठको लिस्टी लगाई जड्ने काम ।",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "१०-१२",
+    "resources": [
+      { "name": "सिपालु", "quantity": 0.060, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.006, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "३ मिमि प्लाईउड", "quantity": 1.050, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "काठको लिस्टी", "quantity": 4.050, "unit": "मि.", "resource_type": "Material" },
+      { "name": "किला", "quantity": null, "unit": "के.जि.", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "G7",
+    "sNo": "G7",
+    "description": "१६-२० मि.मि. व्यासको फलामे डण्डी काटी झ्यालको चौकोसमा प्वाल खोपी जडान गर्ने काम",
+    "unit": "मे.ट.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "१०-२१",
+    "resources": [
+      { "name": "सिपालु", "quantity": 20.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 20.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "डण्डी", "quantity": 1.050, "unit": "मे.ट.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "G8",
+    "sNo": "G8",
+    "description": "३८ X १०० मी.मी. साल काठको फ्रेमको प्यानलहरुमा ८ मी.मी.को कमर्सियल प्लाईउड राखी एकातर्फ ४ मी.मी. टिकप्लाईउड लेमिनेट गरी डिलाखापा बनाई जडान गर्ने ।",
+    "unit": "व.मि.",
+    "basis_quantity": 2.245,
+    "type": "DUDBC",
+    "ref_ss": "१०-३, १०-७",
+    "resources": [
+      { "name": "सिपालु", "quantity": 9.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.900, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "साल काठ", "quantity": 0.030, "unit": "घ.मि.", "resource_type": "Material" },
+      { "name": "कमर्सियल प्लाई", "quantity": 1.900, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "४ मीमी टिक प्लाई", "quantity": 1.900, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "काठको लिस्टी", "quantity": 7.430, "unit": "र.मि.", "resource_type": "Material" },
+      { "name": "गम", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" },
+      { "name": "१०० मीमी कब्जा", "quantity": 3.000, "unit": "गोटा", "resource_type": "Material" },
+      { "name": "१५० मीमी छेसकिनी", "quantity": 2.000, "unit": "गोटा", "resource_type": "Material" },
+      { "name": "मोर्टिस लक", "quantity": 1.000, "unit": "गोटा", "resource_type": "Material" },
+      { "name": "पेच किला", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "G9",
+    "sNo": "G9",
+    "description": "३८ X १०० मी.मी. साल काठको फ्रेमको प्यानलहरुमा ८ मी.मी.को कमर्सियल प्लाईउड राखी दुबैतर्फ ४ मी.मी. टिकप्लाईउड लेमिनेट गरी प्लाईको डिलाखापा बनाई जडान गर्ने ।",
+    "unit": "व.मि.",
+    "basis_quantity": 2.245,
+    "type": "DUDBC",
+    "ref_ss": "१०-३, १०-७",
+    "resources": [
+      { "name": "सिपालु", "quantity": 9.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.900, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "साल काठ", "quantity": 0.030, "unit": "घ.मि.", "resource_type": "Material" },
+      { "name": "कमर्सियल प्लाई", "quantity": 1.900, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "४ मीमी टिक प्लाई", "quantity": 3.500, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "काठको लिस्टी", "quantity": 14.570, "unit": "र.मि.", "resource_type": "Material" },
+      { "name": "गम", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" },
+      { "name": "१०० मीमी कब्जा", "quantity": 3.000, "unit": "गोटा", "resource_type": "Material" },
+      { "name": "१५० मीमी छेसकिनी", "quantity": 2.000, "unit": "गोटा", "resource_type": "Material" },
+      { "name": "मोर्टिस लक", "quantity": 1.000, "unit": "गोटा", "resource_type": "Material" },
+      { "name": "पेच किला", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },{
+  "id": "G10",
+  "sNo": "G10",
+  "description": "३८ X १०० मी.मी. साल काठको फ्रेमको प्यानलहरुमा ८ मी.मी.को वाटरप्रुफ प्लाईउड राखी एकातर्फ ४ मी.मी. टिकप्लाईउड लेमिनेट गरी वाटरप्रुफ प्लाईउडको डिलाखापा बनाई जडान गर्ने ।",
+  "unit": "व.मि.",
+  "basis_quantity": 2.245,
+  "type": "DUDBC",
+  "ref_ss": "१०-३, १०-७",
+  "resources": [
+    { "name": "सिपालु", "quantity": 9.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 0.900, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "साल काठ", "quantity": 0.030, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "वाटरप्रुफ प्लाईउड", "quantity": 1.900, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "४ मीमी टिक प्लाई", "quantity": 1.900, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "काठको लिस्टी", "quantity": 7.430, "unit": "र.मि.", "resource_type": "Material" },
+    { "name": "गम", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" },
+    { "name": "१०० मीमी कब्जा", "quantity": 3.000, "unit": "गोटा", "resource_type": "Material" },
+    { "name": "१५० मीमी छेसकिनी", "quantity": 2.000, "unit": "गोटा", "resource_type": "Material" },
+    { "name": "मोर्टिस लक", "quantity": 1.000, "unit": "गोटा", "resource_type": "Material" },
+    { "name": "पेच किला", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" }
+  ]
+},
+  {
+    "id": "G11",
+    "sNo": "G11",
+    "description": "सिजनिंग र पोइजनिंग गरी एकातर्फ टीक लगाइएको तयारी टीकको साधारण किसिमको ढोका जडान गर्ने काम आवश्यक हार्डवेयर समेत पूरा ।",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "१०-३, १०-७",
+    "resources": [
+      { "name": "सिपालु", "quantity": 1.76, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.18, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "तयारी टीक खापा", "quantity": 1.0000, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "काठको लिस्टी", "quantity": 4.000, "unit": "र.मी.", "resource_type": "Material" },
+      { "name": "गम", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" },
+      { "name": "१०० मी.मी. कब्जा", "quantity": 3, "unit": "गोटा", "resource_type": "Material" },
+      { "name": "१५० मी.मी. छेसकिनी", "quantity": 2, "unit": "गोटा", "resource_type": "Material" },
+      { "name": "मोर्टिस लक (साधारण)", "quantity": 1, "unit": "गोटा", "resource_type": "Material" },
+      { "name": "पेच किला", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "G12",
+    "sNo": "G12",
+    "description": "सिजनिंग र पोइजनिंग गरी एकातर्फ टीक लगाइएको तयारी टीकको विशेष किसिमको ढोका जडान गर्ने काम आवश्यक हार्डवेयर समेत पूरा ।",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "१०-३, १०-७",
+    "resources": [
+      { "name": "सिपालु", "quantity": 1.61, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.161, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "तयारी टीक खापा", "quantity": 1.100, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "काठको लिस्टी", "quantity": 7.434, "unit": "र.मी.", "resource_type": "Material" },
+      { "name": "गम", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" },
+      { "name": "१०० मी.मी. कब्जा", "quantity": 3, "unit": "गोटा", "resource_type": "Material" },
+      { "name": "१५० मी.मी. छेसकिनी", "quantity": 2, "unit": "गोटा", "resource_type": "Material" },
+      { "name": "मोर्टिस लक (साधारण)", "quantity": 1, "unit": "गोटा", "resource_type": "Material" },
+      { "name": "पेच किला", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "G13",
+    "sNo": "G13",
+    "description": "सिजनिंग र पोइजनिंग गरी एकातर्फ टीक र अर्कोतर्फ वाटरप्रुफ प्लाई लगाइएको तयारी टीकको साधारण किसिमको ढोका जडान गर्ने काम आवश्यक हार्डवेयर समेत पूरा ।",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "१०-३, १०-७",
+    "resources": [
+      { "name": "सिपालु", "quantity": 1.61, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.161, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "तयारी टीक खापा", "quantity": 1.0000, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "काठको लिस्टी", "quantity": 7.434, "unit": "र.मी.", "resource_type": "Material" },
+      { "name": "गम", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" },
+      { "name": "१०० मी.मी. कब्जा", "quantity": 3, "unit": "गोटा", "resource_type": "Material" },
+      { "name": "१५० मी.मी. छेसकिनी", "quantity": 2, "unit": "गोटा", "resource_type": "Material" },
+      { "name": "मोर्टिस लक (साधारण)", "quantity": 1, "unit": "गोटा", "resource_type": "Material" },
+      { "name": "पेच किला", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+
+  {
+    "id": "G14",
+    "sNo": "G14",
+    "description": "सिजनिंग र पोइजनिंग गरी एकातर्फ टीक र अर्कोतर्फ वाटरप्रुफ प्लाई लगाइएको तयारी टीकको विशेष किसिमको ढोका जडान गर्ने काम आवश्यक हार्डवेयर समेत पूरा ।",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "१०-३, १०-७",
+    "resources": [
+      { "name": "सिपालु", "quantity": 1.61, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.161, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "तयारी टीक खापा", "quantity": 1.0000, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "काठको लिस्टी", "quantity": 7.434, "unit": "र.मी.", "resource_type": "Material" },
+      { "name": "गम", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" },
+      { "name": "१०० मी.मी. कब्जा", "quantity": 3, "unit": "गोटा", "resource_type": "Material" },
+      { "name": "१५० मी.मी. छेसकिनी", "quantity": 2, "unit": "गोटा", "resource_type": "Material" },
+      { "name": "मोर्टिस लक (साधारण)", "quantity": 1, "unit": "गोटा", "resource_type": "Material" },
+      { "name": "पेच किला", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "G15",
+    "sNo": "G15",
+    "description": "सनमाईका लेमिनेसन गरी जोड्ने काम एकतर्फ मात्र",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "१०-१२",
+    "resources": [
+      { "name": "सिपालु", "quantity": 0.06, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.006, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "सनमाईका", "quantity": 1.05, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "मोबिकल", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" },
+      { "name": "किला", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "G16",
+    "sNo": "G16",
+    "description": "फोरेमाईका लेमिनेसन गरी जोड्ने काम एकतर्फ मात्र",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "१०-१२",
+    "resources": [
+      { "name": "सिपालु", "quantity": 0.06, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.006, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "फोरेमाईका", "quantity": 1.05, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "मोबिकल", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" },
+      { "name": "किला", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" }
+    ]
+  },
+  {
+    "id": "G17",
+    "sNo": "G17",
+    "description": "एल्युमिनियमको स्लाईडिङ झ्याल शिशा र अन्य फिटिङ समेत जडान गर्ने काम पूरा (१.४९ व.मि. क्षेत्रफल लिइएको)",
+    "unit": "व.मि.",
+    "basis_quantity": 1.49,
+    "type": "DUDBC",
+    "ref_ss": "-",
+    "resources": [
+      { "name": "सिपालु", "quantity": 5.33, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 5.33, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "एल्युमिनियम", "quantity": 5.43, "unit": "के.जि.", "resource_type": "Material" },
+      { "name": "पि.भि.सि.प्लग", "quantity": 8.00, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "एल्युमिनियम पेच", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" },
+      { "name": "रबर बिडिङ", "quantity": 9.75, "unit": "मि.", "resource_type": "Material" },
+      { "name": "४ मीमी शिशा", "quantity": 1.64, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "ह्वील रनर", "quantity": 8.00, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "लक सहितको हेण्डल", "quantity": 2.00, "unit": "संख्या", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "G18",
+    "sNo": "G18",
+    "description": "एल्युमिनियमको ओपनेवल झ्याल शिशा र अन्य फिटिङ समेत जडान गर्ने काम पूरा (२.२३ व.मि. क्षेत्रफल लिइएको)",
+    "unit": "व.मि.",
+    "basis_quantity": 2.23,
+    "type": "DUDBC",
+    "ref_ss": "-",
+    "resources": [
+      { "name": "सिपालु", "quantity": 5.00, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 5.00, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "एल्युमिनियम", "quantity": 13.44, "unit": "के.जि.", "resource_type": "Material" },
+      { "name": "पि.भि.सि.प्लग", "quantity": 15.00, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "एल्युमिनियम पेच", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" },
+      { "name": "रबर बिडिङ", "quantity": 10.97, "unit": "मि.", "resource_type": "Material" }
+    ]
+  },
+
+  {
+    "id": "G19",
+    "sNo": "G19",
+    "description": "एल्युमिनियमको ढोका प्रिल्यामिनेटेड बोर्ड र अन्य फिटिङ समेत जडान गर्ने काम पूरा (विश्लेषणको लागि २.१६ व.मि. क्षेत्रफल लिइएको)",
+    "unit": "व.मि.",
+    "basis_quantity": 2.16,
+    "type": "DUDBC",
+    "ref_ss": "-",
+    "resources": [
+      { "name": "सिपालु", "quantity": 6.22, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 6.22, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "एल्युमिनियम", "quantity": 15.99, "unit": "के.जि.", "resource_type": "Material" },
+      { "name": "४\" एल्युमिनियम कब्जा", "quantity": 4.00, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "एल्युमिनियम पेच", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" },
+      { "name": "रबर बिडिङ", "quantity": 18.29, "unit": "मि.", "resource_type": "Material" },
+      { "name": "प्रिल्यामिनेटेड बोर्ड", "quantity": 2.36, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "अटोमेटिक क्लोजर", "quantity": 1.00, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "लक सहितको हेण्डल", "quantity": 2.00, "unit": "संख्या", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "G20",
+    "sNo": "G20",
+    "description": "एल्युमिनियमको ढोका माथिल्लो भागमा शिशा र तल्लो भागमा प्रिल्यामिनेटेड बोर्ड राखी अन्य फिटिङ समेत जडान गर्ने काम पूरा (विश्लेषणको लागि १.८१ व.मि. क्षेत्रफल लिइएको)",
+    "unit": "व.मि.",
+    "basis_quantity": 1.81,
+    "type": "DUDBC",
+    "ref_ss": "-",
+    "resources": [
+      { "name": "सिपालु", "quantity": 6.22, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 6.22, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "एल्युमिनियम", "quantity": 14.72, "unit": "के.जि.", "resource_type": "Material" },
+      { "name": "४\" एल्युमिनियम कब्जा", "quantity": 4.00, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "एल्युमिनियम पेच", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" },
+      { "name": "रबर बिडिङ", "quantity": 18.29, "unit": "मि.", "resource_type": "Material" },
+      { "name": "४ मीमी शिशा", "quantity": 0.92, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "प्रिल्यामिनेटेड बोर्ड", "quantity": 1.07, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "अटोमेटिक क्लोजर", "quantity": 1.00, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "लक सहितको हेण्डल", "quantity": 2.00, "unit": "संख्या", "resource_type": "Material" }
+    ]
+  },
+  
+  {
+    "id": "G21-a",
+    "sNo": "G21-a",
+    "description": "यू.पि.भि.सि. को झ्याल ढोकाको काम शिशा, बोर्ड र अन्य फिटिङ समेत पूरा (५०X५० मि.मि. साइज स्लाईडिङ किसिमको ५ मि.मि. शिशा सहित)",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "-",
+    "resources": [
+      { "name": "तयारी झ्याल वा ढोका", "quantity": 1.00, "unit": "व.मि.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "G21-b",
+    "sNo": "G21-b",
+    "description": "यू.पि.भि.सि. को झ्याल ढोकाको काम शिशा, बोर्ड र अन्य फिटिङ समेत पूरा (६०X६० मि.मि. साइज केसमेन्ट किसिमको ५ मि.मि. शिशा सहित)",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "-",
+    "resources": [
+      { "name": "तयारी झ्याल वा ढोका", "quantity": 1.00, "unit": "व.मि.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "G21-c",
+    "sNo": "G21-c",
+    "description": "यू.पि.भि.सि. को झ्याल ढोकाको काम शिशा, बोर्ड र अन्य फिटिङ समेत पूरा (१००X६० मि.मि. साइज ९ मि.मि. बोर्ड र ५ मि.मि. शिशा सहित)",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "-",
+    "resources": [
+      { "name": "तयारी झ्याल वा ढोका", "quantity": 1.00, "unit": "व.मि.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "G21-d",
+    "sNo": "G21-d",
+    "description": "यू.पि.भि.सि. को झ्याल ढोकाको काम शिशा, बोर्ड र अन्य फिटिङ समेत पूरा (५०X५० मि.मि. साइज केसमेन्ट किसिमको ५ मि.मि. डबल शिशा सहित)",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "-",
+    "resources": [
+      { "name": "तयारी झ्याल वा ढोका", "quantity": 1.00, "unit": "व.मि.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "G21-e",
+    "sNo": "G21-e",
+    "description": "यू.पि.भि.सि. को झ्याल ढोकाको काम शिशा, बोर्ड र अन्य फिटिङ समेत पूरा (६०X६० मि.मि. साइज स्वीङ ढोका ५ मि.मि. शिशा सहित)",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "-",
+    "resources": [
+      { "name": "तयारी झ्याल वा ढोका", "quantity": 1.00, "unit": "व.मि.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "G21-f",
+    "sNo": "G21-f",
+    "description": "यू.पि.भि.सि. को झ्याल ढोकाको काम शिशा, बोर्ड र अन्य फिटिङ समेत पूरा (६०X६० मि.मि. साइज केसमेन्ट किसिमको ५ मि.मि. डबल शिशा सहित)",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "-",
+    "resources": [
+      { "name": "तयारी झ्याल वा ढोका", "quantity": 1.00, "unit": "व.मि.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "G21-g",
+    "sNo": "G21-g",
+    "description": "यू.पि.भि.सि. को झ्याल ढोकाको काम शिशा, बोर्ड र अन्य फिटिङ समेत पूरा (५०X५० मि.मि. स्लाईडिङ किसिमको ५ मि.मि. शिशा र एल्युमिनियम स्लाईड सहित)",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "-",
+    "resources": [
+      { "name": "तयारी झ्याल वा ढोका", "quantity": 1.00, "unit": "व.मि.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "G21-h",
+    "sNo": "G21-h",
+    "description": "यू.पि.भि.सि. को झ्याल ढोकाको काम शिशा, बोर्ड र अन्य फिटिङ समेत पूरा (६०X६० मि.मि. साइज केसमेन्ट किसिमको ५ मि.मि. शिशा र प्यानल लुभर सहित)",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "-",
+    "resources": [
+      { "name": "तयारी झ्याल वा ढोका", "quantity": 1.00, "unit": "व.मि.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "G21-i",
+    "sNo": "G21-i",
+    "description": "यू.पि.भि.सि. को झ्याल ढोकाको काम शिशा, बोर्ड र अन्य फिटिङ समेत पूरा (६०X६० मि.मि. साइज केसमेन्ट किसिमको ५ मि.मि. शिशा र एडजस्टेबल ग्लास प्यानल लुभर सहित)",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "-",
+    "resources": [
+      { "name": "तयारी झ्याल वा ढोका", "quantity": 1.00, "unit": "व.मि.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "G21-j",
+    "sNo": "G21-j",
+    "description": "यू.पि.भि.सि. को झ्याल ढोकाको काम शिशा, बोर्ड र अन्य फिटिङ समेत पूरा (५०X५० मि.मि. साइज केसमेन्ट किसिमको ५ मि.मि. शिशा, एल्युमिनियम स्लाईड र प्यानल लुभर सहित)",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "-",
+    "resources": [
+      { "name": "तयारी झ्याल वा ढोका", "quantity": 1.00, "unit": "व.मि.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "G21-k",
+    "sNo": "G21-k",
+    "description": "यू.पि.भि.सि. को झ्याल ढोकाको काम शिशा, बोर्ड र अन्य फिटिङ समेत पूरा (१००X६० मि.मि. साइज स्वीङ किसिमको माथि ५ मि.मि. शिशा र तल यू.पि.भि.सि. प्यानल सहित)",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "-",
+    "resources": [
+      { "name": "तयारी झ्याल वा ढोका", "quantity": 1.00, "unit": "व.मि.", "resource_type": "Material" }
+    ]
+  }
+,
+{
+  "id": "H1-a",
+  "sNo": "H1-a",
+  "description": "सिमेन्ट बालुवा रोडा (१:२:४) मा कक्रिट फुलोर ढलान गरी सिमेन्ट घोटी तयार पाने काम परा (३५ मि.मि. बाक्लो)",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "11-1ख",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.250, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 2.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.130, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.180, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "रोडा", "quantity": 0.360, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H1-b",
+  "sNo": "H1-b",
+  "description": "सिमेन्ट बालुवा रोडा (१:२:४) मा कक्रिट फुलोर ढलान गरी सिमेन्ट घोटी तयार पाने काम परा (५० मि.मि. बाक्लो)",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "11-1ग",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.250, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 2.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.170, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.230, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "रोडा", "quantity": 0.460, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H1-c",
+  "sNo": "H1-c",
+  "description": "सिमेन्ट बालुवा रोडा (१:२:४) मा कक्रिट फुलोर ढलान गरी सिमेन्ट घोटी तयार पाने काम परा (७५ मि.मि. बाक्लो)",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "11-1घ",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.250, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 3.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.260, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.340, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "रोडा", "quantity": 0.680, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H2",
+  "sNo": "H2",
+  "description": "२५ मि.मि. बाक्लो मोजायक फ्लोरिंग । २० मि.मि. १:२:४ सिमेन्ट कक्रिट गरी त्यस माथि ५ मि.मि. बाक्लो (१:१) भागमा सेतो सिमेन्ट र मार्बल चिप्स लगाई घोट्ने र पालिस समेत गर्ने काम ।",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "सिपालु", "quantity": 2.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 16.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.065, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.088, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "१२.५ मिमि रोडा", "quantity": 0.176, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "सेतो सिमेन्ट", "quantity": 0.061, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "३ मिमि मार्बल चिप्स", "quantity": 0.061, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "अक्जालिक एसिड", "quantity": 0.365, "unit": "के.जि.", "resource_type": "Material" },
+    { "name": "मैनपालिस", "quantity": 0.118, "unit": "के.जि.", "resource_type": "Material" },
+    { "name": "तारपेन्टाइन", "quantity": 0.538, "unit": "लि.", "resource_type": "Material" },
+    { "name": "कार्बोराण्डम", "quantity": null, "unit": "संख्या", "resource_type": "Material", "note": "अन्दाजी" }
+  ]
+},
+{
+  "id": "H3",
+  "sNo": "H3",
+  "description": "२५ मि.मि. बाक्लो मोजायक फ्लोरिंग गर्ने । १९ मि.मि. (१:२) सिमेन्ट प्लास्टर गरी त्यस माथि ६ मि.मि. बाक्लो भागमा मार्बल चिप्स र सेतो सिमेन्ट (१:१) लगाई घोट्ने र पालिस समेत गर्ने काम ।",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "११-३",
+  "resources": [
+    { "name": "सिपालु", "quantity": 3.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 36.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.121, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.165, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "सेतो सिमेन्ट", "quantity": 0.069, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "३ मिमि मार्बलचिप्स", "quantity": 0.047, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "अक्जालिक एसिड", "quantity": 0.340, "unit": "के.जि.", "resource_type": "Material" },
+    { "name": "मैनपालिस", "quantity": 0.118, "unit": "के.जि.", "resource_type": "Material" },
+    { "name": "तारपेन्टाइन", "quantity": 0.500, "unit": "लि.", "resource_type": "Material" },
+    { "name": "कार्बोराण्डम", "quantity": null, "unit": "संख्या", "resource_type": "Material", "note": "अन्दाजी" }
+  ]
+},
+{
+  "id": "H4",
+  "sNo": "H4",
+  "description": "२० मि.मि. बाक्लो मोजायक फ्लोरिंग गर्ने । १२.५ मि.मि. (१:२) सिमेन्ट प्लास्टर गरी त्यस माथि ६ मि.मि. बाक्लो भागमा मार्बल चिप्स र सेतो सिमेन्ट (१:१) भागमा लगाई घोट्ने र पालिस समेत गर्ने काम ।",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "११-४",
+  "resources": [
+    { "name": "सिपालु", "quantity": 3.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 36.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.089, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.122, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "सेतो सिमेन्ट", "quantity": 0.089, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "३ मिमि मार्बलचिप्स", "quantity": 0.061, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "अक्जालिक एसिड", "quantity": 0.370, "unit": "के.जि.", "resource_type": "Material" },
+    { "name": "मैनपालिस", "quantity": 0.118, "unit": "के.जि.", "resource_type": "Material" },
+    { "name": "तारपेन्टाइन", "quantity": 0.538, "unit": "लि.", "resource_type": "Material" },
+    { "name": "कार्बोराण्डम", "quantity": null, "unit": "संख्या", "resource_type": "Material", "note": "अन्दाजी" }
+  ]
+},
+{
+  "id": "H5",
+  "sNo": "H5",
+  "description": "२० मि.मि. टेराजो टाईल २० मि.मि. बाक्लो (१:४) भागको सिमेन्ट बालुवाको मसलामा लगाई घोट्ने र पालिस गर्ने काम ।",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "११-५",
+  "resources": [
+    { "name": "सिपालु", "quantity": 2.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 12.600, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "२० मि.मि. टेराजो टाईल", "quantity": 11.000, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "सिमेन्ट", "quantity": 0.051, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.220, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "अक्जालिक एसिड", "quantity": 0.370, "unit": "के.जि.", "resource_type": "Material" },
+    { "name": "मैनपालिस", "quantity": 0.118, "unit": "के.जि.", "resource_type": "Material" },
+    { "name": "तारपेन्टाइन", "quantity": 0.538, "unit": "लि.", "resource_type": "Material" },
+    { "name": "कार्बोराण्डम", "quantity": null, "unit": "संख्या", "resource_type": "Material", "note": "अन्दाजी" }
+  ]
+},
+{
+  "id": "H6",
+  "sNo": "H6",
+  "description": "पोरसिलिन ग्लेज्ड टाईल (१:४) सिमेन्ट बालुवामा छाप्ने काम ।",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "११-७",
+  "resources": [
+    { "name": "सिपालु", "quantity": 12.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 4.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "पोरसिलिन ग्लेज्ड टाईल", "quantity": 11.000, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "सिमेन्ट", "quantity": 0.056, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.152, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "सेतो सिमेन्ट", "quantity": 3.228, "unit": "के.जि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H7",
+  "sNo": "H7",
+  "description": "५० मि.मि. बाक्लो छाप्ने ढुङ्गा (Flag Stone) (१:४) सिमेन्ट बालुवा मसलामा लगाउने काम ।",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "११-८क",
+  "resources": [
+    { "name": "सिपालु", "quantity": 2.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 4.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "५० मि.मि. ढुङ्गा", "quantity": 11.000, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "सिमेन्ट", "quantity": 0.063, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.171, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H8",
+  "sNo": "H8",
+  "description": "५० मि.मि. सम्मको ढुङ्गा बालुवामा छाप्ने काम",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "११-८ख",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 3.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ढुङ्गा", "quantity": 11.000, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.170, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H9",
+  "sNo": "H9",
+  "description": "३७.५ मि.मि. बाक्लो छाप्ने ढुङ्गा (१:४) सिमेन्ट बालुवा मसलामा छाप्ने काम ।",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "११-९",
+  "resources": [
+    { "name": "सिपालु", "quantity": 2.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 4.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "३७.५ मि.मि. ढुङ्गा", "quantity": 11.000, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "सिमेन्ट", "quantity": 0.060, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.165, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H10",
+  "sNo": "H10",
+  "description": "२५ मि.मि. बाक्लो च्याप्टो ढुङ्गा (१:४) सिमेन्ट बालुवा मसलामा लगाउने काम ।",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 4.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "२५ मि.मि. ढुङ्गा", "quantity": 11.000, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "सिमेन्ट", "quantity": 0.056, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.152, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H11",
+  "sNo": "H11",
+  "description": "२५ मि.मि. बाक्लो तेलिया इँटा (१:२) चुना सुर्खी मसलामा छाप्ने र (१:१) सिमेन्ट बालुवामा टिप्कार गर्ने काम ।",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "११-११",
+  "resources": [
+    { "name": "सिपालु", "quantity": 4.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 4.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "तेलिया इँटा", "quantity": 440.000, "unit": "संख्या", "resource_type": "Material" },
+    { "name": "चुना", "quantity": 0.122, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "सुर्खी", "quantity": 0.244, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "सिमेन्ट", "quantity": 0.016, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.110, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H12",
+  "sNo": "H12",
+  "description": "चेप्टो इँटा सिमेन्ट बालुवामा छापी (१:२) सिमेन्ट बालुवा जोर्नीमा टिप्कार गर्ने काम ।",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "११-१२",
+  "resources": [
+    { "name": "सिपालु", "quantity": 2.250, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 3.250, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "इँटा", "quantity": 430.000, "unit": "संख्या", "resource_type": "Material" },
+    { "name": "सिमेन्ट", "quantity": 0.078, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.229, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H13",
+  "sNo": "H13",
+  "description": "ठाडो इँटा (१:६) सिमेन्ट बालुवामा छापी (१:२) सिमेन्ट बालुवा जोर्नीमा टिप्कार गर्ने काम ।",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "११-१३",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.100, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 1.600, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "इँटा", "quantity": 350.000, "unit": "संख्या", "resource_type": "Material" },
+    { "name": "सिमेन्ट", "quantity": 0.121, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.431, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H14",
+  "sNo": "H14",
+  "description": "पार्केट बिछ्याउने र खाक्सी लगाई पालिस गर्ने काम ।",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.350, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 0.750, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "पार्केट", "quantity": 10.500, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "खाक्सी", "quantity": null, "unit": "गोटा", "resource_type": "Material", "note": "अन्दाजी" },
+    { "name": "मैन पालिस", "quantity": null, "unit": "के.जि.", "resource_type": "Material", "note": "अन्दाजी" }
+  ]
+},
+{
+  "id": "H15-a",
+  "sNo": "H15-a",
+  "description": "सुख्खा इँटा छाप्ने काम (च्याप्टो)",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "११-१५क",
+  "resources": [
+    { "name": "सिपालु", "quantity": 0.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 1.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "इँटा", "quantity": 420.000, "unit": "संख्या", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.170, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H15-b",
+  "sNo": "H15-b",
+  "description": "सुख्खा इँटा छाप्ने काम (ठाडो)",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "११-१५ख",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 3.250, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "इँटा", "quantity": 350.000, "unit": "संख्या", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.170, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H16",
+  "sNo": "H16",
+  "description": "सुख्खा ढुङ्गा छाप्ने काम ।",
+  "unit": "घ.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "११-१६",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 3.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ढुङ्गा", "quantity": 1.100, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.170, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H17",
+  "sNo": "H17",
+  "description": "१२५ मि.मि. बाक्लो ठाडो इँटा सोलिङ्ग गरी जोर्नीमा बालुवाले भर्ने तथा जोर्नीको माथिल्लो भागमा (१:३) सिमेन्ट बालुवाको मसलाले फ्लस टिप्कार गर्ने काम ।",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "११-१७",
+  "resources": [
+    { "name": "सिपालु", "quantity": 2.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 4.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.020, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "इँटा", "quantity": 350.000, "unit": "संख्या", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.100, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H18",
+  "sNo": "H18",
+  "description": "४६ से.मि. x ४६ से.मि. ढुङ्गा छापेकोमा सिमेन्ट बालुवा (१:१) ले टिप्कार गर्ने ।",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "११-१८",
+  "resources": [
+    { "name": "सिपालु", "quantity": 0.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 0.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 4.200, "unit": "के.जि.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.003, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H19-a",
+  "sNo": "H19-a",
+  "description": "भुइँमा भर्ने काम - बालुवाले",
+  "unit": "१० घ.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "११-१९क",
+  "resources": [
+    { "name": "सिपालु", "quantity": 6.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "बालुवा", "quantity": 11.000, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H19-b",
+  "sNo": "H19-b",
+  "description": "भुइँमा भर्ने काम - १५-१५० मि.मि. टुक्रा इँटाले",
+  "unit": "१० घ.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "११-२०ख",
+  "resources": [
+    { "name": "सिपालु", "quantity": 10.000, "unit": "संख्या", "resource_type": "Labour" },
+        { "name": "टुक्रा इँटा", "quantity": 11.000, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H20",
+  "sNo": "H20",
+  "description": "३ मि.मि. मोटाईमा सिमेन्ट मसिनो घोट्ने ।",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "११-२०",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 1.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 43.200, "unit": "के.जी.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H21",
+  "sNo": "H21",
+  "description": "५० मि.मि. X ७५ मि.मि. अखाख्को (अख्खको) फेम ६०० मि.मि. X ६०० मि.मि. मा हाली २५ मि.मि. बाक्लो अखाख्को (अख्खको) काठको फलेक छाप्ने काम ।",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "११-२१",
+  "resources": [
+    { "name": "सिपालु", "quantity": 6.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 0.650, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "अख्खको काठ", "quantity": 0.421, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "किला काँटी", "quantity": null, "unit": "के.जी.", "resource_type": "Material", "note": "अन्दाजी" }
+  ]
+},
+{
+  "id": "H22",
+  "sNo": "H22",
+  "description": "मालसामान उपलब्ध गरी ५० मि.मी. मोटो हेभी ड्युटी इन्टरलकिंङ कक्रिटब्लक ५० मी.मी. मोटाएको कसर डस्ट माथी राखी बिछ्याउने काम पूरा ।",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.00, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 10.00, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "इन्टरलकिंङ ब्लक", "quantity": 11.0, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "ढुङ्गाको धुलो", "quantity": 0.55, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "ढुङ्गाको धुलो", "quantity": 0.67, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H23",
+  "sNo": "H23",
+  "description": "मालसामान उपलब्ध गरी ६० मी.मी. मोटो हेभी ड्युटी इन्टरलकिंङ कक्रिटब्लक ५० मी.मी. मोटाएको कसर डस्ट माथी राखी बिछ्याउने काम पूरा ।",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.00, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 10.00, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "इन्टरलकिंङ ब्लक", "quantity": 11.0, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "ढुङ्गाको धुलो", "quantity": 0.55, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "ढुङ्गाको धुलो", "quantity": 0.67, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H24",
+  "sNo": "H24",
+  "description": "भित्ता एवं सिलिंगमा प्लेन प्लास्टर अफ पेरिस गर्ने ।",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "११-२०",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 1.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "प्लास्टर अफ पेरिस", "quantity": 21.28, "unit": "के.जी.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H25",
+  "sNo": "H25",
+  "description": "मेसिनमेड क्ले टायल वाल सर्फेसमा टास्ने कार्य",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "सिपालु", "quantity": 13.0, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 4.50, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.056, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "नदिको बालुवा", "quantity": 0.152, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "क्ले टायल", "quantity": 11.0, "unit": "व.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H26",
+  "sNo": "H26",
+  "description": "१६ मिमी गेनाईट २० मिमी बाक्लो १:२ भागको सिमेन्ट मसलामा छापी घोट्ने र पालिस समेत गर्ने ।",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "११-६",
+  "resources": [
+    { "name": "सिपालु", "quantity": 2.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 5.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "घोट्ने ज्यामी", "quantity": 13.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.030, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा खोलाको", "quantity": 0.163, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "१६मी.मी. गेनाईट", "quantity": 11.00, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "अक्जालिक एसिड", "quantity": 0.37, "unit": "के.जी.", "resource_type": "Material" },
+    { "name": "मैन पालिस", "quantity": 0.118, "unit": "के.जी.", "resource_type": "Material" },
+    { "name": "तारपेन्टाइन", "quantity": 0.538, "unit": "लि.", "resource_type": "Material" },
+    { "name": "कार्बोराण्डम ढुङ्गा", "quantity": null, "unit": "संख्या", "resource_type": "Material", "note": "अन्दाजी" }
+  ]
+},
+{
+  "id": "H27",
+  "sNo": "H27",
+  "description": "३००x३०० मि.मि. २५ मि.मि. बाक्लो एन्टिसलिप सिमेन्ट टायल सि.वा. (१:४) मा लगाउने कार्य",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 1.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट टायल", "quantity": 11.000, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "सिमेन्ट", "quantity": 0.081, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.220, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H28",
+  "sNo": "H28",
+  "description": "भित्तामा सि.वा. (१:४) मा ग्लेज्ड सेरामिक टायल लगाउने कार्य",
+  "unit": "व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.300, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 0.450, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.013, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.029, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "ग्लेज्ड टायल", "quantity": 1.100, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "इपोक्सी ग्राउट, पिगमेन्ट", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" }
+  ]
+},
+{
+  "id": "H29",
+  "sNo": "H29",
+  "description": "१२ मि.मि. बाक्लो सि.वा. (१:३) मा ननग्लेज्ड टायल लगाउने र जोर्नीमा सेतो सिमेन्ट लगाउने समेतको कार्य",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "सिपालु", "quantity": 13.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 4.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.056, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.120, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "सेतो सिमेन्ट", "quantity": 3.228, "unit": "के.जि.", "resource_type": "Material" },
+    { "name": "ननग्लेज्ड टायल", "quantity": 11.000, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "इपोक्सी ग्राउट, पिगमेन्ट", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" }
+  ]
+},
+{
+  "id": "H30",
+  "sNo": "H30",
+  "description": "४० मि.मि. बाक्लो सि.वा. (१:६) मा भेटिफाइड टायल लगाउने कार्य",
+  "unit": "व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.300, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 0.450, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.015, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.050, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "१० मि.मि. भेटिफाइड टायल", "quantity": 1.100, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "इपोक्सी ग्राउट, पिगमेन्ट", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" }
+  ]
+},
+{
+  "id": "H31",
+  "sNo": "H31",
+  "description": "३००x३०० मि.मि. साइजको १० मि.मि. बाक्लो एसिड वा एल्काली प्रतिरोधक टायल सि.वा. (१:४) मा लगाउने कार्य",
+  "unit": "व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "सिपालु", "quantity": 0.650, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 0.650, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.018, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.052, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "टायल", "quantity": 12.000, "unit": "संख्या", "resource_type": "Material" },
+    { "name": "केमिकलरोधी सिमेन्ट", "quantity": 0.066, "unit": "बोरा", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H32",
+  "sNo": "H32",
+  "description": "रवर बेस्ड एडेशिवमा पि.भि.सी. टायल लगाउने रोलिंग गर्ने समेत कार्य",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.500, "unit": "संख्या", "resource_type": "Labour" },
+ { "name": "ज्यामी", "quantity": 1.500, "unit": "संख्या", "resource_type": "Labour" },
+ { "name": "एडेसिभ", "quantity": 3.000, "unit": "के.जि.", "resource_type": "Material" },
+
+{ "name": "पि.भि.सी.टायल", "quantity": 11.000, "unit": "व.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H33",
+  "sNo": "H33",
+  "description": "१५ मि.मि. बाक्लो मार्बल (४५० X ४५० मि.मि.) २० मि.मि. बाक्लो (१:२) भागको सुर्खी मसलामा छापी घोट्ने र पालिस गर्ने समेत ।",
+  "unit": "व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "सिपालु", "quantity": 2.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 8.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "१५ मि.मि. बाक्लो मार्बल", "quantity": 11.000, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "चुना", "quantity": 0.091, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "सुर्खी", "quantity": 0.183, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "अक्जालिक एसिड", "quantity": 0.370, "unit": "के.जी.", "resource_type": "Material" },
+    { "name": "मैनपालिस", "quantity": 0.118, "unit": "के.जी.", "resource_type": "Material" },
+    { "name": "तारपेन्टाइन", "quantity": 0.538, "unit": "लि.", "resource_type": "Material" },
+    { "name": "कार्बोराण्डम", "quantity": null, "unit": "संख्या", "resource_type": "Material", "note": "अन्दाजी" }
+  ]
+},
+{
+  "id": "H34",
+  "sNo": "H34",
+  "description": "१५ मी.मी. मार्बल (३०० X ३०० मीमी) २० मीमी बाक्लो १:२ भागको सिमेन्ट मसलामा छापी घोट्ने र पालिस समेत गर्ने ।",
+  "unit": "व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "सिपालु", "quantity": 2.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 8.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "घोट्ने ज्यामी", "quantity": 13.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.130, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा खोलाको", "quantity": 0.163, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "मार्बल", "quantity": 11.000, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "अक्जालिक एसिड", "quantity": 0.37, "unit": "के.जी.", "resource_type": "Material" },
+    { "name": "मैन पालिस", "quantity": 0.118, "unit": "के.जी.", "resource_type": "Material" },
+    { "name": "तारपेन्टाइन", "quantity": 0.538, "unit": "लि.", "resource_type": "Material" },
+    { "name": "कार्बोराण्डम ढुङ्गा", "quantity": null, "unit": "संख्या", "resource_type": "Material", "note": "अन्दाजी" }
+  ]
+},
+{
+  "id": "H35",
+  "sNo": "H35",
+  "description": "१५ मि.मि. बाक्लो मार्बल टायल १२.५ मि.मि. बाक्लो सि.वा. (१:३) भागको मसलामा भरेको खुड्किला, स्कर्टिङ, भित्ता, पिलर आदिमा छापी घोट्ने र पालिस गर्ने समेत काम ।",
+  "unit": "व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "सिपालु", "quantity": 14.00, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 12.00, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "१५ मि.मि. बाक्लो मार्बल", "quantity": 11.00, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "सिमेन्ट", "quantity": 0.063, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.126, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "अक्जालिक एसिड", "quantity": 0.370, "unit": "के.जी.", "resource_type": "Material" },
+    { "name": "मैनपालिस", "quantity": 0.118, "unit": "के.जी.", "resource_type": "Material" },
+    { "name": "तारपेन्टाइन", "quantity": 0.538, "unit": "लि.", "resource_type": "Material" },
+    { "name": "कार्बोराण्डम", "quantity": null, "unit": "संख्या", "resource_type": "Material", "note": "अन्दाजी" }
+  ]
+},
+{
+  "id": "H36",
+  "sNo": "H36",
+  "description": "भरेगको खुड्किलामा मार्बल नोजिङ गर्नको लागि थप श्रमिक",
+  "unit": "मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "सिपालु", "quantity": 2.50, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 3.50, "unit": "संख्या", "resource_type": "Labour" }
+  ]
+},
+{
+  "id": "H37",
+  "sNo": "H37",
+  "description": "मार्बल पोलिस मात्र गर्नको लागि आवश्यक श्रमिक",
+  "unit": "व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "ज्यामी", "quantity": 13.50, "unit": "संख्या", "resource_type": "Labour" }
+  ]
+},
+{
+  "id": "H38",
+  "sNo": "H38",
+  "description": "१२ मी.मी. बाक्लो १०० मी.मी.उचाईको काठको पार्केटले कोठाहरुमा स्कर्टिङ गर्ने काम",
+  "unit": "व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "सिपालु", "quantity": 6.5, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 0.65, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "तयारी पार्केट", "quantity": 10.00, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "गम", "quantity": 1, "unit": "के.जी.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "H39",
+  "sNo": "H39",
+  "description": "१२ मि.मि. बाक्लो सि.वा. (१:६) मा ननग्लेज्ड टायलको १०० मि.मि. अग्लो स्कर्टिङ गर्ने कार्य",
+  "unit": "र.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "सिपालु", "quantity": 0.15, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 0.10, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.001, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.003, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "ननग्लेज्ड टायल", "quantity": 0.11, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "इपोक्सी ग्राउट, पिगमेन्ट", "quantity": null, "unit": "-", "resource_type": "Material", "note": "अन्दाजी" }
+  ]
+},
+  {
+    "id": "I1-a",
+    "sNo": "I1-a",
+    "description": "१२.५ मि.मि. बाक्लो सिमेन्ट बालुवा प्लास्टरको काम (१:२) भागमा",
+    "unit": "व.मि.",
+    "basis_quantity": 100,
+    "type": "DUDBC",
+    "ref_ss": "१२-१ग",
+    "resources": [
+      { "name": "सिपालु", "quantity": 12.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 16.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "सिमेन्ट", "quantity": 0.900, "unit": "मे.ट.", "resource_type": "Material" },
+      { "name": "बालुवा", "quantity": 1.220, "unit": "घ.मि.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "I1-b",
+    "sNo": "I1-b",
+    "description": "१२.५ मि.मि. बाक्लो सिमेन्ट बालुवा प्लास्टरको काम (१:३) भागमा",
+    "unit": "व.मि.",
+    "basis_quantity": 100,
+    "type": "DUDBC",
+    "ref_ss": "१२-१ग",
+    "resources": [
+      { "name": "सिपालु", "quantity": 12.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 16.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "सिमेन्ट", "quantity": 0.625, "unit": "मे.ट.", "resource_type": "Material" },
+      { "name": "बालुवा", "quantity": 1.280, "unit": "घ.मि.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "I1-c",
+    "sNo": "I1-c",
+    "description": "१२.५ मि.मि. बाक्लो सिमेन्ट बालुवा प्लास्टरको काम (१:४) भागमा",
+    "unit": "व.मि.",
+    "basis_quantity": 100,
+    "type": "DUDBC",
+    "ref_ss": "१२-१ग",
+    "resources": [
+      { "name": "सिपालु", "quantity": 12.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 16.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "सिमेन्ट", "quantity": 0.538, "unit": "मे.ट.", "resource_type": "Material" },
+      { "name": "बालुवा", "quantity": 1.460, "unit": "घ.मि.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "I1-d",
+    "sNo": "I1-d",
+    "description": "१२.५ मि.मि. बाक्लो सिमेन्ट बालुवा प्लास्टरको काम (१:६) भागमा",
+    "unit": "व.मि.",
+    "basis_quantity": 100,
+    "type": "DUDBC",
+    "ref_ss": "१२-१घ",
+    "resources": [
+      { "name": "सिपालु", "quantity": 12.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 16.000, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "सिमेन्ट", "quantity": 0.382, "unit": "मे.ट.", "resource_type": "Material" },
+      { "name": "बालुवा", "quantity": 1.570, "unit": "घ.मि.", "resource_type": "Material" }
+    ]
+  },
+{
+  "id": "I2-a",
+  "sNo": "I2-a",
+  "description": "१२.५ मि.मि. बाक्लो सिमेन्ट, चुना र बालुवा प्लास्टर गर्ने काम (१:१:६) भागमा",
+  "unit": "व.मि.",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "१२-२",
+  "resources": [
+    { "name": "सिपालु", "quantity": 12.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 16.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.338, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "चुना", "quantity": 0.230, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 1.370, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I2-b",
+  "sNo": "I2-b",
+  "description": "१२.५ मि.मि. बाक्लो सिमेन्ट, चुना र बालुवा प्लास्टर गर्ने काम (१:२:१२) भागमा",
+  "unit": "व.मि.",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "सिपालु", "quantity": 12.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 16.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.180, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "चुना", "quantity": 0.240, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 1.460, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": 2421,
+  "sNo": "24.21",
+  "description": "Providing and laying Plum concrete (Boulder mixed concrete) with 60% M15 concrete and 40% boulders/stones using Mechanical Aids as per Drawing and Specifications",
+  "unit": "cum",
+  "basis_quantity": 10,
+  "type": "DOR",
+  "ref_ss": "2421",
+  "resources": [
+    { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 30, "unit": "day", "resource_type": "Labour" },
+    { "name": "Cement", "quantity": 1.7, "unit": "tonne", "resource_type": "Material" },
+    { "name": "20-40 mm Aggregate", "quantity": 3.45, "unit": "cum", "resource_type": "Material" },
+    { "name": "10-20 mm Aggregate", "quantity": 1.56, "unit": "cum", "resource_type": "Material" },
+    { "name": "5-10 mm Aggregate", "quantity": 0.72, "unit": "cum", "resource_type": "Material" },
+    { "name": "Sand", "quantity": 3, "unit": "cum", "resource_type": "Material" },
+    { "name": "Boulder Stones", "quantity": 4.4, "unit": "cum", "resource_type": "Material" },
+    { "name": "Concrete Mixer", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
+    { "name": "Concrete Vibrator", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": "I3-a",
+  "sNo": "I3-a",
+  "description": "१२.५ मि.मि. बाक्लो चुना सुर्खी प्लास्टर (१:२) भागमा",
+  "unit": "व.मि.",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "१२-३",
+  "resources": [
+    { "name": "सिपालु", "quantity": 12.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 16.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "चुना", "quantity": 0.690, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "सुर्खी", "quantity": 1.220, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I3-b",
+  "sNo": "I3-b",
+  "description": "२० मि.मि. बाक्लो चुना सुर्खी प्लास्टर (१:२) भागमा",
+  "unit": "व.मि.",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "१२-३",
+  "resources": [
+    { "name": "सिपालु", "quantity": 14.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 19.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "चुना", "quantity": 0.920, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "सुर्खी", "quantity": 1.830, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I4-a",
+  "sNo": "I4-a",
+  "description": "२० मि.मि. बाक्लो सिमेन्ट बालुवा प्लास्टर (१:३) भागमा",
+  "unit": "व.मि.",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "१२-४क",
+  "resources": [
+    { "name": "सिपालु", "quantity": 14.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 19.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.960, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 1.500, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I4-b",
+  "sNo": "I4-b",
+  "description": "२० मि.मि. बाक्लो सिमेन्ट बालुवा प्लास्टर (१:४) भागमा",
+  "unit": "व.मि.",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "१२-४ख",
+  "resources": [
+    { "name": "सिपालु", "quantity": 14.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 19.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.590, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 2.200, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I4-c",
+  "sNo": "I4-c",
+  "description": "२० मि.मि. बाक्लो सिमेन्ट बालुवा प्लास्टर (१:६) भागमा",
+  "unit": "व.मि.",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "१२-४ग",
+  "resources": [
+    { "name": "सिपालु", "quantity": 14.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 19.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.570, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 2.350, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I5",
+  "sNo": "I5",
+  "description": "२५ मि.मि. बाक्लो माटोको (लिउन) प्लास्टर गर्ने काम । मसला तयार गरी ३० मि. सम्म ढुवानी गर्ने, सतह सफा गर्ने, पानीले भिजाउने र प्लास्टर गर्ने ।",
+  "unit": "व.मि.",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "१२-५",
+  "resources": [
+    { "name": "सिपालु", "quantity": 20.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 25.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "माटो", "quantity": 3.000, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "भुसा", "quantity": 10.000, "unit": "के.जी.", "resource_type": "Material" },
+    { "name": "गोबर", "quantity": 120.000, "unit": "के.जी.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I6",
+  "sNo": "I6",
+  "description": "१२ मि.मि. बाक्लो माटोको प्लास्टर गर्ने काम । मसला तयार पारी ३० मि. सम्म ढुवानी गर्ने, सतह सफा पार्ने, पानीले भिजाउने र प्लास्टर गर्ने ।",
+  "unit": "व.मि.",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "१२-६",
+  "resources": [
+    { "name": "सिपालु", "quantity": 15.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 20.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "माटो", "quantity": 1.500, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "भुसा", "quantity": 50.000, "unit": "के.जी.", "resource_type": "Material" },
+    { "name": "गोबर", "quantity": 60.000, "unit": "के.जी.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I7-a",
+  "sNo": "I7-a",
+  "description": "सिलिङमा १२.५ मि.मि. बाक्लो सिमेन्ट बालुवा प्लास्टरको काम पूरा (१:३) भागमा",
+  "unit": "व.मि.",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "१२-१क",
+  "resources": [
+    { "name": "सिपालु", "quantity": 15.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 20.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.625, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 1.250, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I7-b",
+  "sNo": "I7-b",
+  "description": "सिलिङमा १२.५ मि.मि. बाक्लो सिमेन्ट बालुवा प्लास्टरको काम पूरा (१:४) भागमा",
+  "unit": "व.मि.",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "१२-१ख",
+  "resources": [
+    { "name": "सिपालु", "quantity": 15.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 20.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.535, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 1.460, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I8-a",
+  "sNo": "I8-a",
+  "description": "इँटाको गारोमा फ्लस रुल टिप्कार गर्ने काम (१:१) सिमेन्ट बालुवामा",
+  "unit": "व.मि.",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "१४-१क",
+  "resources": [
+    { "name": "सिपालु", "quantity": 10.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 12.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.316, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.220, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I8-b",
+  "sNo": "I8-b",
+  "description": "इँटाको गारोमा फ्लस रुल टिप्कार गर्ने काम (१:२) सिमेन्ट बालुवामा",
+  "unit": "व.मि.",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "१४-१ख",
+  "resources": [
+    { "name": "सिपालु", "quantity": 10.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 12.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.210, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.210, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I8-c",
+  "sNo": "I8-c",
+  "description": "इँटाको गारोमा फ्लस रुल टिप्कार गर्ने काम (१:१) चुना, सुर्खीमा",
+  "unit": "व.मि.",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "१४-१ख",
+  "resources": [
+    { "name": "सिपालु", "quantity": 10.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 12.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "चुना", "quantity": 0.220, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "सुर्खी", "quantity": 0.220, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I8-d",
+  "sNo": "I8-d",
+  "description": "इँटाको गारोमा फ्लस रुल टिप्कार गर्ने काम (१:२) चुना, सुर्खीमा",
+  "unit": "व.मि.",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "१४-१ख",
+  "resources": [
+    { "name": "सिपालु", "quantity": 10.500, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 12.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "चुना", "quantity": 0.150, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "सुर्खी", "quantity": 0.210, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I9-a",
+  "sNo": "I9-a",
+  "description": "बोल्डर ढुङ्गाको गारोमा फ्लस रुल टिप्कार गर्ने काम (१:१) सिमेन्ट बालुवामा",
+  "unit": "व.मि.",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "१४-२क",
+  "resources": [
+    { "name": "सिपालु", "quantity": 10.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 14.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.612, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.430, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I9-b",
+  "sNo": "I9-b",
+  "description": "बोल्डर ढुङ्गाको गारोमा फ्लस रुल टिप्कार गर्ने काम (१:२) सिमेन्ट बालुवामा",
+  "unit": "व.मि.",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "१४-२ख",
+  "resources": [
+    { "name": "सिपालु", "quantity": 10.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 14.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.408, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.570, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I10",
+  "sNo": "I10",
+  "description": "एल्टर काममा फ्लस रुल टिप्कार (१:३) सिमेन्ट बालुवामा",
+  "unit": "व.मि.",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "१४-३",
+  "resources": [
+    { "name": "सिपालु", "quantity": 8.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 10.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.110, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.200, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I11",
+  "sNo": "I11",
+  "description": "४५ से.मि. X ४५ से.मि. चेप्टो ढुङ्गा छापेकोमा (१:३) सिमेन्ट बालुवाको टिप्कार",
+  "unit": "व.मि.",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "१४-४",
+  "resources": [
+    { "name": "सिपालु", "quantity": 5.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 5.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.042, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.030, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I12",
+  "sNo": "I12",
+  "description": "तैलिया इँटा छापेकोमा (१:१) सिमेन्ट बालुवाको टिप्कार",
+  "unit": "व.मि.",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "१४-५",
+  "resources": [
+    { "name": "सिपालु", "quantity": 10.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 10.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.150, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.100, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I13",
+  "sNo": "I13",
+  "description": "३ मि.मि. बाक्लो फ्लिसिङ प्लास्टर चुनामा",
+  "unit": "१००",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "१४-७",
+  "resources": [
+    { "name": "सिपालु", "quantity": 10.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 10.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "चुना", "quantity": 0.160, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I14",
+  "sNo": "I14",
+  "description": "३ मि.मि. बाक्लो फ्लस प्लास्टर सिमेन्टमा",
+  "unit": "१००",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "१४-८",
+  "resources": [
+    { "name": "सिपालु", "quantity": 10.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 10.000, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.518, "unit": "मे.ट.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I15",
+  "sNo": "I15",
+  "description": "प्लास्टरमाथि २० मि.मि. बाक्लो झुलर वा पानीपट्टि बनाउने काम",
+  "unit": "र.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "सिपालु", "quantity": 0.025, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 0.010, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "सिमेन्ट", "quantity": 0.003, "unit": "मे.ट.", "resource_type": "Material" },
+    { "name": "बालुवा", "quantity": 0.004, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "वाटरप्रुफिङ", "quantity": 0.10, "unit": "मि.लि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I16",
+  "sNo": "I16",
+  "description": "१\" बाक्लो रफिङ टायल वट्टा प्लास्टर सिमेन्ट मसला (१:४) तयार गरी लगाउने काम",
+  "unit": "व.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "रफिङ टायल वट्टा बनाउने सम्पूर्ण कार्य", "quantity": 1.00, "unit": "-", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "I17",
+  "sNo": "I17",
+  "description": "भित्ता एवं सिलिङमा २ मि.मि. प्लेन ह्वाइट पट्टि प्लास्टर गर्ने कार्य",
+  "unit": "व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.00, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 1.00, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ह्वाइट पट्टि प्लास्टर गर्ने", "quantity": 10.64, "unit": "के.जी.", "resource_type": "Material" }
+
+  ]
+}]
+
+ 
+ 
