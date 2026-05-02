@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Trash2, Calculator, X, Search, LayoutList, TableProperties, Download } from 'lucide-react';
 import { Norm } from '../types';
 import { motion, AnimatePresence } from 'motion/react';
-import { searchNorm } from '../utils/search';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import * as HamoNepaliPatro from 'hamro-nepali-patro';
@@ -92,36 +91,34 @@ export default function BOQ({ norms }: { norms: Norm[] }) {
     }
   };
 
-  const getFilteredNorms = () => {
-    const searchLower = search.toLowerCase().trim();
-    const sortedNorms = norms.slice().sort((a, b) => a.id - b.id);
-    
-    if (!searchLower) return sortedNorms;
+const getFilteredNorms = () => {
+  const searchLower = search.toLowerCase().trim();
+  const sortedNorms = norms.slice().sort((a, b) => a.id - b.id);
+  
+  if (!searchLower) return sortedNorms;
 
-    // Check if search starts with a norm type (dor, dudbc, etc.)
-    const normTypes = ['dor', 'dudbc'];
-    let typeFilter: 'DOR' | 'DUDBC' | null = null;
-    let searchTerm = searchLower;
+  const normTypes = ['dor', 'dudbc'];
+  let typeFilter: 'DOR' | 'DUDBC' | null = null;
+  let searchTerm = searchLower;
 
-    for (const type of normTypes) {
-      if (searchLower.startsWith(type)) {
-        typeFilter = type.toUpperCase() as 'DOR' | 'DUDBC';
-        searchTerm = searchLower.substring(type.length).trim();
-        break;
-      }
+  for (const type of normTypes) {
+    if (searchLower.startsWith(type)) {
+      typeFilter = type.toUpperCase() as 'DOR' | 'DUDBC';
+      searchTerm = searchLower.substring(type.length).trim();
+      break;
     }
+  }
 
-    return sortedNorms.filter(n => {
-      // Filter by type if specified
-      if (typeFilter && n.type !== typeFilter) return false;
-
-      // Filter by search term using intelligent search
-      if (!searchTerm) return true;
-
-      return searchNorm(n, searchTerm);
-    });
-  };
-
+  return sortedNorms.filter(n => {
+    if (typeFilter && n.type !== typeFilter) return false;
+    if (!searchTerm) return true;
+    
+    // Replace searchNorm with inline search
+    return n.description.toLowerCase().includes(searchTerm) ||
+           n.ref_ss?.toLowerCase().includes(searchTerm) ||
+           n.sNo?.toLowerCase().includes(searchTerm);
+  });
+};
   const filteredNorms = getFilteredNorms();
 
   const calculateResourceSummary = () => {
@@ -515,7 +512,7 @@ export default function BOQ({ norms }: { norms: Norm[] }) {
       // Title and Header
       doc.setFontSize(18);
       doc.setFont('Helvetica', 'bold');
-      doc.text('ResourceCalc - BOQ Report', 15, yPosition);
+      doc.text('ResourceCalc - Quick BOQ Report', 15, yPosition);
       
       yPosition += 8;
       doc.setFontSize(10);
@@ -620,12 +617,12 @@ export default function BOQ({ norms }: { norms: Norm[] }) {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] pb-24">
+    <div className="min-h-screen bg-[#F8FAFC] pb-24 md:pb-8">
       {/* Header - Dark slate background with blue title */}
-      <header className="sticky top-0 z-30 bg-[#1E293B] px-4 py-3 shadow-md no-print">
+      <header className="sticky top-0 z-30 bg-[#1E293B] px-4 py-3 shadow-md no-print md:hidden">
         <div className="max-w-md mx-auto flex items-center justify-between gap-3">
           <div>
-            <h1 className="text-lg font-bold text-[#3B82F6]">BOQ</h1>
+            <h1 className="text-lg font-bold text-[#3B82F6]">Quick BOQ</h1>
             <p className="text-xs text-white/50">Build your quantity estimate</p>
           </div>
           <div className="flex items-center gap-2">
@@ -660,7 +657,44 @@ export default function BOQ({ norms }: { norms: Norm[] }) {
         </div>
       </header>
 
-      <main className="max-w-md mx-auto p-4 space-y-4">
+      <main className="w-full md:max-w-5xl md:mx-auto p-4 md:p-6 space-y-4 md:space-y-6">
+        {/* Web Header */}
+        <div className="hidden md:flex items-center justify-between">
+          <div>
+            <h1 className="text-4xl font-bold text-[#1E293B]">Quick BOQ</h1>
+            <p className="text-base text-[#475569] mt-1">Build your quantity estimate</p>
+          </div>
+          <div className="flex items-center gap-3">
+            {hasItems && (
+              <>
+                <button
+                  onClick={() => exportToPDF(viewMode)}
+                  className="px-4 py-2 text-sm font-semibold text-white bg-[#0EA5E9] rounded-lg flex items-center gap-2 hover:bg-[#0284C7] transition-colors shadow-md"
+                >
+                  <Download size={16} />
+                  Export PDF
+                </button>
+                <button
+                  onClick={clearAll}
+                  className="px-4 py-2 text-sm font-semibold text-white bg-[#DC2626] rounded-lg hover:bg-[#B91C1C] transition-colors shadow-md"
+                >
+                  Clear All
+                </button>
+              </>
+            )}
+            <button
+              onClick={() => {
+                setSelectedNormForModal(null);
+                setTempQuantity('');
+                setShowAddModal(true);
+              }}
+              className="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-sm font-bold shadow-md hover:bg-[#2563EB] transition-colors"
+            >
+              Add Item
+            </button>
+          </div>
+        </div>
+
         {!hasItems ? (
           <div className="min-h-[60vh] flex flex-col items-center justify-center gap-3 text-[#333333]/40">
             <Calculator size={48} strokeWidth={1} />
@@ -673,7 +707,7 @@ export default function BOQ({ norms }: { norms: Norm[] }) {
             <div className="flex bg-white rounded-xl p-1 border border-[#E2E8F0]">
               <button
                 onClick={() => setViewMode('summary')}
-                className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold transition-all ${
+                className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all ${
                   viewMode === 'summary'
                     ? 'bg-[#1E293B] text-white shadow-sm'
                     : 'text-[#333333]/60 hover:text-[#1E293B]'
@@ -684,7 +718,7 @@ export default function BOQ({ norms }: { norms: Norm[] }) {
               </button>
               <button
                 onClick={() => setViewMode('detailed')}
-                className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold transition-all ${
+                className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all ${
                   viewMode === 'detailed'
                     ? 'bg-[#1E293B] text-white shadow-sm'
                     : 'text-[#333333]/60 hover:text-[#1E293B]'
@@ -698,25 +732,25 @@ export default function BOQ({ norms }: { norms: Norm[] }) {
             {/* Summary View */}
             {viewMode === 'summary' && (
               <div className="overflow-x-auto rounded-2xl border border-[#E2E8F0] bg-white shadow-sm">
-                <div className="px-3 py-2 bg-[#F8FAFC] border-b border-[#E2E8F0]">
-                  <h3 className="text-xs font-bold uppercase tracking-widest text-[#1E293B]">
+                <div className="px-3 md:px-4 py-2 md:py-3 bg-[#F8FAFC] border-b border-[#E2E8F0]">
+                  <h3 className="text-xs md:text-sm font-bold uppercase tracking-widest text-[#1E293B]">
                     Resource Summary (Total for all BOQ Items)
                   </h3>
                 </div>
                 <table className="min-w-full text-sm text-left text-[#333333]">
-                  <thead className="bg-[#F8FAFC] text-[10px] uppercase tracking-wider text-[#1E293B]">
+                  <thead className="bg-[#F8FAFC] text-[10px] md:text-xs uppercase tracking-wider text-[#1E293B]">
                     <tr>
-                      <th className="px-3 py-3">Resource</th>
-                      <th className="px-3 py-3">Type</th>
-                      <th className="px-3 py-3">Total Qty</th>
-                      <th className="px-3 py-3">Unit</th>
+                      <th className="px-3 md:px-4 py-3">Resource</th>
+                      <th className="px-3 md:px-4 py-3">Type</th>
+                      <th className="px-3 md:px-4 py-3">Total Qty</th>
+                      <th className="px-3 md:px-4 py-3">Unit</th>
                     </tr>
                   </thead>
                   <tbody>
                     {resourceSummary.map((resource, idx) => (
                       <tr key={`${resource.name}-${idx}`} className="border-t border-[#E2E8F0]">
-                        <td className="px-3 py-3 align-top font-semibold text-[#1E293B]">{resource.name}</td>
-                        <td className="px-3 py-3 align-top">
+                        <td className="px-3 md:px-4 py-3 align-top font-semibold text-[#1E293B]">{resource.name}</td>
+                        <td className="px-3 md:px-4 py-3 align-top">
                           <span className={`inline-flex items-center rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase ${
                             resource.resource_type === 'Labour'
                               ? 'bg-[#1E293B]/10 text-[#1E293B]'
@@ -727,13 +761,13 @@ export default function BOQ({ norms }: { norms: Norm[] }) {
                             {resource.resource_type}
                           </span>
                         </td>
-                        <td className="px-3 py-3 align-top font-semibold text-[#1E293B]">{Number(resource.totalQuantity.toFixed(2)).toLocaleString()}</td>
-                        <td className="px-3 py-3 align-top text-[#333333]/50">{resource.unit}</td>
+                        <td className="px-3 md:px-4 py-3 align-top font-semibold text-[#1E293B]">{Number(resource.totalQuantity.toFixed(2)).toLocaleString()}</td>
+                        <td className="px-3 md:px-4 py-3 align-top text-[#333333]/50">{resource.unit}</td>
                       </tr>
                     ))}
                     {resourceSummary.length === 0 && (
                       <tr className="border-t border-[#E2E8F0]">
-                        <td colSpan={4} className="px-3 py-6 text-center text-[#333333]/30 text-xs">
+                        <td colSpan={4} className="px-3 md:px-4 py-6 text-center text-[#333333]/30 text-xs">
                           No resources to summarize
                         </td>
                       </tr>
@@ -745,54 +779,103 @@ export default function BOQ({ norms }: { norms: Norm[] }) {
 
             {/* Detailed View */}
             {viewMode === 'detailed' && (
-              <div className="overflow-x-auto rounded-2xl border border-[#E2E8F0] bg-white shadow-sm">
-                <div className="px-3 py-2 bg-[#F8FAFC] border-b border-[#E2E8F0]">
-                  <h3 className="text-xs font-bold uppercase tracking-widest text-[#1E293B]">
-                    Item-wise Resource Breakdown
-                  </h3>
-                </div>
-                <table className="min-w-[800px] text-sm text-left text-[#333333]">
-                  <thead className="bg-[#F8FAFC] text-[10px] uppercase tracking-wider text-[#1E293B]">
-                    <tr>
-                      <th className="px-3 py-3 w-12">S.N.</th>
-                      <th className="px-3 py-3 min-w-[200px]">Work Item</th>
-                      <th className="px-3 py-3 w-16">Unit</th>
-                      <th className="px-3 py-3 w-20">Qty</th>
-                      {detailedResourceNames.map(resource => (
-                        <th key={resource} className="px-3 py-3 min-w-[80px]">{resource}</th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {detailedRows.map((row) => (
-                      <tr key={row.id} className="border-t border-[#E2E8F0]">
-                        <td className="px-3 py-3 text-[11px] text-[#333333]/50">{row.sNo}</td>
-                        <td className="px-3 py-3">
-                          <div className="text-xs font-semibold text-[#1E293B] line-clamp-2">{row.description}</div>
-                        </td>
-                        <td className="px-3 py-3 text-xs text-[#333333]/50">{row.unit}</td>
-                        <td className="px-3 py-3 text-xs font-semibold text-[#1E293B]">{row.quantity}</td>
-                        {detailedResourceNames.map(resource => (
-                          <td key={resource} className="px-3 py-3 text-xs text-[#333333]">
-                            {row.resources.has(resource) ? Number(row.resources.get(resource)?.toFixed(2)).toLocaleString() : '-'}
+              <div className="space-y-4">
+                {/* Resource Summary (also shown in Detailed View) */}
+                <div className="overflow-x-auto rounded-2xl border border-[#E2E8F0] bg-white shadow-sm">
+                  <div className="px-3 md:px-4 py-2 md:py-3 bg-[#F8FAFC] border-b border-[#E2E8F0]">
+                    <h3 className="text-xs md:text-sm font-bold uppercase tracking-widest text-[#1E293B]">
+                      Resource Summary (Total for all BOQ Items)
+                    </h3>
+                  </div>
+                  <table className="min-w-full text-sm text-left text-[#333333]">
+                    <thead className="bg-[#F8FAFC] text-[10px] md:text-xs uppercase tracking-wider text-[#1E293B]">
+                      <tr>
+                        <th className="px-3 md:px-4 py-3">Resource</th>
+                        <th className="px-3 md:px-4 py-3">Type</th>
+                        <th className="px-3 md:px-4 py-3">Total Qty</th>
+                        <th className="px-3 md:px-4 py-3">Unit</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {resourceSummary.map((resource, idx) => (
+                        <tr key={`${resource.name}-${idx}`} className="border-t border-[#E2E8F0]">
+                          <td className="px-3 md:px-4 py-3 align-top font-semibold text-[#1E293B]">{resource.name}</td>
+                          <td className="px-3 md:px-4 py-3 align-top">
+                            <span className={`inline-flex items-center rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase ${
+                              resource.resource_type === 'Labour'
+                                ? 'bg-[#1E293B]/10 text-[#1E293B]'
+                                : resource.resource_type === 'Material'
+                                ? 'bg-[#3B82F6]/10 text-[#3B82F6]'
+                                : 'bg-[#333333]/10 text-[#333333]'
+                            }`}>
+                              {resource.resource_type}
+                            </span>
                           </td>
+                          <td className="px-3 md:px-4 py-3 align-top font-semibold text-[#1E293B]">{Number(resource.totalQuantity.toFixed(2)).toLocaleString()}</td>
+                          <td className="px-3 md:px-4 py-3 align-top text-[#333333]/50">{resource.unit}</td>
+                        </tr>
+                      ))}
+                      {resourceSummary.length === 0 && (
+                        <tr className="border-t border-[#E2E8F0]">
+                          <td colSpan={4} className="px-3 md:px-4 py-6 text-center text-[#333333]/30 text-xs">
+                            No resources to summarize
+                          </td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* Item-wise Resource Breakdown */}
+                <div className="overflow-x-auto rounded-2xl border border-[#E2E8F0] bg-white shadow-sm">
+                  <div className="px-3 md:px-4 py-2 md:py-3 bg-[#F8FAFC] border-b border-[#E2E8F0]">
+                    <h3 className="text-xs md:text-sm font-bold uppercase tracking-widest text-[#1E293B]">
+                      Item-wise Resource Breakdown
+                    </h3>
+                  </div>
+                  <table className="min-w-[800px] text-sm text-left text-[#333333]">
+                    <thead className="bg-[#F8FAFC] text-[10px] uppercase tracking-wider text-[#1E293B]">
+                      <tr>
+                        <th className="px-3 py-3 w-12">S.N.</th>
+                        <th className="px-3 py-3 min-w-[200px]">Work Item</th>
+                        <th className="px-3 py-3 w-16">Unit</th>
+                        <th className="px-3 py-3 w-20">Qty</th>
+                        {detailedResourceNames.map(resource => (
+                          <th key={resource} className="px-3 py-3 min-w-[80px]">{resource}</th>
                         ))}
                       </tr>
-                    ))}
-                    {/* Total Row */}
-                    <tr className="border-t-2 border-[#E2E8F0] bg-[#F8FAFC]">
-                      <td className="px-3 py-3 font-bold text-[#1E293B]" colSpan={4}>Total</td>
-                      {detailedResourceNames.map(resource => {
-                        const total = detailedRows.reduce((sum, row) => sum + (row.resources.get(resource) || 0), 0);
-                        return (
-                          <td key={resource} className="px-3 py-3 font-bold text-[#1E293B]">
-                            {total > 0 ? Number(total.toFixed(2)).toLocaleString() : '-'}
+                    </thead>
+                    <tbody>
+                      {detailedRows.map((row) => (
+                        <tr key={row.id} className="border-t border-[#E2E8F0]">
+                          <td className="px-3 py-3 text-[11px] text-[#333333]/50">{row.sNo}</td>
+                          <td className="px-3 py-3">
+                            <div className="text-xs font-semibold text-[#1E293B] line-clamp-2">{row.description}</div>
                           </td>
-                        );
-                      })}
-                    </tr>
-                  </tbody>
-                </table>
+                          <td className="px-3 py-3 text-xs text-[#333333]/50">{row.unit}</td>
+                          <td className="px-3 py-3 text-xs font-semibold text-[#1E293B]">{row.quantity}</td>
+                          {detailedResourceNames.map(resource => (
+                            <td key={resource} className="px-3 py-3 text-xs text-[#333333]">
+                              {row.resources.has(resource) ? Number(row.resources.get(resource)?.toFixed(2)).toLocaleString() : '-'}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                      {/* Total Row */}
+                      <tr className="border-t-2 border-[#E2E8F0] bg-[#F8FAFC]">
+                        <td className="px-3 py-3 font-bold text-[#1E293B]" colSpan={4}>Total</td>
+                        {detailedResourceNames.map(resource => {
+                          const total = detailedRows.reduce((sum, row) => sum + (row.resources.get(resource) || 0), 0);
+                          return (
+                            <td key={resource} className="px-3 py-3 font-bold text-[#1E293B]">
+                              {total > 0 ? Number(total.toFixed(2)).toLocaleString() : '-'}
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             )}
 

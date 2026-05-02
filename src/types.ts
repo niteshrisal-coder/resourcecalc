@@ -20,17 +20,6 @@ export interface Norm {
   resources: Resource[];
 }
 
-export interface BoqResource {
-  name: string;
-  quantity: number;
-}
-
-export interface BoqItem {
-  id: number;
-  description: string;
-  resources: BoqResource[];
-}
-
 export interface Rate {
   id: number;
   name: string;
@@ -38,4 +27,14 @@ export interface Rate {
   rate: number;
   resource_type: ResourceType;
   district?: string;
+  apply_vat: boolean;
+}
+
+export interface Project {
+  id: number;
+  name: string;
+  location: string;
+  mode: 'CONTRACTOR' | 'USERS';
+  created_at: string;
+  items: any[];
 }

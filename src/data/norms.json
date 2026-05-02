@@ -9,8 +9,8 @@
     "type": "DOR",
     "ref_ss": "2000",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 2, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 22, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 2, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 22, "unit": "md", "resource_type": "Labour" },
       { "name": "40 mm Aggregate", "quantity": 13.5, "unit": "cum", "resource_type": "Material" },
       { "name": "Coarse Sand", "quantity": 6.75, "unit": "cum", "resource_type": "Material" },
       { "name": "Cement", "quantity": 3.45, "unit": "tonne", "resource_type": "Material" },
@@ -28,8 +28,8 @@
     "type": "DOR",
     "ref_ss": "2000",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 33, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 3, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 33, "unit": "md", "resource_type": "Labour" },
       { "name": "40 mm Aggregate", "quantity": 13.5, "unit": "cum", "resource_type": "Material" },
       { "name": "Coarse Sand", "quantity": 6.75, "unit": "cum", "resource_type": "Material" },
       { "name": "Cement", "quantity": 3.45, "unit": "tonne", "resource_type": "Material" },
@@ -46,8 +46,8 @@
     "type": "DOR",
     "ref_ss": "2000",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 30, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 3, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 30, "unit": "md", "resource_type": "Labour" },
       { "name": "Cement", "quantity": 4.13, "unit": "tonne", "resource_type": "Material" },
       { "name": "Coarse Sand", "quantity": 6.75, "unit": "cum", "resource_type": "Material" },
       { "name": "40 mm Aggregate", "quantity": 8.1, "unit": "cum", "resource_type": "Material" },
@@ -67,8 +67,8 @@
     "type": "DOR",
     "ref_ss": "2000",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 30, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 3, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 30, "unit": "md", "resource_type": "Labour" },
       { "name": "Cement", "quantity": 5.16, "unit": "tonne", "resource_type": "Material" },
       { "name": "Coarse Sand", "quantity": 6.75, "unit": "cum", "resource_type": "Material" },
       { "name": "40 mm Aggregate", "quantity": 5.4, "unit": "cum", "resource_type": "Material" },
@@ -88,8 +88,8 @@
     "type": "DOR",
     "ref_ss": "2000",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 30, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 3, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 30, "unit": "md", "resource_type": "Labour" },
       { "name": "Cement", "quantity": 5.21, "unit": "tonne", "resource_type": "Material" },
       { "name": "Coarse Sand", "quantity": 6.75, "unit": "cum", "resource_type": "Material" },
       { "name": "20 mm Aggregate", "quantity": 8.1, "unit": "cum", "resource_type": "Material" },
@@ -108,8 +108,8 @@
     "type": "DOR",
     "ref_ss": "2000",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 30, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 3, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 30, "unit": "md", "resource_type": "Labour" },
       { "name": "Cement", "quantity": 5.99, "unit": "tonne", "resource_type": "Material" },
       { "name": "Coarse Sand", "quantity": 6.75, "unit": "cum", "resource_type": "Material" },
       { "name": "40 mm Aggregate", "quantity": 5.4, "unit": "cum", "resource_type": "Material" },
@@ -129,8 +129,8 @@
     "type": "DOR",
     "ref_ss": "2000",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 30, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 3, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 30, "unit": "md", "resource_type": "Labour" },
       { "name": "Cement", "quantity": 6.05, "unit": "tonne", "resource_type": "Material" },
       { "name": "Coarse Sand", "quantity": 6.75, "unit": "cum", "resource_type": "Material" },
       { "name": "20 mm Aggregate", "quantity": 8.1, "unit": "cum", "resource_type": "Material" },
@@ -149,8 +149,8 @@
     "type": "DOR",
     "ref_ss": "2000",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 30, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 3, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 30, "unit": "md", "resource_type": "Labour" },
       { "name": "Cement", "quantity": 6.08, "unit": "tonne", "resource_type": "Material" },
       { "name": "Coarse Sand", "quantity": 6.75, "unit": "cum", "resource_type": "Material" },
       { "name": "40 mm Aggregate", "quantity": 5.4, "unit": "cum", "resource_type": "Material" },
@@ -170,8 +170,8 @@
     "type": "DOR",
     "ref_ss": "2000",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 30, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 3, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 30, "unit": "md", "resource_type": "Labour" },
       { "name": "Cement", "quantity": 6.1, "unit": "tonne", "resource_type": "Material" },
       { "name": "Coarse Sand", "quantity": 6.75, "unit": "cum", "resource_type": "Material" },
       { "name": "20 mm Aggregate", "quantity": 8.1, "unit": "cum", "resource_type": "Material" },
@@ -193,13 +193,13 @@
     {
       "name": "Skilled Labour",
       "quantity": 3,
-      "unit": "day",
+      "unit": "md",
       "resource_type": "Labour"
     },
     {
       "name": "Unskilled Labour",
       "quantity": 30,
-      "unit": "day",
+      "unit": "md",
       "resource_type": "Labour"
     },
     {
@@ -269,8 +269,8 @@
   "type": "DOR",
   "ref_ss": "2014",
   "resources": [
-    { "name": "Skilled Labour / Blacksmith", "quantity": 4, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 9, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour (Blacksmith)", "quantity": 4, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 9, "unit": "md", "resource_type": "Labour" },
     { "name": "MS Bars", "quantity": 1.1, "unit": "tonne", "resource_type": "Material" },
     { "name": "Binding Wire", "quantity": 8, "unit": "Kg", "resource_type": "Material" }
   ]
@@ -284,8 +284,8 @@
   "type": "DOR",
   "ref_ss": "2014",
   "resources": [
-    { "name": "Skilled Labour (Blacksmith)", "quantity": 4, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 9, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour (Blacksmith)", "quantity": 4, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 9, "unit": "md", "resource_type": "Labour" },
     { "name": "HYSD Bars", "quantity": 1.1, "unit": "tonne", "resource_type": "Material" },
     { "name": "Binding Wire", "quantity": 8, "unit": "kg", "resource_type": "Material" }
   ]
@@ -299,8 +299,8 @@
   "type": "DOR",
   "ref_ss": "2014",
   "resources": [
-    { "name": "Skilled Labour (Blacksmith)", "quantity": 4, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 10, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour (Blacksmith)", "quantity": 4, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 10, "unit": "md", "resource_type": "Labour" },
     { "name": "MS Bars", "quantity": 1.15, "unit": "tonne", "resource_type": "Material" },
     { "name": "Binding Wire", "quantity": 9, "unit": "kg", "resource_type": "Material" }
   ]
@@ -314,8 +314,8 @@
   "type": "DOR",
   "ref_ss": "2014",
   "resources": [
-    { "name": "Skilled Labour (Blacksmith)", "quantity": 4, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour (Blacksmith)", "quantity": 4, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 12, "unit": "md", "resource_type": "Labour" },
     { "name": "HYSD Bars", "quantity": 1.1, "unit": "tonne", "resource_type": "Material" },
     { "name": "Binding Wire", "quantity": 8, "unit": "kg", "resource_type": "Material" }
   ]
@@ -329,8 +329,8 @@
   "type": "DOR",
   "ref_ss": "905",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 8, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 8, "unit": "md", "resource_type": "Labour" },
     { "name": "Doko, Thunse etc.", "quantity": 3, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
   ]
 },
@@ -343,8 +343,8 @@
   "type": "DOR",
   "ref_ss": "905",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 3, "unit": "md", "resource_type": "Labour" },
     { "name": "Hydraulic Excavator", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
   ]
 },
@@ -357,8 +357,8 @@
   "type": "DOR",
   "ref_ss": "905",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 50, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 3, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 50, "unit": "md", "resource_type": "Labour" },
     { "name": "Doko, Thunse etc.", "quantity": 3, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
   ]
 },
@@ -371,8 +371,8 @@
   "type": "DOR",
   "ref_ss": "905",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 3, "unit": "md", "resource_type": "Labour" },
     { "name": "Hydraulic Excavator", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
   ]
 },
@@ -385,10 +385,10 @@
   "type": "DOR",
   "ref_ss": "905",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 20, "unit": "day", "resource_type": "Labour" },
-    { "name": "Driller", "quantity": 3, "unit": "day", "resource_type": "Labour" },
-    { "name": "Blaster", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 20, "unit": "md", "resource_type": "Labour" },
+    { "name": "Driller", "quantity": 3, "unit": "md", "resource_type": "Labour" },
+    { "name": "Blaster", "quantity": 1, "unit": "md", "resource_type": "Labour" },
     { "name": "Gelatin", "quantity": 32, "unit": "kg", "resource_type": "Material" },
     { "name": "Electric Detonators", "quantity": 126, "unit": "nos", "resource_type": "Material" },
     { "name": "Fuse Wire", "quantity": 180, "unit": "meter", "resource_type": "Material" },
@@ -407,9 +407,9 @@
   "type": "DOR",
   "ref_ss": "905",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 150, "unit": "day", "resource_type": "Labour" },
-    { "name": "Blaster", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 3, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 150, "unit": "md", "resource_type": "Labour" },
+    { "name": "Blaster", "quantity": 1, "unit": "md", "resource_type": "Labour" },
     { "name": "Gelatin", "quantity": 32, "unit": "kg", "resource_type": "Material" },
     { "name": "Electric Detonators", "quantity": 126, "unit": "nos", "resource_type": "Material" },
     { "name": "Fuse Wire", "quantity": 180, "unit": "meter", "resource_type": "Material" },
@@ -426,8 +426,8 @@
   "type": "DOR",
   "ref_ss": "905",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 10, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 10, "unit": "md", "resource_type": "Labour" },
     { "name": "Hydraulic Excavator with rock breaker attachment", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
     { "name": "Credit for excavated rock for use", "quantity": -8, "unit": "cum", "resource_type": "Material" }
   ]
@@ -441,9 +441,9 @@
   "type": "DOR",
   "ref_ss": "905",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 2, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 58, "unit": "day", "resource_type": "Labour" },
-    { "name": "Blacksmith", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 2, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 58, "unit": "md", "resource_type": "Labour" },
+    { "name": "Skilled Labour (Blacksmith)", "quantity": 1, "unit": "md", "resource_type": "Labour" }, { "name": "Unskilled Labour (Blacksmith", "quantity": 1, "unit": "md", "resource_type": "Labour" },
     { "name": "Crow bar and other T&P", "quantity": 3, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" },
     { "name": "Credit for excavated rock for use", "quantity": -8, "unit": "cum", "resource_type": "Material" }
   ]
@@ -457,8 +457,8 @@
   "type": "DOR",
   "ref_ss": "905",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 2, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 16, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 2, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 16, "unit": "md", "resource_type": "Labour" },
     { "name": "Chemical", "quantity": 80, "unit": "kg", "resource_type": "Material" },
     { "name": "Credit for excavated rock for use", "quantity": -8, "unit": "cum", "resource_type": "Material" },
     { "name": "Crow bar and other T&P", "quantity": 3, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
@@ -473,8 +473,8 @@
   "type": "DOR",
   "ref_ss": "905",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 4, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 4, "unit": "md", "resource_type": "Labour" },
     { "name": "Hydraulic Excavator", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
     { "name": "Tipper", "quantity": 18, "unit": "hour", "resource_type": "Equipment" }
   ]
@@ -488,8 +488,8 @@
   "type": "DOR",
   "ref_ss": "905",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 4, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 4, "unit": "md", "resource_type": "Labour" },
     { "name": "Excavator", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
     { "name": "Tipper", "quantity": 18, "unit": "hour", "resource_type": "Equipment" }
   ]
@@ -503,8 +503,8 @@
   "type": "DOR",
   "ref_ss": "909,910",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 2, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 50, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 2, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 50, "unit": "md", "resource_type": "Labour" },
     { "name": "Water", "quantity": 24, "unit": "KL", "resource_type": "Material" },
     { "name": "Vibratory Roller", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
   ]
@@ -518,8 +518,8 @@
   "type": "DOR",
   "ref_ss": "909,910",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 10, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 10, "unit": "md", "resource_type": "Labour" },
     { "name": "Water", "quantity": 72, "unit": "KL", "resource_type": "Material" },
     { "name": "Dozer", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
     { "name": "Motor Grader", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
@@ -535,8 +535,8 @@
   "type": "DOR",
   "ref_ss": "900",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 10, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 10, "unit": "md", "resource_type": "Labour" },
     { "name": "Water", "quantity": 12, "unit": "KL", "resource_type": "Material" },
     { "name": "Dozer", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
     { "name": "Vibratory Road Roller", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
@@ -551,8 +551,8 @@
   "type": "DOR",
   "ref_ss": "908",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 0.2, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 5, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 0.2, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 5, "unit": "md", "resource_type": "Labour" },
     { "name": "Granular Material", "quantity": 11, "unit": "cum", "resource_type": "Material" },
     { "name": "Water", "quantity": 1, "unit": "KL", "resource_type": "Material" },
     { "name": "Plate Compactor/Power Rammer", "quantity": 2.5, "unit": "hour", "resource_type": "Equipment" }
@@ -567,8 +567,8 @@
   "type": "DOR",
   "ref_ss": "908",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 0.2, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 5, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 0.2, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 5, "unit": "md", "resource_type": "Labour" },
     { "name": "Sand", "quantity": 12, "unit": "cum", "resource_type": "Material" },
     { "name": "Water", "quantity": 1, "unit": "KL", "resource_type": "Material" },
     { "name": "Plate Compactor/Power Rammer", "quantity": 2.5, "unit": "hour", "resource_type": "Equipment" }
@@ -583,8 +583,8 @@
   "type": "DOR",
   "ref_ss": "908",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 0.2, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 5, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 0.2, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 5, "unit": "md", "resource_type": "Labour" },
     { "name": "Compensation for Locally available Material", "quantity": 12, "unit": "cum", "resource_type": "Material" },
     { "name": "Water", "quantity": 1, "unit": "KL", "resource_type": "Material" },
     { "name": "Tamping", "quantity": 3, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
@@ -599,8 +599,8 @@
   "type": "DOR",
   "ref_ss": "908",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 0.2, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 4, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 0.2, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 4, "unit": "md", "resource_type": "Labour" },
     { "name": "Locally available Material", "quantity": 12, "unit": "cum", "resource_type": "Material" },
     { "name": "Tamping", "quantity": 3, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
   ]
@@ -614,8 +614,8 @@
   "type": "DOR",
   "ref_ss": "909,910",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 10, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 10, "unit": "md", "resource_type": "Labour" },
     { "name": "Filter Media", "quantity": 12, "unit": "cum", "resource_type": "Material" },
     { "name": "Water", "quantity": 1, "unit": "KL", "resource_type": "Material" }
   ]
@@ -629,8 +629,8 @@
   "type": "DOR",
   "ref_ss": "908",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 0.01, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 0.3, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 0.01, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 0.3, "unit": "md", "resource_type": "Labour" },
     { "name": "Sand", "quantity": 1.2, "unit": "cum", "resource_type": "Material" }
   ]
 },
@@ -644,8 +644,8 @@
     "type": "DOR",
     "ref_ss": "1003",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 15, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 15, "unit": "md", "resource_type": "Labour" },
       { "name": "Tractor-trolley / Truck", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
     ]
   },
@@ -658,8 +658,8 @@
     "type": "DOR",
     "ref_ss": "1003",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" }
+      { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 12, "unit": "md", "resource_type": "Labour" }
     ]
   },
   {
@@ -671,8 +671,8 @@
     "type": "DOR",
     "ref_ss": "1003",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 6, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 6, "unit": "md", "resource_type": "Labour" },
       { "name": "Tractor with Ripper", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
     ]
   },
@@ -685,8 +685,8 @@
     "type": "DOR",
     "ref_ss": "1003",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 6, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 6, "unit": "md", "resource_type": "Labour" },
       { "name": "Tractor with Ripper", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
       { "name": "Loader", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
       { "name": "Tipper", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
@@ -701,8 +701,8 @@
     "type": "DOR",
     "ref_ss": "1004",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 6, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 6, "unit": "md", "resource_type": "Labour" },
       { "name": "Water", "quantity": 72, "unit": "KL", "resource_type": "Material" },
       { "name": "Capping Layer Material", "quantity": 750, "unit": "cum", "resource_type": "Material" },
       { "name": "Motor Grader", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
@@ -718,8 +718,8 @@
     "type": "DOR",
     "ref_ss": "1003,1005",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 5, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 5, "unit": "md", "resource_type": "Labour" },
       { "name": "Water", "quantity": 24, "unit": "KL", "resource_type": "Material" },
       { "name": "Tractor with Ripper Attachment", "quantity": 12, "unit": "hour", "resource_type": "Equipment" },
       { "name": "Motor Grader", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
@@ -735,8 +735,8 @@
     "type": "DOR",
     "ref_ss": "1003,1005",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 4, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 4, "unit": "md", "resource_type": "Labour" },
       { "name": "Water", "quantity": 24, "unit": "KL", "resource_type": "Material" },
       { "name": "Tractor with Ripper Attachment", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
       { "name": "Vibratory Road Roller", "quantity": 12, "unit": "hour", "resource_type": "Equipment" }
@@ -751,8 +751,8 @@
     "type": "DOR",
     "ref_ss": "1006",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 2, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 2, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 12, "unit": "md", "resource_type": "Labour" },
       { "name": "Lime", "quantity": 15.75, "unit": "tonne", "resource_type": "Material" },
       { "name": "Water", "quantity": 72, "unit": "KL", "resource_type": "Material" },
       { "name": "Tractor with Ripper and Rotator", "quantity": 12, "unit": "hour", "resource_type": "Equipment" },
@@ -769,8 +769,8 @@
     "type": "DOR",
     "ref_ss": "1006",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 50, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 3, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 50, "unit": "md", "resource_type": "Labour" },
       { "name": "Lime", "quantity": 8, "unit": "tonne", "resource_type": "Material" },
       { "name": "Water", "quantity": 36, "unit": "KL", "resource_type": "Material" },
       { "name": "Vibratory Roller", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
@@ -785,9 +785,9 @@
     "type": "DOR",
     "ref_ss": "1006",
     "resources": [
-      { "name": "Engineer", "quantity": 1, "unit": "day", "resource_type": "Labour" },
-      { "name": "Skilled Labour", "quantity": 2, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 30, "unit": "day", "resource_type": "Labour" },
+      { "name": "Engineer", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 2, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 30, "unit": "md", "resource_type": "Labour" },
       { "name": "Cement", "quantity": 12, "unit": "tonne", "resource_type": "Material" },
       { "name": "Sand", "quantity": 32, "unit": "cum", "resource_type": "Material" },
       { "name": "Water", "quantity": 12, "unit": "KL", "resource_type": "Material" },
@@ -806,9 +806,9 @@
     "type": "DOR",
     "ref_ss": "1006",
     "resources": [
-      { "name": "Engineer", "quantity": 1, "unit": "day", "resource_type": "Labour" },
-      { "name": "Skilled Labour", "quantity": 2, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 10, "unit": "day", "resource_type": "Labour" },
+      { "name": "Engineer", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 2, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 10, "unit": "md", "resource_type": "Labour" },
       { "name": "Polymer based Admixture", "quantity": 32, "unit": "Lit", "resource_type": "Material" },
       { "name": "Water", "quantity": 20, "unit": "KL", "resource_type": "Material" },
       { "name": "Tractor with Ripper and Rotator", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
@@ -825,8 +825,8 @@
     "type": "DOR",
     "ref_ss": "1000",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 6, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 6, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 12, "unit": "md", "resource_type": "Labour" },
       { "name": "Stone", "quantity": 6, "unit": "cum", "resource_type": "Material" }
     ]
   },
@@ -839,8 +839,8 @@
     "type": "DOR",
     "ref_ss": "1000",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 0.1, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 2, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 0.1, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 2, "unit": "md", "resource_type": "Labour" },
       { "name": "Stone", "quantity": 0.6, "unit": "cum", "resource_type": "Material" }
     ]
   },
@@ -854,8 +854,8 @@
     "type": "DOR",
     "ref_ss": "1201",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 2, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 2, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 12, "unit": "md", "resource_type": "Labour" },
       { "name": "Sub-base Material S1 type or S2 type", "quantity": 384, "unit": "cum", "resource_type": "Material" },
       { "name": "Water", "quantity": 18, "unit": "KL", "resource_type": "Material" },
       { "name": "Motor Grader", "quantity": 6, "unit": "hour", "resource_type": "Equipment" },
@@ -872,8 +872,8 @@
     "type": "DOR",
     "ref_ss": "1201",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 2, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 60, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 2, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 60, "unit": "md", "resource_type": "Labour" },
       { "name": "Sub-base Material S1 type or S2 type", "quantity": 256, "unit": "cum", "resource_type": "Material" },
       { "name": "Water", "quantity": 23, "unit": "KL", "resource_type": "Material" },
       { "name": "Vibratory Roller", "quantity": 6, "unit": "hour", "resource_type": "Equipment" }
@@ -889,8 +889,8 @@
     "type": "DOR",
     "ref_ss": "2500",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 6, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 6, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 12, "unit": "md", "resource_type": "Labour" },
       { "name": "Bricks Ist Class", "quantity": 2800, "unit": "nos", "resource_type": "Material" },
       { "name": "Cement", "quantity": 0.8, "unit": "tonne", "resource_type": "Material" },
       { "name": "Sand", "quantity": 1.12, "unit": "cum", "resource_type": "Material" },
@@ -906,8 +906,8 @@
     "type": "DOR",
     "ref_ss": "2500",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 6, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 6, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 12, "unit": "md", "resource_type": "Labour" },
       { "name": "Bricks Ist Class", "quantity": 2800, "unit": "nos", "resource_type": "Material" },
       { "name": "Cement", "quantity": 0.61, "unit": "tonne", "resource_type": "Material" },
       { "name": "Sand", "quantity": 1.26, "unit": "cum", "resource_type": "Material" },
@@ -923,8 +923,8 @@
     "type": "DOR",
     "ref_ss": "2500",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 6, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 6, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 12, "unit": "md", "resource_type": "Labour" },
       { "name": "Bricks Ist Class", "quantity": 2800, "unit": "nos", "resource_type": "Material" },
       { "name": "Cement", "quantity": 0.48, "unit": "tonne", "resource_type": "Material" },
       { "name": "Sand", "quantity": 1.35, "unit": "cum", "resource_type": "Material" },
@@ -940,8 +940,8 @@
     "type": "DOR",
     "ref_ss": "2500",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 6, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 6, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 12, "unit": "md", "resource_type": "Labour" },
       { "name": "Bricks Ist Class", "quantity": 2800, "unit": "nos", "resource_type": "Material" },
       { "name": "Cement", "quantity": 0.35, "unit": "tonne", "resource_type": "Material" },
       { "name": "Sand", "quantity": 1.45, "unit": "cum", "resource_type": "Material" },
@@ -958,8 +958,8 @@
     "type": "DOR",
     "ref_ss": "2500",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 6, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 6, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 12, "unit": "md", "resource_type": "Labour" },
       { "name": "Bricks Ist Class", "quantity": 2800, "unit": "nos", "resource_type": "Material" },
       { "name": "Cement", "quantity": 0.61, "unit": "tonne", "resource_type": "Material" },
       { "name": "Sand", "quantity": 1.26, "unit": "cum", "resource_type": "Material" },
@@ -976,8 +976,8 @@
     "type": "DOR",
     "ref_ss": "2500",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 7, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 14, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 7, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 14, "unit": "md", "resource_type": "Labour" },
       { "name": "Bricks Ist Class", "quantity": 2800, "unit": "nos", "resource_type": "Material" },
       { "name": "Cement", "quantity": 0.61, "unit": "tonne", "resource_type": "Material" },
       { "name": "Sand", "quantity": 1.26, "unit": "cum", "resource_type": "Material" },
@@ -994,8 +994,8 @@
     "type": "DOR",
     "ref_ss": "2500",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 7, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 14, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 7, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 14, "unit": "md", "resource_type": "Labour" },
       { "name": "Bricks Ist Class", "quantity": 2800, "unit": "nos", "resource_type": "Material" },
       { "name": "Cement", "quantity": 0.48, "unit": "tonne", "resource_type": "Material" },
       { "name": "Sand", "quantity": 1.35, "unit": "cum", "resource_type": "Material" },
@@ -1012,8 +1012,8 @@
     "type": "DOR",
     "ref_ss": "2500",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 7, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 14, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 7, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 14, "unit": "md", "resource_type": "Labour" },
       { "name": "Bricks Ist Class", "quantity": 2800, "unit": "nos", "resource_type": "Material" },
       { "name": "Cement", "quantity": 0.35, "unit": "tonne", "resource_type": "Material" },
       { "name": "Sand", "quantity": 1.45, "unit": "cum", "resource_type": "Material" },
@@ -1030,8 +1030,8 @@
     "type": "DOR",
     "ref_ss": "2500",
     "resources": [
-      { "name": "Skilled Labour", "quantity": 10, "unit": "day", "resource_type": "Labour" },
-      { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+      { "name": "Skilled Labour", "quantity": 10, "unit": "md", "resource_type": "Labour" },
+      { "name": "Unskilled Labour", "quantity": 12, "unit": "md", "resource_type": "Labour" },
       { "name": "Cement", "quantity": 0.15, "unit": "tonne", "resource_type": "Material" },
       { "name": "Sand", "quantity": 0.32, "unit": "cum", "resource_type": "Material" },
       { "name": "Water", "quantity": 1, "unit": "KL", "resource_type": "Material" }
@@ -1047,8 +1047,8 @@
   "type": "DOR",
   "ref_ss": "2500",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 10, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 10, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 12, "unit": "md", "resource_type": "Labour" },
     { "name": "Cement", "quantity": 0.96, "unit": "tonne", "resource_type": "Material" },
     { "name": "Sand", "quantity": 1.38, "unit": "cum", "resource_type": "Material" },
     { "name": "Water", "quantity": 0.3, "unit": "KL", "resource_type": "Material" }
@@ -1063,8 +1063,8 @@
   "type": "DOR",
   "ref_ss": "2500",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 10, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 10, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 12, "unit": "md", "resource_type": "Labour" },
     { "name": "Cement", "quantity": 0.72, "unit": "tonne", "resource_type": "Material" },
     { "name": "Sand", "quantity": 1.5, "unit": "cum", "resource_type": "Material" },
     { "name": "Water", "quantity": 0.2, "unit": "KL", "resource_type": "Material" }
@@ -1079,8 +1079,8 @@
   "type": "DOR",
   "ref_ss": "2500",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 10, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 10, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 12, "unit": "md", "resource_type": "Labour" },
     { "name": "Cement", "quantity": 0.58, "unit": "tonne", "resource_type": "Material" },
     { "name": "Sand", "quantity": 1.6, "unit": "cum", "resource_type": "Material" },
     { "name": "Water", "quantity": 0.17, "unit": "KL", "resource_type": "Material" },
@@ -1096,8 +1096,8 @@
   "type": "DOR",
   "ref_ss": "2500",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 1, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
     { "name": "AC pipe 100 mm dia (including wastage @ 5%)", "quantity": 31.5, "unit": "meter", "resource_type": "Material" },
     { "name": "MS Clamp", "quantity": 30, "unit": "nos", "resource_type": "Material" },
     { "name": "Collar for AC pipe", "quantity": 10, "unit": "nos", "resource_type": "Material" },
@@ -1114,8 +1114,8 @@
   "type": "DOR",
   "ref_ss": "2602,2603,2608",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 4, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 8, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 4, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 8, "unit": "md", "resource_type": "Labour" },
     { "name": "Stone", "quantity": 5.75, "unit": "cum", "resource_type": "Material" }
   ]
 },
@@ -1128,8 +1128,8 @@
   "type": "DOR",
   "ref_ss": "2602,2603,2608",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 6, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 12, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 6, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 12, "unit": "md", "resource_type": "Labour" },
     { "name": "Stone", "quantity": 5.75, "unit": "cum", "resource_type": "Material" },
     { "name": "Mud (Clay)", "quantity": 2, "unit": "cum", "resource_type": "Material" },
     { "name": "Water", "quantity": 1, "unit": "KL", "resource_type": "Material" }
@@ -1144,8 +1144,8 @@
   "type": "DOR",
   "ref_ss": "2602,2603,2607",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 7, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 14, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 7, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 14, "unit": "md", "resource_type": "Labour" },
     { "name": "Stone", "quantity": 5.75, "unit": "cum", "resource_type": "Material" },
     { "name": "Cement", "quantity": 0.79, "unit": "tonne", "resource_type": "Material" },
     { "name": "Sand", "quantity": 1.63, "unit": "cum", "resource_type": "Material" },
@@ -1162,8 +1162,8 @@
   "type": "DOR",
   "ref_ss": "2602,2603,2607",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 7, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 14, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 7, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 14, "unit": "md", "resource_type": "Labour" },
     { "name": "Stone", "quantity": 5.75, "unit": "cum", "resource_type": "Material" },
     { "name": "Cement", "quantity": 0.62, "unit": "tonne", "resource_type": "Material" },
     { "name": "Sand", "quantity": 1.74, "unit": "cum", "resource_type": "Material" },
@@ -1180,8 +1180,8 @@
   "type": "DOR",
   "ref_ss": "2602,2603,2607",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 7, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 14, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 7, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 14, "unit": "md", "resource_type": "Labour" },
     { "name": "Stone", "quantity": 5.75, "unit": "cum", "resource_type": "Material" },
     { "name": "Cement", "quantity": 0.45, "unit": "tonne", "resource_type": "Material" },
     { "name": "Sand", "quantity": 2.08, "unit": "cum", "resource_type": "Material" },
@@ -1197,8 +1197,8 @@
   "type": "DOR",
   "ref_ss": "2607",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 7, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 20, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 7, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 20, "unit": "md", "resource_type": "Labour" },
     { "name": "Stone", "quantity": 5.75, "unit": "cum", "resource_type": "Material" },
     { "name": "Cement", "quantity": 0.84, "unit": "tonne", "resource_type": "Material" },
     { "name": "Sand", "quantity": 1.73, "unit": "cum", "resource_type": "Material" },
@@ -1215,8 +1215,8 @@
   "type": "DOR",
   "ref_ss": "2606",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 8, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 22, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 8, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 22, "unit": "md", "resource_type": "Labour" },
     { "name": "Stone (sorted)", "quantity": 5.75, "unit": "cum", "resource_type": "Material" },
     { "name": "Cement", "quantity": 0.77, "unit": "tonne", "resource_type": "Material" },
     { "name": "Sand", "quantity": 1.58, "unit": "cum", "resource_type": "Material" },
@@ -1233,8 +1233,8 @@
   "type": "DOR",
   "ref_ss": "2607",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 7, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 20, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 7, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 20, "unit": "md", "resource_type": "Labour" },
     { "name": "Stone", "quantity": 5.75, "unit": "cum", "resource_type": "Material" },
     { "name": "Cement", "quantity": 0.66, "unit": "tonne", "resource_type": "Material" },
     { "name": "Sand", "quantity": 1.85, "unit": "cum", "resource_type": "Material" },
@@ -1251,8 +1251,8 @@
   "type": "DOR",
   "ref_ss": "2606",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 8, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 22, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 8, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 22, "unit": "md", "resource_type": "Labour" },
     { "name": "Stone (sorted)", "quantity": 5.75, "unit": "cum", "resource_type": "Material" },
     { "name": "Cement", "quantity": 0.6, "unit": "tonne", "resource_type": "Material" },
     { "name": "Sand", "quantity": 1.68, "unit": "cum", "resource_type": "Material" },
@@ -1269,8 +1269,8 @@
   "type": "DOR",
   "ref_ss": "2607",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 7, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 20, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 7, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 20, "unit": "md", "resource_type": "Labour" },
     { "name": "Stone", "quantity": 5.75, "unit": "cum", "resource_type": "Material" },
     { "name": "Cement", "quantity": 0.48, "unit": "tonne", "resource_type": "Material" },
     { "name": "Sand", "quantity": 1.98, "unit": "cum", "resource_type": "Material" },
@@ -1287,8 +1287,8 @@
   "type": "DOR",
   "ref_ss": "2606",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 8, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 22, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 8, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 22, "unit": "md", "resource_type": "Labour" },
     { "name": "Stone (sorted)", "quantity": 5.75, "unit": "cum", "resource_type": "Material" },
     { "name": "Cement", "quantity": 0.44, "unit": "tonne", "resource_type": "Material" },
     { "name": "Sand", "quantity": 1.8, "unit": "cum", "resource_type": "Material" },
@@ -1305,8 +1305,8 @@
   "type": "DOR",
   "ref_ss": "2600",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 9, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 9, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 9, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 9, "unit": "md", "resource_type": "Labour" },
     { "name": "Cement", "quantity": 0.31, "unit": "tonne", "resource_type": "Material" },
     { "name": "Sand", "quantity": 0.63, "unit": "cum", "resource_type": "Material" },
     { "name": "Water", "quantity": 0.05, "unit": "KL", "resource_type": "Material" }
@@ -1321,8 +1321,8 @@
   "type": "DOR",
   "ref_ss": "2600",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 9, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 9, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 9, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 9, "unit": "md", "resource_type": "Labour" },
     { "name": "Cement", "quantity": 0.4, "unit": "tonne", "resource_type": "Material" },
     { "name": "Sand", "quantity": 0.56, "unit": "cum", "resource_type": "Material" },
     { "name": "Water", "quantity": 0.07, "unit": "KL", "resource_type": "Material" }
@@ -1337,8 +1337,8 @@
   "type": "DOR",
   "ref_ss": "2600",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 9, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 9, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 9, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 9, "unit": "md", "resource_type": "Labour" },
     { "name": "Cement", "quantity": 0.61, "unit": "tonne", "resource_type": "Material" },
     { "name": "Sand", "quantity": 0.42, "unit": "cum", "resource_type": "Material" },
     { "name": "Water", "quantity": 0.1, "unit": "KL", "resource_type": "Material" }
@@ -1353,7 +1353,7 @@
   "type": "DUDBC",
   "ref_ss": "A1 (1-1A)",
   "resources": [
-    { "name": "Unskilled Labour", "quantity": 0.13, "unit": "Nos", "resource_type": "Labour" }
+    { "name": "Unskilled Labour", "quantity": 0.13, "unit": "md", "resource_type": "Labour" }
   ]
 },
 {
@@ -1365,7 +1365,7 @@
   "type": "DUDBC",
   "ref_ss": "A1 (1-1B)",
   "resources": [
-    { "name": "Unskilled Labour", "quantity": 0.39, "unit": "Nos", "resource_type": "Labour" }
+    { "name": "Unskilled Labour", "quantity": 0.39, "unit": "md", "resource_type": "Labour" }
   ]
 },
 {
@@ -1377,7 +1377,7 @@
   "type": "DUDBC",
   "ref_ss": "A1 (1-1C)",
   "resources": [
-    { "name": "Unskilled Labour", "quantity": 0.98, "unit": "Nos", "resource_type": "Labour" }
+    { "name": "Unskilled Labour", "quantity": 0.98, "unit": "md", "resource_type": "Labour" }
   ]
 },
 {
@@ -1389,7 +1389,7 @@
   "type": "DUDBC",
   "ref_ss": "A2 (1-2A)",
   "resources": [
-    { "name": "Unskilled Labour", "quantity": 0.4, "unit": "Nos", "resource_type": "Labour" }
+    { "name": "Unskilled Labour", "quantity": 0.4, "unit": "md", "resource_type": "Labour" }
   ]
 },
 {
@@ -1401,7 +1401,7 @@
   "type": "DUDBC",
   "ref_ss": "A2 (1-2B)",
   "resources": [
-    { "name": "Unskilled Labour", "quantity": 0.53, "unit": "Nos", "resource_type": "Labour" }
+    { "name": "Unskilled Labour", "quantity": 0.53, "unit": "md", "resource_type": "Labour" }
   ]
 },
 {
@@ -1413,7 +1413,7 @@
   "type": "DUDBC",
   "ref_ss": "A2 (1-2C)",
   "resources": [
-    { "name": "Unskilled Labour", "quantity": 2.52, "unit": "Nos", "resource_type": "Labour" }
+    { "name": "Unskilled Labour", "quantity": 2.52, "unit": "md", "resource_type": "Labour" }
   ]
 },
 {
@@ -1425,7 +1425,7 @@
   "type": "DUDBC",
   "ref_ss": "A3",
   "resources": [
-    { "name": "Unskilled Labour", "quantity": 0.23, "unit": "Nos", "resource_type": "Labour" }
+    { "name": "Unskilled Labour", "quantity": 0.23, "unit": "md", "resource_type": "Labour" }
   ]
 },
 {
@@ -1437,7 +1437,7 @@
   "type": "DUDBC",
   "ref_ss": "A4",
   "resources": [
-    { "name": "Unskilled Labour", "quantity": 0.01, "unit": "Nos", "resource_type": "Labour" }
+    { "name": "Unskilled Labour", "quantity": 0.01, "unit": "md", "resource_type": "Labour" }
   ]
 },
 {
@@ -1449,10 +1449,10 @@
   "type": "DUDBC",
   "ref_ss": "A7",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
-{ "name": "Expert", "quantity": 4, "unit": "Nos", "resource_type": "Labour" },
-{ "name": "Helper", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 2, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+{ "name": "Expert", "quantity": 4, "unit": "md", "resource_type": "Labour" },
+{ "name": "Helper", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2, "unit": "md", "resource_type": "Labour" },
     { "name": "Collection Bag", "quantity": 15, "unit": "Nos", "resource_type": "Material" },
 { "name": "Necessary Material with Auger", "quantity": 8, "unit": "hour", "resource_type": "Equipment" }
 
@@ -1468,7 +1468,7 @@
   "type": "DUDBC",
   "ref_ss": "B1 (2-1)",
   "resources": [
-    { "name": "Unskilled Labour", "quantity": 0.7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 0.7, "unit": "md", "resource_type": "Labour" },
     { "name": "Tools & Plants", "quantity": 3, "unit": "%", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
   ]
 },
@@ -1481,7 +1481,7 @@
   "type": "DUDBC",
   "ref_ss": "B1 (2-2)",
   "resources": [
-    { "name": "Unskilled Labour", "quantity": 0.8, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 0.8, "unit": "md", "resource_type": "Labour" },
     { "name": "Tools & Plants", "quantity": 3, "unit": "%", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
   ]
 },
@@ -1494,7 +1494,7 @@
   "type": "DUDBC",
   "ref_ss": "B2 (2-25A)",
   "resources": [
-    { "name": "Unskilled Labour", "quantity": 0.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 0.5, "unit": "md", "resource_type": "Labour" },
 { "name": "Mud", "quantity": 1.5, "unit": "Cum", "resource_type": "Material" },
 { "name": "Water", "quantity": 5, "unit": "Ltr", "resource_type": "Material" }
 
@@ -1510,7 +1510,7 @@
   "type": "DUDBC",
   "ref_ss": "B2 (2-25B)",
   "resources": [
-    { "name": "Unskilled Labour", "quantity": 0.25, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 0.25, "unit": "md", "resource_type": "Labour" },
 { "name": "Mud", "quantity": 1.3, "unit": "Cum", "resource_type": "Material" }
   ]
 },
@@ -1523,7 +1523,7 @@
   "type": "DUDBC",
   "ref_ss": "B3 (2-42A)",
   "resources": [
-    { "name": "Unskilled Labour", "quantity": 0.7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 0.7, "unit": "md", "resource_type": "Labour" },
     { "name": "Sand Local", "quantity": 1.1, "unit": "Cum", "resource_type": "Material" },
     { "name": "Water", "quantity": 5, "unit": "Cum", "resource_type": "Material" }
   ]
@@ -1537,7 +1537,7 @@
   "type": "DUDBC",
   "ref_ss": "B3 (2-42B)",
   "resources": [
-    { "name": "Unskilled Labour", "quantity": 0.75, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 0.75, "unit": "md", "resource_type": "Labour" },
     { "name": "Gravel (Sand Mixed)", "quantity": 1.1, "unit": "Cum", "resource_type": "Material" }
   ]
 },
@@ -1574,7 +1574,7 @@
   "type": "DUDBC",
   "ref_ss": "B6",
   "resources": [
-    { "name": "Unskilled Labour", "quantity": 53, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 53, "unit": "md", "resource_type": "Labour" },
     { "name": "Road Hand Roller 1 MT with fuel", "quantity": 1.67, "unit": "Hour", "resource_type": "Equipment" }
   ]
 },
@@ -1635,9 +1635,9 @@
   "type": "DUDBC",
   "ref_ss": "C2(5-1-B1 & 5-2A)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour (Scaffolding)", "quantity": 0.2, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour (Scaffolding)", "quantity": 0.2, "unit": "md", "resource_type": "Labour" },
     { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
     { "name": "Cement", "quantity": 0.13, "unit": "MT", "resource_type": "Material" },
     { "name": "Sand", "quantity": 0.27, "unit": "Cum", "resource_type": "Material" },
@@ -1654,9 +1654,9 @@
   "type": "DUDBC",
   "ref_ss": "C2(5-1-B1 & 5-2B)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 0.7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 0.7, "unit": "md", "resource_type": "Labour" },
     { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
     { "name": "Cement", "quantity": 0.13, "unit": "MT", "resource_type": "Material" },
     { "name": "Sand", "quantity": 0.27, "unit": "Cum", "resource_type": "Material" },
@@ -1673,9 +1673,9 @@
   "type": "DUDBC",
   "ref_ss": "C2(5-1-B1 & 5-2B)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 1.4, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 1.4, "unit": "md", "resource_type": "Labour" },
     { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
     { "name": "Cement", "quantity": 0.13, "unit": "MT", "resource_type": "Material" },
     { "name": "Sand Crusher", "quantity": 0.27, "unit": "Cum", "resource_type": "Material" },
@@ -1692,9 +1692,9 @@
   "type": "DUDBC",
   "ref_ss": "C2(5-1-B2 & 5-2A)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour (Scaffolding)", "quantity": 0.2, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour (Scaffolding)", "quantity": 0.2, "unit": "md", "resource_type": "Labour" },
     { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
     { "name": "Cement", "quantity": 0.1, "unit": "MT", "resource_type": "Material" },
     { "name": "Sand Crusher", "quantity": 0.28, "unit": "Cum", "resource_type": "Material" },
@@ -1711,9 +1711,9 @@
   "type": "DUDBC",
   "ref_ss": "C25-1-B2 & 5-2B",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 0.7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 0.7, "unit": "md", "resource_type": "Labour" },
     { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
     { "name": "Cement", "quantity": 0.1, "unit": "MT", "resource_type": "Material" },
     { "name": "Sand Crusher", "quantity": 0.28, "unit": "Cum", "resource_type": "Material" },
@@ -1730,9 +1730,9 @@
   "type": "DUDBC",
   "ref_ss": "C2(5-1-B2 & 5-2B)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 1.4, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 1.4, "unit": "md", "resource_type": "Labour" },
     { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
     { "name": "Cement", "quantity": 0.1, "unit": "MT", "resource_type": "Material" },
     { "name": "Sand Crusher", "quantity": 0.28, "unit": "Cum", "resource_type": "Material" },
@@ -1749,9 +1749,9 @@
   "type": "DUDBC",
   "ref_ss": "C2(5-1-B3 & 5-2A)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour (Scaffolding)", "quantity": 0.2, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour (Scaffolding)", "quantity": 0.2, "unit": "md", "resource_type": "Labour" },
     { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
     { "name": "Cement", "quantity": 0.07, "unit": "MT", "resource_type": "Material" },
     { "name": "Sand Crusher", "quantity": 0.3, "unit": "Cum", "resource_type": "Material" },
@@ -1768,9 +1768,9 @@
   "type": "DUDBC",
   "ref_ss": "C2(5-1-B3 & 5-2B)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 0.7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 0.7, "unit": "md", "resource_type": "Labour" },
     { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
     { "name": "Cement", "quantity": 0.07, "unit": "MT", "resource_type": "Material" },
     { "name": "Sand Crusher", "quantity": 0.3, "unit": "Cum", "resource_type": "Material" },
@@ -1787,9 +1787,9 @@
   "type": "DUDBC",
   "ref_ss": "C2(5-1-B3 & 5-2B)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 1.4, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2.2, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 1.4, "unit": "md", "resource_type": "Labour" },
     { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
     { "name": "Cement", "quantity": 0.07, "unit": "MT", "resource_type": "Material" },
     { "name": "Sand Crusher", "quantity": 0.3, "unit": "Cum", "resource_type": "Material" },
@@ -1806,9 +1806,9 @@
   "type": "DUDBC",
   "ref_ss": "C2(5-1-B6 & 5-2A)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 1.7, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour (Scaffolding)", "quantity": 0.2, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 1.7, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour (Scaffolding)", "quantity": 0.2, "unit": "md", "resource_type": "Labour" },
     { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
     { "name": "Mud", "quantity": 0.42, "unit": "Cum", "resource_type": "Material" },
     { "name": "Water", "quantity": 100, "unit": "Ltr", "resource_type": "Material" },
@@ -1824,9 +1824,9 @@
   "type": "DUDBC",
   "ref_ss": "C2(5-1-B6 & 5-2B)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 1.7, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 0.7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 1.7, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 0.7, "unit": "md", "resource_type": "Labour" },
     { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
     { "name": "Mud", "quantity": 0.42, "unit": "Cum", "resource_type": "Material" },
     { "name": "Water", "quantity": 100, "unit": "Ltr", "resource_type": "Material" },
@@ -1842,9 +1842,9 @@
   "type": "DUDBC",
   "ref_ss": "C2(5-1-B6 & 5-2B)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 1.7, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 1.4, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 1.7, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 1.4, "unit": "md", "resource_type": "Labour" },
     { "name": "Brick Chimney", "quantity": 560, "unit": "Nos", "resource_type": "Material" },
     { "name": "Mud", "quantity": 0.42, "unit": "Cum", "resource_type": "Material" },
     { "name": "Water", "quantity": 100, "unit": "Ltr", "resource_type": "Material" },
@@ -1860,8 +1860,8 @@
   "type": "DUDBC",
   "ref_ss": "C6(6-1-1A)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 5, "unit": "md", "resource_type": "Labour" },
     { "name": "Cement", "quantity": 0.194, "unit": "MT", "resource_type": "Material" },
     { "name": "Sand Crusher", "quantity": 0.42, "unit": "Cum", "resource_type": "Material" },
     { "name": "Stone Block", "quantity": 1, "unit": "Cum", "resource_type": "Material" },
@@ -1878,8 +1878,8 @@
   "type": "DUDBC",
   "ref_ss": "C6(6-1-1B)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 5, "unit": "md", "resource_type": "Labour" },
     { "name": "Cement", "quantity": 0.159, "unit": "MT", "resource_type": "Material" },
     { "name": "Sand Crusher", "quantity": 0.45, "unit": "Cum", "resource_type": "Material" },
     { "name": "Stone Block", "quantity": 1, "unit": "Cum", "resource_type": "Material" },
@@ -1896,8 +1896,8 @@
   "type": "DUDBC",
   "ref_ss": "C6(6-1-1C)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1.5, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 5, "unit": "md", "resource_type": "Labour" },
     { "name": "Cement", "quantity": 0.106, "unit": "MT", "resource_type": "Material" },
     { "name": "Sand Crusher", "quantity": 0.47, "unit": "Cum", "resource_type": "Material" },
     { "name": "Stone Block", "quantity": 1, "unit": "Cum", "resource_type": "Material" },
@@ -1914,8 +1914,8 @@
   "type": "DUDBC",
   "ref_ss": "C6(6-2-1)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 2, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2, "unit": "md", "resource_type": "Labour" },
     { "name": "Stone Block", "quantity": 1, "unit": "Cum", "resource_type": "Material" },
     { "name": "Stone Bond", "quantity": 0.1, "unit": "Cum", "resource_type": "Material" }
   ]
@@ -1929,8 +1929,8 @@
   "type": "DUDBC",
   "ref_ss": "C6(6-2-2)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 2.25, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2.25, "unit": "md", "resource_type": "Labour" },
     { "name": "Stone Block", "quantity": 1, "unit": "Cum", "resource_type": "Material" },
     { "name": "Stone Bond", "quantity": 0.1, "unit": "Cum", "resource_type": "Material" },
     { "name": "Mud Soil", "quantity": 0.42, "unit": "Cum", "resource_type": "Material" },
@@ -1946,7 +1946,7 @@
   "type": "DUDBC",
   "ref_ss": "C10(6-5)",
   "resources": [
-    { "name": "Unskilled Labour", "quantity": 1.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 1.5, "unit": "md", "resource_type": "Labour" },
     { "name": "Stone Block", "quantity": 1, "unit": "Cum", "resource_type": "Material" },
     { "name": "Stone Bond", "quantity": 0.2, "unit": "Cum", "resource_type": "Material" }
   ]
@@ -1960,8 +1960,8 @@
   "type": "DUDBC",
   "ref_ss": "C13",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 0.25, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 0.25, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 0.25, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 0.25, "unit": "md", "resource_type": "Labour" },
     { "name": "Hollow Concrete Block 150x200x200 mm", "quantity": 19, "unit": "Nos", "resource_type": "Material" },
     { "name": "Cement", "quantity": 0.014, "unit": "MT", "resource_type": "Material" },
     { "name": "Sand", "quantity": 0.044, "unit": "Cum", "resource_type": "Material" },
@@ -1977,8 +1977,8 @@
   "type": "DUDBC",
   "ref_ss": "D1(7-2B)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 4, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 4, "unit": "md", "resource_type": "Labour" },
     { "name": "Cement", "quantity": 0.17, "unit": "MT", "resource_type": "Material" },
     { "name": "40 mm Aggregate", "quantity": 0.65, "unit": "Cum", "resource_type": "Material" },
     { "name": "20 mm Aggregate", "quantity": 0.24, "unit": "Cum", "resource_type": "Material" },
@@ -1995,8 +1995,8 @@
   "type": "DUDBC",
   "ref_ss": "D1(7-2C)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 4, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 4, "unit": "md", "resource_type": "Labour" },
     { "name": "Cement", "quantity": 0.22, "unit": "MT", "resource_type": "Material" },
     { "name": "40 mm Aggregate", "quantity": 0.65, "unit": "Cum", "resource_type": "Material" },
     { "name": "20 mm Aggregate - River bed", "quantity": 0.24, "unit": "Cum", "resource_type": "Material" },
@@ -2013,8 +2013,8 @@
   "type": "DUDBC",
   "ref_ss": "D1(7-2D)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 4, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 4, "unit": "md", "resource_type": "Labour" },
     { "name": "Cement", "quantity": 0.32, "unit": "MT", "resource_type": "Material" },
     { "name": "40 mm Aggregate ", "quantity": 0.52, "unit": "Cum", "resource_type": "Material" },
     { "name": "20 mm Aggregate ", "quantity": 0.22, "unit": "Cum", "resource_type": "Material" },
@@ -2032,8 +2032,8 @@
   "type": "DUDBC",
   "ref_ss": "D2(7-4A)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 0.8, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 0.8, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 7, "unit": "md", "resource_type": "Labour" },
     { "name": "Cement", "quantity": 0.32, "unit": "MT", "resource_type": "Material" },
     { "name": "40 mm Aggregate ", "quantity": 0.52, "unit": "Cum", "resource_type": "Material" },
     { "name": "20 mm Aggregate ", "quantity": 0.22, "unit": "Cum", "resource_type": "Material" },
@@ -2051,8 +2051,8 @@
   "type": "DUDBC",
   "ref_ss": "D2(7-4B)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 0.8, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 0.8, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 7, "unit": "md", "resource_type": "Labour" },
     { "name": "Cement", "quantity": 0.4, "unit": "MT", "resource_type": "Material" },
     { "name": "20 mm Aggregate ", "quantity": 0.57, "unit": "Cum", "resource_type": "Material" },
     { "name": "10 mm Aggregate ", "quantity": 0.29, "unit": "Cum", "resource_type": "Material" },
@@ -2069,8 +2069,8 @@
   "type": "DUDBC",
   "ref_ss": "D2(7-4C)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 0.8, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 0.8, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 7, "unit": "md", "resource_type": "Labour" },
     { "name": "Cement", "quantity": 0.61, "unit": "MT", "resource_type": "Material" },
     { "name": "20 mm Aggregate ", "quantity": 0.64, "unit": "Cum", "resource_type": "Material" },
     { "name": "10 mm Aggregate ", "quantity": 0.21, "unit": "Cum", "resource_type": "Material" },
@@ -2087,8 +2087,8 @@
   "type": "DUDBC",
   "ref_ss": "D3(A)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 0.5, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 3.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 0.5, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 3.5, "unit": "md", "resource_type": "Labour" },
     { "name": "Cement", "quantity": 0.22, "unit": "MT", "resource_type": "Material" },
     { "name": "40 mm Aggregate ", "quantity": 0.65, "unit": "Cum", "resource_type": "Material" },
     { "name": "20 mm Aggregate ", "quantity": 0.24, "unit": "Cum", "resource_type": "Material" },
@@ -2107,8 +2107,8 @@
   "type": "DUDBC",
   "ref_ss": "D3(B)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 0.5, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 3.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 0.5, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 3.5, "unit": "md", "resource_type": "Labour" },
     { "name": "Cement", "quantity": 0.32, "unit": "MT", "resource_type": "Material" },
     { "name": "40 mm Aggregate ", "quantity": 0.52, "unit": "Cum", "resource_type": "Material" },
     { "name": "20 mm Aggregate ", "quantity": 0.33, "unit": "Cum", "resource_type": "Material" },
@@ -2127,8 +2127,8 @@
   "type": "DUDBC",
   "ref_ss": "D4(A)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 0.5, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 3.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 0.5, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 3.5, "unit": "md", "resource_type": "Labour" },
     { "name": "Cement", "quantity": 0.4, "unit": "MT", "resource_type": "Material" },
     { "name": "20 mm Aggregate ", "quantity": 0.57, "unit": "Cum", "resource_type": "Material" },
     { "name": "10 mm Aggregate ", "quantity": 0.29, "unit": "Cum", "resource_type": "Material" },
@@ -2147,8 +2147,8 @@
   "type": "DUDBC",
   "ref_ss": "D4(B)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 0.5, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 3.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 0.5, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 3.5, "unit": "md", "resource_type": "Labour" },
     { "name": "Cement", "quantity": 0.61, "unit": "MT", "resource_type": "Material" },
     { "name": "20 mm Aggregate ", "quantity": 0.64, "unit": "Cum", "resource_type": "Material" },
     { "name": "10 mm Aggregate ", "quantity": 0.21, "unit": "Cum", "resource_type": "Material" },
@@ -2167,8 +2167,8 @@
   "type": "DUDBC",
   "ref_ss": "D6",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 0.5, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 3.5, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 0.5, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 3.5, "unit": "md", "resource_type": "Labour" },
     { "name": "Design Grade Ready Mix Concrete", "quantity": 1, "unit": "Cum", "resource_type": "Material" },
     { "name": "Vibrator", "quantity": 0.25, "unit": "Hour", "resource_type": "Equipment" }
   ]
@@ -2182,8 +2182,8 @@
   "type": "DUDBC",
   "ref_ss": "D9(7-5)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 12, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 12, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 12, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 12, "unit": "md", "resource_type": "Labour" },
     { "name": "TOR/TMT Reinforcement Bar", "quantity": 1.05, "unit": "MT", "resource_type": "Material" },
     { "name": "Binding Wire", "quantity": 10, "unit": "Kg", "resource_type": "Material" }
   ]
@@ -2197,8 +2197,8 @@
   "type": "DUDBC",
   "ref_ss": "E1(8-3A)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 3.748, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 5.622, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 3.748, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 5.622, "unit": "md", "resource_type": "Labour" },
     { "name": "Local Wood", "quantity": 0.07, "unit": "Cum", "resource_type": "Material" },
     { "name": "Killa", "quantity": 2.5, "unit": "Kg", "resource_type": "Material" }
   ]
@@ -2212,8 +2212,8 @@
   "type": "DUDBC",
   "ref_ss": "E2(51B)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1.574, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 2.361, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1.574, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 2.361, "unit": "md", "resource_type": "Labour" },
     { "name": "Ply Board 19 mm thick", "quantity": 0.693, "unit": "Sqm", "resource_type": "Material" },
     { "name": "Local Wood", "quantity": 0.019, "unit": "Cum", "resource_type": "Material" },
     { "name": "MS Black Pipe (MNB 50-M)", "quantity": 0.54, "unit": "Nos", "resource_type": "Material" },
@@ -2229,8 +2229,8 @@
   "type": "DUDBC",
   "ref_ss": "E3(8-4A)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 4, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 6, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 4, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 6, "unit": "md", "resource_type": "Labour" },
     { "name": "Local Wood", "quantity": 0.07, "unit": "Cum", "resource_type": "Material" },
     { "name": "Killa", "quantity": 2.5, "unit": "Kg", "resource_type": "Material" }
   ]
@@ -2244,8 +2244,8 @@
   "type": "DUDBC",
   "ref_ss": "E4(8-4B)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 2.67, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 4, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 2.67, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 4, "unit": "md", "resource_type": "Labour" },
     { "name": "Local Wood", "quantity": 0.07, "unit": "Cum", "resource_type": "Material" },
     { "name": "Killa", "quantity": 2.5, "unit": "Kg", "resource_type": "Material" }
   ]
@@ -2259,8 +2259,8 @@
   "type": "DUDBC",
   "ref_ss": "E5(51A)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 2.67, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 4, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 2.67, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 4, "unit": "md", "resource_type": "Labour" },
     { "name": "Ply Board 19 mm thick", "quantity": 1.65, "unit": "Sqm", "resource_type": "Material" },
     { "name": "Local Wood", "quantity": 0.04, "unit": "Cum", "resource_type": "Material" },
     { "name": "MS Black Pipe (MNB 50-M)", "quantity": 0.4, "unit": "Nos", "resource_type": "Material" },
@@ -2276,8 +2276,8 @@
   "type": "DUDBC",
   "ref_ss": "E6(8-4A)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 17.2, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 25.7, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 17.2, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 25.7, "unit": "md", "resource_type": "Labour" },
     { "name": "Ply Board 19 mm thick", "quantity": 16.5, "unit": "Sqm", "resource_type": "Material" },
     { "name": "Local Wood", "quantity": 0.232, "unit": "Cum", "resource_type": "Material" },
     { "name": "MS Black Pipe (MNB 50-M)", "quantity": 4.4, "unit": "Nos", "resource_type": "Material" },
@@ -2293,8 +2293,8 @@
   "type": "DUDBC",
   "ref_ss": "E12(8-13A)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 0.25, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 0.25, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 0.25, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 0.25, "unit": "md", "resource_type": "Labour" },
     { "name": "Local Wood", "quantity": 0.105, "unit": "Cum", "resource_type": "Material" },
     { "name": "Local Wood", "quantity": 0.2545, "unit": "Cum", "resource_type": "Material" }
   ]
@@ -2308,8 +2308,8 @@
   "type": "DUDBC",
   "ref_ss": "E12(8-13B)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 0.5, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 0.5, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
     { "name": "Local Wood", "quantity": 0.105, "unit": "Cum", "resource_type": "Material" },
     { "name": "Local Wood", "quantity": 0.2545, "unit": "Cum", "resource_type": "Material" }
   ]
@@ -2323,8 +2323,8 @@
   "type": "DUDBC",
   "ref_ss": "E13(8-13C)",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 1, "unit": "Nos", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 1.75, "unit": "Nos", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 1, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 1.75, "unit": "md", "resource_type": "Labour" },
     { "name": "Local Wood", "quantity": 0.105, "unit": "Cum", "resource_type": "Material" },
     { "name": "Local Wood", "quantity": 0.2545, "unit": "Cum", "resource_type": "Material" }
   ]
@@ -2350,7 +2350,7 @@
   "id": "F2",
   "sNo": "F2",
   "description": "माल सामान उपलब्ध गरी जि.आई. प्लेन सिटको धुरी बनाई जडान गर्ने काम पुरा ।",
-  "unit": "१० र.मि.",
+  "unit": "र.मि.",
   "basis_quantity": 10,
   "type": "DUDBC",
   "ref_ss": "9-2",
@@ -2365,7 +2365,7 @@
     "id": "F3",
     "sNo": "F3",
     "description": "माल सामान उपलब्ध गरी रंगिन सि.जि.आई. सिटको छाना छाउने काम पूरा",
-    "unit": "१० व.मि.",
+    "unit": "व.मि.",
     "basis_quantity": 10,
     "type": "DUDBC",
     "ref_ss": "९-१",
@@ -2382,7 +2382,7 @@
     "id": "F4",
     "sNo": "F4",
     "description": "माल सामान उपलब्ध गरी रंगिन जि.आई. प्लेन सिटको धुरी बनाई जडान गर्ने काम पूरा ।",
-    "unit": "१० र.मि.",
+    "unit": "र.मि.",
     "basis_quantity": 10,
     "type": "DUDBC",
     "ref_ss": "९-२",
@@ -2397,7 +2397,7 @@
     "id": "F5",
     "sNo": "F5",
     "description": "माल सामान उपलब्ध गरी प्लेन.जि.आई. सिटको छाना छाउने काम पूरा",
-    "unit": "१० व.मि.",
+    "unit": "व.मि.",
     "basis_quantity": 10,
     "type": "DUDBC",
     "ref_ss": "९-१",
@@ -2414,7 +2414,7 @@
     "id": "F6",
     "sNo": "F6",
     "description": "माल सामान उपलब्ध गरी रंगिन प्लेन.जि.आई. सिटको छाना छाउने काम पूरा",
-    "unit": "१० व.मि.",
+    "unit": "व.मि.",
     "basis_quantity": 10,
     "type": "DUDBC",
     "ref_ss": "९-१",
@@ -2431,7 +2431,7 @@
     "id": "F7",
     "sNo": "F7",
     "description": "१५० मि.मि. चौडा ४५० मि.मि. सम्मको जी.आई.प्लेन सिटको गटर बनाई वर्षातको पानीको पाइपमा जोड्ने, ४०x३ मि.मि. को फलामे ब्राकेट, नटबोल्ट, वाशर लगाउने समेत काम पूरा",
-    "unit": "१० मि",
+    "unit": "मि",
     "basis_quantity": 10,
     "type": "DUDBC",
     "ref_ss": "९-१",
@@ -2448,7 +2448,7 @@
     "id": "F8",
     "sNo": "F8",
     "description": "१५० मि.मि. चौडा ४५० मि.मि. सम्मको रंगिन जी.आई.प्लेन सिटको गटर बनाई वर्षातको पानीको पाइपमा जोड्ने ४०x३ मि.मि. को फलामे ब्राकेट, नटबोल्ट, वाशर लगाउने समेत काम पूरा",
-    "unit": "१० मि",
+    "unit": "मि",
     "basis_quantity": 10,
     "type": "DUDBC",
     "ref_ss": "९-१",
@@ -2466,7 +2466,7 @@
     "id": "F9",
     "sNo": "F9",
     "description": "मालसामान उपलब्ध गरी स्लेट छाना छाउने काम ।",
-    "unit": "१० व.मि.",
+    "unit": "व.मि.",
     "basis_quantity": 10,
     "type": "DUDBC",
     "ref_ss": "९-५",
@@ -2481,7 +2481,7 @@
     "id": "F10",
     "sNo": "F10",
     "description": "मालसामान उपलब्ध गरी क्ले टायलको छाना छाउने काम ।",
-    "unit": "१० व.मि.",
+    "unit": "व.मि.",
     "basis_quantity": 10,
     "type": "DUDBC",
     "ref_ss": "९-६",
@@ -2495,7 +2495,7 @@
     "id": "F11",
     "sNo": "F11",
     "description": "मालसामान उपलब्ध गरी क्ले टायलको धुरी लगाउने काम ।",
-    "unit": "१० र.मि.",
+    "unit": "र.मि.",
     "basis_quantity": 10,
     "type": "DUDBC",
     "ref_ss": "९-७",
@@ -2509,7 +2509,7 @@
     "id": "F12",
     "sNo": "F12",
     "description": "मालसामान उपलब्ध गरी १० से.मि. मोटाईको लाईम कक्रिट टेरेस्ड छानाको काम (१:१:३)",
-    "unit": "१० व.मि.",
+    "unit": "व.मि.",
     "basis_quantity": 10,
     "type": "DUDBC",
     "ref_ss": "९-८",
@@ -2525,7 +2525,7 @@
     "id": "F13-a",
     "sNo": "F13",
     "description": "मालसामान उपलब्ध गरी बाँसको फ्रेम बनाई खरको छाना छाउने काम पुरा । ८ से.मि. मोटाईको",
-    "unit": "१० व.मि.",
+    "unit": "व.मि.",
     "basis_quantity": 10,
     "type": "DUDBC",
     "ref_ss": "९-९",
@@ -2542,7 +2542,7 @@
     "id": "F13-b",
     "sNo": "F13",
     "description": "मालसामान उपलब्ध गरी बाँसको फ्रेम बनाई खरको छाना छाउने काम पुरा । १५ से.मि. मोटाईको",
-    "unit": "१० व.मि.",
+    "unit": "व.मि.",
     "basis_quantity": 10,
     "type": "DUDBC",
     "ref_ss": "९-९",
@@ -2559,7 +2559,7 @@
     "id": "F14",
     "sNo": "F14",
     "description": "मालसामान उपलब्ध गरी कोरुगेटेड फाइबर ग्लास पाताको छाना छाउने काम पुरा",
-    "unit": "१० व.मि.",
+    "unit": "व.मि.",
     "basis_quantity": 10,
     "type": "DUDBC",
     "ref_ss": "९-१०",
@@ -2576,7 +2576,7 @@
     "id": "F15",
     "sNo": "F15",
     "description": "मालसामान उपलब्ध गरी फाइबर ग्लास प्लेन सिटको धुरी बनाई जडान गर्ने काम पुरा ।",
-    "unit": "१० मि",
+    "unit": "मि",
     "basis_quantity": 10,
     "type": "DUDBC",
     "ref_ss": "९-११",
@@ -2591,7 +2591,7 @@
     "id": "F16",
     "sNo": "F16",
     "description": "माल सामान उपलब्ध गरी रंगिन सि.जि.आई. सिटको छाना छाउने काम पूरा",
-    "unit": "१० व.मि.",
+    "unit": "व.मि.",
     "basis_quantity": 10,
     "type": "DUDBC",
     "ref_ss": "९-१",
@@ -2608,7 +2608,7 @@
     "id": "F17",
     "sNo": "F17",
     "description": "माल सामान उपलब्ध गरी रंगिन जि.आई. प्लेन सिटको धुरी बनाई जडान गर्ने काम पूरा ।",
-    "unit": "१० मि",
+    "unit": "मि",
     "basis_quantity": 10,
     "type": "DUDBC",
     "ref_ss": "९-२",
@@ -2623,7 +2623,7 @@
     "id": "F18",
     "sNo": "F18",
     "description": "माल सामान उपलब्ध गरी सिमेन्ट बालुवा (१:४) स्क्रीडमा रंगिन सिमेन्ट कक्रिट टायल जडान गर्ने काम पूरा ।",
-    "unit": "१० मि",
+    "unit": "मि",
     "basis_quantity": 10,
     "type": "DUDBC",
     "ref_ss": null,
@@ -2654,7 +2654,7 @@
     "id": "F20",
     "sNo": "F20",
     "description": "२५ मि.मि. अग्राख काठको ईभ्सबोर्ड (मुठल) बनाई जोड्ने ।",
-    "unit": "१० व.मि.",
+    "unit": "व.मि.",
     "basis_quantity": 10,
     "type": "DUDBC",
     "ref_ss": "१०-१९",
@@ -2686,7 +2686,7 @@
     "id": "F22",
     "sNo": "F22",
     "description": "छानामा २ मि.मि. बाक्लो यू.पि.भि.सि. पाता लगाउने काम क्लिप तथा पेच आदि समेत पूरा",
-    "unit": "१० व.मि.",
+    "unit": "व.मि.",
     "basis_quantity": 10,
     "type": "DUDBC",
     "ref_ss": null,
@@ -2702,7 +2702,7 @@
     "id": "F23",
     "sNo": "F23",
     "description": "छानामा ३ मि.मि. बाक्लो यू.पि.भि.सि. पाता लगाउने काम क्लिप तथा पेच आदि समेत पूरा",
-    "unit": "१० व.मि.",
+    "unit": "व.मि.",
     "basis_quantity": 10,
     "type": "DUDBC",
     "ref_ss": null,
@@ -4168,8 +4168,8 @@
   "type": "DOR",
   "ref_ss": "2421",
   "resources": [
-    { "name": "Skilled Labour", "quantity": 3, "unit": "day", "resource_type": "Labour" },
-    { "name": "Unskilled Labour", "quantity": 30, "unit": "day", "resource_type": "Labour" },
+    { "name": "Skilled Labour", "quantity": 3, "unit": "md", "resource_type": "Labour" },
+    { "name": "Unskilled Labour", "quantity": 30, "unit": "md", "resource_type": "Labour" },
     { "name": "Cement", "quantity": 1.7, "unit": "tonne", "resource_type": "Material" },
     { "name": "20-40 mm Aggregate", "quantity": 3.45, "unit": "cum", "resource_type": "Material" },
     { "name": "10-20 mm Aggregate", "quantity": 1.56, "unit": "cum", "resource_type": "Material" },

@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Skilled Labour",
+    "unit": "md",
+    "rate": 500,
+    "resource_type": "Labour",
+    "apply_vat": false
+  },
+  {
+    "id": 2,
+    "name": "Unskilled Labour",
+    "unit": "md",
+    "rate": 300,
+    "resource_type": "Labour",
+    "apply_vat": false
+  },
+  {
+    "id": 3,
+    "name": "Semi-skilled Labour",
+    "unit": "md",
+    "rate": 400,
+    "resource_type": "Labour",
+    "apply_vat": false
+  },
+  {
+    "id": 4,
+    "name": "Cement",
+    "unit": "bag",
+    "rate": 350,
+    "resource_type": "Material",
+    "apply_vat": true
+  },
+  {
+    "id": 5,
+    "name": "Sand",
+    "unit": "cum",
+    "rate": 600,
+    "resource_type": "Material",
+    "apply_vat": true
+  },
+  {
+    "id": 6,
+    "name": "Bricks",
+    "unit": "no",
+    "rate": 8,
+    "resource_type": "Material",
+    "apply_vat": true
+  },
+  {
+    "id": 7,
+    "name": "Steel",
+    "unit": "kg",
+    "rate": 50,
+    "resource_type": "Material",
+    "apply_vat": true
+  },
+  {
+    "id": 8,
+    "name": "Excavator",
+    "unit": "hr",
+    "rate": 2000,
+    "resource_type": "Equipment",
+    "apply_vat": false
+  },
+  {
+    "id": 9,
+    "name": "Mixer Machine",
+    "unit": "hr",
+    "rate": 800,
+    "resource_type": "Equipment",
+    "apply_vat": false
+  },
+  {
+    "id": 10,
+    "name": "JCB",
+    "unit": "hr",
+    "rate": 1500,
+    "resource_type": "Equipment",
+    "apply_vat": false
+  }
+]

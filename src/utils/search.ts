@@ -1,46 +1,70 @@
-import { Norm } from '../types';
+import { Norm, Rate } from '../types';
+import normsData from '../data/norms.json';
 
-// Intelligent search function for norms
-export const searchNorm = (norm: Norm, searchTerm: string): boolean => {
-  const lowerSearch = searchTerm.toLowerCase().trim();
+const STORAGE_KEY = 'resourcecalc_norms';
+const VERSION_KEY = 'resourcecalc_version';
+const CURRENT_VERSION = '1.1.0';
+const PROJECTS_KEY = 'resourcecalc_projects';
+const RATES_KEY = 'resourcecalc_rates';
+
+export function getNorms(): Norm[] {
+  const storedVersion = localStorage.getItem(VERSION_KEY);
+  const stored = localStorage.getItem(STORAGE_KEY);
   
-  // Exact text match in description, ref_ss, or sNo
-  if (norm.description.toLowerCase().includes(lowerSearch) || 
-      norm.ref_ss?.toLowerCase().includes(lowerSearch) ||
-      norm.sNo?.toLowerCase().includes(lowerSearch)) {
-    return true;
+  if (!stored || storedVersion !== CURRENT_VERSION) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(normsData));
+    localStorage.setItem(VERSION_KEY, CURRENT_VERSION);
+    return normsData as Norm[];
   }
+  
+  return JSON.parse(stored);
+}
 
-  // Extract numeric prefix from search term
-  const numericMatch = lowerSearch.match(/^(\d+)/);
-  if (numericMatch) {
-    const searchNum = numericMatch[1];
-    
-    // Check ref_ss for matching numeric prefix or range
-    if (norm.ref_ss) {
-      const refNums = norm.ref_ss.split(',').map(s => s.trim());
-      for (const ref of refNums) {
-        const refNumMatch = ref.match(/^(\d+)/);
-        if (refNumMatch) {
-          const refNum = parseInt(refNumMatch[1]);
-          const searchNumInt = parseInt(searchNum);
-          // Match if ref_ss starts with search number or is within 10 of it
-          if (ref.startsWith(searchNum) || 
-              (Math.abs(refNum - searchNumInt) <= 10 && refNum >= searchNumInt)) {
-            return true;
-          }
-        }
-      }
-    }
-    
-    // Check sNo for matching numeric prefix
-    if (norm.sNo) {
-      const sNoNumMatch = norm.sNo.match(/^(\d+)/);
-      if (sNoNumMatch && norm.sNo.startsWith(searchNum)) {
-        return true;
-      }
-    }
+export function resetToDefaultNorms(): void {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(normsData));
+  localStorage.setItem(VERSION_KEY, CURRENT_VERSION);
+}
+
+// Get all rates (for future use - returns empty array for now)
+export function getRates(): Rate[] {
+  const stored = localStorage.getItem(RATES_KEY);
+  if (stored) {
+    return JSON.parse(stored);
   }
+  return [];
+}
 
-  return false;
-};
+// Save rates (for future use)
+export function saveRates(rates: Rate[]): void {
+  localStorage.setItem(RATES_KEY, JSON.stringify(rates));
+}
+
+// Get all projects
+export function getProjects(): any[] {
+  const stored = localStorage.getItem(PROJECTS_KEY);
+  if (stored) {
+    return JSON.parse(stored);
+  }
+  return [];
+}
+
+// Save a single project
+export function saveProject(project: any): void {
+  const projects = getProjects();
+  const index = projects.findIndex((p: any) => p.id === project.id);
+  
+  if (index >= 0) {
+    projects[index] = project;
+  } else {
+    projects.push(project);
+  }
+  
+  localStorage.setItem(PROJECTS_KEY, JSON.stringify(projects));
+}
+
+// Delete a project
+export function deleteProject(projectId: number): void {
+  const projects = getProjects();
+  const filtered = projects.filter((p: any) => p.id !== projectId);
+  localStorage.setItem(PROJECTS_KEY, JSON.stringify(filtered));
+}
