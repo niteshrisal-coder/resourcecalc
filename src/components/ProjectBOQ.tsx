@@ -1964,43 +1964,29 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
                       })}
                     </tbody>
                     <tfoot>
-                      <tr className="bg-[#F5F5F0] border-t border-black/10 font-bold">
-                        <td colSpan={3} className="px-3 py-2 text-sm uppercase tracking-widest text-right">Total</td>
-                        <td colSpan={2}></td>
-                        <td className="px-3 py-2 text-sm text-right">
-                          {tabulationData.reduce((sum: number, i: TabulationRow) => sum + i.measurementAmount, 0).toFixed(2)}
-                        </td>
-                        <td className="px-3 py-2 text-sm text-right">
-                          {tabulationData.reduce((sum: number, i: TabulationRow) => sum + i.measurementVat, 0).toFixed(2)}
-                        </td>
-                        <td colSpan={2}></td>
-                        <td className="px-3 py-2 text-sm text-right">
-                          {tabulationData.reduce((sum: number, i: TabulationRow) => sum + i.billAmount, 0).toFixed(2)}
-                        </td>
-                        <td className="px-3 py-2 text-sm text-right">
-                          {tabulationData.reduce((sum: number, i: TabulationRow) => sum + i.billVat, 0).toFixed(2)}
-                        </td>
-                        <td className="px-3 py-2 text-sm text-right">
-                          {tabulationData.reduce((sum: number, i: TabulationRow) => sum + i.actualAmount, 0).toFixed(2)}
-                        </td>
-                        <td className="px-3 py-2 text-sm text-right">
-                          {tabulationData.reduce((sum: number, i: TabulationRow) => sum + i.actualVat, 0).toFixed(2)}
-                        </td>
-                        <td></td>
-                      </tr>
-                      <tr className="bg-[#1E293B] text-white font-bold">
-                        <td colSpan={11} className="px-3 py-2 text-sm uppercase tracking-widest text-right">Grand Total</td>
-                        <td className="px-3 py-2 text-sm text-right">
-                          {tabulationData.reduce((sum: number, i: TabulationRow) => sum + i.actualAmount, 0).toFixed(2)}
-                        </td>
-                        <td className="px-3 py-2 text-sm text-right">
-                          {tabulationData.reduce((sum: number, i: TabulationRow) => sum + i.actualVat, 0).toFixed(2)}
-                        </td>
-                        <td className="px-3 py-2 text-sm text-right">
-                          {(tabulationData.reduce((sum: number, i: TabulationRow) => sum + i.actualAmount, 0) + tabulationData.reduce((sum: number, i: TabulationRow) => sum + i.actualVat, 0)).toFixed(2)}
-                        </td>
-                        <td></td>
-                      </tr>
+                      {(() => {
+                        const measurementAmount = tabulationData.reduce((sum: number, i: TabulationRow) => sum + i.measurementAmount, 0);
+                        const measurementVat = tabulationData.reduce((sum: number, i: TabulationRow) => sum + i.measurementVat, 0);
+                        const billAmount = tabulationData.reduce((sum: number, i: TabulationRow) => sum + i.billAmount, 0);
+                        const billVat = tabulationData.reduce((sum: number, i: TabulationRow) => sum + i.billVat, 0);
+                        const actualAmount = tabulationData.reduce((sum: number, i: TabulationRow) => sum + i.actualAmount, 0);
+                        const actualVat = tabulationData.reduce((sum: number, i: TabulationRow) => sum + i.actualVat, 0);
+
+                        return (
+                          <tr className="bg-[#1E293B] text-white font-bold">
+                            <td colSpan={3} className="px-3 py-2 text-sm uppercase tracking-widest text-right">Grand Total</td>
+                            <td colSpan={2}></td>
+                            <td className="px-3 py-2 text-sm text-right">{measurementAmount.toFixed(2)}</td>
+                            <td className="px-3 py-2 text-sm text-right">{measurementVat.toFixed(2)}</td>
+                            <td colSpan={2}></td>
+                            <td className="px-3 py-2 text-sm text-right">{billAmount.toFixed(2)}</td>
+                            <td className="px-3 py-2 text-sm text-right">{billVat.toFixed(2)}</td>
+                            <td className="px-3 py-2 text-sm text-right">{actualAmount.toFixed(2)}</td>
+                            <td className="px-3 py-2 text-sm text-right">{actualVat.toFixed(2)}</td>
+                            <td className="px-3 py-2 text-sm text-right">{(measurementAmount + measurementVat).toFixed(2)}</td>
+                          </tr>
+                        );
+                      })()}
                     </tfoot>
                   </table>
                 </div>
