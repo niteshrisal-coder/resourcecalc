@@ -7,7 +7,11 @@ import RateAnalysis from './components/RateAnalysis';
 import Projects from './components/Projects';
 import ProjectBOQ from './components/ProjectBOQ';
 import Dashboard from './components/Dashboard';
-import { Calculator, Library, Info, ClipboardList, DollarSign, TrendingUp, FolderKanban, Menu, X, Home } from 'lucide-react';
+import {
+  Calculator, Library, ClipboardList, DollarSign,
+  TrendingUp, FolderKanban, Menu, X, Home, Info,
+  ChevronRight, Zap
+} from 'lucide-react';
 import { Norm } from './types';
 import { getNorms } from './utils/storage';
 import { useDeviceType } from './utils/device';
@@ -16,7 +20,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<'dashboard' | 'calc' | 'norms' | 'boq' | 'rates' | 'analysis' | 'projects' | 'about'>('dashboard');
   const [norms, setNorms] = useState<Norm[]>([]);
   const [loading, setLoading] = useState(true);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
   const [selectedProjectId, setSelectedProjectId] = useState<number | null>(null);
   const { isMobile } = useDeviceType();
 
@@ -28,37 +32,37 @@ export default function App() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#F8FAFC] flex items-center justify-center">
-        <p className="text-[#64748B]">Loading...</p>
+      <div className="min-h-screen bg-[#0D1117] flex items-center justify-center">
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center animate-pulse">
+            <Zap size={20} className="text-white" />
+          </div>
+          <p className="text-slate-400 text-sm font-medium">Loading ResourceCalc…</p>
+        </div>
       </div>
     );
   }
 
-  // Navigation items
   const navItems = [
-    { id: 'dashboard' as const, label: 'Dashboard', icon: Home },
-    { id: 'calc' as const, label: 'Calculator', icon: Calculator },
-    { id: 'norms' as const, label: 'Norms', icon: Library },
-    { id: 'rates' as const, label: 'Rates', icon: DollarSign },
-    { id: 'analysis' as const, label: 'Analysis', icon: TrendingUp },
-    { id: 'boq' as const, label: 'Quick BOQ', icon: ClipboardList },
-    { id: 'projects' as const, label: 'Projects', icon: FolderKanban },
-    { id: 'about' as const, label: 'About', icon: Info },
+    { id: 'dashboard' as const, label: 'Dashboard', icon: Home, color: 'text-indigo-400' },
+    { id: 'calc' as const, label: 'Calculator', icon: Calculator, color: 'text-sky-400' },
+    { id: 'norms' as const, label: 'Norms Library', icon: Library, color: 'text-violet-400' },
+    { id: 'rates' as const, label: 'Rates', icon: DollarSign, color: 'text-emerald-400' },
+    { id: 'analysis' as const, label: 'Rate Analysis', icon: TrendingUp, color: 'text-amber-400' },
+    { id: 'boq' as const, label: 'Quick BOQ', icon: ClipboardList, color: 'text-rose-400' },
+    { id: 'projects' as const, label: 'Projects', icon: FolderKanban, color: 'text-cyan-400' },
+    { id: 'about' as const, label: 'About', icon: Info, color: 'text-slate-400' },
   ];
 
-  // Mobile layout with hamburger menu
+  // ── Mobile layout ──────────────────────────────────────────────────────────
   if (isMobile) {
-    // Show ProjectBOQ if a project is selected
     if (selectedProjectId !== null) {
       return (
-        <div className="min-h-screen bg-[#F8FAFC]">
-          <div className="p-6">
-            <ProjectBOQ 
-              projectId={selectedProjectId} 
-              onBack={() => {
-                setSelectedProjectId(null);
-                setActiveTab('projects');
-              }}
+        <div className="min-h-screen bg-[#F1F5F9]">
+          <div className="p-4">
+            <ProjectBOQ
+              projectId={selectedProjectId}
+              onBack={() => { setSelectedProjectId(null); setActiveTab('projects'); }}
             />
           </div>
         </div>
@@ -66,56 +70,74 @@ export default function App() {
     }
 
     return (
-      <div className="min-h-screen bg-[#F8FAFC]">
-        {/* Mobile Header with Hamburger */}
-        <header className="bg-white border-b border-[#E2E8F0] px-4 py-3 flex items-center justify-between shadow-sm">
+      <div className="min-h-screen bg-[#F1F5F9]">
+        {/* Mobile Header */}
+        <header className="bg-[#0D1117] px-4 py-3 flex items-center justify-between shadow-lg">
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="p-2 rounded-lg hover:bg-[#F1F5F9] transition-colors"
+            className="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/10 transition-all"
           >
-            {sidebarOpen ? <X size={24} /> : <Menu size={24} />}
+            {sidebarOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
-          <h1 className="text-lg font-bold italic tracking-tighter text-[#1E293B]">ResourceCalc</h1>
-          <div className="w-10"></div> {/* Spacer for centering */}
+          <div className="flex items-center gap-2.5">
+            <div className="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center">
+              <Zap size={14} className="text-white" />
+            </div>
+            <span className="text-white font-bold tracking-tight text-lg">ResourceCalc</span>
+          </div>
+          <div className="w-10" />
         </header>
 
-        {/* Mobile Navigation Drawer */}
+        {/* Mobile Drawer */}
         {sidebarOpen && (
           <div className="fixed inset-0 z-50 flex">
-            <div className="fixed inset-0 bg-black bg-opacity-50" onClick={() => setSidebarOpen(false)}></div>
-            <div className="relative w-64 bg-white shadow-xl flex flex-col">
-              <div className="p-6 border-b border-[#E2E8F0]">
-                <h2 className="text-xl font-bold italic tracking-tighter text-[#1E293B]">ResourceCalc</h2>
-                <p className="text-xs text-[#94A3B8] mt-1">Engineering Calculator</p>
+            <div className="fixed inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setSidebarOpen(false)} />
+            <div className="relative w-72 bg-[#0D1117] shadow-2xl flex flex-col">
+              <div className="p-6 border-b border-white/8">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-900/50">
+                    <Zap size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <h2 className="text-white font-bold text-lg tracking-tight">ResourceCalc</h2>
+                    <p className="text-slate-500 text-[11px]">Engineering Calculator</p>
+                  </div>
+                </div>
               </div>
-              
-              <nav className="flex-1 p-4 space-y-2">
-                {navItems.map(item => (
-                  <button
-                    key={item.id}
-                    onClick={() => {
-                      setActiveTab(item.id);
-                      setSidebarOpen(false);
-                      if (item.id !== 'projects') {
-                        setSelectedProjectId(null);
-                      }
-                    }}
-                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
-                      activeTab === item.id && selectedProjectId === null
-                        ? 'bg-[#3B82F6] text-white shadow-sm'
-                        : 'text-[#475569] hover:bg-[#F1F5F9]'
-                    }`}
-                  >
-                    <item.icon size={20} />
-                    <span className="font-medium">{item.label}</span>
-                  </button>
-                ))}
+
+              <nav className="flex-1 p-3 space-y-0.5 overflow-y-auto">
+                {navItems.map(item => {
+                  const isActive = activeTab === item.id && selectedProjectId === null;
+                  return (
+                    <button
+                      key={item.id}
+                      onClick={() => {
+                        setActiveTab(item.id);
+                        setSidebarOpen(false);
+                        if (item.id !== 'projects') setSelectedProjectId(null);
+                      }}
+                      className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all text-sm font-medium ${
+                        isActive
+                          ? 'bg-indigo-600/20 text-indigo-300 border-l-2 border-indigo-500'
+                          : 'text-slate-400 hover:bg-white/6 hover:text-slate-200'
+                      }`}
+                    >
+                      <item.icon size={17} className={isActive ? 'text-indigo-400' : item.color} />
+                      <span>{item.label}</span>
+                      {isActive && <ChevronRight size={14} className="ml-auto text-indigo-500" />}
+                    </button>
+                  );
+                })}
               </nav>
+
+              <div className="p-4 border-t border-white/8">
+                <p className="text-slate-600 text-xs">v1.0.0 · Professional engineering tool</p>
+              </div>
             </div>
           </div>
         )}
 
-        {/* Mobile Main Content */}
+        {/* Mobile Content */}
         <main className="p-4">
           {activeTab === 'dashboard' && <Dashboard onNavigate={setActiveTab} />}
           {activeTab === 'calc' && <QuickCalculator norms={norms} />}
@@ -124,101 +146,117 @@ export default function App() {
           {activeTab === 'boq' && <BOQ norms={norms} />}
           {activeTab === 'rates' && <Rates />}
           {activeTab === 'analysis' && <RateAnalysis />}
-          {activeTab === 'about' && (
-            <div className="p-4 space-y-6">
-              <h1 className="text-3xl font-bold italic tracking-tighter text-[#1E293B]">About ResourceCalc</h1>
-              <div className="bg-white p-6 rounded-2xl border border-[#E2E8F0] shadow-sm space-y-4">
-                <p className="text-sm text-[#475569] leading-relaxed">
-                  ResourceCalc is a professional tool for civil engineers to quickly estimate resource requirements based on standard norms (DOR & DUDBC).
-                </p>
-                <div className="space-y-2">
-                  <h3 className="text-xs font-bold uppercase tracking-widest text-[#1E293B]">Features</h3>
-                  <ul className="text-sm space-y-1 text-[#475569]">
-                    <li>• Instant resource breakdown</li>
-                    <li>• DOR & DUDBC Norms Library</li>
-                    <li>• BOQ Calculator with resource summary</li>
-                    <li>• Resource Rate Management</li>
-                    <li>• Dynamic Rate Analysis</li>
-                    <li>• Works completely offline</li>
-                    <li>• Professional engineering tool</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          )}
+          {activeTab === 'about' && <AboutPage />}
         </main>
       </div>
     );
   }
 
-  // Web layout with collapsible sidebar
+  // ── Desktop layout ─────────────────────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-[#F8FAFC] flex">
-      {/* Sidebar Navigation - Web */}
-      <aside className={`bg-white border-r border-[#E2E8F0] shadow-sm flex flex-col transition-all duration-300 ${
-        sidebarOpen ? 'w-64' : 'w-16'
-      }`}>
-        <div className={`p-6 border-b border-[#E2E8F0] ${sidebarOpen ? '' : 'px-4'}`}>
-          {sidebarOpen ? (
-            <>
-              <div className="flex items-center justify-between mb-4">
-                <h1 className="text-2xl font-bold italic tracking-tighter text-[#1E293B]">ResourceCalc</h1>
-                <button
-                  onClick={() => setSidebarOpen(false)}
-                  className="p-1 rounded-lg hover:bg-[#F1F5F9] transition-colors"
-                >
-                  <X size={20} />
-                </button>
-              </div>
-              <p className="text-xs text-[#94A3B8]">Engineering Calculator</p>
-            </>
-          ) : (
+    <div className="min-h-screen bg-[#F1F5F9] flex">
+      {/* Sidebar */}
+      <aside
+        className={`flex-shrink-0 bg-[#0D1117] border-r border-white/6 flex flex-col transition-all duration-300 ease-in-out ${
+          sidebarOpen ? 'w-64' : 'w-[68px]'
+        }`}
+        style={{ minHeight: '100vh' }}
+      >
+        {/* Logo area */}
+        <div className={`flex items-center border-b border-white/6 ${sidebarOpen ? 'gap-3 px-5 py-5' : 'justify-center px-3 py-5'}`}>
+          <div className="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-900/40 flex-shrink-0">
+            <Zap size={17} className="text-white" />
+          </div>
+          {sidebarOpen && (
+            <div className="flex-1 min-w-0">
+              <h1 className="text-white font-bold text-base tracking-tight leading-tight">ResourceCalc</h1>
+              <p className="text-slate-600 text-[10px] mt-0.5 tracking-wide uppercase font-medium">Engineering Suite</p>
+            </div>
+          )}
+          {sidebarOpen && (
             <button
-              onClick={() => setSidebarOpen(true)}
-              className="p-2 rounded-lg hover:bg-[#F1F5F9] transition-colors"
+              onClick={() => setSidebarOpen(false)}
+              className="p-1.5 rounded-lg text-slate-600 hover:text-slate-300 hover:bg-white/8 transition-all flex-shrink-0"
             >
-              <Menu size={20} />
+              <X size={15} />
             </button>
           )}
         </div>
-        
-        <nav className="flex-1 p-4 space-y-2">
-          {navItems.map(item => (
-            <button
-              key={item.id}
-              onClick={() => {
-                setActiveTab(item.id);
-                if (item.id !== 'projects') {
-                  setSelectedProjectId(null);
-                }
-              }}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
-                (activeTab === item.id && selectedProjectId === null)
-                  ? 'bg-[#3B82F6] text-white shadow-sm'
-                  : 'text-[#475569] hover:bg-[#F1F5F9]'
-              } ${sidebarOpen ? '' : 'justify-center px-2'}`}
-              title={!sidebarOpen ? item.label : undefined}
-            >
-              <item.icon size={20} />
-              {sidebarOpen && <span className="font-medium">{item.label}</span>}
-            </button>
-          ))}
+
+        {/* Toggle when collapsed */}
+        {!sidebarOpen && (
+          <button
+            onClick={() => setSidebarOpen(true)}
+            className="mx-auto mt-3 p-2 rounded-lg text-slate-600 hover:text-slate-300 hover:bg-white/8 transition-all"
+            title="Expand sidebar"
+          >
+            <Menu size={17} />
+          </button>
+        )}
+
+        {/* Nav */}
+        <nav className={`flex-1 py-3 space-y-0.5 overflow-y-auto ${sidebarOpen ? 'px-3' : 'px-2'}`}>
+          {sidebarOpen && (
+            <p className="text-slate-600 text-[9px] uppercase tracking-widest font-bold px-3 pb-2 pt-1">Navigation</p>
+          )}
+          {navItems.map(item => {
+            const isActive = activeTab === item.id && selectedProjectId === null;
+            return (
+              <button
+                key={item.id}
+                onClick={() => {
+                  setActiveTab(item.id);
+                  if (item.id !== 'projects') setSelectedProjectId(null);
+                }}
+                title={!sidebarOpen ? item.label : undefined}
+                className={`w-full flex items-center transition-all duration-150 rounded-xl text-sm font-medium group relative ${
+                  sidebarOpen ? 'gap-3 px-3 py-2.5' : 'justify-center p-2.5'
+                } ${
+                  isActive
+                    ? 'bg-indigo-600/15 text-indigo-300 border border-indigo-500/25'
+                    : 'text-slate-500 hover:bg-white/6 hover:text-slate-200 border border-transparent'
+                }`}
+              >
+                {isActive && (
+                  <span className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-5 bg-indigo-500 rounded-r-full" />
+                )}
+                <item.icon
+                  size={17}
+                  className={`flex-shrink-0 ${isActive ? 'text-indigo-400' : item.color + ' opacity-70 group-hover:opacity-100'}`}
+                />
+                {sidebarOpen && (
+                  <>
+                    <span className="flex-1 text-left">{item.label}</span>
+                    {isActive && <ChevronRight size={13} className="text-indigo-500/70" />}
+                  </>
+                )}
+              </button>
+            );
+          })}
         </nav>
 
+        {/* Footer */}
         {sidebarOpen && (
-          <div className="p-4 border-t border-[#E2E8F0] text-xs text-[#94A3B8]">
-            <p>v1.0.0</p>
-            <p className="mt-1">Professional engineering tool</p>
+          <div className="px-4 py-4 border-t border-white/6">
+            <div className="flex items-center gap-2">
+              <div className="w-6 h-6 rounded-md bg-white/8 flex items-center justify-center">
+                <Zap size={11} className="text-indigo-400" />
+              </div>
+              <div>
+                <p className="text-slate-500 text-[10px] font-semibold">v1.0.0</p>
+                <p className="text-slate-700 text-[9px]">Professional engineering tool</p>
+              </div>
+            </div>
           </div>
         )}
       </aside>
 
-      {/* Main Content - Web */}
-      <main className="flex-1 overflow-auto bg-gradient-to-br from-[#F8FAFC] via-[#F1F5F9] to-[#F8FAFC]">
+      {/* Main Content */}
+      <main className="flex-1 overflow-auto">
         <div className="w-full h-full p-8">
           {selectedProjectId !== null ? (
-            <ProjectBOQ 
-              projectId={selectedProjectId} 
+            <ProjectBOQ
+              projectId={selectedProjectId}
               onBack={() => setSelectedProjectId(null)}
             />
           ) : (
@@ -230,34 +268,62 @@ export default function App() {
               {activeTab === 'boq' && <BOQ norms={norms} />}
               {activeTab === 'rates' && <Rates />}
               {activeTab === 'analysis' && <RateAnalysis />}
-              {activeTab === 'about' && (
-                <div className="p-8 space-y-6">
-                  <h1 className="text-4xl font-bold italic tracking-tighter text-[#1E293B]">About ResourceCalc</h1>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="bg-white p-6 rounded-2xl border border-[#E2E8F0] shadow-sm space-y-4">
-                      <p className="text-base text-[#475569] leading-relaxed">
-                        ResourceCalc is a professional tool for civil engineers to quickly estimate resource requirements based on standard norms (DOR & DUDBC).
-                      </p>
-                      <div className="space-y-2">
-                        <h3 className="text-sm font-bold uppercase tracking-widest text-[#1E293B]">Features</h3>
-                        <ul className="text-sm space-y-1 text-[#475569]">
-                          <li>• Instant resource breakdown</li>
-                          <li>• DOR & DUDBC Norms Library</li>
-                          <li>• BOQ Calculator with resource summary</li>
-                          <li>• Resource Rate Management</li>
-                          <li>• Dynamic Rate Analysis</li>
-                          <li>• Works completely offline</li>
-                          <li>• Professional engineering tool</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
+              {activeTab === 'about' && <AboutPage />}
             </>
           )}
         </div>
       </main>
+    </div>
+  );
+}
+
+function AboutPage() {
+  const features = [
+    { icon: Calculator, color: 'text-sky-500', bg: 'bg-sky-50', title: 'Quick Calculator', desc: 'Instant resource breakdowns based on DOR & DUDBC engineering norms' },
+    { icon: Library, color: 'text-violet-500', bg: 'bg-violet-50', title: 'Norms Library', desc: 'Comprehensive database of 270+ engineering standards' },
+    { icon: FolderKanban, color: 'text-emerald-500', bg: 'bg-emerald-50', title: 'Project Management', desc: 'Organize and manage multiple construction projects with BOQ support' },
+    { icon: DollarSign, color: 'text-amber-500', bg: 'bg-amber-50', title: 'Rate Management', desc: 'Configure and update resource pricing with VAT support' },
+    { icon: TrendingUp, color: 'text-rose-500', bg: 'bg-rose-50', title: 'Rate Analysis', desc: 'Dynamic cost analysis in Contractor and Users Committee modes' },
+    { icon: ClipboardList, color: 'text-cyan-500', bg: 'bg-cyan-50', title: 'BOQ Export', desc: 'Generate professional PDF reports in summary or detailed format' },
+  ];
+
+  return (
+    <div className="max-w-3xl space-y-8">
+      <div>
+        <div className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
+          <Zap size={12} />
+          Professional Engineering Suite
+        </div>
+        <h1 className="text-4xl font-bold text-[#0F172A] tracking-tight">About ResourceCalc</h1>
+        <p className="mt-3 text-lg text-slate-500 leading-relaxed">
+          A professional tool built for civil engineers to quickly estimate resource requirements based on standard norms — DOR & DUDBC.
+          Works completely offline, right in your browser.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {features.map((f, i) => (
+          <div key={i} className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition-shadow flex items-start gap-4">
+            <div className={`w-10 h-10 rounded-xl ${f.bg} flex items-center justify-center flex-shrink-0`}>
+              <f.icon size={18} className={f.color} />
+            </div>
+            <div>
+              <h3 className="font-semibold text-[#0F172A] text-sm mb-1">{f.title}</h3>
+              <p className="text-slate-500 text-xs leading-relaxed">{f.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="bg-[#0D1117] rounded-2xl p-6 flex items-center justify-between">
+        <div>
+          <p className="text-slate-300 font-semibold text-sm">ResourceCalc v1.0.0</p>
+          <p className="text-slate-600 text-xs mt-1">Built for Nepali civil engineers · Works offline · No data leaves your device</p>
+        </div>
+        <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center">
+          <Zap size={18} className="text-white" />
+        </div>
+      </div>
     </div>
   );
 }

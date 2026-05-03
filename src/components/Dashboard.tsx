@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Calculator, Library, DollarSign, FolderKanban, TrendingUp, Users, BarChart3 } from 'lucide-react';
+import {
+  Calculator, Library, DollarSign, FolderKanban,
+  TrendingUp, ClipboardList, ArrowRight, Zap,
+  BarChart3, Activity, Layers
+} from 'lucide-react';
 import { getNorms, getRates, getProjects } from '../utils/storage';
 import { Norm, Rate, Project } from '../types';
 
@@ -28,201 +32,298 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
     const norms = getNorms();
     const rates = getRates();
     const projects = getProjects();
-
-    // Calculate total resources across all norms
     const totalResources = norms.reduce((sum, norm) => sum + norm.resources.length, 0);
-
-    // Get recent projects (last 3)
     const recentProjects = projects
       .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
       .slice(0, 3);
-
-    setStats({
-      totalNorms: norms.length,
-      totalRates: rates.length,
-      totalProjects: projects.length,
-      totalResources,
-      recentProjects
-    });
+    setStats({ totalNorms: norms.length, totalRates: rates.length, totalProjects: projects.length, totalResources, recentProjects });
   }, []);
 
   const statCards = [
     {
-      title: 'Total Norms',
+      title: 'Engineering Norms',
       value: stats.totalNorms,
       icon: Library,
-      description: 'Engineering standards available',
-      color: 'text-blue-600',
-      bgColor: 'bg-blue-50'
+      description: 'DOR & DUDBC standards',
+      iconColor: 'text-violet-500',
+      iconBg: 'bg-violet-50',
+      accent: 'border-t-violet-500',
+      change: 'DOR + DUDBC'
     },
     {
-      title: 'Total Rates',
+      title: 'Resource Rates',
       value: stats.totalRates,
       icon: DollarSign,
-      description: 'Resource rates configured',
-      color: 'text-green-600',
-      bgColor: 'bg-green-50'
+      description: 'Unit rates configured',
+      iconColor: 'text-emerald-500',
+      iconBg: 'bg-emerald-50',
+      accent: 'border-t-emerald-500',
+      change: 'Labour · Material · Equipment'
     },
     {
       title: 'Active Projects',
       value: stats.totalProjects,
       icon: FolderKanban,
-      description: 'Projects created',
-      color: 'text-purple-600',
-      bgColor: 'bg-purple-50'
+      description: 'BOQ projects created',
+      iconColor: 'text-sky-500',
+      iconBg: 'bg-sky-50',
+      accent: 'border-t-sky-500',
+      change: 'Contractor · Users'
     },
     {
       title: 'Total Resources',
       value: stats.totalResources,
       icon: BarChart3,
-      description: 'Resources in norms',
-      color: 'text-orange-600',
-      bgColor: 'bg-orange-50'
-    }
+      description: 'Resources across all norms',
+      iconColor: 'text-amber-500',
+      iconBg: 'bg-amber-50',
+      accent: 'border-t-amber-500',
+      change: 'Across all norms'
+    },
+  ];
+
+  const quickActions = [
+    {
+      label: 'Quick Calculator',
+      desc: 'Estimate resources instantly',
+      icon: Calculator,
+      tab: 'calc' as const,
+      gradient: 'from-sky-500 to-indigo-600',
+      shadow: 'shadow-sky-200',
+    },
+    {
+      label: 'New Project',
+      desc: 'Create a BOQ project',
+      icon: FolderKanban,
+      tab: 'projects' as const,
+      gradient: 'from-emerald-500 to-teal-600',
+      shadow: 'shadow-emerald-200',
+    },
+    {
+      label: 'Rate Analysis',
+      desc: 'Calculate item rates',
+      icon: TrendingUp,
+      tab: 'analysis' as const,
+      gradient: 'from-violet-500 to-purple-700',
+      shadow: 'shadow-violet-200',
+    },
+    {
+      label: 'Norms Library',
+      desc: 'Browse 270+ standards',
+      icon: Library,
+      tab: 'norms' as const,
+      gradient: 'from-rose-500 to-pink-600',
+      shadow: 'shadow-rose-200',
+    },
   ];
 
   return (
-    <div className="space-y-8">
-      {/* Header */}
-      <div className="text-center space-y-2">
-        <h1 className="text-4xl font-bold italic tracking-tighter text-[#1E293B]">
-          ResourceCalc Dashboard
-        </h1>
-        <p className="text-lg text-[#64748B]">
-          Overview of your engineering calculation tools
-        </p>
+    <div className="space-y-8 max-w-6xl">
+
+      {/* ── Hero Header ───────────────────────────────────────────── */}
+      <div className="relative overflow-hidden rounded-3xl bg-[#0D1117] px-8 py-10">
+        {/* Background decoration */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-indigo-600/10 blur-3xl" />
+          <div className="absolute -bottom-16 -left-10 w-60 h-60 rounded-full bg-violet-600/8 blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-40 bg-indigo-900/10 blur-3xl rounded-full" />
+          {/* Subtle grid */}
+          <div
+            className="absolute inset-0 opacity-[0.03]"
+            style={{
+              backgroundImage: 'linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)',
+              backgroundSize: '40px 40px'
+            }}
+          />
+        </div>
+
+        <div className="relative flex items-start justify-between flex-wrap gap-6">
+          <div>
+            <div className="inline-flex items-center gap-2 bg-indigo-500/15 border border-indigo-500/20 text-indigo-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+              <Activity size={11} />
+              Professional Engineering Suite
+            </div>
+            <h1 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
+              Welcome to <span className="text-indigo-400">ResourceCalc</span>
+            </h1>
+            <p className="mt-3 text-slate-400 text-base leading-relaxed max-w-xl">
+              Calculate resource requirements, manage rates, and generate BOQ reports — all based on DOR & DUDBC engineering standards.
+            </p>
+
+            <div className="flex items-center gap-6 mt-6">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-slate-400 text-sm">Fully offline</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Layers size={13} className="text-slate-500" />
+                <span className="text-slate-400 text-sm">{stats.totalNorms} norms loaded</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Zap size={13} className="text-slate-500" />
+                <span className="text-slate-400 text-sm">Real-time calculation</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-end gap-3">
+            <button
+              onClick={() => onNavigate('calc')}
+              className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm px-5 py-3 rounded-xl shadow-lg shadow-indigo-900/40 transition-all hover:shadow-indigo-900/60"
+            >
+              <Calculator size={16} />
+              Open Calculator
+              <ArrowRight size={14} />
+            </button>
+            <button
+              onClick={() => onNavigate('boq')}
+              className="inline-flex items-center gap-2 bg-white/8 hover:bg-white/12 border border-white/12 text-slate-300 font-medium text-sm px-5 py-2.5 rounded-xl transition-all"
+            >
+              <ClipboardList size={15} />
+              Quick BOQ
+            </button>
+          </div>
+        </div>
       </div>
 
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {statCards.map((stat, index) => (
-          <div key={index} className="bg-white p-6 rounded-2xl border border-[#E2E8F0] shadow-sm hover:shadow-md transition-shadow">
-            <div className="flex items-center justify-between mb-4">
-              <div className={`p-3 rounded-lg ${stat.bgColor}`}>
-                <stat.icon className={`w-6 h-6 ${stat.color}`} />
+      {/* ── Stats Grid ───────────────────────────────────────────── */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        {statCards.map((card, i) => (
+          <div
+            key={i}
+            className={`bg-white rounded-2xl p-5 border border-slate-100 border-t-4 ${card.accent} shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 cursor-default`}
+          >
+            <div className="flex items-start justify-between mb-4">
+              <div className={`w-10 h-10 rounded-xl ${card.iconBg} flex items-center justify-center`}>
+                <card.icon size={18} className={card.iconColor} />
               </div>
-              <span className="text-2xl font-bold text-[#1E293B]">{stat.value}</span>
+              <span className="text-3xl font-bold text-slate-800 tabular-nums">{card.value}</span>
             </div>
-            <h3 className="text-sm font-semibold text-[#374151] mb-1">{stat.title}</h3>
-            <p className="text-xs text-[#6B7280]">{stat.description}</p>
+            <p className="font-semibold text-slate-700 text-sm">{card.title}</p>
+            <p className="text-slate-400 text-xs mt-0.5">{card.description}</p>
+            <div className="mt-3 pt-3 border-t border-slate-50">
+              <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">{card.change}</span>
+            </div>
           </div>
         ))}
       </div>
 
-      {/* Quick Actions */}
-      <div className="bg-white p-6 rounded-2xl border border-[#E2E8F0] shadow-sm">
-        <h2 className="text-xl font-bold text-[#1E293B] mb-4">Quick Actions</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <button 
-            onClick={() => onNavigate('calc')}
-            className="flex items-center gap-3 p-4 bg-[#F1F5F9] hover:bg-[#E2E8F0] rounded-lg transition-colors"
-          >
-            <Calculator className="w-5 h-5 text-[#3B82F6]" />
-            <div className="text-left">
-              <div className="font-medium text-[#1E293B]">Quick Calculator</div>
-              <div className="text-sm text-[#64748B]">Calculate resources instantly</div>
-            </div>
-          </button>
-          <button 
-            onClick={() => onNavigate('projects')}
-            className="flex items-center gap-3 p-4 bg-[#F1F5F9] hover:bg-[#E2E8F0] rounded-lg transition-colors"
-          >
-            <FolderKanban className="w-5 h-5 text-[#8B5CF6]" />
-            <div className="text-left">
-              <div className="font-medium text-[#1E293B]">New Project</div>
-              <div className="text-sm text-[#64748B]">Start a new project</div>
-            </div>
-          </button>
-          <button 
-            onClick={() => onNavigate('analysis')}
-            className="flex items-center gap-3 p-4 bg-[#F1F5F9] hover:bg-[#E2E8F0] rounded-lg transition-colors"
-          >
-            <TrendingUp className="w-5 h-5 text-[#10B981]" />
-            <div className="text-left">
-              <div className="font-medium text-[#1E293B]">Rate Analysis</div>
-              <div className="text-sm text-[#64748B]">Analyze resource rates</div>
-            </div>
-          </button>
+      {/* ── Quick Actions ─────────────────────────────────────────── */}
+      <div>
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-lg font-bold text-slate-800">Quick Actions</h2>
+          <span className="text-xs text-slate-400 font-medium">Jump to any tool</span>
+        </div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {quickActions.map((action, i) => (
+            <button
+              key={i}
+              onClick={() => onNavigate(action.tab)}
+              className="group relative overflow-hidden rounded-2xl p-5 text-left transition-all duration-200 hover:scale-[1.02] hover:shadow-lg"
+              style={{ background: `linear-gradient(135deg, var(--tw-gradient-from), var(--tw-gradient-to))` }}
+            >
+              <div className={`relative z-10 bg-gradient-to-br ${action.gradient} rounded-2xl p-5`}>
+                <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center mb-4 group-hover:bg-white/30 transition-colors">
+                  <action.icon size={20} className="text-white" />
+                </div>
+                <p className="text-white font-bold text-sm">{action.label}</p>
+                <p className="text-white/70 text-xs mt-0.5">{action.desc}</p>
+                <div className="flex items-center gap-1 mt-4 text-white/60 group-hover:text-white/90 transition-colors">
+                  <span className="text-xs font-semibold">Open</span>
+                  <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
+                </div>
+              </div>
+            </button>
+          ))}
         </div>
       </div>
 
-      {/* Recent Projects */}
-      {stats.recentProjects.length > 0 && (
-        <div className="bg-white p-6 rounded-2xl border border-[#E2E8F0] shadow-sm">
-          <h2 className="text-xl font-bold text-[#1E293B] mb-4">Recent Projects</h2>
-          <div className="space-y-3">
-            {stats.recentProjects.map((project) => (
-              <div key={project.id} className="flex items-center justify-between p-4 bg-[#F8FAFC] rounded-lg">
-                <div className="flex items-center gap-3">
-                  <FolderKanban className="w-5 h-5 text-[#64748B]" />
-                  <div>
-                    <div className="font-medium text-[#1E293B]">{project.name}</div>
-                    <div className="text-sm text-[#64748B]">{project.location || 'Location not set'}</div>
+      {/* ── Recent Projects + Features ────────────────────────────── */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        {/* Recent Projects */}
+        <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+          <div className="flex items-center justify-between px-6 py-4 border-b border-slate-50">
+            <h2 className="font-bold text-slate-800">Recent Projects</h2>
+            <button
+              onClick={() => onNavigate('projects')}
+              className="text-xs text-indigo-600 font-semibold hover:text-indigo-700 flex items-center gap-1"
+            >
+              View all <ArrowRight size={12} />
+            </button>
+          </div>
+          <div className="divide-y divide-slate-50">
+            {stats.recentProjects.length > 0 ? (
+              stats.recentProjects.map((project) => (
+                <div key={project.id} className="flex items-center justify-between px-6 py-4 hover:bg-slate-50/50 transition-colors">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-xl bg-emerald-50 flex items-center justify-center flex-shrink-0">
+                      <FolderKanban size={16} className="text-emerald-600" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-slate-800 text-sm">{project.name}</p>
+                      <p className="text-slate-400 text-xs">{project.location || 'Location not set'}</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <span className={`inline-block px-2 py-0.5 rounded-md text-[10px] font-bold uppercase ${
+                      project.mode === 'CONTRACTOR' ? 'bg-sky-100 text-sky-700' : 'bg-violet-100 text-violet-700'
+                    }`}>
+                      {project.mode}
+                    </span>
+                    <p className="text-slate-400 text-[10px] mt-1">{new Date(project.created_at).toLocaleDateString()}</p>
                   </div>
                 </div>
-                <div className="text-right">
-                  <div className="text-sm text-[#64748B]">{project.mode}</div>
-                  <div className="text-xs text-[#94A3B8]">
-                    {new Date(project.created_at).toLocaleDateString()}
-                  </div>
+              ))
+            ) : (
+              <div className="flex flex-col items-center justify-center py-12 px-6 text-center">
+                <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center mb-3">
+                  <FolderKanban size={22} className="text-slate-300" />
                 </div>
+                <p className="text-slate-400 font-medium text-sm">No projects yet</p>
+                <button
+                  onClick={() => onNavigate('projects')}
+                  className="mt-3 text-indigo-600 text-xs font-semibold hover:underline"
+                >
+                  Create your first project →
+                </button>
               </div>
+            )}
+          </div>
+        </div>
+
+        {/* App Features */}
+        <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+          <div className="px-6 py-4 border-b border-slate-50">
+            <h2 className="font-bold text-slate-800">Application Features</h2>
+          </div>
+          <div className="p-5 space-y-3">
+            {[
+              { icon: Calculator, color: 'text-sky-500', bg: 'bg-sky-50', title: 'Quick Calculator', desc: 'Instant resource calculations', tab: 'calc' as const },
+              { icon: Library, color: 'text-violet-500', bg: 'bg-violet-50', title: 'Norms Library', desc: '270+ DOR & DUDBC standards', tab: 'norms' as const },
+              { icon: DollarSign, color: 'text-emerald-500', bg: 'bg-emerald-50', title: 'Rate Management', desc: 'Configure pricing with VAT', tab: 'rates' as const },
+              { icon: TrendingUp, color: 'text-amber-500', bg: 'bg-amber-50', title: 'Rate Analysis', desc: 'Dynamic cost breakdown', tab: 'analysis' as const },
+              { icon: ClipboardList, color: 'text-rose-500', bg: 'bg-rose-50', title: 'BOQ Generator', desc: 'Export professional PDF reports', tab: 'boq' as const },
+              { icon: FolderKanban, color: 'text-cyan-500', bg: 'bg-cyan-50', title: 'Project Management', desc: 'Multi-project BOQ tracking', tab: 'projects' as const },
+            ].map((f, i) => (
+              <button
+                key={i}
+                onClick={() => onNavigate(f.tab)}
+                className="w-full flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors text-left group"
+              >
+                <div className={`w-8 h-8 rounded-lg ${f.bg} flex items-center justify-center flex-shrink-0`}>
+                  <f.icon size={15} className={f.color} />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="font-semibold text-slate-700 text-sm">{f.title}</p>
+                  <p className="text-slate-400 text-xs">{f.desc}</p>
+                </div>
+                <ArrowRight size={13} className="text-slate-300 group-hover:text-slate-500 group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+              </button>
             ))}
           </div>
         </div>
-      )}
 
-      {/* App Features Overview */}
-      <div className="bg-white p-6 rounded-2xl border border-[#E2E8F0] shadow-sm">
-        <h2 className="text-xl font-bold text-[#1E293B] mb-4">Application Features</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-4">
-            <div className="flex items-start gap-3">
-              <Calculator className="w-5 h-5 text-[#3B82F6] mt-0.5" />
-              <div>
-                <h3 className="font-medium text-[#1E293B]">Quick Calculator</h3>
-                <p className="text-sm text-[#64748B]">Instant resource calculations based on engineering norms</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <Library className="w-5 h-5 text-[#8B5CF6] mt-0.5" />
-              <div>
-                <h3 className="font-medium text-[#1E293B]">Norms Library</h3>
-                <p className="text-sm text-[#64748B]">Comprehensive DOR & DUDBC standards database</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <FolderKanban className="w-5 h-5 text-[#10B981] mt-0.5" />
-              <div>
-                <h3 className="font-medium text-[#1E293B]">Project Management</h3>
-                <p className="text-sm text-[#64748B]">Organize and manage multiple construction projects</p>
-              </div>
-            </div>
-          </div>
-          <div className="space-y-4">
-            <div className="flex items-start gap-3">
-              <DollarSign className="w-5 h-5 text-[#F59E0B] mt-0.5" />
-              <div>
-                <h3 className="font-medium text-[#1E293B]">Rate Management</h3>
-                <p className="text-sm text-[#64748B]">Configure and update resource pricing</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <TrendingUp className="w-5 h-5 text-[#EF4444] mt-0.5" />
-              <div>
-                <h3 className="font-medium text-[#1E293B]">Rate Analysis</h3>
-                <p className="text-sm text-[#64748B]">Dynamic cost analysis and comparisons</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <Users className="w-5 h-5 text-[#06B6D4] mt-0.5" />
-              <div>
-                <h3 className="font-medium text-[#1E293B]">Offline Operation</h3>
-                <p className="text-sm text-[#64748B]">Works completely offline for field use</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
