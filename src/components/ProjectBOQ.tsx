@@ -557,7 +557,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
         if (!res.is_percentage) {
           const customQty = getCustomResourceQuantity(item.normId, res.name);
           const resourceQty = customQty !== null ? customQty : res.quantity;
-          const quantity = resourceQty * basis * userQuantity;
+          const quantity = (resourceQty * userQuantity) / basis;
           row.resources[res.name] = quantity;
           allResources.set(res.name, { unit: res.unit || '-', type: res.resource_type });
         }
@@ -609,7 +609,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
         if (!res.is_percentage) {
           const customQty = getCustomResourceQuantity(item.normId, res.name);
           const resourceQty = customQty !== null ? customQty : res.quantity;
-          const quantity = resourceQty * basis * userQuantity;
+          const quantity = (resourceQty * userQuantity) / basis;
           row.resources[res.name] = quantity;
           allResources.set(res.name, { unit: res.unit || '-', type: res.resource_type });
         }
