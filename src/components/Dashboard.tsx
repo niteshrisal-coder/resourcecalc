@@ -46,8 +46,9 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
       icon: Library,
       description: 'DOR & DUDBC standards',
       iconColor: 'text-slate-600',
-      iconBg: 'bg-slate-100',
+      iconBg: 'bg-slate-200',
       accent: 'border-t-slate-500',
+      cardBg: 'bg-slate-50',
       change: 'DOR + DUDBC'
     },
     {
@@ -55,9 +56,10 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
       value: stats.totalRates,
       icon: DollarSign,
       description: 'Unit rates configured',
-      iconColor: 'text-emerald-500',
-      iconBg: 'bg-emerald-50',
+      iconColor: 'text-emerald-600',
+      iconBg: 'bg-emerald-100',
       accent: 'border-t-emerald-500',
+      cardBg: 'bg-emerald-50',
       change: 'Labour · Material · Equipment'
     },
     {
@@ -65,9 +67,10 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
       value: stats.totalProjects,
       icon: FolderKanban,
       description: 'BOQ projects created',
-      iconColor: 'text-sky-500',
-      iconBg: 'bg-sky-50',
+      iconColor: 'text-sky-600',
+      iconBg: 'bg-sky-100',
       accent: 'border-t-sky-500',
+      cardBg: 'bg-sky-50',
       change: 'Contractor · Users'
     },
     {
@@ -75,9 +78,10 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
       value: stats.totalResources,
       icon: BarChart3,
       description: 'Resources across all norms',
-      iconColor: 'text-amber-500',
-      iconBg: 'bg-amber-50',
+      iconColor: 'text-amber-600',
+      iconBg: 'bg-amber-100',
       accent: 'border-t-amber-500',
+      cardBg: 'bg-amber-50',
       change: 'Across all norms'
     },
   ];
@@ -191,7 +195,7 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
         {statCards.map((card, i) => (
           <div
             key={i}
-            className={`bg-[#FAFBFF] rounded-2xl p-5 border border-slate-100 border-t-4 ${card.accent} shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 cursor-default`}
+            className={`${card.cardBg} rounded-2xl p-5 border border-slate-100 border-t-4 ${card.accent} shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 cursor-default`}
           >
             <div className="flex items-start justify-between mb-4">
               <div className={`w-10 h-10 rounded-xl ${card.iconBg} flex items-center justify-center`}>
