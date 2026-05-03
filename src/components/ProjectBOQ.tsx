@@ -542,19 +542,22 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
     project.items.forEach((item: BOQItem, idx: number) => {
       const norm = norms.find((n: Norm) => n.id === item.normId);
       if (!norm) return;
+      const userQuantity = item.estimate_quantity;
+      const basis = norm.basis_quantity || 1;
 
       const row: MatrixRow = {
         sNo: idx + 1,
         workItem: `${norm.ref_ss || ''} ${norm.sNo || ''} - ${norm.description}`.trim(),
         unit: norm.unit || '-',
-        quantity: item.estimate_quantity,
+        quantity: userQuantity,
         resources: {}
       };
 
       norm.resources.forEach((res: any) => {
         if (!res.is_percentage) {
           const customQty = getCustomResourceQuantity(item.normId, res.name);
-          const quantity = (customQty !== null ? customQty : res.quantity) * item.estimate_quantity;
+          const resourceQty = customQty !== null ? customQty : res.quantity;
+          const quantity = resourceQty * basis * userQuantity;
           row.resources[res.name] = quantity;
           allResources.set(res.name, { unit: res.unit || '-', type: res.resource_type });
         }
@@ -591,19 +594,22 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
     project.items.forEach((item: BOQItem, idx: number) => {
       const norm = norms.find((n: Norm) => n.id === item.normId);
       if (!norm) return;
+      const userQuantity = item.measurement_quantity;
+      const basis = norm.basis_quantity || 1;
 
       const row: MatrixRow = {
         sNo: idx + 1,
         workItem: `${norm.ref_ss || ''} ${norm.sNo || ''} - ${norm.description}`.trim(),
         unit: norm.unit || '-',
-        quantity: item.measurement_quantity,
+        quantity: userQuantity,
         resources: {}
       };
 
       norm.resources.forEach((res: any) => {
         if (!res.is_percentage) {
           const customQty = getCustomResourceQuantity(item.normId, res.name);
-          const quantity = (customQty !== null ? customQty : res.quantity) * item.measurement_quantity;
+          const resourceQty = customQty !== null ? customQty : res.quantity;
+          const quantity = resourceQty * basis * userQuantity;
           row.resources[res.name] = quantity;
           allResources.set(res.name, { unit: res.unit || '-', type: res.resource_type });
         }
