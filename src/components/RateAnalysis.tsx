@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
-import { Search, Calculator, ChevronLeft } from 'lucide-react';
+import { Search, Calculator, ChevronLeft, TrendingUp } from 'lucide-react';
 import { Norm, Rate } from '../types';
 import { motion } from 'motion/react';
 import { getNorms, getRates } from '../utils/storage';
@@ -250,74 +250,81 @@ export default function RateAnalysis() {
 
   // Web Layout
   return (
-    <div className="space-y-8">
-      <div className="flex flex-col gap-2">
-        <div className="flex items-center justify-between">
-          <h1 className="text-4xl font-bold tracking-tighter italic">Rate Analysis</h1>
-          <div className="flex items-center gap-4">
-            <select 
-              value={normType}
-              onChange={(e: ChangeEvent<HTMLSelectElement>) => setNormType(e.target.value as any)}
-              className="bg-white px-4 py-2 rounded-xl border border-black/5 text-xs font-bold uppercase tracking-widest focus:outline-none shadow-sm"
+    <div className="space-y-6 max-w-6xl">
+      {/* Header */}
+      <div className="flex items-start justify-between flex-wrap gap-4">
+        <div className="flex items-start gap-4">
+          <div className="w-11 h-11 rounded-xl bg-amber-50 flex items-center justify-center mt-0.5">
+            <TrendingUp size={19} className="text-amber-600" />
+          </div>
+          <div>
+            <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Rate Analysis</h1>
+            <p className="text-slate-500 text-sm mt-0.5">Dynamic calculation of item rates based on current resource prices</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-3">
+          <select 
+            value={normType}
+            onChange={(e: ChangeEvent<HTMLSelectElement>) => setNormType(e.target.value as any)}
+            className="bg-white px-3 py-2 rounded-xl border border-slate-200 text-xs font-bold uppercase tracking-wide text-slate-600 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all"
+          >
+            <option value="ALL">All Norms</option>
+            <option value="DOR">DOR Norms</option>
+            <option value="DUDBC">DUDBC Norms</option>
+          </select>
+          <div className="flex bg-white p-1 rounded-xl border border-slate-200 gap-0.5">
+            <button
+              onClick={() => setMode('CONTRACTOR')}
+              className={`px-4 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wide transition-all ${mode === 'CONTRACTOR' ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'}`}
             >
-              <option value="ALL">All Norms</option>
-              <option value="DOR">DOR Norms</option>
-              <option value="DUDBC">DUDBC Norms</option>
-            </select>
-            <div className="flex bg-white p-1 rounded-2xl border border-black/5 shadow-sm">
-              <button
-                onClick={() => setMode('CONTRACTOR')}
-                className={`px-6 py-2 rounded-xl text-xs font-bold uppercase tracking-widest transition-all ${mode === 'CONTRACTOR' ? 'bg-[#141414] text-white shadow-md' : 'text-black/40 hover:text-black/60'}`}
-              >
-                Contractor
-              </button>
-              <button
-                onClick={() => setMode('USERS')}
-                className={`px-6 py-2 rounded-xl text-xs font-bold uppercase tracking-widest transition-all ${mode === 'USERS' ? 'bg-[#141414] text-white shadow-md' : 'text-black/40 hover:text-black/60'}`}
-              >
-                Users Committee
-              </button>
-            </div>
+              Contractor
+            </button>
+            <button
+              onClick={() => setMode('USERS')}
+              className={`px-4 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wide transition-all ${mode === 'USERS' ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'}`}
+            >
+              Users Committee
+            </button>
           </div>
         </div>
       </div>
-      <p className="text-black/50">Dynamic calculation of item rates based on current resource prices.</p>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Norm Selection List */}
-        <div className="lg:col-span-1 space-y-4">
+        <div className="lg:col-span-1 space-y-3">
           <div className="relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-black/30" size={18} />
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
             <input 
               type="text" 
               placeholder="Search items..."
-              className="w-full pl-12 pr-4 py-3 bg-white border border-black/5 rounded-2xl focus:outline-none focus:ring-2 focus:ring-black/5 transition-all"
+              className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 transition-all text-sm text-slate-800 placeholder:text-slate-400"
               value={search}
               onChange={(e: ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
             />
           </div>
-          <div className="bg-white rounded-3xl border border-black/5 overflow-hidden shadow-sm max-h-[600px] overflow-y-auto">
-            <div className="grid grid-cols-12 bg-[#F5F5F0]/50 border-b border-black/5 px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-black/40">
-              <div className="col-span-2">Ref</div>
-              <div className="col-span-7">Description</div>
+          <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden max-h-[600px] overflow-y-auto">
+            <div className="grid grid-cols-12 bg-slate-50 border-b border-slate-100 px-4 py-2.5 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+              <div className="col-span-3">Ref</div>
+              <div className="col-span-6">Description</div>
               <div className="col-span-3 text-right">Rate</div>
             </div>
             {filteredNorms.map(norm => {
               const unitRate = calculateItemRate(norm);
+              const isSelected = selectedNorm?.id === norm.id;
               return (
                 <button
                   key={norm.id}
                   onClick={() => setSelectedNorm(norm)}
-                  className={`w-full text-left p-4 border-b border-black/5 transition-colors grid grid-cols-12 items-center gap-2 group ${selectedNorm?.id === norm.id ? 'bg-[#141414] text-white' : 'hover:bg-[#F5F5F0]'}`}
+                  className={`w-full text-left px-4 py-3 border-b border-slate-50 transition-colors grid grid-cols-12 items-center gap-2 ${isSelected ? 'bg-indigo-600 text-white' : 'hover:bg-slate-50 text-slate-700'}`}
                 >
-                  <div className="col-span-2 text-[10px] font-mono opacity-60 truncate">
+                  <div className={`col-span-3 text-[10px] font-mono truncate ${isSelected ? 'text-indigo-200' : 'text-slate-400'}`}>
                     {norm.ref_ss || '-'}
                   </div>
-                  <div className="col-span-7">
+                  <div className="col-span-6">
                     <p className="text-xs font-medium line-clamp-2">{norm.description}</p>
                   </div>
                   <div className="col-span-3 text-right">
-                    <p className="text-xs font-bold font-mono">
+                    <p className={`text-xs font-bold font-mono ${isSelected ? 'text-indigo-100' : 'text-emerald-600'}`}>
                       {unitRate.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                     </p>
                   </div>
@@ -331,23 +338,25 @@ export default function RateAnalysis() {
         <div className="lg:col-span-2">
           {selectedNorm ? (
             <motion.div 
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: 16 }}
               animate={{ opacity: 1, x: 0 }}
-              className="bg-white rounded-3xl shadow-xl border border-black/5 overflow-hidden"
+              className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden"
             >
-              <div className="p-8 bg-[#141414] text-white">
-                <div className="flex items-start justify-between mb-4">
-                  <span className="px-3 py-1 bg-white/10 rounded-lg text-xs font-bold uppercase tracking-widest">{selectedNorm.type} Norm</span>
+              <div className="p-6 bg-slate-900 text-white">
+                <div className="flex items-start justify-between mb-3">
+                  <span className="px-2.5 py-1 bg-white/10 rounded-lg text-xs font-bold uppercase tracking-widest">{selectedNorm.type} Norm</span>
                   <div className="flex flex-col items-end gap-1">
                     <span className="text-xs font-mono opacity-50">Ref: {selectedNorm.ref_ss || 'N/A'}</span>
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-400">{mode === 'CONTRACTOR' ? 'Contractor Mode (Excl. VAT + 15% CP&O)' : 'Users Committee Mode (Incl. VAT)'}</span>
+                    <span className={`text-[10px] font-bold uppercase tracking-widest ${mode === 'CONTRACTOR' ? 'text-amber-400' : 'text-emerald-400'}`}>
+                      {mode === 'CONTRACTOR' ? 'Contractor Mode (+15% CP&O)' : 'Users Mode (Incl. VAT)'}
+                    </span>
                   </div>
                 </div>
-                <h2 className="text-2xl font-bold tracking-tight mb-2">{selectedNorm.description}</h2>
-                <p className="text-sm opacity-60">Analysis for {selectedNorm.basis_quantity} {selectedNorm.unit} of work</p>
+                <h2 className="text-xl font-bold tracking-tight mb-1">{selectedNorm.description}</h2>
+                <p className="text-sm opacity-50">Analysis for {selectedNorm.basis_quantity} {selectedNorm.unit} of work</p>
               </div>
 
-              <div className="p-8 space-y-8">
+              <div className="p-6 space-y-6">
                 <AnalysisTable 
                   title="Labour Component" 
                   resources={selectedNorm.resources.filter(r => r.resource_type === 'Labour')} 
@@ -373,40 +382,40 @@ export default function RateAnalysis() {
                   allResources={selectedNorm.resources}
                 />
 
-                <div className="pt-8 border-t border-black/10 space-y-4">
+                <div className="pt-6 border-t border-slate-100 space-y-3">
                   {mode === 'CONTRACTOR' && (
                     <>
-                      <div className="flex justify-between items-center text-sm">
-                        <div className="flex flex-col">
-                          <span className="text-black/40 font-bold uppercase tracking-widest text-[10px]">Total Cost (Excl. CP&O)</span>
-                          <span className="text-[9px] opacity-40">Rate per {selectedNorm.unit}: Rs. {(calculateRawTotal(selectedNorm) / (selectedNorm.basis_quantity || 1)).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                      <div className="flex justify-between items-center">
+                        <div>
+                          <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Subtotal (Excl. CP&O)</p>
+                          <p className="text-[10px] text-slate-300 mt-0.5">Rate per {selectedNorm.unit}: Rs. {(calculateRawTotal(selectedNorm) / (selectedNorm.basis_quantity || 1)).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
                         </div>
-                        <span className="font-mono font-bold">Rs. {calculateRawTotal(selectedNorm).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                        <span className="font-semibold text-sm text-slate-700">Rs. {calculateRawTotal(selectedNorm).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                       </div>
-                      <div className="flex justify-between items-center text-sm">
-                        <div className="flex flex-col">
-                          <span className="text-black/40 font-bold uppercase tracking-widest text-[10px]">Contractor Profit & Overhead (15%)</span>
-                          <span className="text-[9px] opacity-40">Rate per {selectedNorm.unit}: Rs. {(calculateRawTotal(selectedNorm) * 0.15 / (selectedNorm.basis_quantity || 1)).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                      <div className="flex justify-between items-center">
+                        <div>
+                          <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">CP&O (15%)</p>
+                          <p className="text-[10px] text-slate-300 mt-0.5">Rate per {selectedNorm.unit}: Rs. {(calculateRawTotal(selectedNorm) * 0.15 / (selectedNorm.basis_quantity || 1)).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
                         </div>
-                        <span className="font-mono font-bold">Rs. {(calculateRawTotal(selectedNorm) * 0.15).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                        <span className="font-semibold text-sm text-slate-700">Rs. {(calculateRawTotal(selectedNorm) * 0.15).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                       </div>
                     </>
                   )}
                   
-                  <div className="grid grid-cols-2 gap-8 pt-4 border-t border-black/5">
-                    <div className="flex flex-col items-start gap-2">
-                      <p className="text-[10px] font-bold uppercase tracking-widest text-black/40">Total Cost (for {selectedNorm.basis_quantity} {selectedNorm.unit})</p>
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-xs font-medium text-black/40">Rs.</span>
-                        <span className="text-3xl font-bold tracking-tighter">{calculateTotalCost(selectedNorm).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                  <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-100">
+                    <div className="bg-slate-50 rounded-xl p-4">
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">Total Cost ({selectedNorm.basis_quantity} {selectedNorm.unit})</p>
+                      <div className="flex items-baseline gap-1.5">
+                        <span className="text-xs font-medium text-slate-400">Rs.</span>
+                        <span className="text-2xl font-bold text-slate-800">{calculateTotalCost(selectedNorm).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                       </div>
                     </div>
 
-                    <div className="flex flex-col items-end gap-2">
-                      <p className="text-[10px] font-bold uppercase tracking-widest text-black/40">Rate per {selectedNorm.unit}</p>
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-xs font-medium text-black/40">Rs.</span>
-                        <span className="text-3xl font-bold tracking-tighter text-emerald-600">{calculateItemRate(selectedNorm).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                    <div className="bg-emerald-50 rounded-xl p-4">
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-emerald-600 mb-2">Rate per {selectedNorm.unit}</p>
+                      <div className="flex items-baseline gap-1.5">
+                        <span className="text-xs font-medium text-emerald-500">Rs.</span>
+                        <span className="text-2xl font-bold text-emerald-700">{calculateItemRate(selectedNorm).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                       </div>
                     </div>
                   </div>
@@ -414,9 +423,12 @@ export default function RateAnalysis() {
               </div>
             </motion.div>
           ) : (
-            <div className="h-full flex flex-col items-center justify-center text-black/20 bg-white/50 rounded-3xl border-2 border-dashed border-black/5">
-              <Calculator size={64} strokeWidth={1} className="mb-4" />
-              <p className="font-medium">Select an item from the left to view rate analysis</p>
+            <div className="h-full min-h-[400px] flex flex-col items-center justify-center bg-white rounded-2xl border border-dashed border-slate-200">
+              <div className="w-14 h-14 rounded-2xl bg-amber-50 flex items-center justify-center mb-4">
+                <Calculator size={26} className="text-amber-300" />
+              </div>
+              <p className="font-semibold text-slate-400">Select an item to view rate analysis</p>
+              <p className="text-sm text-slate-300 mt-1">Click any norm from the list on the left</p>
             </div>
           )}
         </div>

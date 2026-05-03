@@ -319,11 +319,18 @@ export default function QuickCalculator({ norms }: { norms: Norm[] }) {
         <PGCalculator onBack={() => setShowPGPage(false)} />
       ) : (
         <>
-          <main className="w-full space-y-8">
-            {/* Page Title */}
-            <div className="border-b border-[#E2E8F0] pb-6">
-              <h1 className="text-5xl font-bold tracking-tight text-[#1E293B]">Calculator</h1>
-              <p className="text-base text-[#64748B] mt-2">Estimate resources for your project in seconds</p>
+          <main className="w-full space-y-6">
+            {/* Page Header */}
+            <div className="flex items-start justify-between">
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 rounded-xl bg-sky-50 flex items-center justify-center mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-sky-600"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="14"/><path d="m8 14 2 2 4-4"/></svg>
+                </div>
+                <div>
+                  <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Calculator</h1>
+                  <p className="text-slate-500 text-sm mt-0.5">Estimate resources for your project in seconds</p>
+                </div>
+              </div>
             </div>
 
             {/* Main Content Grid */}

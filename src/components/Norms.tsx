@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, ChevronDown, ChevronUp } from 'lucide-react';
+import { Search, ChevronDown, Library } from 'lucide-react';
 import { Norm, Resource } from '../types';
 import { motion, AnimatePresence } from 'motion/react';
 import { useDeviceType } from '../utils/device';
@@ -125,135 +125,136 @@ const filteredNorms = sortedNorms.filter((n: Norm) => {
 
   // Web Layout
   return (
-    <div className="w-full">
-      <main className="w-full space-y-8 pb-8">
-        {/* Page Header */}
-        <div className="border-b border-[#E2E8F0] pb-6">
-          <h1 className="text-5xl font-bold tracking-tight text-[#1E293B]">Norms Library</h1>
-          <p className="text-base text-[#64748B] mt-2">Browse all available DOR & DUDBC standards for resource estimation</p>
-        </div>
-
-        {/* Search and Filters */}
-        <div className="flex gap-6 items-end">
-          <div className="flex-1 relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-[#94A3B8] size-5" />
-            <input 
-              type="text" 
-              placeholder="Search norms by name, code, or description..."
-              className="w-full pl-12 pr-4 py-3 bg-white border-2 border-[#E2E8F0] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]/20 focus:border-[#0EA5E9] transition-all text-base text-[#1E293B] placeholder:text-[#94A3B8]"
-              value={search}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
-            />
+    <div className="w-full max-w-6xl space-y-6 pb-8">
+      {/* Page Header */}
+      <div className="flex items-start justify-between flex-wrap gap-4">
+        <div className="flex items-start gap-4">
+          <div className="w-11 h-11 rounded-xl bg-violet-50 flex items-center justify-center mt-0.5">
+            <Library size={19} className="text-violet-600" />
           </div>
-          <div className="flex bg-white rounded-xl p-1.5 border-2 border-[#E2E8F0] w-fit gap-1">
-            {(['ALL', 'DOR', 'DUDBC'] as const).map(type => (
-              <button
-                key={type}
-                onClick={() => setFilter(type)}
-                className={`px-5 py-2.5 rounded-lg text-sm font-bold uppercase tracking-widest transition-all ${
-                  filter === type 
-                    ? 'bg-gradient-to-r from-[#1E293B] to-[#334155] text-white shadow-md' 
-                    : 'text-[#64748B] hover:text-[#1E293B] hover:bg-[#F8FAFC]'
-                }`}
-              >
-                {type}
-              </button>
-            ))}
+          <div>
+            <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Norms Library</h1>
+            <p className="text-slate-500 text-sm mt-0.5">Browse all DOR & DUDBC engineering standards</p>
           </div>
         </div>
+        <div className="text-sm text-slate-500">
+          Showing <span className="font-bold text-slate-700">{filteredNorms.length}</span> of <span className="font-bold text-slate-700">{sortedNorms.length}</span> norms
+        </div>
+      </div>
 
-        {/* Stats */}
-        <div className="flex items-center justify-between">
-          <div className="text-sm text-[#64748B]">
-            Showing <span className="font-bold text-[#1E293B]">{filteredNorms.length}</span> of <span className="font-bold text-[#1E293B]">{sortedNorms.length}</span> norms
-          </div>
-          {search && (
+      {/* Search and Filters */}
+      <div className="flex flex-col sm:flex-row gap-3">
+        <div className="flex-1 relative">
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
+          <input 
+            type="text" 
+            placeholder="Search by name, code, or description..."
+            className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 transition-all text-sm text-slate-800 placeholder:text-slate-400"
+            value={search}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
+          />
+        </div>
+        <div className="flex bg-white p-1 rounded-xl border border-slate-200 gap-0.5 w-fit">
+          {(['ALL', 'DOR', 'DUDBC'] as const).map(type => (
             <button
-              onClick={() => setSearch('')}
-              className="text-sm text-[#0EA5E9] hover:text-[#06B6D4] font-semibold underline"
+              key={type}
+              onClick={() => setFilter(type)}
+              className={`px-5 py-1.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-all ${
+                filter === type 
+                  ? 'bg-indigo-600 text-white shadow-sm' 
+                  : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'
+              }`}
             >
-              Clear search
+              {type}
             </button>
-          )}
+          ))}
         </div>
+        {search && (
+          <button
+            onClick={() => setSearch('')}
+            className="text-sm text-indigo-600 hover:text-indigo-500 font-semibold px-3"
+          >
+            Clear
+          </button>
+        )}
+      </div>
 
-        {/* Norms Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredNorms.length > 0 ? (
-            filteredNorms.map(norm => (
-              <motion.div 
-                layout
-                key={norm.id}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                className={`rounded-3xl border-2 overflow-hidden transition-all duration-300 hover:shadow-lg cursor-pointer ${
-                  expandedNorm === norm.id 
-                    ? 'bg-gradient-to-br from-[#EFF6FF] to-[#E0F2FE] border-[#0EA5E9] ring-2 ring-[#0EA5E9]/20 shadow-lg' 
-                    : 'bg-white border-[#E2E8F0] hover:border-[#0EA5E9] shadow-sm'
-                }`}
+      {/* Norms Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {filteredNorms.length > 0 ? (
+          filteredNorms.map(norm => (
+            <motion.div 
+              layout
+              key={norm.id}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              className={`rounded-2xl border overflow-hidden transition-all duration-200 cursor-pointer ${
+                expandedNorm === norm.id 
+                  ? 'bg-violet-50 border-violet-200 shadow-md ring-1 ring-violet-200' 
+                  : 'bg-white border-slate-100 hover:border-slate-200 shadow-sm hover:shadow-md'
+              }`}
+            >
+              <div 
+                onClick={() => setExpandedNorm(expandedNorm === norm.id ? null : norm.id)}
+                className="p-5 space-y-3"
               >
-                <div 
-                  onClick={() => setExpandedNorm(expandedNorm === norm.id ? null : norm.id)}
-                  className="p-6 space-y-4"
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="flex items-center gap-2">
-                      <span className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase shadow-md ${
-                        norm.type === 'DOR' 
-                          ? 'bg-gradient-to-r from-[#1E293B] to-[#334155] text-white' 
-                          : 'bg-gradient-to-r from-[#1E293B] to-[#334155] text-white'
-                      }`}>
-                        {norm.type}
-                      </span>
-                    </div>
-                    <ChevronDown size={20} className={`text-[#0EA5E9] transition-transform duration-300 ${expandedNorm === norm.id ? 'rotate-180' : ''}`} />
-                  </div>
-                  
-                  <div>
-                    <div className="text-xs font-bold uppercase tracking-widest text-[#64748B] mb-2">
-                      {norm.ref_ss} {norm.sNo ? ` ${norm.sNo}` : ''}
-                    </div>
-                    <h3 className="font-bold text-base leading-snug text-[#1E293B] line-clamp-3">{norm.description}</h3>
-                  </div>
-
-                  <div className="flex items-center gap-4 text-sm text-[#64748B] pt-2 border-t border-[#E2E8F0]">
-                    <span>Unit: <span className="font-semibold text-[#1E293B]">{norm.unit}</span></span>
-                    <span>Basis: <span className="font-semibold text-[#1E293B]">{norm.basis_quantity}</span></span>
-                  </div>
-
-                  <div className="flex items-center gap-2 text-xs">
-                    <span className="px-3 py-1 bg-[#0EA5E9]/10 text-[#0EA5E9] rounded-full font-semibold">
-                      {norm.resources.length} Resources
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex items-center gap-2">
+                    <span className={`px-2 py-1 rounded-md text-[10px] font-bold uppercase ${
+                      norm.type === 'DOR' 
+                        ? 'bg-violet-100 text-violet-700' 
+                        : 'bg-indigo-100 text-indigo-700'
+                    }`}>
+                      {norm.type}
+                    </span>
+                    <span className="text-[10px] font-mono text-slate-400">
+                      {norm.ref_ss}{norm.sNo ? ` ${norm.sNo}` : ''}
                     </span>
                   </div>
+                  <ChevronDown size={16} className={`text-slate-400 flex-shrink-0 transition-transform duration-200 ${expandedNorm === norm.id ? 'rotate-180' : ''}`} />
                 </div>
+                
+                <h3 className="font-semibold text-sm leading-snug text-slate-800 line-clamp-3">{norm.description}</h3>
 
-                <AnimatePresence>
-                  {expandedNorm === norm.id && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="bg-gradient-to-b from-[#F8FAFC] to-white border-t-2 border-[#E2E8F0] px-6 py-6 space-y-6"
-                    >
-                      <ResourceGroupWeb title="Labour" resources={norm.resources.filter(r => r.resource_type === 'Labour')} color="text-[#F97316]" bgColor="bg-[#FFF7ED]" />
-                      <ResourceGroupWeb title="Material" resources={norm.resources.filter(r => r.resource_type === 'Material')} color="text-[#3B82F6]" bgColor="bg-[#EFF6FF]" />
-                      <ResourceGroupWeb title="Equipment" resources={norm.resources.filter(r => r.resource_type === 'Equipment')} color="text-[#10B981]" bgColor="bg-[#F0FDF4]" />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            ))
-          ) : (
-            <div className="col-span-full py-16 text-center">
-              <p className="text-xl font-bold text-[#94A3B8]">No norms found</p>
-              <p className="text-sm text-[#94A3B8] mt-2">Try adjusting your search or filter criteria</p>
+                <div className="flex items-center justify-between pt-2 border-t border-slate-100">
+                  <div className="flex items-center gap-3 text-xs text-slate-500">
+                    <span>Unit: <span className="font-semibold text-slate-700">{norm.unit}</span></span>
+                    <span>Basis: <span className="font-semibold text-slate-700">{norm.basis_quantity}</span></span>
+                  </div>
+                  <span className="px-2 py-0.5 bg-violet-50 text-violet-600 rounded-full text-[10px] font-bold">
+                    {norm.resources.length} res.
+                  </span>
+                </div>
+              </div>
+
+              <AnimatePresence>
+                {expandedNorm === norm.id && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.25 }}
+                    className="bg-white border-t border-violet-100 px-5 py-4 space-y-4"
+                  >
+                    <ResourceGroupWeb title="Labour" resources={norm.resources.filter(r => r.resource_type === 'Labour')} color="text-orange-600" bgColor="bg-orange-50" />
+                    <ResourceGroupWeb title="Material" resources={norm.resources.filter(r => r.resource_type === 'Material')} color="text-blue-600" bgColor="bg-blue-50" />
+                    <ResourceGroupWeb title="Equipment" resources={norm.resources.filter(r => r.resource_type === 'Equipment')} color="text-emerald-600" bgColor="bg-emerald-50" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          ))
+        ) : (
+          <div className="col-span-full py-16 flex flex-col items-center text-center bg-white rounded-2xl border border-slate-100">
+            <div className="w-14 h-14 rounded-2xl bg-violet-50 flex items-center justify-center mb-4">
+              <Library size={26} className="text-violet-300" />
             </div>
-          )}
-        </div>
-      </main>
+            <p className="font-bold text-slate-400 text-lg">No norms found</p>
+            <p className="text-sm text-slate-300 mt-1">Try adjusting your search or filter</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

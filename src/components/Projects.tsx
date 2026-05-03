@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FolderOpen, Plus, Trash2, Edit2, Calendar, ArrowRight } from 'lucide-react';
+import { FolderOpen, Plus, Trash2, Calendar, ArrowRight, FolderKanban, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { getProjects, saveProject, deleteProject } from '../utils/storage';
 
@@ -18,18 +18,12 @@ export default function Projects({ onSelectProject }: { onSelectProject: (projec
   const [newProject, setNewProject] = useState({ name: '', location: '', mode: 'CONTRACTOR' as 'CONTRACTOR' | 'USERS' });
   const [deleteConfirm, setDeleteConfirm] = useState<number | null>(null);
 
-  useEffect(() => {
-    loadProjects();
-  }, []);
+  useEffect(() => { loadProjects(); }, []);
 
-  const loadProjects = () => {
-    const loaded = getProjects();
-    setProjects(loaded);
-  };
+  const loadProjects = () => setProjects(getProjects());
 
   const handleCreateProject = () => {
     if (!newProject.name.trim()) return;
-
     const project: Project = {
       id: Date.now(),
       name: newProject.name,
@@ -38,7 +32,6 @@ export default function Projects({ onSelectProject }: { onSelectProject: (projec
       created_at: new Date().toISOString(),
       items: []
     };
-
     saveProject(project);
     loadProjects();
     setIsModalOpen(false);
@@ -57,18 +50,23 @@ export default function Projects({ onSelectProject }: { onSelectProject: (projec
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 max-w-6xl">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight">Projects</h1>
-          <p className="text-sm text-black/40">Manage your BOQ projects</p>
+      <div className="flex items-start justify-between">
+        <div className="flex items-start gap-4">
+          <div className="w-11 h-11 rounded-xl bg-cyan-50 flex items-center justify-center mt-0.5">
+            <FolderKanban size={20} className="text-cyan-600" />
+          </div>
+          <div>
+            <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Projects</h1>
+            <p className="text-slate-500 text-sm mt-0.5">Manage your BOQ projects and generate cost estimates</p>
+          </div>
         </div>
         <button
           onClick={() => setIsModalOpen(true)}
-          className="bg-[#141414] text-white px-4 py-2 rounded-2xl font-bold flex items-center gap-2 hover:bg-black transition-all shadow-lg shadow-black/10"
+          className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm px-4 py-2.5 rounded-xl shadow-sm transition-all"
         >
-          <Plus size={20} />
+          <Plus size={16} />
           New Project
         </button>
       </div>
@@ -79,44 +77,58 @@ export default function Projects({ onSelectProject }: { onSelectProject: (projec
           {projects.map((project) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               className="relative group"
             >
               <button
                 onClick={() => onSelectProject(project.id)}
-                className="w-full text-left p-6 bg-white rounded-3xl border border-black/5 shadow-sm hover:shadow-md transition-all hover:border-black/10"
+                className="w-full text-left bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-slate-200 transition-all duration-200 overflow-hidden"
               >
-                <div className="flex items-start justify-between mb-3">
-                  <div className="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center">
-                    <FolderOpen size={24} className="text-emerald-600" />
+                {/* Card top accent */}
+                <div className={`h-1.5 w-full ${project.mode === 'CONTRACTOR' ? 'bg-gradient-to-r from-sky-400 to-indigo-500' : 'bg-gradient-to-r from-violet-400 to-purple-600'}`} />
+                
+                <div className="p-5">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-cyan-50 flex items-center justify-center">
+                      <FolderOpen size={18} className="text-cyan-600" />
+                    </div>
+                    <span className={`px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wide ${
+                      project.mode === 'CONTRACTOR'
+                        ? 'bg-sky-50 text-sky-700'
+                        : 'bg-violet-50 text-violet-700'
+                    }`}>
+                      {project.mode}
+                    </span>
                   </div>
-                  <span className={`px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-tighter ${
-                    project.mode === 'CONTRACTOR' 
-                      ? 'bg-blue-100 text-blue-700' 
-                      : 'bg-purple-100 text-purple-700'
-                  }`}>
-                    {project.mode}
-                  </span>
-                </div>
-                
-                <h3 className="text-lg font-bold mb-1 line-clamp-1">{project.name}</h3>
-                <p className="text-sm text-black/40 line-clamp-2 mb-3">{project.location || 'Location not set'}</p>
-                
-                <div className="flex items-center gap-2 text-xs text-black/30">
-                  <Calendar size={12} />
-                  <span>{new Date(project.created_at).toLocaleDateString()}</span>
-                  <span className="mx-1">•</span>
-                  <span>{project.items.length} items</span>
+
+                  <h3 className="font-bold text-slate-800 text-base mb-1 line-clamp-1">{project.name}</h3>
+                  
+                  <div className="flex items-center gap-1.5 text-slate-400 text-xs mb-4">
+                    <MapPin size={11} />
+                    <span>{project.location || 'Location not set'}</span>
+                  </div>
+
+                  <div className="flex items-center justify-between pt-3 border-t border-slate-50">
+                    <div className="flex items-center gap-1.5 text-slate-400 text-xs">
+                      <Calendar size={11} />
+                      <span>{new Date(project.created_at).toLocaleDateString()}</span>
+                    </div>
+                    <div className="flex items-center gap-1 text-indigo-500 text-xs font-semibold group-hover:gap-2 transition-all">
+                      <span>Open</span>
+                      <ArrowRight size={12} />
+                    </div>
+                  </div>
                 </div>
               </button>
 
               {/* Delete Button */}
               <button
-onClick={(e: React.MouseEvent<HTMLButtonElement>) => handleDeleteClick(e, project.id)}                className="absolute top-4 right-4 w-8 h-8 rounded-full bg-red-50 text-red-500 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-100 z-10"
+                onClick={(e: React.MouseEvent<HTMLButtonElement>) => handleDeleteClick(e, project.id)}
+                className="absolute top-7 right-12 w-7 h-7 rounded-lg bg-red-50 text-red-400 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-100 z-10"
                 aria-label="Delete project"
               >
-                <Trash2 size={16} />
+                <Trash2 size={13} />
               </button>
 
               {/* Delete Confirmation */}
@@ -126,20 +138,24 @@ onClick={(e: React.MouseEvent<HTMLButtonElement>) => handleDeleteClick(e, projec
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="absolute inset-0 bg-white/95 backdrop-blur-sm rounded-3xl flex items-center justify-center z-20"
+                    className="absolute inset-0 bg-white/96 backdrop-blur-sm rounded-2xl flex items-center justify-center z-20"
                   >
                     <div className="text-center p-4">
-                      <p className="text-sm font-bold mb-3">Delete "{project.name}"?</p>
+                      <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center mx-auto mb-3">
+                        <Trash2 size={16} className="text-red-500" />
+                      </div>
+                      <p className="text-sm font-bold text-slate-800 mb-1">Delete project?</p>
+                      <p className="text-xs text-slate-500 mb-4">"{project.name}"</p>
                       <div className="flex gap-2">
                         <button
                           onClick={() => confirmDelete(project.id)}
-                          className="px-4 py-2 bg-red-500 text-white rounded-xl text-xs font-bold"
+                          className="flex-1 px-3 py-2 bg-red-500 hover:bg-red-600 text-white rounded-xl text-xs font-bold transition-colors"
                         >
-                          Yes
+                          Delete
                         </button>
                         <button
                           onClick={() => setDeleteConfirm(null)}
-                          className="px-4 py-2 bg-black/5 rounded-xl text-xs font-bold"
+                          className="flex-1 px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition-colors"
                         >
                           Cancel
                         </button>
@@ -152,14 +168,18 @@ onClick={(e: React.MouseEvent<HTMLButtonElement>) => handleDeleteClick(e, projec
           ))}
         </div>
       ) : (
-        <div className="text-center py-16 bg-white rounded-3xl border border-black/5">
-          <FolderOpen size={48} className="text-black/20 mx-auto mb-4" />
-          <p className="text-black/40">No projects yet</p>
+        <div className="flex flex-col items-center justify-center py-20 bg-white rounded-2xl border border-slate-100 shadow-sm">
+          <div className="w-16 h-16 rounded-2xl bg-cyan-50 flex items-center justify-center mb-4">
+            <FolderOpen size={30} className="text-cyan-300" />
+          </div>
+          <p className="font-bold text-slate-400 text-lg">No projects yet</p>
+          <p className="text-slate-400 text-sm mt-1 mb-5">Create your first BOQ project to get started</p>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="mt-4 text-emerald-600 font-bold hover:underline"
+            className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm px-5 py-2.5 rounded-xl transition-all"
           >
-            Create your first project
+            <Plus size={16} />
+            Create First Project
           </button>
         </div>
       )}
@@ -167,82 +187,85 @@ onClick={(e: React.MouseEvent<HTMLButtonElement>) => handleDeleteClick(e, projec
       {/* New Project Modal */}
       <AnimatePresence>
         {isModalOpen && (
-          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[100] p-4">
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-[100] p-4">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-white w-full max-w-md rounded-3xl shadow-2xl overflow-hidden"
+              initial={{ opacity: 0, scale: 0.96, y: 8 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.96, y: 8 }}
+              className="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden"
             >
-              <div className="p-6 border-b border-black/5">
-                <h2 className="text-2xl font-bold">New Project</h2>
-                <p className="text-sm text-black/40 mt-1">Create a new BOQ project</p>
+              <div className="px-6 py-5 border-b border-slate-100 flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-cyan-50 flex items-center justify-center">
+                  <FolderKanban size={17} className="text-cyan-600" />
+                </div>
+                <div>
+                  <h2 className="font-bold text-slate-900 text-base">New Project</h2>
+                  <p className="text-slate-400 text-xs mt-0.5">Create a new BOQ project</p>
+                </div>
               </div>
 
-              <div className="p-6 space-y-4">
-                <div className="space-y-2">
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-black/40">Project Name</label>
+              <div className="p-6 space-y-5">
+                <div className="space-y-1.5">
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Project Name *</label>
                   <input
                     type="text"
-                    className="w-full p-3 bg-[#F5F5F0] rounded-xl border-none focus:ring-2 focus:ring-black/5"
-                    placeholder="e.g., Bridge Construction"
+                    autoFocus
+                    className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-800 font-medium placeholder:text-slate-400 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all"
+                    placeholder="e.g., Bridge Construction Phase 1"
                     value={newProject.name}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewProject({ ...newProject, name: e.target.value })}
+                    onKeyDown={(e) => e.key === 'Enter' && handleCreateProject()}
                   />
                 </div>
 
-                <div className="space-y-2">
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-black/40">Location</label>
+                <div className="space-y-1.5">
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Location</label>
                   <input
                     type="text"
-                    className="w-full p-3 bg-[#F5F5F0] rounded-xl border-none focus:ring-2 focus:ring-black/5"
+                    className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-800 font-medium placeholder:text-slate-400 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all"
                     placeholder="e.g., Kathmandu, Nepal"
                     value={newProject.location}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewProject({ ...newProject, location: e.target.value })}
                   />
                 </div>
 
-                <div className="space-y-2">
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-black/40">Mode</label>
-                  <div className="flex gap-3">
-                    <button
-                      type="button"
-                      onClick={() => setNewProject({ ...newProject, mode: 'CONTRACTOR' })}
-                      className={`flex-1 py-3 rounded-xl font-bold text-sm transition-all ${
-                        newProject.mode === 'CONTRACTOR'
-                          ? 'bg-[#141414] text-white shadow-md'
-                          : 'bg-[#F5F5F0] text-black/40'
-                      }`}
-                    >
-                      CONTRACTOR
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setNewProject({ ...newProject, mode: 'USERS' })}
-                      className={`flex-1 py-3 rounded-xl font-bold text-sm transition-all ${
-                        newProject.mode === 'USERS'
-                          ? 'bg-[#141414] text-white shadow-md'
-                          : 'bg-[#F5F5F0] text-black/40'
-                      }`}
-                    >
-                      USERS
-                    </button>
+                <div className="space-y-1.5">
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Mode</label>
+                  <div className="grid grid-cols-2 gap-2">
+                    {(['CONTRACTOR', 'USERS'] as const).map(mode => (
+                      <button
+                        key={mode}
+                        type="button"
+                        onClick={() => setNewProject({ ...newProject, mode })}
+                        className={`py-2.5 rounded-xl text-sm font-bold transition-all ${
+                          newProject.mode === mode
+                            ? 'bg-indigo-600 text-white shadow-md shadow-indigo-200'
+                            : 'bg-slate-50 text-slate-500 border border-slate-200 hover:border-slate-300'
+                        }`}
+                      >
+                        {mode}
+                      </button>
+                    ))}
                   </div>
+                  <p className="text-xs text-slate-400 pt-1">
+                    {newProject.mode === 'CONTRACTOR' ? 'Includes 15% CP&O overhead, excludes VAT' : 'Includes VAT on applicable resources'}
+                  </p>
                 </div>
               </div>
 
-              <div className="p-6 bg-[#F5F5F0]/50 border-t border-black/5 flex justify-end gap-3">
+              <div className="px-6 py-4 bg-slate-50 border-t border-slate-100 flex justify-end gap-3">
                 <button
                   onClick={() => setIsModalOpen(false)}
-                  className="px-6 py-2 rounded-xl font-bold text-sm hover:bg-black/5"
+                  className="px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-100 transition-colors"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleCreateProject}
                   disabled={!newProject.name.trim()}
-                  className="bg-[#141414] text-white px-6 py-2 rounded-xl font-bold text-sm hover:bg-black transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold text-sm px-5 py-2 rounded-xl transition-all"
                 >
+                  <Plus size={15} />
                   Create Project
                 </button>
               </div>

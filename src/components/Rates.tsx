@@ -216,38 +216,49 @@ export default function Rates() {
 
   // Web layout
   return (
-    <div className="space-y-6">
-      <div className="flex items-end justify-between">
-        <div className="space-y-1">
-          <h1 className="text-4xl font-bold tracking-tighter italic">Resource Rates</h1>
-          <p className="text-black/50">Define unit rates for labour, materials, and equipment.</p>
+    <div className="space-y-6 max-w-6xl">
+      {/* Header */}
+      <div className="flex items-start justify-between">
+        <div className="flex items-start gap-4">
+          <div className="w-11 h-11 rounded-xl bg-emerald-50 flex items-center justify-center mt-0.5">
+            <Search size={19} className="text-emerald-600" />
+          </div>
+          <div>
+            <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Resource Rates</h1>
+            <p className="text-slate-500 text-sm mt-0.5">Define unit rates for labour, materials, and equipment</p>
+          </div>
         </div>
         <button 
           onClick={() => { setEditingRate(null); setIsModalOpen(true); }}
-          className="bg-[#141414] text-white px-6 py-3 rounded-2xl font-bold flex items-center gap-2 hover:bg-black transition-all shadow-lg shadow-black/10"
+          className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm px-4 py-2.5 rounded-xl shadow-sm transition-all"
         >
-          <Plus size={20} />
+          <Plus size={16} />
           Add Rate
         </button>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-4">
+      {/* Filters */}
+      <div className="flex flex-col md:flex-row gap-3">
         <div className="relative flex-1">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-black/30" size={18} />
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
           <input 
             type="text" 
             placeholder="Search resources..."
-            className="w-full pl-12 pr-4 py-3 bg-white border border-black/5 rounded-2xl focus:outline-none focus:ring-2 focus:ring-black/5 transition-all"
+            className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 transition-all text-sm text-slate-800 placeholder:text-slate-400"
             value={search}
             onChange={(e: ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
           />
         </div>
-        <div className="flex bg-white p-1 rounded-2xl border border-black/5">
+        <div className="flex bg-white p-1 rounded-xl border border-slate-200 gap-0.5">
           {(['ALL', 'Labour', 'Material', 'Equipment'] as const).map(type => (
             <button
               key={type}
               onClick={() => setFilter(type)}
-              className={`px-6 py-2 rounded-xl text-xs font-bold uppercase tracking-widest transition-all ${filter === type ? 'bg-[#141414] text-white shadow-md' : 'text-black/40 hover:text-black/60'}`}
+              className={`px-4 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wide transition-all ${
+                filter === type 
+                  ? 'bg-indigo-600 text-white shadow-sm' 
+                  : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'
+              }`}
             >
               {type}
             </button>
@@ -255,20 +266,21 @@ export default function Rates() {
         </div>
       </div>
 
-      <div className="bg-white rounded-3xl shadow-sm border border-black/5 overflow-hidden">
+      {/* Table */}
+      <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="bg-[#F5F5F0]/50 border-b border-black/5">
-              <th className="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-black/40">Type</th>
-              <th className="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-black/40">Resource Name</th>
-              <th className="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-black/40">Unit</th>
-              <th className="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-black/40 text-right">Rate (Excl. VAT)</th>
-              <th className="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-black/40 text-center">Apply VAT</th>
-              <th className="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-black/40 text-right">Total with VAT</th>
-              <th className="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-black/40 text-right">Actions</th>
+            <tr className="bg-slate-50 border-b border-slate-100">
+              <th className="px-5 py-3 text-[10px] font-bold uppercase tracking-widest text-slate-400">Type</th>
+              <th className="px-5 py-3 text-[10px] font-bold uppercase tracking-widest text-slate-400">Resource Name</th>
+              <th className="px-5 py-3 text-[10px] font-bold uppercase tracking-widest text-slate-400">Unit</th>
+              <th className="px-5 py-3 text-[10px] font-bold uppercase tracking-widest text-slate-400 text-right">Rate (Excl. VAT)</th>
+              <th className="px-5 py-3 text-[10px] font-bold uppercase tracking-widest text-slate-400 text-center">VAT</th>
+              <th className="px-5 py-3 text-[10px] font-bold uppercase tracking-widest text-slate-400 text-right">Total with VAT</th>
+              <th className="px-5 py-3 text-[10px] font-bold uppercase tracking-widest text-slate-400 text-right">Actions</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-black/5">
+          <tbody className="divide-y divide-slate-50">
             {filteredRates.map(rate => {
               const inputValue = rateInputs[rate.id] ?? String(rate.rate ?? 0);
               const parsed = parseRateInput(inputValue);
@@ -277,22 +289,22 @@ export default function Rates() {
               const totalWithVat = effectiveRate + vatAmount;
 
               return (
-                <tr key={rate.id} className="hover:bg-black/5 transition-colors group">
-                  <td className="px-6 py-4">
-                    <span className={`px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-tighter ${
-                      rate.resource_type === 'Labour' ? 'bg-blue-100 text-blue-700' : 
-                      rate.resource_type === 'Material' ? 'bg-emerald-100 text-emerald-700' : 'bg-orange-100 text-orange-700'
+                <tr key={rate.id} className="hover:bg-slate-50/60 transition-colors group">
+                  <td className="px-5 py-3.5">
+                    <span className={`px-2 py-1 rounded-md text-[10px] font-bold uppercase ${
+                      rate.resource_type === 'Labour' ? 'bg-sky-50 text-sky-700' : 
+                      rate.resource_type === 'Material' ? 'bg-emerald-50 text-emerald-700' : 'bg-orange-50 text-orange-700'
                     }`}>
                       {rate.resource_type}
                     </span>
                   </td>
-                  <td className="px-6 py-4 font-bold text-sm">{rate.name}</td>
-                  <td className="px-6 py-4 text-xs font-mono text-black/40">{rate.unit}</td>
-                  <td className="px-6 py-4 text-right">
+                  <td className="px-5 py-3.5 font-semibold text-sm text-slate-800">{rate.name}</td>
+                  <td className="px-5 py-3.5 text-xs font-mono text-slate-400">{rate.unit}</td>
+                  <td className="px-5 py-3.5 text-right">
                     <input
                       inputMode="decimal"
                       type="number"
-                      className="w-32 p-2 bg-[#F5F5F0] rounded-lg border-none text-right font-bold focus:ring-2 focus:ring-black/10"
+                      className="w-28 px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-right text-sm font-semibold text-slate-800 focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 focus:outline-none transition-all"
                       value={inputValue}
                       onChange={(e: ChangeEvent<HTMLInputElement>) => {
                         const nextVal = e.target.value;
@@ -313,30 +325,30 @@ export default function Rates() {
                       step="1"
                     />
                   </td>
-                  <td className="px-6 py-4 text-center">
+                  <td className="px-5 py-3.5 text-center">
                     <input 
                       type="checkbox" 
                       checked={!!rate.apply_vat}
                       onChange={(e: ChangeEvent<HTMLInputElement>) => commitRate({ ...rate, apply_vat: (e.target as HTMLInputElement).checked })}
-                      className="w-4 h-4 rounded border-black/10 text-black focus:ring-black/5"
+                      className="w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-200"
                     />
                   </td>
-                  <td className="px-6 py-4 text-right">
-                    <span className="text-lg font-bold tracking-tighter">Rs. {totalWithVat.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                  <td className="px-5 py-3.5 text-right">
+                    <span className="text-sm font-bold text-slate-800">Rs. {totalWithVat.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                   </td>
-                  <td className="px-6 py-4 text-right">
+                  <td className="px-5 py-3.5 text-right">
                     <div className="flex items-center justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                       <button 
                         onClick={() => { setEditingRate(rate); setIsModalOpen(true); }} 
-                        className="p-2 hover:bg-black/5 rounded-xl text-black/40 hover:text-black transition-colors"
+                        className="p-1.5 hover:bg-slate-100 rounded-lg text-slate-400 hover:text-slate-600 transition-colors"
                       >
-                        <Edit size={16} />
+                        <Edit size={14} />
                       </button>
                       <button 
                         onClick={() => handleDelete(rate.id)} 
-                        className="p-2 hover:bg-red-50 rounded-xl text-red-400 hover:text-red-500 transition-colors"
+                        className="p-1.5 hover:bg-red-50 rounded-lg text-red-400 hover:text-red-500 transition-colors"
                       >
-                        <Trash2 size={16} />
+                        <Trash2 size={14} />
                       </button>
                     </div>
                   </td>
@@ -345,8 +357,9 @@ export default function Rates() {
             })}
             {filteredRates.length === 0 && (
               <tr>
-                <td colSpan={7} className="px-6 py-12 text-center text-black/20 italic">
-                  No resources found matching your search.
+                <td colSpan={7} className="px-6 py-14 text-center">
+                  <p className="text-slate-400 font-semibold">No resources found</p>
+                  <p className="text-slate-300 text-sm mt-1">Try adjusting your search or filter</p>
                 </td>
               </tr>
             )}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Trash2, Calculator, X, Search, LayoutList, TableProperties, Download } from 'lucide-react';
+import { Trash2, Calculator, X, Search, LayoutList, TableProperties, Download, Plus } from 'lucide-react';
 import { Norm } from '../types';
 import { motion, AnimatePresence } from 'motion/react';
 import jsPDF from 'jspdf';
@@ -659,24 +659,29 @@ const getFilteredNorms = () => {
 
       <main className="w-full md:max-w-5xl md:mx-auto p-4 md:p-6 space-y-4 md:space-y-6">
         {/* Web Header */}
-        <div className="hidden md:flex items-center justify-between">
-          <div>
-            <h1 className="text-4xl font-bold text-[#1E293B]">Quick BOQ</h1>
-            <p className="text-base text-[#475569] mt-1">Build your quantity estimate</p>
+        <div className="hidden md:flex items-start justify-between">
+          <div className="flex items-start gap-4">
+            <div className="w-11 h-11 rounded-xl bg-rose-50 flex items-center justify-center mt-0.5">
+              <Calculator size={19} className="text-rose-500" />
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Quick BOQ</h1>
+              <p className="text-slate-500 text-sm mt-0.5">Build and export your quantity estimate</p>
+            </div>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             {hasItems && (
               <>
                 <button
                   onClick={() => exportToPDF(viewMode)}
-                  className="px-4 py-2 text-sm font-semibold text-white bg-[#0EA5E9] rounded-lg flex items-center gap-2 hover:bg-[#0284C7] transition-colors shadow-md"
+                  className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-sky-600 hover:bg-sky-500 rounded-xl transition-colors shadow-sm"
                 >
-                  <Download size={16} />
+                  <Download size={15} />
                   Export PDF
                 </button>
                 <button
                   onClick={clearAll}
-                  className="px-4 py-2 text-sm font-semibold text-white bg-[#DC2626] rounded-lg hover:bg-[#B91C1C] transition-colors shadow-md"
+                  className="px-4 py-2 text-sm font-semibold text-red-600 bg-red-50 hover:bg-red-100 rounded-xl transition-colors"
                 >
                   Clear All
                 </button>
@@ -688,8 +693,9 @@ const getFilteredNorms = () => {
                 setTempQuantity('');
                 setShowAddModal(true);
               }}
-              className="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-sm font-bold shadow-md hover:bg-[#2563EB] transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-sm font-semibold shadow-sm transition-colors"
             >
+              <Plus size={15} />
               Add Item
             </button>
           </div>
