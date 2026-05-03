@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import QuickCalculator from './components/QuickCalculator';
+import PGCalculator from './components/PGCalculator';
 import Norms from './components/Norms';
 import BOQ from './components/BOQ';
 import Rates from './components/Rates';
@@ -10,14 +11,14 @@ import Dashboard from './components/Dashboard';
 import {
   Calculator, Library, ClipboardList, DollarSign,
   TrendingUp, FolderKanban, Menu, X, Home, Info,
-  ChevronRight, Zap
+  ChevronRight, Zap, BadgePercent
 } from 'lucide-react';
 import { Norm } from './types';
 import { getNorms } from './utils/storage';
 import { useDeviceType } from './utils/device';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'calc' | 'norms' | 'boq' | 'rates' | 'analysis' | 'projects' | 'about'>('dashboard');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'calc' | 'pg' | 'norms' | 'boq' | 'rates' | 'analysis' | 'projects' | 'about'>('dashboard');
   const [norms, setNorms] = useState<Norm[]>([]);
   const [loading, setLoading] = useState(true);
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -46,6 +47,7 @@ export default function App() {
   const navItems = [
     { id: 'dashboard' as const, label: 'Dashboard', icon: Home, color: 'text-slate-400' },
     { id: 'calc' as const, label: 'Calculator', icon: Calculator, color: 'text-sky-400' },
+    { id: 'pg' as const, label: 'PG Calculator', icon: BadgePercent, color: 'text-slate-400' },
     { id: 'norms' as const, label: 'Norms Library', icon: Library, color: 'text-slate-400' },
     { id: 'rates' as const, label: 'Rates', icon: DollarSign, color: 'text-emerald-400' },
     { id: 'analysis' as const, label: 'Rate Analysis', icon: TrendingUp, color: 'text-amber-400' },
@@ -141,6 +143,7 @@ export default function App() {
         <main className="p-4">
           {activeTab === 'dashboard' && <Dashboard onNavigate={setActiveTab} />}
           {activeTab === 'calc' && <QuickCalculator norms={norms} />}
+          {activeTab === 'pg' && <PGCalculator onBack={() => setActiveTab('calc')} />}
           {activeTab === 'norms' && <Norms norms={norms} />}
           {activeTab === 'projects' && <Projects onSelectProject={(id) => setSelectedProjectId(id)} />}
           {activeTab === 'boq' && <BOQ norms={norms} />}
@@ -263,6 +266,7 @@ export default function App() {
             <>
               {activeTab === 'dashboard' && <Dashboard onNavigate={setActiveTab} />}
               {activeTab === 'calc' && <QuickCalculator norms={norms} />}
+              {activeTab === 'pg' && <PGCalculator onBack={() => setActiveTab('calc')} />}
               {activeTab === 'norms' && <Norms norms={norms} />}
               {activeTab === 'projects' && <Projects onSelectProject={(id) => setSelectedProjectId(id)} />}
               {activeTab === 'boq' && <BOQ norms={norms} />}
