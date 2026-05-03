@@ -443,7 +443,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
             };
           }
 
-          breakdown[key].quantity += quantity * item.measurement_quantity;
+          breakdown[key].quantity += (quantity / basis) * item.measurement_quantity;
         }
       });
     });
@@ -1750,56 +1750,12 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
 
               {/* Summary: aggregated resource list */}
               {breakdownSubView === 'summary' && (() => {
-                const matrix = sharedMode === 'estimate' ? resourceMatrixData : resourceMatrixMeasurementData;
-                const resourceTypeMap = new Map<string, string>();
-
-                project.items.forEach((item: BOQItem) => {
-                  const norm = norms.find((n: Norm) => n.id === item.normId);
-                  norm?.resources.forEach((res: any) => {
-                    if (!res.is_percentage && !resourceTypeMap.has(res.name)) {
-                      resourceTypeMap.set(res.name, res.resource_type);
-                    }
-                  });
-                });
-
-                const summaryMap = new Map<string, ResourceBreakdownItem>();
-                matrix.rows.forEach((row: MatrixRow) => {
-                  matrix.columns.forEach((resourceName: string) => {
-                    const quantity = row.resources[resourceName];
-                    if (quantity === undefined) return;
-                    const rateInfo = getResourceRate(resourceName);
-                    const type = resourceTypeMap.get(resourceName) || 'Material';
-                    const key = `${type}-${resourceName}`;
-
-                    if (!summaryMap.has(key)) {
-                      summaryMap.set(key, {
-                        name: resourceName,
-                        type,
-                        unit: rateInfo.unit || '-',
-                        quantity: 0,
-                        rate: rateInfo.rate,
-                        apply_vat: rateInfo.apply_vat,
-                        totalAmount: 0,
-                        normId: 0,
-                        originalQuantity: 0,
-                        isCustomized: false
-                      });
-                    }
-
-                    const summaryItem = summaryMap.get(key)!;
-                    summaryItem.quantity += quantity;
-                  });
-                });
-
-                summaryMap.forEach((item) => {
-                  let rate = item.rate;
-                  if (project.mode === 'USERS' && item.apply_vat) {
-                    rate = rate * 1.13;
-                  }
-                  item.totalAmount = item.quantity * rate;
-                });
-
-                const data = Array.from(summaryMap.values()).sort((a, b) => {
+                const data = (sharedMode === 'estimate' ? resourceBreakdownEstimate : resourceBreakdownMeasurement)
+                  .map((item: ResourceBreakdownItem) => ({
+                    ...item,
+                    totalAmount: item.quantity * (project.mode === 'USERS' && item.apply_vat ? item.rate * 1.13 : item.rate)
+                  }))
+                  .sort((a, b) => {
                   const order = { Labour: 1, Material: 2, Equipment: 3 };
                   return (order[a.type as keyof typeof order] || 99) - (order[b.type as keyof typeof order] || 99) || a.name.localeCompare(b.name);
                 });
@@ -1839,7 +1795,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
                         <tr className="bg-[#F5F5F0] border-t border-black/10">
                           <td colSpan={4} className="px-4 py-3 text-sm font-bold uppercase tracking-widest text-right">Total</td>
                           <td className="px-4 py-3 text-lg font-bold text-emerald-600 text-right">
-                            {(sharedMode === 'estimate' ? resourceBreakdownEstimate : resourceBreakdownMeasurement).reduce((acc: number, r: ResourceBreakdownItem) => acc + r.totalAmount, 0).toLocaleString(undefined, { minimumFractionDigits: 2 })}
+                            {data.reduce((acc: number, r: ResourceBreakdownItem) => acc + r.totalAmount, 0).toLocaleString(undefined, { minimumFractionDigits: 2 })}
                           </td>
                           <td></td>
                         </tr>
