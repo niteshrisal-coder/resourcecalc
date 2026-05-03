@@ -391,7 +391,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
         .filter((res: any) => !res.is_percentage)
         .map((res: any) => {
           const customQty = getCustomResourceQuantity(item.normId, res.name);
-          const quantity = (customQty !== null ? customQty : res.quantity) / basis;
+          const quantity = customQty !== null ? customQty : res.quantity;
           const rateInfo = getResourceRate(res.name);
           let rate = rateInfo.rate;
           
@@ -399,7 +399,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
             rate = rate * 1.13;
           }
           
-          const amount = quantity * rate;
+          const amount = (quantity / basis) * rate;
 
           if (res.resource_type === 'Labour') labourTotal += amount;
           else if (res.resource_type === 'Material') materialTotal += amount;
