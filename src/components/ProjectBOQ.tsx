@@ -644,6 +644,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
     const resourceMap = new Map<string, {
       unit: string,
       measurementQty: number,
+      measurementRate: number,
       applyVat: boolean,
       billRate: number,
       remarks: string
@@ -664,6 +665,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
           resourceMap.set(resourceName, {
             unit: rateInfo.unit || '-',
             measurementQty: addQty,
+            measurementRate: rateInfo.rate,
             applyVat: rateInfo.apply_vat,
             billRate: savedData?.billRate || 0,
             remarks: savedData?.remarks || ''
@@ -673,9 +675,9 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
     });
 
     return Array.from(resourceMap.entries()).map(([name, data], idx: number) => {
-      const billAmount = data.billRate ? data.measurementQty * data.billRate : 0;
+      const billAmount = data.measurementQty * data.billRate;
       const billVat = data.applyVat ? billAmount * 0.13 : 0;
-      const measurementRate = data.measurementQty ? billAmount / data.measurementQty || 0 : 0;
+      const measurementRate = data.measurementRate;
       const measurementAmount = data.measurementQty * measurementRate;
       const measurementVat = data.applyVat ? measurementAmount * 0.13 : 0;
       const actualAmount = Math.min(measurementAmount, billAmount);
