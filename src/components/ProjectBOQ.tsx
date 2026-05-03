@@ -1750,7 +1750,59 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
 
               {/* Summary: aggregated resource list */}
               {breakdownSubView === 'summary' && (() => {
-                const data = sharedMode === 'estimate' ? resourceBreakdownEstimate : resourceBreakdownMeasurement;
+                const matrix = sharedMode === 'estimate' ? resourceMatrixData : resourceMatrixMeasurementData;
+                const resourceTypeMap = new Map<string, string>();
+
+                project.items.forEach((item: BOQItem) => {
+                  const norm = norms.find((n: Norm) => n.id === item.normId);
+                  norm?.resources.forEach((res: any) => {
+                    if (!res.is_percentage && !resourceTypeMap.has(res.name)) {
+                      resourceTypeMap.set(res.name, res.resource_type);
+                    }
+                  });
+                });
+
+                const summaryMap = new Map<string, ResourceBreakdownItem>();
+                matrix.rows.forEach((row: MatrixRow) => {
+                  matrix.columns.forEach((resourceName: string) => {
+                    const quantity = row.resources[resourceName];
+                    if (quantity === undefined) return;
+                    const rateInfo = getResourceRate(resourceName);
+                    const type = resourceTypeMap.get(resourceName) || 'Material';
+                    const key = `${type}-${resourceName}`;
+
+                    if (!summaryMap.has(key)) {
+                      summaryMap.set(key, {
+                        name: resourceName,
+                        type,
+                        unit: rateInfo.unit || '-',
+                        quantity: 0,
+                        rate: rateInfo.rate,
+                        apply_vat: rateInfo.apply_vat,
+                        totalAmount: 0,
+                        normId: 0,
+                        originalQuantity: 0,
+                        isCustomized: false
+                      });
+                    }
+
+                    const summaryItem = summaryMap.get(key)!;
+                    summaryItem.quantity += quantity;
+                  });
+                });
+
+                summaryMap.forEach((item) => {
+                  let rate = item.rate;
+                  if (project.mode === 'USERS' && item.apply_vat) {
+                    rate = rate * 1.13;
+                  }
+                  item.totalAmount = item.quantity * rate;
+                });
+
+                const data = Array.from(summaryMap.values()).sort((a, b) => {
+                  const order = { Labour: 1, Material: 2, Equipment: 3 };
+                  return (order[a.type as keyof typeof order] || 99) - (order[b.type as keyof typeof order] || 99) || a.name.localeCompare(b.name);
+                });
                 return data.length > 0 ? (
                   <div className="overflow-x-auto -mx-4 px-4">
                     <table className="w-full text-left border-collapse min-w-[700px] bg-white rounded-2xl overflow-hidden border border-black/5">
