@@ -134,7 +134,8 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
   const [activeTab, setActiveTab] = useState<'boq' | 'breakdown' | 'analysis'>('boq');
   const [boqSubTab, setBoqSubTab] = useState<'estimate' | 'measurement'>('estimate');
   const [isAdding, setIsAdding] = useState(true);
-  const [breakdownView, setBreakdownView] = useState<'estimate' | 'measurement' | 'tabulation'>('estimate');
+  const [breakdownView, setBreakdownView] = useState<'estimate' | 'measurement'>('estimate');
+  const [breakdownSubView, setBreakdownSubView] = useState<'summary' | 'detailed' | 'tabulation'>('summary');
   const [breakdownDetailView, setBreakdownDetailView] = useState<'summary' | 'detailed'>('summary');
   const [searchTerm, setSearchTerm] = useState('');
   const [editingItemId, setEditingItemId] = useState<string | null>(null);
@@ -1670,7 +1671,6 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
                   As per Measurement
                 </button>
               </div>
-
               <div className="flex bg-white rounded-xl p-1 border border-[#E2E8F0]">
                 <button
                   onClick={() => setBreakdownDetailView('summary')}
