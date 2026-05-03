@@ -799,7 +799,10 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
             currentRow++;
           });
 
-          // Labour Sub Total
+        const labourStartRow = currentRow - labourResources.length;
+        const labourEndRow = currentRow - 1;
+
+        // Labour Sub Total
           ws[XLSX.utils.encode_cell({ r: currentRow, c: 5 })] = {
             v: 'Sub Total (Labour):',
             t: 's',
@@ -816,7 +819,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
             }
           };
           ws[XLSX.utils.encode_cell({ r: currentRow, c: 6 })] = {
-            v: item.labourTotal * (item.userQuantity / item.basisQuantity),
+            f: `SUM(F${labourStartRow + 1}:F${labourEndRow + 1})`,
             t: 'n',
             s: {
               font: { bold: true },
@@ -832,6 +835,9 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
           };
           currentRow++;
         }
+
+        const materialStartRow = currentRow - materialResources.length;
+        const materialEndRow = currentRow - 1;
 
         // Material rows
         if (materialResources.length > 0) {
@@ -885,7 +891,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
             }
           };
           ws[XLSX.utils.encode_cell({ r: currentRow, c: 6 })] = {
-            v: item.materialTotal * (item.userQuantity / item.basisQuantity),
+            f: `SUM(F${materialStartRow + 1}:F${materialEndRow + 1})`,
             t: 'n',
             s: {
               font: { bold: true },
@@ -901,6 +907,9 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
           };
           currentRow++;
         }
+
+        const equipmentStartRow = currentRow - equipmentResources.length;
+        const equipmentEndRow = currentRow - 1;
 
         // Equipment rows
         if (equipmentResources.length > 0) {
@@ -953,7 +962,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
             }
           };
           ws[XLSX.utils.encode_cell({ r: currentRow, c: 6 })] = {
-            v: item.equipmentTotal * (item.userQuantity / item.basisQuantity),
+            f: `SUM(F${equipmentStartRow + 1}:F${equipmentEndRow + 1})`,
             t: 'n',
             s: {
               font: { bold: true },
@@ -987,7 +996,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
           }
         };
         ws[XLSX.utils.encode_cell({ r: currentRow, c: 5 })] = {
-          v: item.subtotal * (item.userQuantity / item.basisQuantity),
+          f: `SUM(F${currentRow - 2}:F${currentRow})`,
           t: 'n',
           s: {
             font: { bold: true },
@@ -1054,7 +1063,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
             }
           };
           ws[XLSX.utils.encode_cell({ r: currentRow, c: 5 })] = {
-            v: item.subtotal * 0.15 * (item.userQuantity / item.basisQuantity),
+            f: `F${currentRow - 1}*0.15`,
             t: 'n',
             s: {
               font: { bold: true },
