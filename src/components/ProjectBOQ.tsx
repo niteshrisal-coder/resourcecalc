@@ -1708,7 +1708,6 @@ onChange={(e: ChangeEvent<HTMLInputElement>) => setEditBillRateForm({ rate: pars
                 <table className="w-full table-auto border-collapse min-w-[900px]">
                   <thead>
                     <tr className="bg-[#0F172A] text-white">
-                      <th className="px-4 py-3 text-[11px] font-bold uppercase tracking-widest text-left min-w-[200px]">Work Item</th>
                       <th className="px-4 py-3 text-[11px] font-bold uppercase tracking-widest text-left min-w-[180px]">Resource</th>
                       <th className="px-4 py-3 text-[11px] font-bold uppercase tracking-widest text-left min-w-[90px]">Type</th>
                       <th className="px-4 py-3 text-[11px] font-bold uppercase tracking-widest text-left min-w-[70px]">Unit</th>
