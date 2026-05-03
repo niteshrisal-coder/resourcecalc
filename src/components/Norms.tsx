@@ -129,8 +129,8 @@ const filteredNorms = sortedNorms.filter((n: Norm) => {
       {/* Page Header */}
       <div className="flex items-start justify-between flex-wrap gap-4">
         <div className="flex items-start gap-4">
-          <div className="w-11 h-11 rounded-xl bg-violet-50 flex items-center justify-center mt-0.5">
-            <Library size={19} className="text-violet-600" />
+          <div className="w-11 h-11 rounded-xl bg-slate-100 flex items-center justify-center mt-0.5">
+            <Library size={19} className="text-slate-700" />
           </div>
           <div>
             <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Norms Library</h1>
@@ -172,7 +172,7 @@ const filteredNorms = sortedNorms.filter((n: Norm) => {
         {search && (
           <button
             onClick={() => setSearch('')}
-            className="text-sm text-slate-800 hover:text-indigo-500 font-semibold px-3"
+            className="text-sm text-slate-800 hover:text-slate-600 font-semibold px-3"
           >
             Clear
           </button>
@@ -191,7 +191,7 @@ const filteredNorms = sortedNorms.filter((n: Norm) => {
               exit={{ opacity: 0, y: 10 }}
               className={`rounded-2xl border overflow-hidden transition-all duration-200 cursor-pointer ${
                 expandedNorm === norm.id 
-                  ? 'bg-violet-50 border-violet-200 shadow-md ring-1 ring-violet-200' 
+                  ? 'bg-slate-50 border-slate-300 shadow-md ring-1 ring-slate-200' 
                   : 'bg-white border-slate-100 hover:border-slate-200 shadow-sm hover:shadow-md'
               }`}
             >
@@ -203,7 +203,7 @@ const filteredNorms = sortedNorms.filter((n: Norm) => {
                   <div className="flex items-center gap-2">
                     <span className={`px-2 py-1 rounded-md text-[10px] font-bold uppercase ${
                       norm.type === 'DOR' 
-                        ? 'bg-violet-100 text-violet-700' 
+                        ? 'bg-slate-900 text-white' 
                         : 'bg-slate-100 text-slate-700'
                     }`}>
                       {norm.type}
@@ -222,7 +222,7 @@ const filteredNorms = sortedNorms.filter((n: Norm) => {
                     <span>Unit: <span className="font-semibold text-slate-700">{norm.unit}</span></span>
                     <span>Basis: <span className="font-semibold text-slate-700">{norm.basis_quantity}</span></span>
                   </div>
-                  <span className="px-2 py-0.5 bg-violet-50 text-violet-600 rounded-full text-[10px] font-bold">
+                  <span className="px-2 py-0.5 bg-slate-100 text-slate-700 rounded-full text-[10px] font-bold">
                     {norm.resources.length} res.
                   </span>
                 </div>
@@ -235,10 +235,10 @@ const filteredNorms = sortedNorms.filter((n: Norm) => {
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.25 }}
-                    className="bg-white border-t border-violet-100 px-5 py-4 space-y-4"
+                    className="bg-white border-t border-slate-100 px-5 py-4 space-y-4"
                   >
-                    <ResourceGroupWeb title="Labour" resources={norm.resources.filter(r => r.resource_type === 'Labour')} color="text-orange-600" bgColor="bg-orange-50" />
-                    <ResourceGroupWeb title="Material" resources={norm.resources.filter(r => r.resource_type === 'Material')} color="text-blue-600" bgColor="bg-blue-50" />
+                    <ResourceGroupWeb title="Labour" resources={norm.resources.filter(r => r.resource_type === 'Labour')} color="text-slate-700" bgColor="bg-slate-50" />
+                    <ResourceGroupWeb title="Material" resources={norm.resources.filter(r => r.resource_type === 'Material')} color="text-slate-700" bgColor="bg-slate-50" />
                     <ResourceGroupWeb title="Equipment" resources={norm.resources.filter(r => r.resource_type === 'Equipment')} color="text-emerald-600" bgColor="bg-emerald-50" />
                   </motion.div>
                 )}
@@ -247,8 +247,8 @@ const filteredNorms = sortedNorms.filter((n: Norm) => {
           ))
         ) : (
           <div className="col-span-full py-16 flex flex-col items-center text-center bg-white rounded-2xl border border-slate-100">
-            <div className="w-14 h-14 rounded-2xl bg-violet-50 flex items-center justify-center mb-4">
-              <Library size={26} className="text-violet-300" />
+            <div className="w-14 h-14 rounded-2xl bg-slate-100 flex items-center justify-center mb-4">
+              <Library size={26} className="text-slate-400" />
             </div>
             <p className="font-bold text-slate-400 text-lg">No norms found</p>
             <p className="text-sm text-slate-300 mt-1">Try adjusting your search or filter</p>
