@@ -134,7 +134,8 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
   const [activeTab, setActiveTab] = useState<'boq' | 'breakdown' | 'analysis'>('boq');
   const [boqSubTab, setBoqSubTab] = useState<'estimate' | 'measurement'>('estimate');
   const [isAdding, setIsAdding] = useState(true);
-  const [breakdownView, setBreakdownView] = useState<'estimate' | 'measurement' | 'detailed' | 'tabulation'>('estimate');
+  const [breakdownView, setBreakdownView] = useState<'estimate' | 'measurement' | 'tabulation'>('estimate');
+  const [breakdownDetailView, setBreakdownDetailView] = useState<'summary' | 'detailed'>('summary');
   const [searchTerm, setSearchTerm] = useState('');
   const [editingItemId, setEditingItemId] = useState<string | null>(null);
   const [editForm, setEditForm] = useState({ quantity: 0 });
@@ -1670,134 +1671,195 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
                 </button>
               </div>
 
+              <div className="flex bg-white rounded-xl p-1 border border-[#E2E8F0]">
+                <button
+                  onClick={() => setBreakdownDetailView('summary')}
+                  className={`flex-1 px-3 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all ${
+                    breakdownDetailView === 'summary'
+                      ? 'bg-[#1E293B] text-white shadow-sm'
+                      : 'text-[#333333]/60 hover:text-[#1E293B]'
+                  }`}
+                >
+                  Summary
+                </button>
+                <button
+                  onClick={() => setBreakdownDetailView('detailed')}
+                  className={`flex-1 px-3 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all ${
+                    breakdownDetailView === 'detailed'
+                      ? 'bg-[#1E293B] text-white shadow-sm'
+                      : 'text-[#333333]/60 hover:text-[#1E293B]'
+                  }`}
+                >
+                  Detailed
+                </button>
+              </div>
+
               {breakdownView === 'estimate' && (
-                resourceBreakdownEstimate.length > 0 ? (
-                  <div className="overflow-x-auto -mx-4 px-4">
-                    <table className="w-full text-left border-collapse min-w-[700px] bg-white rounded-2xl overflow-hidden border border-black/5">
-                      <thead>
-                        <tr className="bg-[#F5F5F0]/50 border-b border-black/5">
-                          <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40">Type</th>
-                          <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40">Resource</th>
-                          <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40">Unit</th>
-                          <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40 text-right w-24">Qty</th>
-                          <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40 text-right w-28">Rate</th>
-                          <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40 text-right w-32">Total</th>
-                         </tr>
-                      </thead>
-                      <tbody className="divide-y divide-black/5">
-                        {resourceBreakdownEstimate.map((res: ResourceBreakdownItem, idx: number) => {
-                          return (
-                            <tr key={idx} className="hover:bg-black/5 transition-colors">
-                              <td className="px-4 py-3">
-                                <span className={`px-2 py-1 rounded-lg text-[10px] font-bold uppercase ${
-                                  res.type === 'Labour' ? 'bg-blue-100 text-blue-700' : 
-                                  res.type === 'Material' ? 'bg-emerald-100 text-emerald-700' : 'bg-orange-100 text-orange-700'
-                                }`}>
-                                  {res.type}
-                                </span>
-                              </td>
-                              <td className="px-4 py-3">
-                                <span className="text-sm font-bold">{res.name}</span>
-                                {res.isCustomized && (
-                                  <span className="ml-2 text-[8px] bg-yellow-100 text-yellow-700 px-1 py-0.5 rounded">Custom</span>
-                                )}
-                              </td>
-                              <td className="px-4 py-3 text-sm text-black/60">{res.unit}</td>
-                              <td className="px-4 py-3 text-right">
-                                <span className="text-sm font-bold">
-                                  {res.quantity.toLocaleString(undefined, { maximumFractionDigits: 3 })}
-                                </span>
-                              </td>
-                              <td className="px-4 py-3 text-right text-sm font-mono"> {res.rate.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
-                              <td className="px-4 py-3 text-right text-sm font-bold text-emerald-600"> {res.totalAmount.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
-                              <td className="px-4 py-3 text-center">
-                                {/* Action column removed - quantity editing disabled */}
-                              </td>
+                <>
+                  {breakdownDetailView === 'summary' ? (
+                    resourceBreakdownEstimate.length > 0 ? (
+                      <div className="overflow-x-auto -mx-4 px-4">
+                        <table className="w-full text-left border-collapse min-w-[700px] bg-white rounded-2xl overflow-hidden border border-black/5">
+                          <thead>
+                            <tr className="bg-[#F5F5F0]/50 border-b border-black/5">
+                              <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40">Type</th>
+                              <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40">Resource</th>
+                              <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40">Unit</th>
+                              <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40 text-right w-24">Qty</th>
+                              <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40 text-right w-28">Rate</th>
+                              <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40 text-right w-32">Total</th>
                             </tr>
-                          );
-                        })}
-                      </tbody>
-                      <tfoot>
-                        <tr className="bg-[#F5F5F0] border-t border-black/10">
-                          <td colSpan={4} className="px-4 py-3 text-sm font-bold uppercase tracking-widest text-right">Total</td>
-                          <td className="px-4 py-3 text-lg font-bold text-emerald-600 text-right">
-                            {resourceBreakdownEstimate.reduce((acc: number, r: ResourceBreakdownItem) => acc + r.totalAmount, 0).toLocaleString(undefined, { minimumFractionDigits: 2 })}
-                          </td>
-                          <td></td>
-                        </tr>
-                      </tfoot>
-                    </table>
-                  </div>
-                ) : (
-                  <div className="p-8 text-center text-black/20">
-                    <p className="text-sm">No resources to display.</p>
-                  </div>
-                )
+                          </thead>
+                          <tbody className="divide-y divide-black/5">
+                            {resourceBreakdownEstimate.map((res: ResourceBreakdownItem, idx: number) => (
+                              <tr key={idx} className="hover:bg-black/5 transition-colors">
+                                <td className="px-4 py-3">
+                                  <span className={`px-2 py-1 rounded-lg text-[10px] font-bold uppercase ${res.type === 'Labour' ? 'bg-blue-100 text-blue-700' : res.type === 'Material' ? 'bg-emerald-100 text-emerald-700' : 'bg-orange-100 text-orange-700'}`}>
+                                    {res.type}
+                                  </span>
+                                </td>
+                                <td className="px-4 py-3">
+                                  <span className="text-sm font-bold">{res.name}</span>
+                                  {res.isCustomized && <span className="ml-2 text-[8px] bg-yellow-100 text-yellow-700 px-1 py-0.5 rounded">Custom</span>}
+                                </td>
+                                <td className="px-4 py-3 text-sm text-black/60">{res.unit}</td>
+                                <td className="px-4 py-3 text-right"><span className="text-sm font-bold">{res.quantity.toLocaleString(undefined, { maximumFractionDigits: 3 })}</span></td>
+                                <td className="px-4 py-3 text-right text-sm font-mono">{res.rate.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
+                                <td className="px-4 py-3 text-right text-sm font-bold text-emerald-600">{res.totalAmount.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                          <tfoot>
+                            <tr className="bg-[#F5F5F0] border-t border-black/10">
+                              <td colSpan={4} className="px-4 py-3 text-sm font-bold uppercase tracking-widest text-right">Total</td>
+                              <td className="px-4 py-3 text-lg font-bold text-emerald-600 text-right">
+                                {resourceBreakdownEstimate.reduce((acc: number, r: ResourceBreakdownItem) => acc + r.totalAmount, 0).toLocaleString(undefined, { minimumFractionDigits: 2 })}
+                              </td>
+                              <td></td>
+                            </tr>
+                          </tfoot>
+                        </table>
+                      </div>
+                    ) : (
+                      <div className="p-8 text-center text-black/20"><p className="text-sm">No resources to display.</p></div>
+                    )
+                  ) : (
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-left border-collapse min-w-[800px] bg-white rounded-2xl overflow-hidden border border-black/5">
+                        <thead>
+                          <tr className="bg-[#1E293B] text-white">
+                            <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest">S.N.</th>
+                            <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest">Work Item</th>
+                            <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest">Unit</th>
+                            <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest">Qty</th>
+                            {resourceMatrixData.columns.map((col: string) => <th key={col} className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest min-w-[120px]">{col}</th>)}
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-black/5">
+                          {resourceMatrixData.rows.map((row: MatrixRow) => (
+                            <tr key={row.sNo} className="hover:bg-black/5">
+                              <td className="px-4 py-3 text-sm">{row.sNo}</td>
+                              <td className="px-4 py-3 text-sm font-medium">{row.workItem}</td>
+                              <td className="px-4 py-3 text-sm">{row.unit}</td>
+                              <td className="px-4 py-3 text-sm font-bold">{row.quantity}</td>
+                              {resourceMatrixData.columns.map((col: string) => <td key={col} className="px-4 py-3 text-sm">{row.resources[col] !== undefined ? row.resources[col].toFixed(3) : '-'}</td>)}
+                            </tr>
+                          ))}
+                        </tbody>
+                        <tfoot>
+                          <tr className="bg-[#F5F5F0] border-t border-black/10 font-bold">
+                            <td colSpan={4} className="px-4 py-3 text-sm uppercase tracking-widest">Total</td>
+                            {resourceMatrixData.columns.map((col: string) => <td key={col} className="px-4 py-3 text-sm">{resourceMatrixData.totals[col]?.toFixed(3) || '-'}</td>)}
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                  )}
+                </>
               )}
 
               {breakdownView === 'measurement' && (
-                resourceBreakdownMeasurement.length > 0 ? (
-                  <div className="overflow-x-auto -mx-4 px-4">
-                    <table className="w-full text-left border-collapse min-w-[700px] bg-white rounded-2xl overflow-hidden border border-black/5">
-                      <thead>
-                        <tr className="bg-[#F5F5F0]/50 border-b border-black/5">
-                          <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40">Type</th>
-                          <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40">Resource</th>
-                          <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40">Unit</th>
-                          <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40 text-right w-24">Qty</th>
-                          <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40 text-right w-28">Rate</th>
-                          <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40 text-right w-32">Total</th>
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-black/5">
-                        {resourceBreakdownMeasurement.map((res: ResourceBreakdownItem, idx: number) => {
-                          return (
-                            <tr key={idx} className="hover:bg-black/5 transition-colors">
-                              <td className="px-4 py-3">
-                                <span className={`px-2 py-1 rounded-lg text-[10px] font-bold uppercase ${
-                                  res.type === 'Labour' ? 'bg-blue-100 text-blue-700' :
-                                  res.type === 'Material' ? 'bg-emerald-100 text-emerald-700' : 'bg-orange-100 text-orange-700'
-                                }`}>
-                                  {res.type}
-                                </span>
-                              </td>
-                              <td className="px-4 py-3">
-                                <span className="text-sm font-bold">{res.name}</span>
-                                {res.isCustomized && (
-                                  <span className="ml-2 text-[8px] bg-yellow-100 text-yellow-700 px-1 py-0.5 rounded">Custom</span>
-                                )}
-                              </td>
-                              <td className="px-4 py-3 text-sm text-black/60">{res.unit}</td>
-                              <td className="px-4 py-3 text-right">
-                                <span className="text-sm font-bold">
-                                  {res.quantity.toLocaleString(undefined, { maximumFractionDigits: 3 })}
-                                </span>
-                              </td>
-                              <td className="px-4 py-3 text-right text-sm font-mono"> {res.rate.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
-                              <td className="px-4 py-3 text-right text-sm font-bold text-emerald-600"> {res.totalAmount.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
+                <>
+                  {breakdownDetailView === 'summary' ? (
+                    resourceBreakdownMeasurement.length > 0 ? (
+                      <div className="overflow-x-auto -mx-4 px-4">
+                        <table className="w-full text-left border-collapse min-w-[700px] bg-white rounded-2xl overflow-hidden border border-black/5">
+                          <thead>
+                            <tr className="bg-[#F5F5F0]/50 border-b border-black/5">
+                              <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40">Type</th>
+                              <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40">Resource</th>
+                              <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40">Unit</th>
+                              <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40 text-right w-24">Qty</th>
+                              <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40 text-right w-28">Rate</th>
+                              <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40 text-right w-32">Total</th>
                             </tr>
-                          );
-                        })}
-                      </tbody>
-                      <tfoot>
-                        <tr className="bg-[#F5F5F0] border-t border-black/10">
-                          <td colSpan={4} className="px-4 py-3 text-sm font-bold uppercase tracking-widest text-right">Total</td>
-                          <td className="px-4 py-3 text-lg font-bold text-emerald-600 text-right">
-                            {resourceBreakdownMeasurement.reduce((acc: number, r: ResourceBreakdownItem) => acc + r.totalAmount, 0).toLocaleString(undefined, { minimumFractionDigits: 2 })}
-                          </td>
-                          <td></td>
-                        </tr>
-                      </tfoot>
-                    </table>
-                  </div>
-                ) : (
-                  <div className="p-8 text-center text-black/20">
-                    <p className="text-sm">No resources to display.</p>
-                  </div>
-                )
+                          </thead>
+                          <tbody className="divide-y divide-black/5">
+                            {resourceBreakdownMeasurement.map((res: ResourceBreakdownItem, idx: number) => (
+                              <tr key={idx} className="hover:bg-black/5 transition-colors">
+                                <td className="px-4 py-3">
+                                  <span className={`px-2 py-1 rounded-lg text-[10px] font-bold uppercase ${res.type === 'Labour' ? 'bg-blue-100 text-blue-700' : res.type === 'Material' ? 'bg-emerald-100 text-emerald-700' : 'bg-orange-100 text-orange-700'}`}>
+                                    {res.type}
+                                  </span>
+                                </td>
+                                <td className="px-4 py-3"><span className="text-sm font-bold">{res.name}</span>{res.isCustomized && <span className="ml-2 text-[8px] bg-yellow-100 text-yellow-700 px-1 py-0.5 rounded">Custom</span>}</td>
+                                <td className="px-4 py-3 text-sm text-black/60">{res.unit}</td>
+                                <td className="px-4 py-3 text-right"><span className="text-sm font-bold">{res.quantity.toLocaleString(undefined, { maximumFractionDigits: 3 })}</span></td>
+                                <td className="px-4 py-3 text-right text-sm font-mono">{res.rate.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
+                                <td className="px-4 py-3 text-right text-sm font-bold text-emerald-600">{res.totalAmount.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                          <tfoot>
+                            <tr className="bg-[#F5F5F0] border-t border-black/10">
+                              <td colSpan={4} className="px-4 py-3 text-sm font-bold uppercase tracking-widest text-right">Total</td>
+                              <td className="px-4 py-3 text-lg font-bold text-emerald-600 text-right">
+                                {resourceBreakdownMeasurement.reduce((acc: number, r: ResourceBreakdownItem) => acc + r.totalAmount, 0).toLocaleString(undefined, { minimumFractionDigits: 2 })}
+                              </td>
+                              <td></td>
+                            </tr>
+                          </tfoot>
+                        </table>
+                      </div>
+                    ) : (
+                      <div className="p-8 text-center text-black/20"><p className="text-sm">No resources to display.</p></div>
+                    )
+                  ) : (
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-left border-collapse min-w-[800px] bg-white rounded-2xl overflow-hidden border border-black/5">
+                        <thead>
+                          <tr className="bg-[#1E293B] text-white">
+                            <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest">S.N.</th>
+                            <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest">Work Item</th>
+                            <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest">Unit</th>
+                            <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest">Qty</th>
+                            {resourceMatrixData.columns.map((col: string) => <th key={col} className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest min-w-[120px]">{col}</th>)}
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-black/5">
+                          {resourceMatrixData.rows.map((row: MatrixRow) => (
+                            <tr key={row.sNo} className="hover:bg-black/5">
+                              <td className="px-4 py-3 text-sm">{row.sNo}</td>
+                              <td className="px-4 py-3 text-sm font-medium">{row.workItem}</td>
+                              <td className="px-4 py-3 text-sm">{row.unit}</td>
+                              <td className="px-4 py-3 text-sm font-bold">{row.quantity}</td>
+                              {resourceMatrixData.columns.map((col: string) => <td key={col} className="px-4 py-3 text-sm">{row.resources[col] !== undefined ? row.resources[col].toFixed(3) : '-'}</td>)}
+                            </tr>
+                          ))}
+                        </tbody>
+                        <tfoot>
+                          <tr className="bg-[#F5F5F0] border-t border-black/10 font-bold">
+                            <td colSpan={4} className="px-4 py-3 text-sm uppercase tracking-widest">Total</td>
+                            {resourceMatrixData.columns.map((col: string) => <td key={col} className="px-4 py-3 text-sm">{resourceMatrixData.totals[col]?.toFixed(3) || '-'}</td>)}
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                  )}
+                </>
               )}
 
-              {breakdownView === 'detailed' && (
+              {breakdownView === 'measurement' && breakdownDetailView === 'detailed' && (
                 <div className="overflow-x-auto">
                   <table className="w-full text-left border-collapse min-w-[800px] bg-white rounded-2xl overflow-hidden border border-black/5">
                     <thead>
