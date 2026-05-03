@@ -399,7 +399,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
             rate = rate * 1.13;
           }
           
-          const amount = (quantity / basis) * rate;
+          const amount = quantity * rate;
 
           if (res.resource_type === 'Labour') labourTotal += amount;
           else if (res.resource_type === 'Material') materialTotal += amount;
