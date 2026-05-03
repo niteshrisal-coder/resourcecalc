@@ -1723,11 +1723,6 @@ onChange={(e: ChangeEvent<HTMLInputElement>) => setEditBillRateForm({ rate: pars
                       <>
                         {labourResources.map((res, resIdx) => (
                           <tr key={`labour-${resIdx}`} className="hover:bg-blue-50/30 transition-colors">
-                            {resIdx === 0 && (
-                              <td rowSpan={labourResources.length} className="px-4 py-3 align-top text-sm font-bold text-blue-700 bg-blue-50/50">
-                                {item.refSs} {item.sNo} - {item.normDescription}
-                              </td>
-                            )}
                             <td className="px-4 py-3 align-top">
                               <span className="text-sm font-medium">{res.resourceName}</span>
                               {res.isCustomizedRate && <span className="ml-2 text-[8px] bg-yellow-100 text-yellow-700 px-1 py-0.5 rounded">Custom Rate</span>}
@@ -1843,7 +1838,7 @@ onChange={(e: ChangeEvent<HTMLInputElement>) => setEditBillRateForm({ rate: pars
                   <tfoot>
                     {/* Total Row */}
                     <tr className="bg-[#F1F5F9] border-t-2 border-black/10">
-                      <td colSpan={5} className="px-4 py-3 text-right text-sm font-bold uppercase tracking-widest text-black/70">
+                      <td colSpan={4} className="px-4 py-3 text-right text-sm font-bold uppercase tracking-widest text-black/70">
                         TOTAL (Labour + Material + Equipment)
                       </td>
                       <td className="px-4 py-3 text-right text-base font-bold text-emerald-700">
@@ -1856,7 +1851,7 @@ onChange={(e: ChangeEvent<HTMLInputElement>) => setEditBillRateForm({ rate: pars
                     
                     {/* Unit Rate Row */}
                     <tr className="bg-[#F8FAFC]">
-                      <td colSpan={5} className="px-4 py-3 text-right text-sm font-bold uppercase tracking-widest text-black/70">
+                      <td colSpan={4} className="px-4 py-3 text-right text-sm font-bold uppercase tracking-widest text-black/70">
                         UNIT RATE (Total ÷ {item.basisQuantity} {item.unit})
                       </td>
                       <td className="px-4 py-3 text-right text-base font-bold text-emerald-700">
@@ -1869,7 +1864,7 @@ onChange={(e: ChangeEvent<HTMLInputElement>) => setEditBillRateForm({ rate: pars
                     {project.mode === 'CONTRACTOR' && (
                       <>
                         <tr className="bg-[#FEF3C7]">
-                          <td colSpan={5} className="px-4 py-3 text-right text-sm font-bold uppercase tracking-widest text-amber-700">
+                          <td colSpan={4} className="px-4 py-3 text-right text-sm font-bold uppercase tracking-widest text-amber-700">
                             Contractor Profit and Overhead @ 15%
                           </td>
                           <td className="px-4 py-3 text-right text-base font-bold text-amber-700">
@@ -1878,7 +1873,7 @@ onChange={(e: ChangeEvent<HTMLInputElement>) => setEditBillRateForm({ rate: pars
                           <td className="px-4 py-3"></td>
                         </tr>
                         <tr className="bg-[#1E293B] text-white">
-                          <td colSpan={5} className="px-4 py-3 text-right text-sm font-bold uppercase tracking-widest">
+                          <td colSpan={4} className="px-4 py-3 text-right text-sm font-bold uppercase tracking-widest">
                             UNIT RATE (With Contractor Profit & Overhead)
                           </td>
                           <td className="px-4 py-3 text-right text-lg font-bold">
