@@ -638,39 +638,32 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
 
   // Tabulation Data - based on rateAnalysisData
   const tabulationData = React.useMemo((): TabulationRow[] => {
-    if (!rateAnalysisData.length) return [];
+    const matrix = sharedMode === 'estimate' ? resourceMatrixData : resourceMatrixMeasurementData;
+    if (!matrix.rows.length) return [];
 
     const resourceMap = new Map<string, {
       unit: string,
       measurementQty: number,
-      measurementRate: number,
-      measurementAmount: number,
-      measurementVat: number,
       applyVat: boolean,
       billRate: number,
       remarks: string
     }>();
 
-    rateAnalysisData.forEach((item: RateAnalysisItem) => {
-      item.resources.forEach((res: RateAnalysisResource) => {
-        const rateInfo = getResourceRate(res.resourceName);
-        const measurementAmount = res.amount * item.userQuantity;
-        const measurementVat = rateInfo.apply_vat ? measurementAmount * 0.13 : 0;
-        
-        const existing = resourceMap.get(res.resourceName);
-        const savedData = project?.tabulationData?.find((d: TabulationData) => d.resourceName === res.resourceName);
-        
+    matrix.rows.forEach((row: MatrixRow) => {
+      matrix.columns.forEach((resourceName: string) => {
+        const quantity = row.resources[resourceName];
+        if (quantity === undefined) return;
+        const rateInfo = getResourceRate(resourceName);
+        const savedData = project?.tabulationData?.find((d: TabulationData) => d.resourceName === resourceName);
+        const existing = resourceMap.get(resourceName);
+        const addQty = quantity;
+
         if (existing) {
-          existing.measurementQty += res.quantity * item.userQuantity;
-          existing.measurementAmount += measurementAmount;
-          existing.measurementVat += measurementVat;
+          existing.measurementQty += addQty;
         } else {
-          resourceMap.set(res.resourceName, {
-            unit: res.unit,
-            measurementQty: res.quantity * item.userQuantity,
-            measurementRate: res.rate,
-            measurementAmount: measurementAmount,
-            measurementVat: measurementVat,
+          resourceMap.set(resourceName, {
+            unit: rateInfo.unit || '-',
+            measurementQty: addQty,
             applyVat: rateInfo.apply_vat,
             billRate: savedData?.billRate || 0,
             remarks: savedData?.remarks || ''
@@ -679,10 +672,13 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
       });
     });
 
-    const result: TabulationRow[] = Array.from(resourceMap.entries()).map(([name, data], idx: number) => {
+    return Array.from(resourceMap.entries()).map(([name, data], idx: number) => {
       const billAmount = data.billRate ? data.measurementQty * data.billRate : 0;
       const billVat = data.applyVat ? billAmount * 0.13 : 0;
-      const actualAmount = Math.min(data.measurementAmount, billAmount);
+      const measurementRate = data.measurementQty ? billAmount / data.measurementQty || 0 : 0;
+      const measurementAmount = data.measurementQty * measurementRate;
+      const measurementVat = data.applyVat ? measurementAmount * 0.13 : 0;
+      const actualAmount = Math.min(measurementAmount, billAmount);
       const actualVat = data.applyVat ? actualAmount * 0.13 : 0;
 
       return {
@@ -690,21 +686,19 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
         resourceName: name,
         unit: data.unit,
         measurementQty: data.measurementQty,
-        measurementRate: data.measurementRate,
-        measurementAmount: data.measurementAmount,
-        measurementVat: data.measurementVat,
+        measurementRate,
+        measurementAmount,
+        measurementVat,
         billQty: data.measurementQty,
         billRate: data.billRate,
-        billAmount: billAmount,
-        billVat: billVat,
-        actualAmount: actualAmount,
-        actualVat: actualVat,
+        billAmount,
+        billVat,
+        actualAmount,
+        actualVat,
         remarks: data.remarks
       };
     });
-
-    return result;
-  }, [rateAnalysisData, project?.tabulationData]);
+  }, [sharedMode, resourceMatrixData, resourceMatrixMeasurementData, project?.tabulationData, getResourceRate]);
 
   const updateTabulationBillRate = (resourceName: string, newRate: number) => {
     if (!project) return;
