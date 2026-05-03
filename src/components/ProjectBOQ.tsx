@@ -779,22 +779,19 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
 
             rowData.forEach((value, colIndex) => {
               const cell = XLSX.utils.encode_cell({ r: currentRow, c: colIndex });
-              let displayValue = value;
-              
-              ws[cell] = {
-                v: typeof displayValue === 'number' ? displayValue : displayValue,
-                t: typeof displayValue === 'number' ? 'n' : 's',
-                s: {
-                  fill: { fgColor: { rgb: 'DBEAFE' } },
-                  alignment: { horizontal: colIndex > 2 ? 'right' : 'left', vertical: 'center', wrapText: true },
-                  border: {
-                    top: { style: 'thin', color: { rgb: '000000' } },
-                    bottom: { style: 'thin', color: { rgb: '000000' } },
-                    left: { style: 'thin', color: { rgb: '000000' } },
-                    right: { style: 'thin', color: { rgb: '000000' } }
-                  }
+              const style = {
+                fill: { fgColor: { rgb: 'DBEAFE' } },
+                alignment: { horizontal: colIndex > 2 ? 'right' : 'left', vertical: 'center', wrapText: true },
+                border: {
+                  top: { style: 'thin', color: { rgb: '000000' } },
+                  bottom: { style: 'thin', color: { rgb: '000000' } },
+                  left: { style: 'thin', color: { rgb: '000000' } },
+                  right: { style: 'thin', color: { rgb: '000000' } }
                 }
               };
+              ws[cell] = colIndex === 5
+                ? { f: `${XLSX.utils.encode_col(3)}${currentRow + 1}*${XLSX.utils.encode_col(4)}${currentRow + 1}`, t: 'n', s: style }
+                : { v: value, t: typeof value === 'number' ? 'n' : 's', s: style };
             });
             currentRow++;
           });
@@ -854,11 +851,12 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
 
             rowData.forEach((value, colIndex) => {
               const cell = XLSX.utils.encode_cell({ r: currentRow, c: colIndex });
-              let displayValue = value;
-              
+              const isAmountCell = colIndex === 5;
+              const isQuantityCell = colIndex === 3;
+              const isRateCell = colIndex === 4;
               ws[cell] = {
-                v: typeof displayValue === 'number' ? displayValue : displayValue,
-                t: typeof displayValue === 'number' ? 'n' : 's',
+                v: value,
+                t: typeof value === 'number' ? 'n' : 's',
                 s: {
                   fill: { fgColor: { rgb: 'D1FAE5' } },
                   alignment: { horizontal: colIndex > 2 ? 'right' : 'left', vertical: 'center', wrapText: true },
@@ -870,6 +868,16 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
                   }
                 }
               };
+              if (isQuantityCell || isRateCell || isAmountCell) {
+                ws[cell].t = 'n';
+              }
+              if (isAmountCell) {
+                ws[cell] = {
+                  f: `${XLSX.utils.encode_col(3)}${currentRow + 1}*${XLSX.utils.encode_col(4)}${currentRow + 1}`,
+                  t: 'n',
+                  s: ws[cell].s
+                };
+              }
             });
             currentRow++;
           });
@@ -926,11 +934,12 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
 
             rowData.forEach((value, colIndex) => {
               const cell = XLSX.utils.encode_cell({ r: currentRow, c: colIndex });
-              let displayValue = value;
-              
+              const isAmountCell = colIndex === 5;
+              const isQuantityCell = colIndex === 3;
+              const isRateCell = colIndex === 4;
               ws[cell] = {
-                v: typeof displayValue === 'number' ? displayValue : displayValue,
-                t: typeof displayValue === 'number' ? 'n' : 's',
+                v: value,
+                t: typeof value === 'number' ? 'n' : 's',
                 s: {
                   fill: { fgColor: { rgb: 'FFEDD5' } },
                   alignment: { horizontal: colIndex > 2 ? 'right' : 'left', vertical: 'center', wrapText: true },
@@ -941,6 +950,16 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
                   }
                 }
               };
+              if (isQuantityCell || isRateCell || isAmountCell) {
+                ws[cell].t = 'n';
+              }
+              if (isAmountCell) {
+                ws[cell] = {
+                  f: `${XLSX.utils.encode_col(3)}${currentRow + 1}*${XLSX.utils.encode_col(4)}${currentRow + 1}`,
+                  t: 'n',
+                  s: ws[cell].s
+                };
+              }
             });
             currentRow++;
           });
@@ -996,7 +1015,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
           }
         };
         ws[XLSX.utils.encode_cell({ r: currentRow, c: 5 })] = {
-          f: `SUM(F${currentRow - 2}:F${currentRow})`,
+          f: `SUM(F${currentRow - 2}:F${currentRow - 1})`,
           t: 'n',
           s: {
             font: { bold: true },
@@ -1029,7 +1048,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
           }
         };
         ws[XLSX.utils.encode_cell({ r: currentRow, c: 5 })] = {
-          f: `F${currentRow}/F${currentRow - 1}`,
+          f: `F${currentRow - 1}/F${currentRow - 2}`,
           t: 'n',
           s: {
             font: { bold: true },
@@ -1096,7 +1115,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
             }
           };
           ws[XLSX.utils.encode_cell({ r: currentRow, c: 5 })] = {
-            f: project.mode === 'CONTRACTOR' ? `F${currentRow}*1.15` : `F${currentRow}/F${currentRow - 1}`,
+            f: project.mode === 'CONTRACTOR' ? `F${currentRow}*1.15` : `F${currentRow - 1}/F${currentRow - 2}`,
             t: 'n',
             s: {
               font: { bold: true, color: { rgb: 'FFFFFF' } },
