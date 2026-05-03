@@ -237,5 +237,171 @@ export default function QuickCalculator({ norms }: { norms: Norm[] }) {
     );
   }
 
-  return <div className="min-h-screen bg-slate-50 p-8">Quick Calculator</div>;
+  return (
+    <div className="max-w-7xl mx-auto space-y-6">
+      <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <h1 className="text-3xl font-bold text-slate-900 tracking-tight">Quick Calculator</h1>
+            <p className="mt-2 text-sm text-slate-500">Select a norm, enter quantity, and view the scaled resources instantly.</p>
+          </div>
+          <button
+            onClick={reset}
+            className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100 transition-colors"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+        <div className="space-y-4">
+          <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-900 mb-3">Work Item</div>
+            {selectedNorm ? (
+              <div onClick={() => setIsSearching(true)} className="space-y-3 cursor-pointer rounded-xl p-3 transition-all duration-200 bg-slate-50 border border-slate-200 hover:border-sky-300">
+                <div className="flex items-center justify-between gap-3">
+                  <div className="text-sm font-semibold text-slate-700">{selectedNorm.ref_ss} {selectedNorm.sNo || ''}</div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[9px] font-bold text-slate-700 bg-white px-2 py-0.5 rounded-full">✓ Selected</span>
+                    <span className="text-[10px] text-slate-500 bg-white px-2 py-1 rounded-full">Click to change</span>
+                  </div>
+                </div>
+                <p className="text-sm text-slate-900 leading-6 font-medium">{selectedNorm.description}</p>
+                <div className="flex flex-wrap gap-3 text-xs text-slate-500 mt-2">
+                  <span>Unit: {selectedNorm.unit}</span>
+                  <span>Basis: {selectedNorm.basis_quantity}</span>
+                </div>
+              </div>
+            ) : (
+              <button onClick={() => setIsSearching(true)} className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-left text-sm font-semibold text-slate-500 hover:bg-slate-100 transition-colors">
+                Select work item
+              </button>
+            )}
+          </section>
+
+          <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-900 mb-3">Quantity</div>
+            <div className="flex items-center gap-3">
+              <input
+                type="number"
+                value={quantity === 0 ? '' : quantity}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setQuantity(e.target.value ? parseFloat(e.target.value) : 0)}
+                disabled={!selectedNorm}
+                className="flex-1 rounded-2xl border border-slate-200 bg-white px-3 py-2 text-base font-semibold text-slate-900 outline-none focus:border-sky-500 focus:ring-2 focus:ring-sky-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                placeholder={selectedNorm ? String(selectedNorm.basis_quantity) : 'Select work item first'}
+              />
+              <span className="text-sm font-semibold text-slate-500">{selectedNorm?.unit || 'unit'}</span>
+            </div>
+          </section>
+        </div>
+
+        <div>
+          <AnimatePresence>
+            {selectedNorm && (
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 20 }} transition={{ duration: 0.35 }} className="space-y-5">
+                <div className="flex items-center justify-between px-1">
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900">Resource Breakdown</h3>
+                  <span className="px-3 py-1 bg-sky-600 text-white rounded-full text-[8px] font-bold uppercase tracking-wider shadow-sm">Live</span>
+                </div>
+
+                <div className="space-y-5">
+                  {(() => {
+                    const breakdown = calculateResourceBreakdown(selectedNorm, quantity);
+                    const groups = [
+                      { type: 'Labour' },
+                      { type: 'Material' },
+                      { type: 'Equipment' }
+                    ];
+
+                    return groups.map(group => {
+                      const items = breakdown.filter(r => r.resource_type === group.type);
+                      if (items.length === 0) return null;
+
+                      return (
+                        <motion.div key={group.type} initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.1 }} className="rounded-2xl border border-slate-200 bg-white shadow-sm">
+                          <div className="flex items-center gap-3 px-4 py-3 border-b border-slate-200">
+                            <div className="w-2 h-2 rounded-full bg-sky-600" />
+                            <h4 className="text-sm font-bold uppercase tracking-wide text-slate-900">{group.type}</h4>
+                          </div>
+                          <div className="divide-y divide-slate-200">
+                            {items.map((item, idx) => (
+                              <div key={idx} className="px-4 py-4">
+                                <div className="flex items-start justify-between gap-4">
+                                  <div className="flex-1 pr-3">
+                                    <p className="font-bold text-sm leading-tight text-slate-900">{item.name}</p>
+                                    {item.is_percentage ? (
+                                      <p className="text-[10px] text-sky-600 font-semibold bg-sky-100 px-2 py-1 rounded-full inline-block mt-2">% of {item.percentage_base || 'Labour'}</p>
+                                    ) : (
+                                      <p className="text-[10px] text-slate-500 bg-slate-100 px-2 py-1 rounded-full inline-block mt-2">Basis: {item.quantity} {item.unit}</p>
+                                    )}
+                                  </div>
+                                  <div className="text-right shrink-0">
+                                    {item.is_percentage ? (
+                                      <div>
+                                        <p className="text-base font-bold font-mono text-sky-600">{item.scaledQuantity}%</p>
+                                        <p className="text-[8px] font-semibold text-slate-500 uppercase mt-1">of {item.percentage_base || 'Labour'}</p>
+                                      </div>
+                                    ) : (
+                                      <div>
+                                        <p className="text-base font-bold font-mono text-slate-900">{item.scaledQuantity.toLocaleString()}</p>
+                                        <p className="text-[8px] font-semibold text-slate-500 uppercase mt-1">{item.displayUnit}</p>
+                                      </div>
+                                    )}
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </motion.div>
+                      );
+                    });
+                  })()}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
+
+      <AnimatePresence>
+        {isSearching && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm flex items-start justify-center overflow-hidden p-4">
+            <div className="mt-16 w-full max-w-3xl rounded-3xl bg-slate-50 shadow-2xl overflow-hidden border border-slate-200">
+              <div className="sticky top-0 bg-slate-50 z-10 p-4 border-b border-slate-200 shadow-sm flex items-center gap-3">
+                <button onClick={() => setIsSearching(false)} className="text-slate-500 text-sm font-semibold hover:text-sky-600 transition-colors">Back</button>
+                <input
+                  autoFocus
+                  type="text"
+                  placeholder="Search work items..."
+                  className="flex-1 px-4 py-3 bg-white border border-slate-200 rounded-2xl focus:ring-2 focus:ring-sky-200 focus:border-sky-500 transition-all duration-200 text-sm font-medium text-slate-900 placeholder:text-slate-500/40"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+              </div>
+
+              <div className="max-h-[65vh] overflow-y-auto p-4">
+                <div className="space-y-2">
+                  {filteredNorms.map(norm => (
+                    <button key={norm.id} onClick={() => handleSelectNorm(norm)} className="w-full text-left bg-white border border-slate-200 rounded-2xl p-3 shadow-sm hover:border-sky-300 hover:shadow-md transition-all">
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="flex-1 min-w-0">
+                          <div className="text-xs font-bold text-sky-700 mb-1">{norm.ref_ss} {norm.sNo || ''}</div>
+                          <div className="text-sm font-medium text-slate-900 line-clamp-2">{norm.description}</div>
+                        </div>
+                        <div className="text-xs font-semibold text-slate-500 shrink-0">{norm.type}</div>
+                      </div>
+                    </button>
+                  ))}
+                  {filteredNorms.length === 0 && (
+                    <div className="text-center text-slate-500 text-sm py-10">No matching work items found.</div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 }
