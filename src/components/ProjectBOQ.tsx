@@ -134,9 +134,10 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
   const [activeTab, setActiveTab] = useState<'boq' | 'breakdown' | 'analysis'>('boq');
   const [boqSubTab, setBoqSubTab] = useState<'estimate' | 'measurement'>('estimate');
   const [isAdding, setIsAdding] = useState(true);
-  const [breakdownView, setBreakdownView] = useState<'estimate' | 'measurement'>('estimate');
+  const [breakdownView, setBreakdownView] = useState<'summary' | 'detailed' | 'tabulation'>('summary');
   const [breakdownSubView, setBreakdownSubView] = useState<'summary' | 'detailed' | 'tabulation'>('summary');
   const [breakdownDetailView, setBreakdownDetailView] = useState<'summary' | 'detailed'>('summary');
+  const [sharedMode, setSharedMode] = useState<'estimate' | 'measurement'>('estimate');
   const [searchTerm, setSearchTerm] = useState('');
   const [editingItemId, setEditingItemId] = useState<string | null>(null);
   const [editForm, setEditForm] = useState({ quantity: 0 });
@@ -699,7 +700,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
         ['Total BOQ:', '', '', '', '', calculateTotalBOQ().toFixed(2), '']
       ];
     } else if (activeTab === 'breakdown') {
-      if (breakdownView === 'estimate') {
+      if (breakdownSubView === 'summary') {
         sheetName = 'Resource_Breakdown_Estimate';
         sheetData = [
           ['Type', 'Resource Name', 'Unit', 'Total Quantity', 'Rate (Rs.)', 'Total Amount (Rs.)', 'Customized'],
@@ -709,7 +710,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
           [],
           ['Total:', '', '', '', '', resourceBreakdownEstimate.reduce((acc: number, r: ResourceBreakdownItem) => acc + r.totalAmount, 0).toFixed(2), '']
         ];
-      } else if (breakdownView === 'measurement') {
+      } else if (breakdownSubView === 'detailed') {
         sheetName = 'Resource_Breakdown_Measurement';
         sheetData = [
           ['Type', 'Resource Name', 'Unit', 'Total Quantity', 'Rate (Rs.)', 'Total Amount (Rs.)', 'Customized'],
@@ -719,7 +720,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
           [],
           ['Total:', '', '', '', '', resourceBreakdownMeasurement.reduce((acc: number, r: ResourceBreakdownItem) => acc + r.totalAmount, 0).toFixed(2), '']
         ];
-      } else if (breakdownView === 'detailed') {
+      } else if (breakdownSubView === 'tabulation') {
         sheetName = 'Resource_Breakdown_Detailed';
         const headers = ['S.N.', 'Work Item', 'Unit', 'Qty', ...resourceMatrixData.columns];
         sheetData = [headers];
@@ -737,7 +738,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
           totalRow.push(resourceMatrixData.totals[col]?.toFixed(3) || '-');
         });
         sheetData.push(totalRow);
-      } else if (breakdownView === 'tabulation') {
+      } else if (breakdownSubView === 'tabulation') {
         sheetName = 'Tabulation_Chart';
         sheetData = [
           ['SN', 'Materials & Labours', 'Unit', 
@@ -1331,10 +1332,10 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
           <div className="grid grid-cols-2 gap-3 md:gap-4">
             <div className="bg-white p-4 md:p-6 rounded-2xl md:rounded-3xl border border-black/5 shadow-sm">
               <p className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-black/40 mb-1">
-                {boqSubTab === 'estimate' ? 'Total BOQ (Estimate)' : 'Total BOQ (Measurement)'}
+                {sharedMode === 'estimate' ? 'Total BOQ (Estimate)' : 'Total BOQ (Measurement)'}
               </p>
               <p className="text-xl md:text-2xl lg:text-3xl font-bold tracking-tighter">
-                {boqSubTab === 'estimate'
+                {sharedMode === 'estimate'
                   ? totalAmount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })
                   : calculateMeasurementTotal().toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               </p>
@@ -1348,9 +1349,9 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
           {/* BOQ Sub-tabs */}
           <div className="flex bg-white rounded-xl p-1 border border-[#E2E8F0]">
             <button
-              onClick={() => setBoqSubTab('estimate')}
+              onClick={() => setSharedMode('estimate')}
               className={`flex-1 px-3 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all ${
-                boqSubTab === 'estimate'
+                sharedMode === 'estimate'
                   ? 'bg-[#1E293B] text-white shadow-sm'
                   : 'text-[#333333]/60 hover:text-[#1E293B]'
               }`}
@@ -1358,9 +1359,9 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
               As per Estimate
             </button>
             <button
-              onClick={() => setBoqSubTab('measurement')}
+              onClick={() => setSharedMode('measurement')}
               className={`flex-1 px-3 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all ${
-                boqSubTab === 'measurement'
+                sharedMode === 'measurement'
                   ? 'bg-[#1E293B] text-white shadow-sm'
                   : 'text-[#333333]/60 hover:text-[#1E293B]'
               }`}
@@ -1369,7 +1370,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
             </button>
           </div>
 
-          {isAdding && boqSubTab === 'estimate' ? (
+          {isAdding && sharedMode === 'estimate' ? (
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <h3 className="text-xs font-bold uppercase tracking-widest text-[#1E293B]">Available Norms (Tap to add)</h3>
@@ -1438,7 +1439,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
           )}
 
           {/* BOQ Table — As per Estimate */}
-          {boqSubTab === 'estimate' && (
+          {sharedMode === 'estimate' && (
             <div className="bg-white rounded-2xl md:rounded-3xl shadow-sm border border-black/5 overflow-hidden">
               <div className="px-3 py-2 bg-[#F8FAFC] border-b border-[#E2E8F0]">
                 <h3 className="text-xs font-bold uppercase tracking-widest text-[#1E293B]">
@@ -1541,7 +1542,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
           )}
 
           {/* BOQ Table — As per Measurement */}
-          {boqSubTab === 'measurement' && (
+          {sharedMode === 'measurement' && (
             <div className="bg-white rounded-2xl md:rounded-3xl shadow-sm border border-black/5 overflow-hidden">
               <div className="px-3 py-2 bg-[#F8FAFC] border-b border-[#E2E8F0] flex items-center justify-between">
                 <h3 className="text-xs font-bold uppercase tracking-widest text-[#1E293B]">
@@ -1651,9 +1652,9 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
             <div className="p-4 space-y-4">
               <div className="flex bg-white rounded-xl p-1 border border-[#E2E8F0]">
                 <button
-                  onClick={() => setBreakdownView('estimate')}
+                  onClick={() => setSharedMode('estimate')}
                   className={`flex-1 px-3 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all ${
-                    breakdownView === 'estimate'
+                    sharedMode === 'estimate'
                       ? 'bg-[#1E293B] text-white shadow-sm'
                       : 'text-[#333333]/60 hover:text-[#1E293B]'
                   }`}
@@ -1661,9 +1662,9 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
                   As per Estimate
                 </button>
                 <button
-                  onClick={() => setBreakdownView('measurement')}
+                  onClick={() => setSharedMode('measurement')}
                   className={`flex-1 px-3 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all ${
-                    breakdownView === 'measurement'
+                    sharedMode === 'measurement'
                       ? 'bg-[#1E293B] text-white shadow-sm'
                       : 'text-[#333333]/60 hover:text-[#1E293B]'
                   }`}
@@ -1694,9 +1695,9 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
                 </button>
               </div>
 
-              {breakdownView === 'estimate' && (
+              {breakdownSubView === 'summary' && (
                 <>
-                  {breakdownDetailView === 'summary' ? (
+                  {sharedMode === 'estimate' ? (
                     resourceBreakdownEstimate.length > 0 ? (
                       <div className="overflow-x-auto -mx-4 px-4">
                         <table className="w-full text-left border-collapse min-w-[700px] bg-white rounded-2xl overflow-hidden border border-black/5">
@@ -1778,9 +1779,9 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
                 </>
               )}
 
-              {breakdownView === 'measurement' && (
+              {breakdownSubView === 'detailed' && (
                 <>
-                  {breakdownDetailView === 'summary' ? (
+                  {sharedMode === 'estimate' ? (
                     resourceBreakdownMeasurement.length > 0 ? (
                       <div className="overflow-x-auto -mx-4 px-4">
                         <table className="w-full text-left border-collapse min-w-[700px] bg-white rounded-2xl overflow-hidden border border-black/5">
@@ -1859,7 +1860,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
                 </>
               )}
 
-              {breakdownView === 'measurement' && breakdownDetailView === 'detailed' && (
+              {breakdownSubView === 'detailed' && breakdownDetailView === 'detailed' && (
                 <div className="overflow-x-auto">
                   <table className="w-full text-left border-collapse min-w-[800px] bg-white rounded-2xl overflow-hidden border border-black/5">
                     <thead>
@@ -1902,7 +1903,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
                 </div>
               )}
 
-              {breakdownView === 'tabulation' && (
+              {breakdownSubView === 'tabulation' && (
                 <div className="overflow-x-auto">
                   <table className="w-full text-left border-collapse min-w-[1200px] bg-white rounded-2xl overflow-hidden border border-black/5">
                     <thead>
