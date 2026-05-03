@@ -86,7 +86,7 @@ export default function Projects({ onSelectProject }: { onSelectProject: (projec
                 className="w-full text-left bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-slate-200 transition-all duration-200 overflow-hidden"
               >
                 {/* Card top accent */}
-                <div className={`h-1.5 w-full ${project.mode === 'CONTRACTOR' ? 'bg-gradient-to-r from-sky-400 to-indigo-500' : 'bg-gradient-to-r from-violet-400 to-purple-600'}`} />
+                <div className={`h-1.5 w-full ${project.mode === 'CONTRACTOR' ? 'bg-gradient-to-r from-sky-400 to-sky-600' : 'bg-gradient-to-r from-slate-400 to-slate-600'}`} />
                 
                 <div className="p-5">
                   <div className="flex items-start justify-between mb-4">
@@ -96,7 +96,7 @@ export default function Projects({ onSelectProject }: { onSelectProject: (projec
                     <span className={`px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wide ${
                       project.mode === 'CONTRACTOR'
                         ? 'bg-sky-50 text-sky-700'
-                        : 'bg-violet-50 text-violet-700'
+                        : 'bg-slate-100 text-slate-700'
                     }`}>
                       {project.mode}
                     </span>

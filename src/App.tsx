@@ -46,7 +46,7 @@ export default function App() {
   const navItems = [
     { id: 'dashboard' as const, label: 'Dashboard', icon: Home, color: 'text-slate-400' },
     { id: 'calc' as const, label: 'Calculator', icon: Calculator, color: 'text-sky-400' },
-    { id: 'norms' as const, label: 'Norms Library', icon: Library, color: 'text-violet-400' },
+    { id: 'norms' as const, label: 'Norms Library', icon: Library, color: 'text-slate-400' },
     { id: 'rates' as const, label: 'Rates', icon: DollarSign, color: 'text-emerald-400' },
     { id: 'analysis' as const, label: 'Rate Analysis', icon: TrendingUp, color: 'text-amber-400' },
     { id: 'boq' as const, label: 'Quick BOQ', icon: ClipboardList, color: 'text-rose-400' },
@@ -280,7 +280,7 @@ export default function App() {
 function AboutPage() {
   const features = [
     { icon: Calculator, color: 'text-sky-500', bg: 'bg-sky-50', title: 'Quick Calculator', desc: 'Instant resource breakdowns based on DOR & DUDBC engineering norms' },
-    { icon: Library, color: 'text-violet-500', bg: 'bg-violet-50', title: 'Norms Library', desc: 'Comprehensive database of 270+ engineering standards' },
+    { icon: Library, color: 'text-slate-600', bg: 'bg-slate-100', title: 'Norms Library', desc: 'Comprehensive database of 270+ engineering standards' },
     { icon: FolderKanban, color: 'text-emerald-500', bg: 'bg-emerald-50', title: 'Project Management', desc: 'Organize and manage multiple construction projects with BOQ support' },
     { icon: DollarSign, color: 'text-amber-500', bg: 'bg-amber-50', title: 'Rate Management', desc: 'Configure and update resource pricing with VAT support' },
     { icon: TrendingUp, color: 'text-rose-500', bg: 'bg-rose-50', title: 'Rate Analysis', desc: 'Dynamic cost analysis in Contractor and Users Committee modes' },

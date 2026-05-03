@@ -45,9 +45,9 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
       value: stats.totalNorms,
       icon: Library,
       description: 'DOR & DUDBC standards',
-      iconColor: 'text-violet-500',
-      iconBg: 'bg-violet-50',
-      accent: 'border-t-violet-500',
+      iconColor: 'text-slate-600',
+      iconBg: 'bg-slate-100',
+      accent: 'border-t-slate-500',
       change: 'DOR + DUDBC'
     },
     {
@@ -104,8 +104,8 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
       desc: 'Calculate item rates',
       icon: TrendingUp,
       tab: 'analysis' as const,
-      gradient: 'from-violet-500 to-purple-700',
-      shadow: 'shadow-violet-200',
+      gradient: 'from-slate-700 to-slate-900',
+      shadow: 'shadow-slate-300',
     },
     {
       label: 'Norms Library',
@@ -125,7 +125,7 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
         {/* Background decoration */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-slate-500/10 blur-3xl" />
-          <div className="absolute -bottom-16 -left-10 w-60 h-60 rounded-full bg-violet-600/8 blur-3xl" />
+          <div className="absolute -bottom-16 -left-10 w-60 h-60 rounded-full bg-slate-500/8 blur-3xl" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-40 bg-slate-800/10 blur-3xl rounded-full" />
           {/* Subtle grid */}
           <div
@@ -267,7 +267,7 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
                   </div>
                   <div className="text-right">
                     <span className={`inline-block px-2 py-0.5 rounded-md text-[10px] font-bold uppercase ${
-                      project.mode === 'CONTRACTOR' ? 'bg-sky-100 text-sky-700' : 'bg-violet-100 text-violet-700'
+                      project.mode === 'CONTRACTOR' ? 'bg-sky-100 text-sky-700' : 'bg-slate-100 text-slate-700'
                     }`}>
                       {project.mode}
                     </span>
@@ -300,7 +300,7 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
           <div className="p-5 space-y-3">
             {[
               { icon: Calculator, color: 'text-sky-500', bg: 'bg-sky-50', title: 'Quick Calculator', desc: 'Instant resource calculations', tab: 'calc' as const },
-              { icon: Library, color: 'text-violet-500', bg: 'bg-violet-50', title: 'Norms Library', desc: '270+ DOR & DUDBC standards', tab: 'norms' as const },
+              { icon: Library, color: 'text-slate-600', bg: 'bg-slate-100', title: 'Norms Library', desc: '270+ DOR & DUDBC standards', tab: 'norms' as const },
               { icon: DollarSign, color: 'text-emerald-500', bg: 'bg-emerald-50', title: 'Rate Management', desc: 'Configure pricing with VAT', tab: 'rates' as const },
               { icon: TrendingUp, color: 'text-amber-500', bg: 'bg-amber-50', title: 'Rate Analysis', desc: 'Dynamic cost breakdown', tab: 'analysis' as const },
               { icon: ClipboardList, color: 'text-rose-500', bg: 'bg-rose-50', title: 'BOQ Generator', desc: 'Export professional PDF reports', tab: 'boq' as const },
