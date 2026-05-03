@@ -266,7 +266,7 @@ export default function RateAnalysis() {
           <select 
             value={normType}
             onChange={(e: ChangeEvent<HTMLSelectElement>) => setNormType(e.target.value as any)}
-            className="bg-white px-3 py-2 rounded-xl border border-slate-200 text-xs font-bold uppercase tracking-wide text-slate-600 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all"
+            className="bg-white px-3 py-2 rounded-xl border border-slate-200 text-xs font-bold uppercase tracking-wide text-slate-600 focus:outline-none focus:border-slate-500 focus:ring-2 focus:ring-slate-200 transition-all"
           >
             <option value="ALL">All Norms</option>
             <option value="DOR">DOR Norms</option>
@@ -275,13 +275,13 @@ export default function RateAnalysis() {
           <div className="flex bg-white p-1 rounded-xl border border-slate-200 gap-0.5">
             <button
               onClick={() => setMode('CONTRACTOR')}
-              className={`px-4 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wide transition-all ${mode === 'CONTRACTOR' ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'}`}
+              className={`px-4 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wide transition-all ${mode === 'CONTRACTOR' ? 'bg-slate-900 text-white shadow-sm' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'}`}
             >
               Contractor
             </button>
             <button
               onClick={() => setMode('USERS')}
-              className={`px-4 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wide transition-all ${mode === 'USERS' ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'}`}
+              className={`px-4 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wide transition-all ${mode === 'USERS' ? 'bg-slate-900 text-white shadow-sm' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'}`}
             >
               Users Committee
             </button>
@@ -297,7 +297,7 @@ export default function RateAnalysis() {
             <input 
               type="text" 
               placeholder="Search items..."
-              className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 transition-all text-sm text-slate-800 placeholder:text-slate-400"
+              className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-slate-200 focus:border-slate-500 transition-all text-sm text-slate-800 placeholder:text-slate-400"
               value={search}
               onChange={(e: ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
             />
@@ -315,16 +315,16 @@ export default function RateAnalysis() {
                 <button
                   key={norm.id}
                   onClick={() => setSelectedNorm(norm)}
-                  className={`w-full text-left px-4 py-3 border-b border-slate-50 transition-colors grid grid-cols-12 items-center gap-2 ${isSelected ? 'bg-indigo-600 text-white' : 'hover:bg-slate-50 text-slate-700'}`}
+                  className={`w-full text-left px-4 py-3 border-b border-slate-50 transition-colors grid grid-cols-12 items-center gap-2 ${isSelected ? 'bg-slate-900 text-white' : 'hover:bg-slate-50 text-slate-700'}`}
                 >
-                  <div className={`col-span-3 text-[10px] font-mono truncate ${isSelected ? 'text-indigo-200' : 'text-slate-400'}`}>
+                  <div className={`col-span-3 text-[10px] font-mono truncate ${isSelected ? 'text-slate-200' : 'text-slate-400'}`}>
                     {norm.ref_ss || '-'}
                   </div>
                   <div className="col-span-6">
                     <p className="text-xs font-medium line-clamp-2">{norm.description}</p>
                   </div>
                   <div className="col-span-3 text-right">
-                    <p className={`text-xs font-bold font-mono ${isSelected ? 'text-indigo-100' : 'text-emerald-600'}`}>
+                    <p className={`text-xs font-bold font-mono ${isSelected ? 'text-slate-100' : 'text-emerald-600'}`}>
                       {unitRate.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                     </p>
                   </div>

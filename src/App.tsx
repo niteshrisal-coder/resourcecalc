@@ -34,7 +34,7 @@ export default function App() {
     return (
       <div className="min-h-screen bg-[#0D1117] flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
-          <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center animate-pulse">
+          <div className="w-10 h-10 rounded-xl bg-slate-700 flex items-center justify-center animate-pulse">
             <Zap size={20} className="text-white" />
           </div>
           <p className="text-slate-400 text-sm font-medium">Loading ResourceCalc…</p>
@@ -44,7 +44,7 @@ export default function App() {
   }
 
   const navItems = [
-    { id: 'dashboard' as const, label: 'Dashboard', icon: Home, color: 'text-indigo-400' },
+    { id: 'dashboard' as const, label: 'Dashboard', icon: Home, color: 'text-slate-400' },
     { id: 'calc' as const, label: 'Calculator', icon: Calculator, color: 'text-sky-400' },
     { id: 'norms' as const, label: 'Norms Library', icon: Library, color: 'text-violet-400' },
     { id: 'rates' as const, label: 'Rates', icon: DollarSign, color: 'text-emerald-400' },
@@ -80,7 +80,7 @@ export default function App() {
             {sidebarOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
           <div className="flex items-center gap-2.5">
-            <div className="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center">
+            <div className="w-7 h-7 rounded-lg bg-slate-700 flex items-center justify-center">
               <Zap size={14} className="text-white" />
             </div>
             <span className="text-white font-bold tracking-tight text-lg">ResourceCalc</span>
@@ -95,7 +95,7 @@ export default function App() {
             <div className="relative w-72 bg-[#0D1117] shadow-2xl flex flex-col">
               <div className="p-6 border-b border-white/8">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-900/50">
+                  <div className="w-9 h-9 rounded-xl bg-slate-700 flex items-center justify-center shadow-lg shadow-black/50">
                     <Zap size={18} className="text-white" />
                   </div>
                   <div>
@@ -118,13 +118,13 @@ export default function App() {
                       }}
                       className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all text-sm font-medium ${
                         isActive
-                          ? 'bg-indigo-600/20 text-indigo-300 border-l-2 border-indigo-500'
+                          ? 'bg-white/10 text-white border-l-2 border-white/60'
                           : 'text-slate-400 hover:bg-white/6 hover:text-slate-200'
                       }`}
                     >
-                      <item.icon size={17} className={isActive ? 'text-indigo-400' : item.color} />
+                      <item.icon size={17} className={isActive ? 'text-white' : item.color} />
                       <span>{item.label}</span>
-                      {isActive && <ChevronRight size={14} className="ml-auto text-indigo-500" />}
+                      {isActive && <ChevronRight size={14} className="ml-auto text-white/50" />}
                     </button>
                   );
                 })}
@@ -164,7 +164,7 @@ export default function App() {
       >
         {/* Logo area */}
         <div className={`flex items-center border-b border-white/6 ${sidebarOpen ? 'gap-3 px-5 py-5' : 'justify-center px-3 py-5'}`}>
-          <div className="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-900/40 flex-shrink-0">
+          <div className="w-9 h-9 rounded-xl bg-slate-700 flex items-center justify-center shadow-lg shadow-black/40 flex-shrink-0">
             <Zap size={17} className="text-white" />
           </div>
           {sidebarOpen && (
@@ -213,21 +213,21 @@ export default function App() {
                   sidebarOpen ? 'gap-3 px-3 py-2.5' : 'justify-center p-2.5'
                 } ${
                   isActive
-                    ? 'bg-indigo-600/15 text-indigo-300 border border-indigo-500/25'
+                    ? 'bg-white/10 text-white border border-white/15'
                     : 'text-slate-500 hover:bg-white/6 hover:text-slate-200 border border-transparent'
                 }`}
               >
                 {isActive && (
-                  <span className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-5 bg-indigo-500 rounded-r-full" />
+                  <span className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-5 bg-white/70 rounded-r-full" />
                 )}
                 <item.icon
                   size={17}
-                  className={`flex-shrink-0 ${isActive ? 'text-indigo-400' : item.color + ' opacity-70 group-hover:opacity-100'}`}
+                  className={`flex-shrink-0 ${isActive ? 'text-white' : item.color + ' opacity-70 group-hover:opacity-100'}`}
                 />
                 {sidebarOpen && (
                   <>
                     <span className="flex-1 text-left">{item.label}</span>
-                    {isActive && <ChevronRight size={13} className="text-indigo-500/70" />}
+                    {isActive && <ChevronRight size={13} className="text-white/50" />}
                   </>
                 )}
               </button>
@@ -240,7 +240,7 @@ export default function App() {
           <div className="px-4 py-4 border-t border-white/6">
             <div className="flex items-center gap-2">
               <div className="w-6 h-6 rounded-md bg-white/8 flex items-center justify-center">
-                <Zap size={11} className="text-indigo-400" />
+                <Zap size={11} className="text-slate-400" />
               </div>
               <div>
                 <p className="text-slate-500 text-[10px] font-semibold">v1.0.0</p>
@@ -290,7 +290,7 @@ function AboutPage() {
   return (
     <div className="max-w-3xl space-y-8">
       <div>
-        <div className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
+        <div className="inline-flex items-center gap-2 bg-slate-100 text-slate-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
           <Zap size={12} />
           Professional Engineering Suite
         </div>
@@ -320,7 +320,7 @@ function AboutPage() {
           <p className="text-slate-300 font-semibold text-sm">ResourceCalc v1.0.0</p>
           <p className="text-slate-600 text-xs mt-1">Built for Nepali civil engineers · Works offline · No data leaves your device</p>
         </div>
-        <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center">
+        <div className="w-10 h-10 rounded-xl bg-slate-700 flex items-center justify-center">
           <Zap size={18} className="text-white" />
         </div>
       </div>

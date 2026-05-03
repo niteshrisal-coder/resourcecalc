@@ -149,7 +149,7 @@ const filteredNorms = sortedNorms.filter((n: Norm) => {
           <input 
             type="text" 
             placeholder="Search by name, code, or description..."
-            className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 transition-all text-sm text-slate-800 placeholder:text-slate-400"
+            className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-slate-200 focus:border-slate-500 transition-all text-sm text-slate-800 placeholder:text-slate-400"
             value={search}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
           />
@@ -161,7 +161,7 @@ const filteredNorms = sortedNorms.filter((n: Norm) => {
               onClick={() => setFilter(type)}
               className={`px-5 py-1.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-all ${
                 filter === type 
-                  ? 'bg-indigo-600 text-white shadow-sm' 
+                  ? 'bg-slate-900 text-white shadow-sm' 
                   : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'
               }`}
             >
@@ -172,7 +172,7 @@ const filteredNorms = sortedNorms.filter((n: Norm) => {
         {search && (
           <button
             onClick={() => setSearch('')}
-            className="text-sm text-indigo-600 hover:text-indigo-500 font-semibold px-3"
+            className="text-sm text-slate-800 hover:text-indigo-500 font-semibold px-3"
           >
             Clear
           </button>
@@ -204,7 +204,7 @@ const filteredNorms = sortedNorms.filter((n: Norm) => {
                     <span className={`px-2 py-1 rounded-md text-[10px] font-bold uppercase ${
                       norm.type === 'DOR' 
                         ? 'bg-violet-100 text-violet-700' 
-                        : 'bg-indigo-100 text-indigo-700'
+                        : 'bg-slate-100 text-slate-700'
                     }`}>
                       {norm.type}
                     </span>

@@ -230,7 +230,7 @@ export default function Rates() {
         </div>
         <button 
           onClick={() => { setEditingRate(null); setIsModalOpen(true); }}
-          className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm px-4 py-2.5 rounded-xl shadow-sm transition-all"
+          className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-700 text-white font-semibold text-sm px-4 py-2.5 rounded-xl shadow-sm transition-all"
         >
           <Plus size={16} />
           Add Rate
@@ -244,7 +244,7 @@ export default function Rates() {
           <input 
             type="text" 
             placeholder="Search resources..."
-            className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 transition-all text-sm text-slate-800 placeholder:text-slate-400"
+            className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-slate-200 focus:border-slate-500 transition-all text-sm text-slate-800 placeholder:text-slate-400"
             value={search}
             onChange={(e: ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
           />
@@ -256,7 +256,7 @@ export default function Rates() {
               onClick={() => setFilter(type)}
               className={`px-4 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wide transition-all ${
                 filter === type 
-                  ? 'bg-indigo-600 text-white shadow-sm' 
+                  ? 'bg-slate-900 text-white shadow-sm' 
                   : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'
               }`}
             >
@@ -304,7 +304,7 @@ export default function Rates() {
                     <input
                       inputMode="decimal"
                       type="number"
-                      className="w-28 px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-right text-sm font-semibold text-slate-800 focus:ring-2 focus:ring-indigo-100 focus:border-indigo-400 focus:outline-none transition-all"
+                      className="w-28 px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-right text-sm font-semibold text-slate-800 focus:ring-2 focus:ring-slate-200 focus:border-slate-500 focus:outline-none transition-all"
                       value={inputValue}
                       onChange={(e: ChangeEvent<HTMLInputElement>) => {
                         const nextVal = e.target.value;
@@ -330,7 +330,7 @@ export default function Rates() {
                       type="checkbox" 
                       checked={!!rate.apply_vat}
                       onChange={(e: ChangeEvent<HTMLInputElement>) => commitRate({ ...rate, apply_vat: (e.target as HTMLInputElement).checked })}
-                      className="w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-200"
+                      className="w-4 h-4 rounded border-slate-300 text-slate-800 focus:ring-slate-200"
                     />
                   </td>
                   <td className="px-5 py-3.5 text-right">

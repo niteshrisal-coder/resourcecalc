@@ -64,7 +64,7 @@ export default function Projects({ onSelectProject }: { onSelectProject: (projec
         </div>
         <button
           onClick={() => setIsModalOpen(true)}
-          className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm px-4 py-2.5 rounded-xl shadow-sm transition-all"
+          className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-700 text-white font-semibold text-sm px-4 py-2.5 rounded-xl shadow-sm transition-all"
         >
           <Plus size={16} />
           New Project
@@ -114,7 +114,7 @@ export default function Projects({ onSelectProject }: { onSelectProject: (projec
                       <Calendar size={11} />
                       <span>{new Date(project.created_at).toLocaleDateString()}</span>
                     </div>
-                    <div className="flex items-center gap-1 text-indigo-500 text-xs font-semibold group-hover:gap-2 transition-all">
+                    <div className="flex items-center gap-1 text-slate-700 text-xs font-semibold group-hover:gap-2 transition-all">
                       <span>Open</span>
                       <ArrowRight size={12} />
                     </div>
@@ -176,7 +176,7 @@ export default function Projects({ onSelectProject }: { onSelectProject: (projec
           <p className="text-slate-400 text-sm mt-1 mb-5">Create your first BOQ project to get started</p>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm px-5 py-2.5 rounded-xl transition-all"
+            className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-700 text-white font-semibold text-sm px-5 py-2.5 rounded-xl transition-all"
           >
             <Plus size={16} />
             Create First Project
@@ -210,7 +210,7 @@ export default function Projects({ onSelectProject }: { onSelectProject: (projec
                   <input
                     type="text"
                     autoFocus
-                    className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-800 font-medium placeholder:text-slate-400 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all"
+                    className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-800 font-medium placeholder:text-slate-400 focus:outline-none focus:border-slate-500 focus:ring-2 focus:ring-slate-200 transition-all"
                     placeholder="e.g., Bridge Construction Phase 1"
                     value={newProject.name}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewProject({ ...newProject, name: e.target.value })}
@@ -222,7 +222,7 @@ export default function Projects({ onSelectProject }: { onSelectProject: (projec
                   <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Location</label>
                   <input
                     type="text"
-                    className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-800 font-medium placeholder:text-slate-400 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all"
+                    className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-800 font-medium placeholder:text-slate-400 focus:outline-none focus:border-slate-500 focus:ring-2 focus:ring-slate-200 transition-all"
                     placeholder="e.g., Kathmandu, Nepal"
                     value={newProject.location}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewProject({ ...newProject, location: e.target.value })}
@@ -239,7 +239,7 @@ export default function Projects({ onSelectProject }: { onSelectProject: (projec
                         onClick={() => setNewProject({ ...newProject, mode })}
                         className={`py-2.5 rounded-xl text-sm font-bold transition-all ${
                           newProject.mode === mode
-                            ? 'bg-indigo-600 text-white shadow-md shadow-indigo-200'
+                            ? 'bg-slate-900 text-white shadow-md '
                             : 'bg-slate-50 text-slate-500 border border-slate-200 hover:border-slate-300'
                         }`}
                       >
@@ -263,7 +263,7 @@ export default function Projects({ onSelectProject }: { onSelectProject: (projec
                 <button
                   onClick={handleCreateProject}
                   disabled={!newProject.name.trim()}
-                  className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold text-sm px-5 py-2 rounded-xl transition-all"
+                  className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold text-sm px-5 py-2 rounded-xl transition-all"
                 >
                   <Plus size={15} />
                   Create Project

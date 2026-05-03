@@ -88,7 +88,7 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
       desc: 'Estimate resources instantly',
       icon: Calculator,
       tab: 'calc' as const,
-      gradient: 'from-sky-500 to-indigo-600',
+      gradient: 'from-sky-500 to-sky-700',
       shadow: 'shadow-sky-200',
     },
     {
@@ -124,9 +124,9 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
       <div className="relative overflow-hidden rounded-3xl bg-[#0D1117] px-8 py-10">
         {/* Background decoration */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-indigo-600/10 blur-3xl" />
+          <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-slate-500/10 blur-3xl" />
           <div className="absolute -bottom-16 -left-10 w-60 h-60 rounded-full bg-violet-600/8 blur-3xl" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-40 bg-indigo-900/10 blur-3xl rounded-full" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-40 bg-slate-800/10 blur-3xl rounded-full" />
           {/* Subtle grid */}
           <div
             className="absolute inset-0 opacity-[0.03]"
@@ -139,12 +139,12 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
 
         <div className="relative flex items-start justify-between flex-wrap gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 bg-indigo-500/15 border border-indigo-500/20 text-indigo-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 text-slate-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
               <Activity size={11} />
               Professional Engineering Suite
             </div>
             <h1 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
-              Welcome to <span className="text-indigo-400">ResourceCalc</span>
+              Welcome to <span className="text-slate-300">ResourceCalc</span>
             </h1>
             <p className="mt-3 text-slate-400 text-base leading-relaxed max-w-xl">
               Calculate resource requirements, manage rates, and generate BOQ reports — all based on DOR & DUDBC engineering standards.
@@ -169,7 +169,7 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
           <div className="flex flex-col items-end gap-3">
             <button
               onClick={() => onNavigate('calc')}
-              className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm px-5 py-3 rounded-xl shadow-lg shadow-indigo-900/40 transition-all hover:shadow-indigo-900/60"
+              className="inline-flex items-center gap-2 bg-white hover:bg-slate-100 text-slate-900 font-semibold text-sm px-5 py-3 rounded-xl shadow-lg shadow-black/30 transition-all"
             >
               <Calculator size={16} />
               Open Calculator
@@ -247,7 +247,7 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
             <h2 className="font-bold text-slate-800">Recent Projects</h2>
             <button
               onClick={() => onNavigate('projects')}
-              className="text-xs text-indigo-600 font-semibold hover:text-indigo-700 flex items-center gap-1"
+              className="text-xs text-slate-500 font-semibold hover:text-slate-700 flex items-center gap-1"
             >
               View all <ArrowRight size={12} />
             </button>
@@ -283,7 +283,7 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
                 <p className="text-slate-400 font-medium text-sm">No projects yet</p>
                 <button
                   onClick={() => onNavigate('projects')}
-                  className="mt-3 text-indigo-600 text-xs font-semibold hover:underline"
+                  className="mt-3 text-slate-500 text-xs font-semibold hover:underline"
                 >
                   Create your first project →
                 </button>
