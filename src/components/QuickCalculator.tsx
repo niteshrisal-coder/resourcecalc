@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { Norm } from '../types';
 import { motion, AnimatePresence } from 'motion/react';
 import { useDeviceType } from '../utils/device';
+import PGCalculator from './PGCalculator';
 
 export default function QuickCalculator({ norms }: { norms: Norm[] }) {
   const [search, setSearch] = useState('');
   const [selectedNorm, setSelectedNorm] = useState<Norm | null>(null);
   const [quantity, setQuantity] = useState<number>(1);
   const [isSearching, setIsSearching] = useState(false);
+  const [showPGPage, setShowPGPage] = useState(false);
   const { isMobile } = useDeviceType();
 
   const sortedNorms = [...norms].sort((a, b) => a.id - b.id);
@@ -63,7 +65,10 @@ export default function QuickCalculator({ norms }: { norms: Norm[] }) {
   if (isMobile) {
     return (
       <div className="min-h-screen bg-slate-50 pb-24">
-        <main className="w-full p-4 space-y-4">
+        {showPGPage ? (
+          <PGCalculator onBack={() => setShowPGPage(false)} />
+        ) : (
+          <main className="w-full p-4 space-y-4">
           <div className="rounded-2xl border border-slate-700 bg-slate-900 p-4 shadow-sm">
             <div className="flex items-center justify-between">
               <div>
@@ -104,6 +109,14 @@ export default function QuickCalculator({ norms }: { norms: Norm[] }) {
                   <span className="text-sm font-semibold text-slate-500">{selectedNorm?.unit || 'unit'}</span>
                 </div>
               </section>
+              {!selectedNorm && (
+                <button
+                  onClick={() => setShowPGPage(true)}
+                  className="w-full px-4 py-3 bg-sky-600 text-white rounded-xl text-sm font-semibold hover:bg-sky-700 transition-colors"
+                >
+                  PG Calculator
+                </button>
+              )}
             </div>
             <AnimatePresence>
               {selectedNorm && quantity > 0 && (
@@ -154,7 +167,8 @@ export default function QuickCalculator({ norms }: { norms: Norm[] }) {
               )}
             </AnimatePresence>
           </div>
-        </main>
+          </main>
+        )}
         <AnimatePresence>
           {isSearching && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 bg-slate-50 flex items-center justify-center overflow-hidden">
