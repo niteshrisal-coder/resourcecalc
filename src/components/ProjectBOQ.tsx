@@ -1988,6 +1988,19 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
                         </td>
                         <td></td>
                       </tr>
+                      <tr className="bg-[#1E293B] text-white font-bold">
+                        <td colSpan={11} className="px-3 py-2 text-sm uppercase tracking-widest text-right">Grand Total</td>
+                        <td className="px-3 py-2 text-sm text-right">
+                          {tabulationData.reduce((sum: number, i: TabulationRow) => sum + i.actualAmount, 0).toFixed(2)}
+                        </td>
+                        <td className="px-3 py-2 text-sm text-right">
+                          {tabulationData.reduce((sum: number, i: TabulationRow) => sum + i.actualVat, 0).toFixed(2)}
+                        </td>
+                        <td className="px-3 py-2 text-sm text-right">
+                          {(tabulationData.reduce((sum: number, i: TabulationRow) => sum + i.actualAmount, 0) + tabulationData.reduce((sum: number, i: TabulationRow) => sum + i.actualVat, 0)).toFixed(2)}
+                        </td>
+                        <td></td>
+                      </tr>
                     </tfoot>
                   </table>
                 </div>
