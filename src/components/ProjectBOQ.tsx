@@ -563,7 +563,10 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
       rows.push(row);
     });
 
-    const columns = Array.from(allResources.keys()).sort();
+    const columns = Array.from(allResources.keys()).sort((a, b) => {
+      const typeOrder = { Labour: 1, Material: 2, Equipment: 3 };
+      return (typeOrder[allResources.get(a)?.type as keyof typeof typeOrder] || 99) - (typeOrder[allResources.get(b)?.type as keyof typeof typeOrder] || 99) || a.localeCompare(b);
+    });
     const totals: Record<string, number> = {};
     columns.forEach((col: string) => { totals[col] = 0; });
 
@@ -609,7 +612,10 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
       rows.push(row);
     });
 
-    const columns = Array.from(allResources.keys()).sort();
+    const columns = Array.from(allResources.keys()).sort((a, b) => {
+      const typeOrder = { Labour: 1, Material: 2, Equipment: 3 };
+      return (typeOrder[allResources.get(a)?.type as keyof typeof typeOrder] || 99) - (typeOrder[allResources.get(b)?.type as keyof typeof typeOrder] || 99) || a.localeCompare(b);
+    });
     const totals: Record<string, number> = {};
     columns.forEach((col: string) => { totals[col] = 0; });
 
