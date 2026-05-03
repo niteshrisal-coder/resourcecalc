@@ -348,6 +348,19 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
     }, 0);
   };
 
+  const calculateMeasurementBOQ = (): number => {
+    if (!project) return 0;
+
+    return project.items.reduce((total: number, item: BOQItem) => {
+      const rate = calculateItemRate(item.normId);
+      return total + (rate * item.measurement_quantity);
+    }, 0);
+  };
+
+  const calculateCurrentBOQTotal = (): number => {
+    return sharedMode === 'estimate' ? calculateTotalBOQ() : calculateMeasurementBOQ();
+  };
+
   const resourceBreakdownEstimate = React.useMemo((): ResourceBreakdownItem[] => {
     if (!project) return [];
 
@@ -1282,7 +1295,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
     );
   }
 
-  const totalAmount = calculateTotalBOQ();
+  const totalAmount = calculateCurrentBOQTotal();
 
   return (
     <div className="space-y-4 md:space-y-6">
@@ -1600,7 +1613,6 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
                         <th className="px-3 py-3 text-[9px] font-bold uppercase tracking-widest text-black/40">S.N.</th>
                         <th className="px-3 py-3 text-[9px] font-bold uppercase tracking-widest text-black/40">Work Item (Description)</th>
                         <th className="px-3 py-3 text-[9px] font-bold uppercase tracking-widest text-black/40">Unit</th>
-                        <th className="px-3 py-3 text-[9px] font-bold uppercase tracking-widest text-black/40 text-center w-24">Qty (Est.)</th>
                         <th className="px-3 py-3 text-[9px] font-bold uppercase tracking-widest text-black/40 text-center w-28">Qty (Meas.)</th>
                         <th className="px-3 py-3 text-[9px] font-bold uppercase tracking-widest text-black/40 text-right w-28">Rate (Rs.)</th>
                         <th className="px-3 py-3 text-[9px] font-bold uppercase tracking-widest text-black/40 text-right w-32">Amount (Rs.)</th>
@@ -1622,7 +1634,6 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
                               <span className="text-[8px] font-bold uppercase tracking-tighter text-black/30">{norm?.type}</span>
                             </td>
                             <td className="px-3 py-3 text-xs">{norm?.unit || '-'}</td>
-                            <td className="px-3 py-3 text-center text-sm text-black/40">{item.estimate_quantity}</td>
                             <td className="px-3 py-3 text-center">
                               {isEditingMeas ? (
                                 <input
@@ -1666,7 +1677,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
                     </tbody>
                     <tfoot>
                       <tr className="bg-[#F5F5F0] border-t border-black/10 font-bold">
-                        <td colSpan={6} className="px-3 py-3 text-xs uppercase tracking-widest text-right">Total (Measurement)</td>
+                        <td colSpan={5} className="px-3 py-3 text-xs uppercase tracking-widest text-right">Total (Measurement)</td>
                         <td className="px-3 py-3 text-sm font-bold text-right">
                            {calculateMeasurementTotal().toLocaleString(undefined, { minimumFractionDigits: 2 })}
                         </td>
@@ -1764,7 +1775,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
                         <tr className="bg-[#F5F5F0] border-t border-black/10">
                           <td colSpan={4} className="px-4 py-3 text-sm font-bold uppercase tracking-widest text-right">Total</td>
                           <td className="px-4 py-3 text-lg font-bold text-emerald-600 text-right">
-                            {data.reduce((acc: number, r: ResourceBreakdownItem) => acc + r.totalAmount, 0).toLocaleString(undefined, { minimumFractionDigits: 2 })}
+                            {(sharedMode === 'estimate' ? resourceBreakdownEstimate : resourceBreakdownMeasurement).reduce((acc: number, r: ResourceBreakdownItem) => acc + r.totalAmount, 0).toLocaleString(undefined, { minimumFractionDigits: 2 })}
                           </td>
                           <td></td>
                         </tr>
