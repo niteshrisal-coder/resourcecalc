@@ -1335,6 +1335,29 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
         </div>
       </div>
 
+      <div className="flex bg-white rounded-xl p-1 border border-[#E2E8F0]">
+        <button
+          onClick={() => setSharedMode('estimate')}
+          className={`flex-1 px-3 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all ${
+            sharedMode === 'estimate'
+              ? 'bg-[#1E293B] text-white shadow-sm'
+              : 'text-[#333333]/60 hover:text-[#1E293B]'
+          }`}
+        >
+          As per Estimate
+        </button>
+        <button
+          onClick={() => setSharedMode('measurement')}
+          className={`flex-1 px-3 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all ${
+            sharedMode === 'measurement'
+              ? 'bg-[#1E293B] text-white shadow-sm'
+              : 'text-[#333333]/60 hover:text-[#1E293B]'
+          }`}
+        >
+          As per Measurement
+        </button>
+      </div>
+
       {/* Tabs */}
       <div className="flex bg-white rounded-xl p-1 border border-[#E2E8F0]">
         <button
@@ -1366,30 +1389,6 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
           }`}
         >
           Rate Analysis
-        </button>
-      </div>
-
-      {/* Shared Estimate / Measurement Toggle — applies to all tabs */}
-      <div className="flex bg-white rounded-xl p-1 border border-[#E2E8F0]">
-        <button
-          onClick={() => setSharedMode('estimate')}
-          className={`flex-1 px-3 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all ${
-            sharedMode === 'estimate'
-              ? 'bg-[#1E293B] text-white shadow-sm'
-              : 'text-[#333333]/60 hover:text-[#1E293B]'
-          }`}
-        >
-          As per Estimate
-        </button>
-        <button
-          onClick={() => setSharedMode('measurement')}
-          className={`flex-1 px-3 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all ${
-            sharedMode === 'measurement'
-              ? 'bg-[#1E293B] text-white shadow-sm'
-              : 'text-[#333333]/60 hover:text-[#1E293B]'
-          }`}
-        >
-          As per Measurement
         </button>
       </div>
 
@@ -1693,7 +1692,6 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
           </div>
           {project.items.length > 0 ? (
             <div className="p-4 space-y-4">
-              {/* Sub-view tabs: Summary / Detailed / Tabulation */}
               <div className="flex bg-white rounded-xl p-1 border border-[#E2E8F0]">
                 <button
                   onClick={() => setBreakdownSubView('summary')}
