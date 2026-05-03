@@ -1029,7 +1029,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
           }
         };
         ws[XLSX.utils.encode_cell({ r: currentRow, c: 5 })] = {
-          v: item.unitRate,
+          f: `F${currentRow}/F${currentRow - 1}`,
           t: 'n',
           s: {
             font: { bold: true },
@@ -1096,7 +1096,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
             }
           };
           ws[XLSX.utils.encode_cell({ r: currentRow, c: 5 })] = {
-            v: item.unitRate,
+            f: project.mode === 'CONTRACTOR' ? `F${currentRow}*1.15` : `F${currentRow}/F${currentRow - 1}`,
             t: 'n',
             s: {
               font: { bold: true, color: { rgb: 'FFFFFF' } },
