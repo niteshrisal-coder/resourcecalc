@@ -134,7 +134,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
   const [activeTab, setActiveTab] = useState<'boq' | 'breakdown' | 'analysis'>('boq');
   const [boqSubTab, setBoqSubTab] = useState<'estimate' | 'measurement'>('estimate');
   const [isAdding, setIsAdding] = useState(true);
-  const [breakdownView, setBreakdownView] = useState<'summary' | 'detailed' | 'tabulation'>('summary');
+  const [breakdownView, setBreakdownView] = useState<'estimate' | 'measurement' | 'detailed' | 'tabulation'>('estimate');
   const [searchTerm, setSearchTerm] = useState('');
   const [editingItemId, setEditingItemId] = useState<string | null>(null);
   const [editForm, setEditForm] = useState({ quantity: 0 });
@@ -348,8 +348,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
     }, 0);
   };
 
-  // Resource breakdown for summary view
-  const resourceBreakdown = React.useMemo((): ResourceBreakdownItem[] => {
+  const resourceBreakdownEstimate = React.useMemo((): ResourceBreakdownItem[] => {
     if (!project) return [];
 
     const breakdown: Record<string, ResourceBreakdownItem> = {};
@@ -383,6 +382,55 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
           }
 
           breakdown[key].quantity += (quantity / basis) * item.estimate_quantity;
+        }
+      });
+    });
+
+    Object.values(breakdown).forEach((item: ResourceBreakdownItem) => {
+      let rate = item.rate;
+      if (project.mode === 'USERS' && item.apply_vat) {
+        rate = rate * 1.13;
+      }
+      item.totalAmount = item.quantity * rate;
+    });
+
+    return Object.values(breakdown);
+  }, [project, norms, globalRates, project?.customRates, project?.customResources]);
+
+  const resourceBreakdownMeasurement = React.useMemo((): ResourceBreakdownItem[] => {
+    if (!project) return [];
+
+    const breakdown: Record<string, ResourceBreakdownItem> = {};
+
+    project.items.forEach((item: BOQItem) => {
+      const norm = norms.find((n: Norm) => n.id === item.normId);
+      if (!norm) return;
+
+      const basis = norm.basis_quantity || 1;
+
+      norm.resources.forEach((res: any) => {
+        if (!res.is_percentage) {
+          const key = `${res.resource_type}-${res.name}`;
+          const rateInfo = getResourceRate(res.name);
+          const customQty = getCustomResourceQuantity(item.normId, res.name);
+          const quantity = customQty !== null ? customQty : res.quantity;
+
+          if (!breakdown[key]) {
+            breakdown[key] = {
+              name: res.name,
+              type: res.resource_type,
+              unit: res.unit || rateInfo.unit || '-',
+              quantity: 0,
+              rate: rateInfo.rate,
+              apply_vat: rateInfo.apply_vat,
+              totalAmount: 0,
+              normId: item.normId,
+              originalQuantity: res.quantity,
+              isCustomized: customQty !== null
+            };
+          }
+
+          breakdown[key].quantity += quantity * item.measurement_quantity;
         }
       });
     });
@@ -649,15 +697,25 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
         ['Total BOQ:', '', '', '', '', calculateTotalBOQ().toFixed(2), '']
       ];
     } else if (activeTab === 'breakdown') {
-      if (breakdownView === 'summary') {
-        sheetName = 'Resource_Breakdown_Summary';
+      if (breakdownView === 'estimate') {
+        sheetName = 'Resource_Breakdown_Estimate';
         sheetData = [
           ['Type', 'Resource Name', 'Unit', 'Total Quantity', 'Rate (Rs.)', 'Total Amount (Rs.)', 'Customized'],
-          ...resourceBreakdown.map((res: ResourceBreakdownItem) => [
+          ...resourceBreakdownEstimate.map((res: ResourceBreakdownItem) => [
             res.type, res.name, res.unit, res.quantity.toFixed(3), res.rate.toFixed(2), res.totalAmount.toFixed(2), res.isCustomized ? 'Yes' : 'No'
           ]),
           [],
-          ['Total:', '', '', '', '', resourceBreakdown.reduce((acc: number, r: ResourceBreakdownItem) => acc + r.totalAmount, 0).toFixed(2), '']
+          ['Total:', '', '', '', '', resourceBreakdownEstimate.reduce((acc: number, r: ResourceBreakdownItem) => acc + r.totalAmount, 0).toFixed(2), '']
+        ];
+      } else if (breakdownView === 'measurement') {
+        sheetName = 'Resource_Breakdown_Measurement';
+        sheetData = [
+          ['Type', 'Resource Name', 'Unit', 'Total Quantity', 'Rate (Rs.)', 'Total Amount (Rs.)', 'Customized'],
+          ...resourceBreakdownMeasurement.map((res: ResourceBreakdownItem) => [
+            res.type, res.name, res.unit, res.quantity.toFixed(3), res.rate.toFixed(2), res.totalAmount.toFixed(2), res.isCustomized ? 'Yes' : 'No'
+          ]),
+          [],
+          ['Total:', '', '', '', '', resourceBreakdownMeasurement.reduce((acc: number, r: ResourceBreakdownItem) => acc + r.totalAmount, 0).toFixed(2), '']
         ];
       } else if (breakdownView === 'detailed') {
         sheetName = 'Resource_Breakdown_Detailed';
@@ -1591,39 +1649,29 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
             <div className="p-4 space-y-4">
               <div className="flex bg-white rounded-xl p-1 border border-[#E2E8F0]">
                 <button
-                  onClick={() => setBreakdownView('summary')}
+                  onClick={() => setBreakdownView('estimate')}
                   className={`flex-1 px-3 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all ${
-                    breakdownView === 'summary'
+                    breakdownView === 'estimate'
                       ? 'bg-[#1E293B] text-white shadow-sm'
                       : 'text-[#333333]/60 hover:text-[#1E293B]'
                   }`}
                 >
-                  Summary
+                  As per Estimate
                 </button>
                 <button
-                  onClick={() => setBreakdownView('detailed')}
+                  onClick={() => setBreakdownView('measurement')}
                   className={`flex-1 px-3 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all ${
-                    breakdownView === 'detailed'
+                    breakdownView === 'measurement'
                       ? 'bg-[#1E293B] text-white shadow-sm'
                       : 'text-[#333333]/60 hover:text-[#1E293B]'
                   }`}
                 >
-                  Detailed
-                </button>
-                <button
-                  onClick={() => setBreakdownView('tabulation')}
-                  className={`flex-1 px-3 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all ${
-                    breakdownView === 'tabulation'
-                      ? 'bg-[#1E293B] text-white shadow-sm'
-                      : 'text-[#333333]/60 hover:text-[#1E293B]'
-                  }`}
-                >
-                  Tabulation
+                  As per Measurement
                 </button>
               </div>
 
-              {breakdownView === 'summary' && (
-                resourceBreakdown.length > 0 ? (
+              {breakdownView === 'estimate' && (
+                resourceBreakdownEstimate.length > 0 ? (
                   <div className="overflow-x-auto -mx-4 px-4">
                     <table className="w-full text-left border-collapse min-w-[700px] bg-white rounded-2xl overflow-hidden border border-black/5">
                       <thead>
@@ -1637,7 +1685,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
                          </tr>
                       </thead>
                       <tbody className="divide-y divide-black/5">
-                        {resourceBreakdown.map((res: ResourceBreakdownItem, idx: number) => {
+                        {resourceBreakdownEstimate.map((res: ResourceBreakdownItem, idx: number) => {
                           return (
                             <tr key={idx} className="hover:bg-black/5 transition-colors">
                               <td className="px-4 py-3">
@@ -1673,7 +1721,69 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
                         <tr className="bg-[#F5F5F0] border-t border-black/10">
                           <td colSpan={4} className="px-4 py-3 text-sm font-bold uppercase tracking-widest text-right">Total</td>
                           <td className="px-4 py-3 text-lg font-bold text-emerald-600 text-right">
-                             {resourceBreakdown.reduce((acc: number, r: ResourceBreakdownItem) => acc + r.totalAmount, 0).toLocaleString(undefined, { minimumFractionDigits: 2 })}
+                            {resourceBreakdownEstimate.reduce((acc: number, r: ResourceBreakdownItem) => acc + r.totalAmount, 0).toLocaleString(undefined, { minimumFractionDigits: 2 })}
+                          </td>
+                          <td></td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                ) : (
+                  <div className="p-8 text-center text-black/20">
+                    <p className="text-sm">No resources to display.</p>
+                  </div>
+                )
+              )}
+
+              {breakdownView === 'measurement' && (
+                resourceBreakdownMeasurement.length > 0 ? (
+                  <div className="overflow-x-auto -mx-4 px-4">
+                    <table className="w-full text-left border-collapse min-w-[700px] bg-white rounded-2xl overflow-hidden border border-black/5">
+                      <thead>
+                        <tr className="bg-[#F5F5F0]/50 border-b border-black/5">
+                          <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40">Type</th>
+                          <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40">Resource</th>
+                          <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40">Unit</th>
+                          <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40 text-right w-24">Qty</th>
+                          <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40 text-right w-28">Rate</th>
+                          <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-black/40 text-right w-32">Total</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-black/5">
+                        {resourceBreakdownMeasurement.map((res: ResourceBreakdownItem, idx: number) => {
+                          return (
+                            <tr key={idx} className="hover:bg-black/5 transition-colors">
+                              <td className="px-4 py-3">
+                                <span className={`px-2 py-1 rounded-lg text-[10px] font-bold uppercase ${
+                                  res.type === 'Labour' ? 'bg-blue-100 text-blue-700' :
+                                  res.type === 'Material' ? 'bg-emerald-100 text-emerald-700' : 'bg-orange-100 text-orange-700'
+                                }`}>
+                                  {res.type}
+                                </span>
+                              </td>
+                              <td className="px-4 py-3">
+                                <span className="text-sm font-bold">{res.name}</span>
+                                {res.isCustomized && (
+                                  <span className="ml-2 text-[8px] bg-yellow-100 text-yellow-700 px-1 py-0.5 rounded">Custom</span>
+                                )}
+                              </td>
+                              <td className="px-4 py-3 text-sm text-black/60">{res.unit}</td>
+                              <td className="px-4 py-3 text-right">
+                                <span className="text-sm font-bold">
+                                  {res.quantity.toLocaleString(undefined, { maximumFractionDigits: 3 })}
+                                </span>
+                              </td>
+                              <td className="px-4 py-3 text-right text-sm font-mono"> {res.rate.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
+                              <td className="px-4 py-3 text-right text-sm font-bold text-emerald-600"> {res.totalAmount.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                      <tfoot>
+                        <tr className="bg-[#F5F5F0] border-t border-black/10">
+                          <td colSpan={4} className="px-4 py-3 text-sm font-bold uppercase tracking-widest text-right">Total</td>
+                          <td className="px-4 py-3 text-lg font-bold text-emerald-600 text-right">
+                            {resourceBreakdownMeasurement.reduce((acc: number, r: ResourceBreakdownItem) => acc + r.totalAmount, 0).toLocaleString(undefined, { minimumFractionDigits: 2 })}
                           </td>
                           <td></td>
                         </tr>
