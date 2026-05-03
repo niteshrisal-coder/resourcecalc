@@ -191,7 +191,7 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
         {statCards.map((card, i) => (
           <div
             key={i}
-            className={`bg-white rounded-2xl p-5 border border-slate-100 border-t-4 ${card.accent} shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 cursor-default`}
+            className={`bg-[#FAFBFF] rounded-2xl p-5 border border-slate-100 border-t-4 ${card.accent} shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 cursor-default`}
           >
             <div className="flex items-start justify-between mb-4">
               <div className={`w-10 h-10 rounded-xl ${card.iconBg} flex items-center justify-center`}>
