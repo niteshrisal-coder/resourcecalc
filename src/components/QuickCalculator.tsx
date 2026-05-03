@@ -12,8 +12,9 @@ export default function QuickCalculator({ norms }: { norms: Norm[] }) {
 
   const sortedNorms = [...norms].sort((a, b) => a.id - b.id);
 
-  const calculateResourceBreakdown = (norm: Norm, inputQuantity: number) => {
-    const scaleFactor = inputQuantity / (norm.basis_quantity || 1);
+  const calculateResourceBreakdown = (norm: Norm, inputQuantity?: number) => {
+    const effectiveQuantity = inputQuantity && inputQuantity > 0 ? inputQuantity : norm.basis_quantity;
+    const scaleFactor = effectiveQuantity / (norm.basis_quantity || 1);
 
     return norm.resources.map(resource => {
       if (resource.is_percentage) {
@@ -116,11 +117,11 @@ export default function QuickCalculator({ norms }: { norms: Norm[] }) {
                 <div className="flex items-center gap-3">
                   <input
                     type="number"
-                    value={quantity}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setQuantity(parseFloat(e.target.value) || 0)}
+                    value={quantity === 0 ? '' : quantity}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setQuantity(e.target.value ? parseFloat(e.target.value) : 0)}
                     disabled={!selectedNorm}
                     className="flex-1 rounded-2xl border border-slate-200 bg-white px-3 py-2 text-base font-semibold text-slate-900 outline-none focus:border-sky-500 focus:ring-2 focus:ring-sky-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                    placeholder={selectedNorm ? '0.00' : 'Select work item first'}
+                    placeholder={selectedNorm ? String(selectedNorm.basis_quantity) : 'Select work item first'}
                   />
                   <span className="text-sm font-semibold text-slate-500">{selectedNorm?.unit || 'unit'}</span>
                 </div>
