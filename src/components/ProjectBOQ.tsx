@@ -143,7 +143,7 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
   const [editingRate, setEditingRate] = useState<string | null>(null);
   const [editRateForm, setEditRateForm] = useState({ rate: 0 });
   const [editingBillRate, setEditingBillRate] = useState<string | null>(null);
-  const [editBillRateForm, setEditBillRateForm] = useState({ rate: 0 });
+  const [editBillRateForm, setEditBillRateForm] = useState({ qty: 0, rate: 0 });
   const { isMobile } = useDeviceType();
 
   useEffect(() => {
@@ -714,6 +714,24 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
       updatedData[existingIndex] = { ...updatedData[existingIndex], billRate: newRate };
     } else {
       updatedData = [...existingTabData, { resourceName, billRate: newRate, remarks: '' }];
+    }
+    
+    const updated = { ...project, tabulationData: updatedData };
+    updateProject(updated);
+  };
+
+  const updateTabulationBillQty = (resourceName: string, newQty: number) => {
+    if (!project) return;
+    
+    const existingTabData = project.tabulationData || [];
+    const existingIndex = existingTabData.findIndex((d: TabulationData) => d.resourceName === resourceName);
+    
+    let updatedData: TabulationData[];
+    if (existingIndex >= 0) {
+      updatedData = [...existingTabData];
+      updatedData[existingIndex] = { ...updatedData[existingIndex], billQty: newQty };
+    } else {
+      updatedData = [...existingTabData, { resourceName, billQty: newQty, billRate: 0, remarks: '' }];
     }
     
     const updated = { ...project, tabulationData: updatedData };
@@ -1884,13 +1902,23 @@ export default function ProjectBOQ({ projectId, onBack }: { projectId: number; o
                             <td className="px-3 py-2 text-sm text-right">{item.measurementRate.toFixed(2)}</td>
                             <td className="px-3 py-2 text-sm text-right">{item.measurementAmount.toFixed(2)}</td>
                             <td className="px-3 py-2 text-sm text-right">{item.measurementVat.toFixed(2)}</td>
-                            <td className="px-3 py-2 text-sm text-right">{item.billQty.toFixed(3)}</td>
+                            <td className="px-3 py-2 text-sm text-right">
+                              <input
+                                type="number"
+                                value={item.billQty}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => updateTabulationBillQty(item.resourceName, parseFloat(e.target.value) || 0)}
+                                className="w-24 p-1 border border-black/10 rounded-lg text-sm text-right"
+                                step="0.001"
+                                min="0"
+                              />
+                            </td>
                             <td className="px-3 py-2 text-sm text-right">
                               {isEditingBill ? (
                                 <input
                                   type="number"
                                   value={editBillRateForm.rate}
-onChange={(e: ChangeEvent<HTMLInputElement>) => setEditBillRateForm({ rate: parseFloat(e.target.value) || 0 })}                                  className="w-24 p-1 border border-black/10 rounded-lg text-sm text-right"
+                                  onChange={(e: ChangeEvent<HTMLInputElement>) => setEditBillRateForm({ ...editBillRateForm, rate: parseFloat(e.target.value) || 0 })}
+                                  className="w-24 p-1 border border-black/10 rounded-lg text-sm text-right"
                                   step="1"
                                   min="0"
                                   onBlur={() => {
@@ -1910,7 +1938,7 @@ onChange={(e: ChangeEvent<HTMLInputElement>) => setEditBillRateForm({ rate: pars
                                 <button
                                   onClick={() => {
                                     setEditingBillRate(item.resourceName);
-                                    setEditBillRateForm({ rate: item.billRate });
+                                    setEditBillRateForm({ qty: item.billQty, rate: item.billRate });
                                   }}
                                   className="hover:bg-black/5 px-2 py-1 rounded-lg transition-colors"
                                 >
