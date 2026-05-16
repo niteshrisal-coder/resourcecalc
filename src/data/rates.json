@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Skilled Labour",
     "unit": "md",
-    "rate": 500,
+    "rate": 1200,
     "resource_type": "Labour",
     "apply_vat": false
   },
@@ -11,7 +11,7 @@
     "id": 2,
     "name": "Unskilled Labour",
     "unit": "md",
-    "rate": 300,
+    "rate": 870,
     "resource_type": "Labour",
     "apply_vat": false
   },

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, ChevronDown, Library } from 'lucide-react';
+import { Search, ChevronDown, ChevronUp, Library } from 'lucide-react';
 import { Norm, Resource } from '../types';
 import { motion, AnimatePresence } from 'motion/react';
 import { useDeviceType } from '../utils/device';
@@ -10,12 +10,16 @@ export default function Norms({ norms }: { norms: Norm[] }) {
   const [expandedNorm, setExpandedNorm] = useState<number | null>(null);
   const { isMobile } = useDeviceType();
 
-  const sortedNorms = [...norms].sort((a, b) => a.id - b.id);
+  const safeNorms = norms.map(norm => ({
+  ...norm,
+  resources: Array.isArray(norm.resources) ? norm.resources : [],
+}));
+const sortedNorms = [...safeNorms].sort((a, b) => a.id - b.id);
 
 const filteredNorms = sortedNorms.filter((n: Norm) => {
   const matchesFilter = filter === 'ALL' || n.type === filter;
   const searchTerm = search.toLowerCase();
-  const matchesSearch = n.description.toLowerCase().includes(searchTerm) || 
+  const matchesSearch = (n.description || '').toLowerCase().includes(searchTerm) || 
                          n.ref_ss?.toLowerCase().includes(searchTerm) ||
                          n.sNo?.toLowerCase().includes(searchTerm);
   return matchesFilter && matchesSearch;

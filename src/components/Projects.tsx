@@ -214,8 +214,7 @@ export default function Projects({ onSelectProject }: { onSelectProject: (projec
                     placeholder="e.g., Bridge Construction Phase 1"
                     value={newProject.name}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewProject({ ...newProject, name: e.target.value })}
-                    onKeyDown={(e) => e.key === 'Enter' && handleCreateProject()}
-                  />
+onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => e.key === 'Enter' && handleCreateProject()}                  />
                 </div>
 
                 <div className="space-y-1.5">

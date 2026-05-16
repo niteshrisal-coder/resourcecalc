@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState, ChangeEvent } from 'react';
+import React, { useEffect, useState, ChangeEvent } from 'react';
 import { Plus, Search, Trash2, Edit, X } from 'lucide-react';
 import { Rate } from '../types';
 import { motion } from 'motion/react';
@@ -13,7 +13,7 @@ export default function Rates() {
   const [editingRate, setEditingRate] = useState<Rate | null>(null);
   const [rateInputs, setRateInputs] = useState<Record<number, string>>({});
   const { isMobile } = useDeviceType();
-  const saveTimersRef = useRef<Record<number, number | undefined>>({});
+  const saveTimersRef = React.useRef<Record<number, number | undefined>>({});
 
   useEffect(() => {
     loadRates();
@@ -42,13 +42,41 @@ export default function Rates() {
     });
   };
 
-  const filteredRates = useMemo(() => {
+  const filteredRates = React.useMemo(() => {
     return rates.filter(r => {
       const matchesFilter = filter === 'ALL' || r.resource_type === filter;
       const matchesSearch = r.name.toLowerCase().includes(search.toLowerCase());
       return matchesFilter && matchesSearch;
     });
   }, [rates, filter, search]);
+
+  const groupedAndSortedRates = React.useMemo(() => {
+    const typeOrder: ('Labour' | 'Material' | 'Equipment')[] = ['Labour', 'Material', 'Equipment'];
+    const grouped: Record<string, Rate[]> = {
+      Labour: [],
+      Material: [],
+      Equipment: []
+    };
+    
+    filteredRates.forEach(rate => {
+      if (rate.resource_type) {
+        grouped[rate.resource_type].push(rate);
+      }
+    });
+    
+    // Sort each group alphabetically by name
+    Object.keys(grouped).forEach(key => {
+      grouped[key].sort((a, b) => a.name.localeCompare(b.name));
+    });
+    
+    // Return in the specified order: Labour, Material, Equipment
+    const result: Rate[] = [];
+    typeOrder.forEach(type => {
+      result.push(...grouped[type]);
+    });
+    
+    return result;
+  }, [filteredRates]);
 
   const commitRate = (updated: Rate) => {
     saveRate(updated);
@@ -112,13 +140,12 @@ export default function Rates() {
         </div>
 
         <div className="space-y-2">
-          {filteredRates.length === 0 ? (
+          {groupedAndSortedRates.length === 0 ? (
             <div className="text-center py-8 text-black/20 italic">
               No resources found matching your search.
             </div>
           ) : (
-            filteredRates.map(rate => {
-              const inputValue = rateInputs[rate.id] ?? String(rate.rate ?? 0);
+groupedAndSortedRates.map((rate: Rate) => {              const inputValue = rateInputs[rate.id] ?? String(rate.rate ?? 0);
               const parsed = parseRateInput(inputValue);
               const effectiveRate = parsed ?? (rate.rate ?? 0);
               const vatAmount = rate.apply_vat ? effectiveRate * 0.13 : 0;
@@ -281,8 +308,7 @@ export default function Rates() {
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-50">
-            {filteredRates.map(rate => {
-              const inputValue = rateInputs[rate.id] ?? String(rate.rate ?? 0);
+{groupedAndSortedRates.map((rate: Rate) => {              const inputValue = rateInputs[rate.id] ?? String(rate.rate ?? 0);
               const parsed = parseRateInput(inputValue);
               const effectiveRate = parsed ?? (rate.rate ?? 0);
               const vatAmount = rate.apply_vat ? effectiveRate * 0.13 : 0;
@@ -355,7 +381,7 @@ export default function Rates() {
                 </tr>
               );
             })}
-            {filteredRates.length === 0 && (
+            {groupedAndSortedRates.length === 0 && (
               <tr>
                 <td colSpan={7} className="px-6 py-14 text-center">
                   <p className="text-slate-400 font-semibold">No resources found</p>

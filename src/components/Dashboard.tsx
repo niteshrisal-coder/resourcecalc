@@ -29,10 +29,10 @@ export default function Dashboard({ onNavigate }: DashboardProps) {
   });
 
   useEffect(() => {
-    const norms = getNorms();
-    const rates = getRates();
-    const projects = getProjects();
-    const totalResources = norms.reduce((sum, norm) => sum + norm.resources.length, 0);
+    const norms = getNorms() || [];
+    const rates = getRates() || [];
+    const projects = getProjects() || [];
+    const totalResources = norms.reduce((sum, norm) => sum + (Array.isArray(norm.resources) ? norm.resources.length : 0), 0);
     const recentProjects = projects
       .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
       .slice(0, 3);

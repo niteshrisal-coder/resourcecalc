@@ -1150,7 +1150,7 @@
     { "name": "Cement", "quantity": 0.79, "unit": "tonne", "resource_type": "Material" },
     { "name": "Sand", "quantity": 1.63, "unit": "cum", "resource_type": "Material" },
     { "name": "Water", "quantity": 1, "unit": "KL", "resource_type": "Material" },
-    { "name": "Concrete mixer or other tools", "quantity": 5, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
+    { "name": "Concrete mixer", "quantity": 5, "unit": "", "resource_type": "Equipment", "is_percentage": true, "percentage_base": "Labour" }
   ]
 },
 {
@@ -4522,7 +4522,1941 @@
     { "name": "ह्वाइट पट्टि प्लास्टर गर्ने", "quantity": 10.64, "unit": "के.जी.", "resource_type": "Material" }
 
   ]
+},{
+"id": "J1-13-1क",
+"sNo": "१३-१क",
+"description": "नयाँ सर्फेसमा सेतो चुना लगाउने (ह्वाईट वास) गर्ने काम - एक कोट",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J1",
+"resources": [
+  { "name": "सिपालु", "quantity": 0.8, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 0.7, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "सेतो चुना", "quantity": 12, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "गम आदि", "quantity": 0.48, "unit": "के.जी.", "resource_type": "Material" }
+]
+},
+{
+"id": "J1-13-1ख",
+"sNo": "१३-१ख",
+"description": "नयाँ सर्फेसमा सेतो चुना लगाउने (ह्वाईट वास) गर्ने काम - दुई कोट",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J1",
+"resources": [
+  { "name": "सिपालु", "quantity": 1.5, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 1.1, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "सेतो चुना", "quantity": 22, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "गम आदि", "quantity": 0.88, "unit": "के.जी.", "resource_type": "Material" }
+]
+},
+{
+"id": "J1-13-1ग",
+"sNo": "१३-१ग",
+"description": "नयाँ सर्फेसमा सेतो चुना लगाउने (ह्वाईट वास) गर्ने काम - तिन कोट",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J1",
+"resources": [
+  { "name": "सिपालु", "quantity": 3, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 2.7, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "सेतो चुना", "quantity": 32, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "गम आदि", "quantity": 1.28, "unit": "के.जी.", "resource_type": "Material" }
+]
+},{
+"id": "J2-13-2",
+"sNo": "१३-२",
+"description": "पुरानो सर्फेसमा सेतो चुना लगाउने (ह्वाईट वास) गर्ने काम ।",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J2",
+"resources": [
+  { "name": "सिपालु", "quantity": 0.8, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 0.7, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "सेतो चुना", "quantity": 10, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "गम आदि", "quantity": 0.4, "unit": "के.जी.", "resource_type": "Material" }
+]
+},{
+"id": "J1-13-1क-S",
+"sNo": "१३-१क (सिलिङ)",
+"description": "नयाँ सर्फेसमा सेतो चुना लगाउने (ह्वाईट वास) गर्ने काम - एक कोट (सिलिङको लागि)",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J1",
+"resources": [
+  { "name": "सिपालु", "quantity": 1.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 0.875, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "सेतो चुना", "quantity": 12, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "गम आदि", "quantity": 0.48, "unit": "के.जी.", "resource_type": "Material" }
+]
+},
+{
+"id": "J1-13-1ख-S",
+"sNo": "१३-१ख (सिलिङ)",
+"description": "नयाँ सर्फेसमा सेतो चुना लगाउने (ह्वाईट वास) गर्ने काम - दुई कोट (सिलिङको लागि)",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J1",
+"resources": [
+  { "name": "सिपालु", "quantity": 1.875, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 1.375, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "सेतो चुना", "quantity": 22, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "गम आदि", "quantity": 0.88, "unit": "के.जी.", "resource_type": "Material" }
+]
+},
+{
+"id": "J1-13-1ग-S",
+"sNo": "१३-१ग (सिलिङ)",
+"description": "नयाँ सर्फेसमा सेतो चुना लगाउने (ह्वाईट वास) गर्ने काम - तिन कोट (सिलिङको लागि)",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J1",
+"resources": [
+  { "name": "सिपालु", "quantity": 3.75, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 3.375, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "सेतो चुना", "quantity": 32, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "गम आदि", "quantity": 1.28, "unit": "के.जी.", "resource_type": "Material" }
+]
+}
+,{
+"id": "J3-13-3क",
+"sNo": "१३-३क",
+"description": "डिस्टेम्पर लगाउने काम - अस्तर",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J3",
+"resources": [
+  { "name": "सिपालु", "quantity": 2.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 2.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "अस्तर", "quantity": 8.0, "unit": "लि.", "resource_type": "Material" }
+]
+},{
+"id": "J3-13-3ख-NoPrimer",
+"sNo": "१३-३ख",
+"description": "डिस्टेम्पर लगाउने काम एक कोट - अस्तर बाहेक",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J3",
+"resources": [
+  { "name": "सिपालु", "quantity": 2.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 2.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "सुख्खा डिस्टेम्पर पाउडर", "quantity": 6.5, "unit": "के.जी.", "resource_type": "Material" }
+]
+},{
+"id": "J3-13-3-2Coat-NoPrimer",
+"sNo": "१३-३ (ख+ग)",
+"description": "डिस्टेम्पर लगाउने काम दुइ कोट - अस्तर बाहेक",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J3",
+"resources": [
+  { "name": "सिपालु", "quantity": 3.8, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 3.8, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "सुख्खा डिस्टेम्पर पाउडर", "quantity": 11.5, "unit": "के.जी.", "resource_type": "Material" }
+]
+},{
+"id": "J3-13-3-1Coat-WithPrimer",
+"sNo": "१३-३ (क+ख)",
+"description": "एक कोट डिस्टेम्पर लगाउने काम - अस्तर सहित",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J3",
+"resources": [
+  { "name": "सिपालु", "quantity": 4.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 4.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "अस्तर", "quantity": 8.0, "unit": "लि.", "resource_type": "Material" },
+  { "name": "सुख्खा डिस्टेम्पर पाउडर", "quantity": 6.5, "unit": "के.जी.", "resource_type": "Material" }
+]
+},{
+"id": "J3-13-3-2Coat-WithPrimer",
+"sNo": "१३-३ (क+ख+ग)",
+"description": "दुई कोट डिस्टेम्पर लगाउने काम- अस्तर सहित",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J3",
+"resources": [
+  { "name": "सिपालु", "quantity": 5.8, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 5.8, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "अस्तर", "quantity": 8.0, "unit": "लि.", "resource_type": "Material" },
+  { "name": "सुख्खा डिस्टेम्पर पाउडर", "quantity": 11.5, "unit": "के.जी.", "resource_type": "Material" }
+]
+},{
+"id": "J4-13-4क",
+"sNo": "१३-४क",
+"description": "वाटर प्रुफ सिमेन्ट पेन्ट लगाउने काम - एक कोट",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J4",
+"resources": [
+  { "name": "सिपालु", "quantity": 1.7, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 1.7, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "वाटर प्रुफ सिमेन्ट पेन्ट", "quantity": 30, "unit": "के.जी.", "resource_type": "Material" }
+]
+},
+{
+"id": "J4-13-4ख",
+"sNo": "१३-४ख",
+"description": "वाटर प्रुफ सिमेन्ट पेन्ट लगाउने काम - दुई कोट",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J4",
+"resources": [
+  { "name": "सिपालु", "quantity": 5.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 5.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "वाटर प्रुफ सिमेन्ट पेन्ट", "quantity": 48.5, "unit": "के.जी.", "resource_type": "Material" }
+]
+},{
+"id": "J16-13-5ख",
+"sNo": "१३-५ख",
+"description": "अस्तर बाहेक एककोट तयारी इनामेल पेन्ट गर्ने काम",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J16",
+"resources": [
+  { "name": "सिपालु", "quantity": 5.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 2.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "इनामेल पेन्ट", "quantity": 9.0, "unit": "लि.", "resource_type": "Material" }
+]
+},
+{
+"id": "J17-13-5ख-ग",
+"sNo": "१३-५ख, ग",
+"description": "अस्तर बाहेक दुईकोट तयारी इनामेल पेन्ट गर्ने काम",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J17",
+"resources": [
+  { "name": "सिपालु", "quantity": 9.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 5.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "इनामेल पेन्ट", "quantity": 16.0, "unit": "लि.", "resource_type": "Material" }
+]
+},
+{
+"id": "J18-13-5ख",
+"sNo": "१३-५ख",
+"description": "अस्तर बाहेक एककोट प्लास्टिक इमल्सन पेन्ट गर्ने काम",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J18",
+"resources": [
+  { "name": "सिपालु", "quantity": 5.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 2.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "इमल्सन पेन्ट", "quantity": 9.0, "unit": "लि.", "resource_type": "Material" }
+]
+},
+{
+"id": "J19-13-5ख-ग",
+"sNo": "१३-५ख, ग",
+"description": "अस्तर बाहेक दुई कोट प्लास्टिक इमल्सन पेन्ट गर्ने काम",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J19",
+"resources": [
+  { "name": "सिपालु", "quantity": 9.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 5.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "इमल्सन पेन्ट", "quantity": 16.0, "unit": "लि.", "resource_type": "Material" }
+]
+},
+{
+"id": "J20-13-6",
+"sNo": "१३-६",
+"description": "अस्तर बाहेक एक कोट आल्मुनियम पेन्ट गर्ने काम",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J20",
+"resources": [
+  { "name": "सिपालु", "quantity": 3.75, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 3.75, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "आल्मुनियम पेन्ट", "quantity": 5.38, "unit": "लि.", "resource_type": "Material" },
+  { "name": "खाक्सी", "quantity": 3.0, "unit": "टाउ", "resource_type": "Material" }
+]
+},
+{
+"id": "J21-13-6",
+"sNo": "१३-६",
+"description": "अस्तर बाहेक दुई कोट आल्मुनियम पेन्ट गर्ने काम",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J21",
+"resources": [
+  { "name": "सिपालु", "quantity": 7.75, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 7.75, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "आल्मुनियम पेन्ट", "quantity": 10.76, "unit": "लि.", "resource_type": "Material" },
+  { "name": "खाक्सी", "quantity": 4.0, "unit": "टाउ", "resource_type": "Material" }
+]
+},
+{
+"id": "J22-13-7",
+"sNo": "१३-७",
+"description": "अस्तर बाहेक एक कोट रेड अक्साइड पेन्ट गर्ने काम",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J22",
+"resources": [
+  { "name": "सिपालु", "quantity": 4.3, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 4.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "रेडअक्साइड पेन्ट", "quantity": 7.5, "unit": "लि.", "resource_type": "Material" }
+]
+},{
+"id": "J23-13-7",
+"sNo": "१३-७",
+"description": "अस्तर बाहेक दुई कोट रेड अक्साइड पेन्ट गर्ने काम",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J23",
+"resources": [
+  { "name": "सिपालु", "quantity": 8.67, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 8.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "रेडअक्साइड पेन्ट", "quantity": 15.0, "unit": "ली.", "resource_type": "Material" }
+]
+},
+{
+"id": "J24-18-12क",
+"sNo": "१८-१२(क)",
+"description": "एक तह प्लास्टिक फेल्ट लगाउने काम",
+"unit": "व.मि.",
+"basis_quantity": 10,
+"type": "DUDBC",
+"ref_ss": "J24",
+"resources": [
+  { "name": "सिपालु", "quantity": 1.1, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 3.5, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "प्लास्टिक फेल्ट", "quantity": 11.0, "unit": "व.मि.", "resource_type": "Material" },
+  { "name": "रुफिङ्ग ग्रेडबिटुमिन", "quantity": 15.0, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "दाउरा", "quantity": 60.0, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "खस्रो बालुवा खोलाको", "quantity": 0.31, "unit": "घ.मि.", "resource_type": "Material" }
+]
+},
+{
+"id": "J25-18-12ख",
+"sNo": "१८-१२(ख)",
+"description": "दुई तह प्लास्टिक फेल्ट लगाउने काम",
+"unit": "व.मि.",
+"basis_quantity": 10,
+"type": "DUDBC",
+"ref_ss": "J25",
+"resources": [
+  { "name": "सिपालु", "quantity": 2.3, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 4.6, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "प्लास्टिक फेल्ट", "quantity": 22.0, "unit": "व.मि.", "resource_type": "Material" },
+  { "name": "रुफिङ्ग ग्रेडबिटुमिन", "quantity": 25.0, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "दाउरा", "quantity": 80.0, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "खस्रो बालुवा खोलाको", "quantity": 0.31, "unit": "घ.मि.", "resource_type": "Material" }
+]
+},
+{
+"id": "J26-Washable",
+"sNo": "-",
+"description": "एक कोट प्राईमर सहित दुई कोट तयारी वासेवल डिस्तेम्पर लगाउने काम ।",
+"unit": "व.मि.",
+"basis_quantity": 10,
+"type": "DUDBC",
+"ref_ss": "J26",
+"resources": [
+  { "name": "सिपालु", "quantity": 5.8, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 5.8, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "अस्तर", "quantity": 8.0, "unit": "ली.", "resource_type": "Material" },
+  { "name": "वासेवल डिस्तेम्पर", "quantity": 16.0, "unit": "ली.", "resource_type": "Material" }
+]
+},{
+"id": "J27-Japanese-Texture",
+"sNo": "-",
+"description": "जापानीज टेक्सचर पेन्ट लगाउने काम पुरा",
+"unit": "व.मि.",
+"basis_quantity": 10,
+"type": "DUDBC",
+"ref_ss": "J27",
+"resources": [
+  { "name": "जापानिज टेक्सचर पेन्ट ज्याला समेत", "quantity": 10.0, "unit": "व.मि.", "resource_type": "Material" }
+]
+},
+{
+"id": "J28-Heritage-Wall",
+"sNo": "-",
+"description": "हेरिटेज वाल टेक्सचर पेन्ट लगाउने काम पुरा",
+"unit": "व.मि.",
+"basis_quantity": 10,
+"type": "DUDBC",
+"ref_ss": "J28",
+"resources": [
+  { "name": "हेरिटेज टेक्सचर पेन्ट ज्याला समेत", "quantity": 10.0, "unit": "व.मि.", "resource_type": "Material" }
+]
+},
+{
+"id": "J29-Anti-Termite",
+"sNo": "-",
+"description": "एन्टिटर्माईट केमिकल लगाउने काम पुरा",
+"unit": "व.मि.",
+"basis_quantity": 10,
+"type": "DUDBC",
+"ref_ss": "J29",
+"resources": [
+  { "name": "एन्टिटर्माईट केमिकल ज्याला समेत", "quantity": 10.0, "unit": "व.मि.", "resource_type": "Material" }
+]
+},{
+"id": "J13-Whitewash-Old-Door",
+"sNo": "-",
+"description": "पुरानो दरवारको बाहिरी भागमा एककोट ह्वाईटवाश गर्ने काम",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J13",
+"resources": [
+  { "name": "सिपालु", "quantity": 2.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 4.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "सेतो चुना", "quantity": 10.0, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "गम", "quantity": 0.4, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "खटको सामान", "quantity": 1.0, "unit": "अन्दाजी", "resource_type": "Material" }
+]
+},
+{
+"id": "J14-Ramtilak-Old-Door",
+"sNo": "-",
+"description": "पुरानो दरवारको बाहिरी भागमा एककोट रामतिलकले पोत्ने काम",
+"unit": "व.मि.",
+"basis_quantity": 100,
+"type": "DUDBC",
+"ref_ss": "J14",
+"resources": [
+  { "name": "सिपालु", "quantity": 2.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 4.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "राम तिलक", "quantity": 10.0, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "गम", "quantity": 0.4, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "खटको सामान", "quantity": 1.0, "unit": "अन्दाजी", "resource_type": "Material" }
+]
+},
+{
+"id": "J15-Enamel-Linseed",
+"sNo": "-",
+"description": "पुरानो सतहमा लिन्सीड आयलले पुछी तयारी इनामेल पेन्ट गर्ने काम",
+"unit": "व.मि.",
+"basis_quantity": 10,
+"type": "DUDBC",
+"ref_ss": "J15",
+"resources": [
+  { "name": "सिपालु", "quantity": 0.538, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 0.538, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "लिन्सीड आयल", "quantity": 0.538, "unit": "ली.", "resource_type": "Material" },
+  { "name": "तयारी इनामेल पेन्ट", "quantity": 1.614, "unit": "ली.", "resource_type": "Material" }
+]
+},{
+"id": "K1-18-7",
+"sNo": "१८-७",
+"description": "२ से.मि. मोटाईको सिमेन्ट बालुवा (१:२) भागमा वाटर प्रुफ कम्पाउण्डसँग मिलाई डेम्प प्रुफिङ्ग गर्ने",
+"unit": "व.मि.",
+"basis_quantity": 10,
+"type": "DUDBC",
+"ref_ss": "K1",
+"resources": [
+  { "name": "सिपालु", "quantity": 0.75, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 0.8, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "सिमेन्ट", "quantity": 0.135, "unit": "मे.ट.", "resource_type": "Material" },
+  { "name": "बालुवा", "quantity": 0.18, "unit": "घ.मि.", "resource_type": "Material" },
+  { "name": "वाटर प्रुफ कम्पाउण्ड", "quantity": 2.7, "unit": "के.जी.", "resource_type": "Material" }
+]
+},
+{
+"id": "K2-18-8",
+"sNo": "१८-८",
+"description": "२.५ से.मि. मोटाईमा सिमेन्ट कङ्क्रिट (१:१.५:३) डेम्प प्रुफिङ्ग गर्ने",
+"unit": "व.मि.",
+"basis_quantity": 10,
+"type": "DUDBC",
+"ref_ss": "K2",
+"resources": [
+  { "name": "सिपालु", "quantity": 1.0, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 1.25, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "सिमेन्ट", "quantity": 0.1125, "unit": "मे.ट.", "resource_type": "Material" },
+  { "name": "बालुवा", "quantity": 0.113, "unit": "घ.मि.", "resource_type": "Material" },
+  { "name": "रोडा (१२ मि.मि.)", "quantity": 0.25, "unit": "घ.मि.", "resource_type": "Material" },
+  { "name": "वाटर प्रुफकम्पाउड", "quantity": 2.25, "unit": "के.जी.", "resource_type": "Material" }
+]
+},
+{
+"id": "K3-18-10",
+"sNo": "१८-१०",
+"description": "एक कोट बिटुमेन पेन्ट डेम्प प्रुफ कोर्समा लगाई बालुवाले छोप्ने",
+"unit": "व.मि.",
+"basis_quantity": 10,
+"type": "DUDBC",
+"ref_ss": "K3",
+"resources": [
+  { "name": "ज्यामी", "quantity": 0.6, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "बिटुमिन", "quantity": 10.0, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "खस्रो बालुवा", "quantity": 0.02, "unit": "घ.मि.", "resource_type": "Material" },
+  { "name": "दाउरा", "quantity": 30.0, "unit": "के.जी.", "resource_type": "Material" }
+]
+},
+{
+"id": "K4-18-11",
+"sNo": "१८-११",
+"description": "एक तह पोलिथिन सिट (५०० गेजको) बिच्छ्याउने",
+"unit": "व.मि.",
+"basis_quantity": 10,
+"type": "DUDBC",
+"ref_ss": "K4",
+"resources": [
+  { "name": "सिपालु", "quantity": 0.6, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 0.6, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "पोलिथिन सिट", "quantity": 11.0, "unit": "व.मि.", "resource_type": "Material" }
+]
+},
+{
+"id": "K5-18-12क",
+"sNo": "१८-१२(क)",
+"description": "टारफेल्ट लगाउने काम - एक तह",
+"unit": "व.मि.",
+"basis_quantity": 10,
+"type": "DUDBC",
+"ref_ss": "K5",
+"resources": [
+  { "name": "सिपालु", "quantity": 1.1, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 3.5, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "टारफेल्ट", "quantity": 11.0, "unit": "व.मि.", "resource_type": "Material" },
+  { "name": "बिटुमिन", "quantity": 15.0, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "दाउरा", "quantity": 60.0, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "खस्रो बालुवा", "quantity": 0.31, "unit": "घ.मि.", "resource_type": "Material" }
+]
+},
+{
+"id": "K5-18-12ख",
+"sNo": "१८-१२(ख)",
+"description": "टारफेल्ट लगाउने काम - दुई तह",
+"unit": "व.मि.",
+"basis_quantity": 10,
+"type": "DUDBC",
+"ref_ss": "K5",
+"resources": [
+  { "name": "सिपालु", "quantity": 2.3, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 4.6, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "टारफेल्ट", "quantity": 22.0, "unit": "व.मि.", "resource_type": "Material" },
+  { "name": "बिटुमिन", "quantity": 25.0, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "दाउरा", "quantity": 80.0, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "खस्रो बालुवा", "quantity": 0.31, "unit": "घ.मि.", "resource_type": "Material" }
+]
+},{
+"id": "K6-18-13क",
+"sNo": "१८-१३क",
+"description": "डेम्पप्रुफ ग्रेड टारफेल्ट लगाउने काम - एक तह",
+"unit": "व.मि.",
+"basis_quantity": 10,
+"type": "DUDBC",
+"ref_ss": "K6",
+"resources": [
+  { "name": "सिपालु", "quantity": 2.35, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 4.6, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "टारफेल्ट", "quantity": 11.0, "unit": "व.मि.", "resource_type": "Material" },
+  { "name": "बिटुमिन", "quantity": 17.0, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "दाउरा", "quantity": 60.0, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "खस्रो बालुवा", "quantity": 0.31, "unit": "घ.मि.", "resource_type": "Material" }
+]
+},
+{
+"id": "K6-18-13ख",
+"sNo": "१८-१३ख",
+"description": "डेम्पप्रुफ ग्रेड टारफेल्ट लगाउने काम - दुई तह",
+"unit": "व.मि.",
+"basis_quantity": 10,
+"type": "DUDBC",
+"ref_ss": "K6",
+"resources": [
+  { "name": "सिपालु", "quantity": 3.5, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 11.7, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "टारफेल्ट", "quantity": 22.0, "unit": "व.मि.", "resource_type": "Material" },
+  { "name": "बिटुमिन", "quantity": 27.0, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "दाउरा", "quantity": 80.0, "unit": "के.जी.", "resource_type": "Material" },
+  { "name": "खस्रो बालुवा", "quantity": 0.31, "unit": "घ.मि.", "resource_type": "Material" }
+]
+},
+{
+"id": "K7-Elastomeric-Coating",
+"sNo": "-",
+"description": "इलास्टोक्रेत सिमेन्टेनियस इलास्टोमेरिक वाटर प्रूफ कोटिङ्ग दुई कोट लगाउने काम पुरा",
+"unit": "व.मि.",
+"basis_quantity": 1,
+"type": "DUDBC",
+"ref_ss": "K7",
+"resources": [
+  { "name": "इलास्टोक्रेत सिमेन्टेनियस इलास्टोमेरिक वाटर प्रूफ कोटिङ्ग ज्याला सहित", "quantity": 1.0, "unit": "व.मि.", "resource_type": "Material" }
+]
+},
+{
+"id": "K8-Rensil-Paint",
+"sNo": "-",
+"description": "एक कोट रेनसिल वा सो सरहको पेन्ट प्रयोग गरी लगाउने काम",
+"unit": "व.मि.",
+"basis_quantity": 1,
+"type": "DUDBC",
+"ref_ss": "K8",
+"resources": [
+  { "name": "सिपालु", "quantity": 0.162, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "ज्यामी", "quantity": 0.54, "unit": "संख्या", "resource_type": "Labour" },
+  { "name": "रेन्सिल पेन्ट", "quantity": 0.245, "unit": "लि.", "resource_type": "Material" }
+]
+},
+  {
+    "id": "L1-19-1",
+    "sNo": "१९-१",
+    "description": "माटोमा जोडेको गाह्रो भत्काई त्यसबाट आएको सामाग्री १० मि. सम्म हटाउने काम ।",
+    "unit": "घ.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "L1",
+    "resources": [
+      { "name": "ज्यामी", "quantity": 1.06, "unit": "संख्या", "resource_type": "Labour" }
+    ]
+  },
+  {
+    "id": "L2-19-2",
+    "sNo": "१९-२",
+    "description": "सिमेन्ट वा बज्रमा जोडेको गाह्रो भत्काई त्यसबाट आएको सामाग्री १० मि. सम्म हटाउने काम ।",
+    "unit": "घ.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "L2",
+    "resources": [
+      { "name": "ज्यामी", "quantity": 2.12, "unit": "संख्या", "resource_type": "Labour" }
+    ]
+  },
+  {
+    "id": "L3-19-3",
+    "sNo": "१९-३",
+    "description": "आर.सि.सि. वा आर.बि.सि. काम भत्काई त्यसबाट आएको सामाग्री १० मि. सम्म हटाउने काम ।",
+    "unit": "घ.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "L3",
+    "resources": [
+      { "name": "ज्यामी", "quantity": 11.0, "unit": "संख्या", "resource_type": "Labour" }
+    ]
+  },
+  {
+    "id": "L4-19-4",
+    "sNo": "१९-४",
+    "description": "प्लेन सिमेन्ट कङ्क्रिट वा बज्र कङ्क्रिट भत्काई त्यसबाट आएको सामाग्री १० मि. सम्म हटाउने काम ।",
+    "unit": "घ.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "L4",
+    "resources": [
+      { "name": "ज्यामी", "quantity": 4.0, "unit": "संख्या", "resource_type": "Labour" }
+    ]
+  },
+  {
+    "id": "L5-19-Plaster",
+    "sNo": "-",
+    "description": "सिमेन्ट वा बज्र प्लाष्टर भत्काई त्यसबाट आएको धुलो १० मि. सम्म हटाउने काम ।",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "L5",
+    "resources": [
+      { "name": "ज्यामी", "quantity": 0.108, "unit": "संख्या", "resource_type": "Labour" }
+    ]
+  },
+  {
+    "id": "L6-Tile-Roofing",
+    "sNo": "-",
+    "description": "टायल छाना भत्काई त्यसबाट आएको टायल काठ आदि १० मि. सम्म पर सार्न लगाई राम्ररी थन्काउने काम ।",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "L6",
+    "resources": [
+      { "name": "सिपालु", "quantity": 0.054, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.081, "unit": "संख्या", "resource_type": "Labour" }
+    ]
+  },
+  {
+    "id": "L7-Wood-Preservative",
+    "sNo": "-",
+    "description": "काठमा किरा नलाग्ने पेन्ट प्रयोग गर्ने ।",
+    "unit": "व.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "L7",
+    "resources": [
+      { "name": "सिपालु", "quantity": 0.22, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.1, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "उड प्रिजर्भेटिभ पेन्ट", "quantity": 0.245, "unit": "लि.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "L8-Brickwork-Repair",
+    "sNo": "-",
+    "description": "गारोको मोहडामा बिग्रेको ईंटा निकाली सिमेन्ट वालुवा (१:६) मा गारो मर्मत गर्ने ।",
+    "unit": "घ.मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "L8",
+    "resources": [
+      { "name": "सिपालु", "quantity": 3.53, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 7.06, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "१ नं को ईंटा", "quantity": 560.0, "unit": "संख्या", "resource_type": "Material" },
+      { "name": "सिमेन्ट", "quantity": 84.0, "unit": "के.जी.", "resource_type": "Material" },
+      { "name": "वालुवा", "quantity": 0.36, "unit": "घ.मि.", "resource_type": "Material" }
+    ]
+  },
+{
+  "id": "L9-Brickwork-Lime-Repair",
+  "sNo": "-",
+  "description": "गारोको मोहडामा बिग्रेको ईंटा झिकी चुना सुर्खी (१:२) मा गारो मर्मत गर्ने ।",
+  "unit": "घ.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "L9",
+  "resources": [
+    { "name": "सिपालु", "quantity": 35.28, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 70.56, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "१ नं को ईंटा", "quantity": 5600.0, "unit": "संख्या", "resource_type": "Material" },
+    { "name": "चुना", "quantity": 1.4, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "सुर्खी", "quantity": 2.8, "unit": "घ.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "L10-Enamel-1Coat-Old",
+  "sNo": "-",
+  "description": "पुरानो सतहमा लिन्सीड आयलले पुछी तयारी इनामेल पेन्ट १ कोट लगाउने ।",
+  "unit": "व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "L10",
+  "resources": [
+    { "name": "सिपालु", "quantity": 0.538, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 0.538, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "लिन्सीड आयल", "quantity": 0.538, "unit": "लिटर", "resource_type": "Material" },
+    { "name": "तयारी इनामेल", "quantity": 1.614, "unit": "लिटर", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "L11-Marble-Cleaning",
+  "sNo": "-",
+  "description": "पुरानो मार्बल तथा भित्तामा मार्बल सतह अक्जालिक एसिड हाली घोट्ने, सफा गर्ने कार्य ।",
+  "unit": "व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "L11",
+  "resources": [
+    { "name": "ज्यामी", "quantity": 3.38, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "अक्जालिक एसिड", "quantity": 0.185, "unit": "के.जी.", "resource_type": "Material" },
+    { "name": "कार्बोरिण्डम ढुंगा", "quantity": 1.0, "unit": "अन्दाजी", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "L12-Parquet-Polish",
+  "sNo": "-",
+  "description": "पुरानो पार्केट बिछ्याएको ठाउँमा घोटि पालिस गर्ने कार्य ।",
+  "unit": "व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "L12",
+  "resources": [
+    { "name": "ज्यामी", "quantity": 0.38, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "खाक्सी", "quantity": 1.0, "unit": "अन्दाजी", "resource_type": "Material" },
+    { "name": "मैन पालिस", "quantity": 1.0, "unit": "अन्दाजी", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "L13-Mosaic-Polish",
+  "sNo": "-",
+  "description": "पुरानो मोजायक फ्लोरिङ्ग गरेको ठाउँमा घोटि सफा गरी मैन पालिस समेत गर्ने कार्य ।",
+  "unit": "व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "L13",
+  "resources": [
+    { "name": "ज्यामी", "quantity": 3.38, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "अक्जालिक एसिड", "quantity": 0.37, "unit": "के.जी.", "resource_type": "Material" },
+    { "name": "मैन पालिस", "quantity": 0.118, "unit": "के.जी.", "resource_type": "Material" },
+    { "name": "तारपेन्टाइन", "quantity": 0.538, "unit": "लि.", "resource_type": "Material" },
+    { "name": "कार्बोरिण्डम ढुंगा", "quantity": 1.0, "unit": "अन्दाजी", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "L14-Brick-Recovery-Mud",
+  "sNo": "-",
+  "description": "गारोबाट ईंटा झिकी लागेको मसला सफा गर्ने तथा पुनः प्रयोग गर्न सकिने गरी थन्काउने काम - माटोको मसलामा",
+  "unit": "१००० गोटा",
+  "basis_quantity": 1000,
+  "type": "DUDBC",
+  "ref_ss": "L14",
+  "resources": [
+    { "name": "सिपालु", "quantity": 0.04, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 3.90, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "पुल्ली, डोरी, ग्यास कटर, ग्यास आदि", "quantity": 10, "unit": "श्रमिकको प्रतिशत", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": "L14-Brick-Recovery-Lime",
+  "sNo": "-",
+  "description": "गारोबाट ईंटा झिकी लागेको मसला सफा गर्ने तथा पुनः प्रयोग गर्न सकिने गरी थन्काउने काम - चुनासुर्खी मसलामा",
+  "unit": "१००० गोटा",
+  "basis_quantity": 1000,
+  "type": "DUDBC",
+  "ref_ss": "L14",
+  "resources": [
+    { "name": "सिपालु", "quantity": 0.75, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 4.10, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "पुल्ली, डोरी, ग्यास कटर, ग्यास आदि", "quantity": 10, "unit": "श्रमिकको प्रतिशत", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": "L14-Brick-Recovery-Cement",
+  "sNo": "-",
+  "description": "गारोबाट ईंटा झिकी लागेको मसला सफा गर्ने तथा पुनः प्रयोग गर्न सकिने गरी थन्काउने काम - सिमेन्ट मसलामा",
+  "unit": "१००० गोटा",
+  "basis_quantity": 1000,
+  "type": "DUDBC",
+  "ref_ss": "L14",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.20, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 4.85, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "पुल्ली, डोरी, ग्यास कटर, ग्यास आदि", "quantity": 10, "unit": "श्रमिकको प्रतिशत", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": "L15-Stone-Recovery-Lime",
+  "sNo": "-",
+  "description": "गारोबाट ढुंगा झिकी लागेको मसला सफा गर्ने तथा पुनः प्रयोग गर्न सकिने गरी थन्काउने काम - चुनासुर्खी मसलामा",
+  "unit": "घ.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "L15",
+  "resources": [
+    { "name": "सिपालु", "quantity": 0.18, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 1.05, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "पुल्ली, डोरी, ग्यास कटर आदि", "quantity": 5, "unit": "श्रमिकको प्रतिशत", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": "L15-Stone-Recovery-Cement",
+  "sNo": "-",
+  "description": "गारोबाट ढुंगा झिकी लागेको मसला सफा गर्ने तथा पुनः प्रयोग गर्न सकिने गरी थन्काउने काम - सिमेन्ट मसलामा",
+  "unit": "घ.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "L15",
+  "resources": [
+    { "name": "सिपालु", "quantity": 0.22, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 1.15, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "पुल्ली, डोरी, ग्यास कटर आदि", "quantity": 5, "unit": "श्रमिकको प्रतिशत", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": "L16-Carved-Stone-Recovery-Lime",
+  "sNo": "-",
+  "description": "कुँदेको ढुंगा, मार्बल वा प्रिकाष्ट कङ्क्रिट भत्काउने काम - चुनासुर्खी मसलामा",
+  "unit": "घ.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "L16",
+  "resources": [
+    { "name": "सिपालु", "quantity": 0.10, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 1.40, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "पुल्ली, डोरी, ग्यास कटर आदि", "quantity": 5, "unit": "श्रमिकको प्रतिशत", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": "L16-Carved-Stone-Recovery-Cement",
+  "sNo": "-",
+  "description": "कुँदेको ढुंगा, मार्बल वा प्रिकाष्ट कङ्क्रिट भत्काउने काम - सिमेन्ट मसलामा",
+  "unit": "घ.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "L16",
+  "resources": [
+    { "name": "सिपालु", "quantity": 0.10, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 2.70, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "पुल्ली, डोरी, ग्यास कटर आदि", "quantity": 5, "unit": "श्रमिकको प्रतिशत", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": "L17-Timber-Dismantle-Small",
+  "sNo": "-",
+  "description": "१० मि. सम्म स्थान र ५ मि. उचाईमा रहेको काठको काम भत्काई राम्ररी थन्काउने काम - ४० वर्गसेमि सम्मको सेक्सन",
+  "unit": "घ.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "L17",
+  "resources": [
+    { "name": "सिपालु", "quantity": 0.10, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 0.20, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "औजार आदि", "quantity": 3, "unit": "श्रमिकको प्रतिशत", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": "L17-Timber-Dismantle-Large",
+  "sNo": "-",
+  "description": "१० मि. सम्म स्थान र ५ मि. उचाईमा रहेको काठको काम भत्काई राम्ररी थन्काउने काम - ४० वर्गसेमि भन्दा ठूलो सेक्सन",
+  "unit": "घ.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "L17",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.25, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 2.60, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "औजार आदि", "quantity": 15, "unit": "श्रमिकको प्रतिशत", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": "L18-Steel-Dismantle-Joist",
+  "sNo": "-",
+  "description": "फलामे काम हटाउने कार्य, झिक्ने, छुट्याउने र राम्ररी थन्काउने समेत - रोल्ड स्टील ज्वाइष्ट",
+  "unit": "मे.ट.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "L18",
+  "resources": [
+    { "name": "सिपालु", "quantity": 0.50, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 3.40, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ग्यास कटर, ग्यास आदि", "quantity": 5, "unit": "श्रमिकको प्रतिशत", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": "L18-Steel-Dismantle-Section",
+  "sNo": "-",
+  "description": "फलामे काम हटाउने कार्य, झिक्ने, छुट्याउने र राम्ररी थन्काउने समेत - च्यानल, एङ्गल, टी आदि",
+  "unit": "मे.ट.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "L18",
+  "resources": [
+    { "name": "सिपालु", "quantity": 0.50, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 3.00, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ग्यास कटर, ग्यास आदि", "quantity": 5, "unit": "श्रमिकको प्रतिशत", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": "L18-Steel-Dismantle-Builtup",
+  "sNo": "-",
+  "description": "फलामे काम हटाउने कार्य, झिक्ने, छुट्याउने र राम्ररी थन्काउने समेत - बिल्ट अप सेक्सनहरु",
+  "unit": "मे.ट.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "L18",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.50, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 7.00, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ग्यास कटर, ग्यास आदि", "quantity": 5, "unit": "श्रमिकको प्रतिशत", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": "L18-Steel-Dismantle-Builtup-NoSeparate",
+  "sNo": "-",
+  "description": "फलामे काम हटाउने कार्य, झिक्ने, छुट्याउने र राम्ररी थन्काउने समेत - बिल्ट अप सेक्सनहरु (नछुट्याईकन)",
+  "unit": "मे.ट.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "L18",
+  "resources": [
+    { "name": "सिपालु", "quantity": 1.00, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 6.00, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ग्यास कटर, ग्यास आदि", "quantity": 5, "unit": "श्रमिकको प्रतिशत", "resource_type": "Equipment" }
+  ]
+},
+{
+  "id": "L19-Fence-Removal-RCC",
+  "sNo": "-",
+  "description": "फेन्सको काम हटाउने माटो खन्ने र खाल्डोमा माटो पुरी सम्याउने समेत काम - आर.सि.सि. फेन्स",
+  "unit": "व.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "L19",
+  "resources": [
+    { "name": "ज्यामी", "quantity": 0.45, "unit": "संख्या", "resource_type": "Labour" }
+  ]
+},
+{
+  "id": "L19-Fence-Removal-Steel",
+  "sNo": "-",
+  "description": "फेन्सको काम हटाउने माटो खन्ने र खाल्डोमा माटो पुरी सम्याउने समेत काम - फलामे फेन्स",
+  "unit": "व.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "L19",
+  "resources": [
+    { "name": "ज्यामी", "quantity": 0.42, "unit": "संख्या", "resource_type": "Labour" }
+  ]
+},
+{
+  "id": "L19-Fence-Removal-Timber",
+  "sNo": "-",
+  "description": "फेन्सको काम हटाउने माटो खन्ने र खाल्डोमा माटो पुरी सम्याउने समेत काम - काठे फेन्स",
+  "unit": "व.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "L19",
+  "resources": [
+    { "name": "ज्यामी", "quantity": 0.40, "unit": "संख्या", "resource_type": "Labour" }
+  ]
+},
+{
+  "id": "L20-Reinforcement-Cutting",
+  "sNo": "-",
+  "description": "आर.सि.सि. वा आर.वि.सि. मा भएको फलामे डण्डी काटी आएको सामाग्री १० मि. सम्म हटाउने काम ।",
+  "unit": "व.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "L20",
+  "resources": [
+    { "name": "सिपालु", "quantity": 0.10, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 1.20, "unit": "संख्या", "resource_type": "Labour" }
+  ]
+},
+{
+  "id": "L21-Gabion-Dismantle",
+  "sNo": "-",
+  "description": "ग्याबियन भत्काई आएको सामाग्री १० मि. सम्म हटाउने काम ।",
+  "unit": "घ.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "L21",
+  "resources": [
+    { "name": "सिपालु", "quantity": 0.10, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 1.00, "unit": "संख्या", "resource_type": "Labour" }
+  ]
+},
+{
+  "id": "L22-CGI-Roof-Dismantle",
+  "sNo": "-",
+  "description": "जस्तापाताको छाना भत्काई त्यसबाट निस्केको काठ तथा फलामे निर्माण सामाग्रीहरु १० मी. पर लगि मिलाई थाक लगाउने कार्य",
+  "unit": "व.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "L22",
+  "resources": [
+    { "name": "सिपालु", "quantity": 0.027, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 0.04, "unit": "संख्या", "resource_type": "Labour" }
+  ]
+},
+{
+  "id": "M1-Steel-Grill-3x20-1SqM",
+  "sNo": "२४-१क",
+  "description": "३X२० मि.मि. फलामे ग्रिल बनाई खाक्सी लगाई आलुमिनियम पेन्ट गरी जड्ने ज्याला समेत (प्रति व.मि.)",
+  "unit": "व.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "M1",
+  "resources": [
+    { "name": "३X२० मि.मि. फलामे ग्रिल बनाइ जड्ने", "quantity": 10000, "unit": "व.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "M2-Steel-Grill-4.5x20-10SqM",
+  "sNo": "२४-१ख",
+  "description": "४.५X२० मि.मि. फलामे ग्रिल बनाई खाक्सी लगाई आलुमिनियम पेन्ट समेत गरी जोड्ने ज्याला समेत (प्रति १० व.मि.)",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "M2",
+  "resources": [
+    { "name": "४.५X२० मि.मि. फलामे ग्रिल बनाइ जड्ने", "quantity": 10000, "unit": "व.मि.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "M3-Steel-Grill-Solid-Core",
+  "sNo": "-",
+  "description": "४.५ X २० मी.मी. फलामे पाताको फ्रेममा १२ X १२ मी.मी. ठोस कोर स्क्वायर रडको ग्रिल बनाई खाक्सी लगाई रेडअक्साइड तथा अल्मुनियम पेन्ट गरी जड्ने",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "M3",
+  "resources": [
+    { "name": "सिपालु", "quantity": 0.70, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 0.60, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "फलामे पाता", "quantity": 28.24, "unit": "के.जी.", "resource_type": "Material" },
+    { "name": "सोलिड कोर स्क्वायर रड", "quantity": 215, "unit": "के.जी.", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "M4-Steel-Angle-Fabrication",
+  "sNo": "-",
+  "description": "विभिन्न साईजको फलामे एङ्गल फेव्रिकेशन गरी प्राइमर पेन्ट सहित तयार गर्ने काम ।",
+  "unit": "१८.९४ केजी",
+  "basis_quantity": 18.94,
+  "type": "DUDBC",
+  "ref_ss": "M4",
+  "resources": [
+    { "name": "सिपालु", "quantity": 0.687, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 0.781, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "फलामे एल", "quantity": 18.94, "unit": "के.जी.", "resource_type": "Material" },
+    { "name": "प्राइमर पेन्ट", "quantity": 1.0, "unit": "अन्दाजी", "resource_type": "Material" }
+  ]
+},
+{
+  "id": "M5-Spiral-Staircase-Steel",
+  "sNo": "-",
+  "description": "३ मि. उचाइमा ९० से.मि. चौडा फलामे स्पाइरल भरेङ्ग बनाई जडान गर्ने काम",
+  "unit": "३ मि.",
+  "basis_quantity": 3,
+  "type": "DUDBC",
+  "ref_ss": "M5",
+  "resources": [
+    {
+      "name": "सिपालु",
+      "quantity": 16.0,
+      "unit": "संख्या",
+      "resource_type": "Labour"
+    },
+    {
+      "name": "ज्यामी",
+      "quantity": 16.0,
+      "unit": "संख्या",
+      "resource_type": "Labour"
+    },
+    {
+      "name": "३८ मिमि ए.ल को स्टेप",
+      "quantity": 81.06,
+      "unit": "के.जी.",
+      "resource_type": "Material"
+    },
+    {
+      "name": "७५ मिमि पोस्ट",
+      "quantity": 4.57,
+      "unit": "मि.",
+      "resource_type": "Material"
+    },
+    {
+      "name": "३ मिमि पाता",
+      "quantity": 0.97,
+      "unit": "के.जी.",
+      "resource_type": "Material"
+    },
+    {
+      "name": "४०X५ मिमि पाता",
+      "quantity": 9.89,
+      "unit": "के.जी.",
+      "resource_type": "Material"
+    },
+    {
+      "name": "२५ मिमि स्वाएर पाइप",
+      "quantity": 38.72,
+      "unit": "मि.",
+      "resource_type": "Material"
+    },
+    {
+      "name": "१२ मिमि स्वाएर रड",
+      "quantity": 38.78,
+      "unit": "के.जी.",
+      "resource_type": "Material"
+    },
+    {
+      "name": "२५X५ मिमि पाता",
+      "quantity": 11.65,
+      "unit": "के.जी.",
+      "resource_type": "Material"
+    },
+    {
+      "name": "३२ मिमि हेण्डरेल",
+      "quantity": 10.47,
+      "unit": "मि.",
+      "resource_type": "Material"
+    }
+  ]
+},
+  {
+    "id": "M6-Rolling-Shutter",
+    "sNo": "२४-२",
+    "description": "फलामे रोलिङ्ग सटर बनाई जडान गर्ने, पेन्टिङ्ग र ज्याला समेत ।",
+    "unit": "व.मि.",
+    "basis_quantity": 9.3,
+    "type": "DUDBC",
+     "ref_ss": "M6",
+    "resources": [
+      {
+        "name": "सिपालु", "quantity": 16.0, "unit": "संख्या","resource_type": "Labour" },
+      { "name": "ज्यामी","quantity": 16.0,"unit": "संख्या",
+        "resource_type": "Labour"},
+      {"name": "४०X५ मिमि एल", "quantity": 123.78,"unit": "के.जी.", "resource_type": "Material"},
+      { "name": "४५ से.मि. स्प्रिंग","quantity": 2.0,"unit": "संख्या","resource_type": "Material"},
+      {"name": "रिबेट","quantity": 1.5, "unit": "के.जी.", "resource_type": "Material"},
+      {"name": "४०X५ मिमि पाता लक","quantity": 2.87,"unit": "के.जी.","resource_type": "Material"},
+      {"name": "२६ गेज जि.आइ. कभर लकप्लेट","quantity": 5.0,"unit": "के.जी.","resource_type": "Material"},
+      {"name": "२०X३ मिमि पाता", "quantity": 1.43, "unit": "के.जी.", "resource_type": "Material" },
+      {
+        "name": "इन्टरलक",
+        "quantity": 2.0,
+        "unit": "संख्या",
+        "resource_type": "Material"
+      },
+      {
+        "name": "च्यानल साइड प्लग",
+        "quantity": 2.0,
+        "unit": "संख्या",
+        "resource_type": "Material"
+      }]
+  },
+  {
+    "id": "M7-Collapsible-Gate",
+    "sNo": "२४-४",
+    "description": "फलामे कोलाप्सिबल गेट, पेन्टिङ्ग र जडान समेत गर्ने",
+    "unit": "१० व.मि.",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": "M7",
+    "resources": [
+      { "name": "फलामे गेट", "quantity": 10.0, "unit": "व.मि.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "M8-Steel-Gate-Fabrication",
+    "sNo": "२४-२",
+    "description": "फलामे गेट बनाई जोड्ने काम प्राइमर पेन्ट तथा ज्याला सहित",
+    "unit": "१० के.जी.",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": "M8",
+    "resources": [
+      { "name": "फलामे गेट", "quantity": 10, "unit": "के.जी.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "M9-GI-Barbed-Wire",
+    "sNo": "२४-६",
+    "description": "जी.आई. काँडेतार लगाउने काम",
+    "unit": "१०० र.मि.",
+    "basis_quantity": 100,
+    "type": "DUDBC",
+    "ref_ss": "M9",
+    "resources": [
+      { "name": "सिपालु", "quantity": 1.076, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 5.38, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "जि.आई.काडेतार", "quantity": 110.0, "unit": "र.मि.", "resource_type": "Material" },
+      { "name": "किला हक आदि", "quantity": 1.0, "unit": "अन्दाजी", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "M10-Wood-Post-Barbed-Wire",
+    "sNo": "२४-७",
+    "description": "३ मी. दूरीमा काठको खम्बा गाडी ५ लाइन सिधा, २ लाइन तेर्सो काँडेतार लगाउने काम",
+    "unit": "३० र.मि.",
+    "basis_quantity": 30,
+    "type": "DUDBC",
+    "ref_ss": "M10",
+    "resources": [
+      { "name": "सिपालु", "quantity": 1.0, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 2.0, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "सालको काठ", "quantity": 0.190, "unit": "घ.मि.", "resource_type": "Material" },
+      { "name": "काँडेतार", "quantity": 250.0, "unit": "मी.", "resource_type": "Material" },
+      { "name": "यू हक", "quantity": 77.0, "unit": "संख्या", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "M11-Black-Pipe-Truss",
+    "sNo": "-",
+    "description": "ब्लाक पाइप ट्यूबलर ट्रस जडान गर्ने काम (प्राइमर पेन्ट सहित)",
+    "unit": "१८.९४ केजी",
+    "basis_quantity": 18.94,
+    "type": "DUDBC",
+    "ref_ss": "M11",
+    "resources": [
+      { "name": "सिपालु", "quantity": 0.687, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 0.781, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "कालो पाइप", "quantity": 18.94, "unit": "के.जी.", "resource_type": "Material" }
+    ]
+  },
+  [
+  {
+    "id": "M12-GI-Chain-Link-Fence-Complete",
+    "sNo": "-",
+    "description": "५० मि.मी. को कालो फलामे पोस्ट २ मीटर दूरीमा २०x२०x४ मि.मी. र २५x२५x४ मि.मी. साईजको फलामे एङ्गल फ्रेमको बिचमा १० S.W.G. G.I. Chain Link २\"x२\" को मेस साईज जाली जडान गर्ने र ३x२० को फलामे पाताको ग्रिल ०.१५ मी. अग्लो बनाई माथि जडान गरी फेब्रिकेशन गरी प्राइमर पेन्ट लगाउने सहित सम्पूर्ण कार्य ।",
+    "unit": "१० व.मि.",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": "M12",
+    "resources": [
+      { "name": "सिपालु", "quantity": 7.0, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 5.0, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "५० मि.मी. पोस्ट", "quantity": 35.51, "unit": "के.जी.", "resource_type": "Material" },
+      { "name": "२५x२५x४ मि.मी. एल", "quantity": 32.06, "unit": "के.जी.", "resource_type": "Material" },
+      { "name": "२०x२०x४ मि.मी. एल", "quantity": 25.19, "unit": "के.जी.", "resource_type": "Material" },
+      { "name": "फलामे ग्रिल ३x२० मि.मी.", "quantity": 14.76, "unit": "के.जी.", "resource_type": "Material" },
+      { "name": "१० S.W.G. G.I. Chain Link २\"x२\"", "quantity": 10.0, "unit": "व.मि.", "resource_type": "Material" },
+      { "name": "फेब्रिकेशन", "quantity": 15, "unit": "प्रतिशत", "resource_type": "Equipment" }
+    ]
+  },
+  {
+    "id": "M13-Black-Pipe-Gate-Mesh-Complete",
+    "sNo": "-",
+    "description": "५० मि.मी. को कालो फलामे पाइप पोस्ट २ मीटर दूरीमा २५ x २५ x ४ मि.मी. साईजको फलामे एङ्गल फ्रेममा ६ मि.मी. फलामे डण्डीको डायगोनली जाली १२ x १२ मि.मी. साईजमा जडान गर्ने र ३x२० को फलामे पाताको ग्रिल ०.१५ मी. अग्लो बनाई माथि जडान गरी फेब्रिकेशन गरी प्राइमर पेन्ट लगाउने सहित सम्पूर्ण कार्य ।",
+    "unit": "१० व.मि.",
+    "basis_quantity": 10,
+    "type": "DUDBC",
+    "ref_ss": "M13",
+    "resources": [
+      { "name": "सिपालु", "quantity": 7.0, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 5.0, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "५० मि.मी. पोस्ट", "quantity": 35.51, "unit": "के.जी.", "resource_type": "Material" },
+      { "name": "२५x२५x४ मि.मी. एल", "quantity": 32.06, "unit": "के.जी.", "resource_type": "Material" },
+      { "name": "फलामे ग्रिल ३x२० मि.मी.", "quantity": 14.76, "unit": "के.जी.", "resource_type": "Material" },
+      { "name": "६ मि.मी. फलामे डण्डी", "quantity": 66.41, "unit": "के.जी.", "resource_type": "Material" },
+      { "name": "फेब्रिकेशन", "quantity": 15, "unit": "प्रतिशत", "resource_type": "Equipment" }
+    ]
+  }
+],
+  {
+    "id": "M14-SS-Railing",
+    "sNo": "-",
+    "description": "भर्‍याङमा स्टेनलेस स्टीलको १० से.मि. अग्लो रेलिङको काम",
+    "unit": "३.९६ मि.",
+    "basis_quantity": 3.96,
+    "type": "DUDBC",
+    "ref_ss": "M14",
+    "resources": [
+      { "name": "सिपालु", "quantity": 10.0, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 10.0, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "५० मिमि स्टिल पाइप", "quantity": 15.0, "unit": "मि.", "resource_type": "Material" },
+      { "name": "३० मिमि स्टिल पाइप", "quantity": 39.0, "unit": "मि.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "M15-SS-Handrail-Assembly-Complete",
+    "sNo": "-",
+    "description": "३ मि.मी. व्यासको स्टेनलेस स्टीलको हयाण्डरेलमा २ मीटरको दूरीमा ३८ मि.मी. व्यासको स्टेनलेस स्टीलको ठाडो पोष्ट राखी हयाण्डरेल र भर्‍याङको बिचमा दुई तह तेर्सो २५ मि.मी. व्यासको स्टेनलेस स्टीलको मेम्बर राखी रेलिङ्ग बनाई जडान गर्ने काम ।",
+    "unit": "९.१५ मि.",
+    "basis_quantity": 9.15,
+    "type": "DUDBC",
+    "ref_ss": "M15",
+    "resources": [
+      { "name": "सिपालु", "quantity": 7.76, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 11.35, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "३८ मि.मी. स्टिल पाइप", "quantity": 15.0, "unit": "मि.", "resource_type": "Material" },
+      { "name": "२५ मि.मी. स्टिल पाइप", "quantity": 20.0, "unit": "मि.", "resource_type": "Material" },
+      { "name": "स्टेनलेस स्टील पाइपमा ग्यास वेल्डिङ गर्ने", "quantity": 9.15, "unit": "मि.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "M16-Wood-Glass-Railing-Complete",
+    "sNo": "-",
+    "description": "१५x१५ स.मि. साईजको साल वा शिशाको काठको कलात्मक पोष्ट तथा ३\"x३\" साईजको काठको कलात्मक बट्ठर राखी ३\"x४\" साईजको साल वा शिशाको हयाण्डरेल बनाई जडान गर्ने काम ।",
+    "unit": "९ मि.",
+    "basis_quantity": 9,
+    "type": "DUDBC",
+    "ref_ss": "M16",
+    "resources": [
+      { "name": "सिपालु", "quantity": 5.27, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "ज्यामी", "quantity": 5.27, "unit": "संख्या", "resource_type": "Labour" },
+      { "name": "साल वा शिशाको काठ (कलात्मक पोष्ट, बट्ठर तथा हयाण्डरेल)", "quantity": 0.329, "unit": "घ.मि.", "resource_type": "Material" }
+    ]
+  }
+  ,{
+    "id": "M17-Glass-Wood-Handrail",
+    "sNo": "-",
+    "description": "सिसा काठको ३x४ साईजको हयाण्डरेल",
+    "unit": "१ मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "M17",
+    "resources": [
+      { "name": "सिसाको काम", "quantity": 1.0, "unit": "मि.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "M18-Square-Pipe-Railing",
+    "sNo": "-",
+    "description": "३/४\" X ३/४\" साईजको स्क्वायर पाइपबाट रेलिङ बनाई ३\"X४\" साईजको साल वा शिशौको हयाण्डरेल बनाई प्राइमर पेन्ट सहित जडान गर्ने काम ।",
+    "unit": "१ मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "M18",
+    "resources": [
+      { "name": "रेलिङको काम पुरा", "quantity": 1.0, "unit": "मि.", "resource_type": "Material" }
+    ]
+  },
+  {
+    "id": "M19-Square-Pipe-Handrail",
+    "sNo": "-",
+    "description": "३/४ इन्च x ३/४ इन्च साईजको स्क्वायर पाइपबाट रेलिङ बानइ १.५ इन्च व्यासको कालो पाइपको  हयाण्डरेल बनाइ प्राइमर पेन्ट सहित जडान गर्ने काम सम्पू्र्ण पुरा",
+    "unit": "मि.",
+    "basis_quantity": 1,
+    "type": "DUDBC",
+    "ref_ss": "M19",
+    "resources": [
+      { "name": "रेलिङको काम पुरा", "quantity": 1.0, "unit": "मि.", "resource_type": "Material" }
+    ]
+  },{
+  "id": "N1-Wood-Ceiling",
+  "sNo": "-",
+  "description": "मालसामान उपलब्ध गरी २० मि.मि. मोटाईको काठको सिलिङ्ग लगाउने काम । ४० X २० मि.मि. बिडिङ्ग ज्वाइन्टमा लगाउने समेत ।",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "N1",
+  "resources": [
+    {
+      "name": "सिपालु",
+      "quantity": 1.80,
+      "unit": "संख्या",
+      "resource_type": "Labour"
+    },
+    {
+      "name": "ज्यामी",
+      "quantity": 1.50,
+      "unit": "संख्या",
+      "resource_type": "Labour"
+    },
+    {
+      "name": "काठ",
+      "quantity": 0.260,
+      "unit": "घ.मि.",
+      "resource_type": "Material"
+    },
+    {
+      "name": "किला",
+      "quantity": 0.400,
+      "unit": "के.जी.",
+      "resource_type": "Material"
+    },
+    {
+      "name": "४० मिमि स्क्रु",
+      "quantity": 160.0,
+      "unit": "संख्या",
+      "resource_type": "Material"
+    }
+  ]
+},{
+  "id": "N2-Plywood-Ceiling",
+  "sNo": "-",
+  "description": "मालसामान उपलब्ध गरी २० मि.मि. मोटाईको प्लाई बोर्डको सिलिङ्ग लगाउने काम ।",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "N2",
+  "resources": [
+    { "name": "सिपालु", "quantity": 2.0, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 2.0, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "प्लाई बोर्ड", "quantity": 10.5, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "काठको बिडिङ्ग", "quantity": 0.03, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "५० मिमि स्क्रु", "quantity": 70.0, "unit": "संख्या", "resource_type": "Material" },
+    { "name": "६० मिमि स्क्रु", "quantity": 160.0, "unit": "संख्या", "resource_type": "Material" },
+    { "name": "५० मिमि किला", "quantity": 0.36, "unit": "के.जी.", "resource_type": "Material" }
+  ]
+},{
+  "id": "N3-Agrakh-Frame-Plywood",
+  "sNo": "१०-१४(क)",
+  "description": "३८x७५ मि.मि. साईजको अग्रख काठको ०.६१ x ०.९१५ मि.को कोठा (फ्रेम) बनाई दुबै तर्फ ३ मि.मि. कमर्सियल प्लाईउड लगाई जोर्नीमा काठको लिष्टी ठोक्री काठबार लगाउने काम ।",
+  "unit": "३५.५८ व.मि.",
+  "basis_quantity": 35.58,
+  "type": "DUDBC",
+  "ref_ss": "N3",
+  "resources": [
+    { "name": "सिपालु", "quantity": 23.0, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 2.30, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "अग्रख काठ", "quantity": 0.35, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "३ मि.मि. कमर्सियल प्लाईउड", "quantity": 75.0, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "लिष्टी", "quantity": 1, "unit": "अन्दाजी", "resource_type": "Material" },
+    { "name": "किला", "quantity": 1, "unit": "अन्दाजी", "resource_type": "Material" }
+  ]
+},{
+  "id": "N4-Agrakh-Frame-Plywood",
+  "sNo": "-",
+  "description": "३८x७५ मि.मि. साईजको अग्रख काठको ०.६१ x ०.९१५ मि.को कोठा (फ्रेम) बनाई दुबै तर्फ ३ मि.मि. प्लाईबोर्ड लगाई जोर्नीमा काठको लिष्टी ठोकी काठबार लगाउने काम ।",
+  "unit": "३५.५८ व.मि.",
+  "basis_quantity": 35.58,
+  "type": "DUDBC",
+  "ref_ss": "N4",
+  "resources": [
+    { "name": "सिपालु", "quantity": 23.0, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 2.30, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "अग्रख काठ", "quantity": 0.34, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "प्लाई बोर्ड", "quantity": 75.0, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "लिष्टी", "quantity": 1, "unit": "अन्दाजी", "resource_type": "Material" },
+    { "name": "किला", "quantity": 1, "unit": "अन्दाजी", "resource_type": "Material" }
+  ]
+}
+,{
+  "id": "N5-Agrakh-Frame-Hard-Board",
+  "sNo": "-",
+  "description": "३८x७५ मि.मि. साईजको अग्रख काठको ०.६१ x ०.९१५ मि.को कोठा (फ्रेम) बनाई दुबै तर्फ ३ मि.मि. हार्ड बोर्ड लगाई जोर्नीमा काठको लिष्टी ठोकी काठबार लगाउने काम ।",
+  "unit": "३५.५८ व.मि.",
+  "basis_quantity": 35.58,
+  "type": "DUDBC",
+  "ref_ss": "N5",
+  "resources": [
+    { "name": "सिपालु", "quantity": 23.0, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 2.30, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "अग्रख काठ", "quantity": 0.34, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "हार्ड बोर्ड", "quantity": 75.0, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "लिष्टी", "quantity": 1, "unit": "अन्दाजी", "resource_type": "Material" },
+    { "name": "किला", "quantity": 1, "unit": "अन्दाजी", "resource_type": "Material" }
+  ]
+},{
+  "id": "N6-Agrakh-Plank-Ceiling",
+  "sNo": "-",
+  "description": "३८x७५ मि.मि. साईजको अग्रखको ०.६१ मि. x ०.९१५ मि. को कोठा (फ्रेम) बनाई १९ मि.मि. अग्रख काठको फल्यक दुबैतर्फ ल्याप ज्वाइन्टमा ठोकी काठबार लगाउने काम ।",
+  "unit": "३५.५८ व.मि.",
+  "basis_quantity": 35.58,
+  "type": "DUDBC",
+  "ref_ss": "N6",
+  "resources": [
+    { "name": "सिपालु", "quantity": 30.0, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 3.0, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "अग्रख काठ", "quantity": 1.763, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "लिष्टी", "quantity": 1, "unit": "अन्दाजी", "resource_type": "Material" },
+    { "name": "किला", "quantity": 1, "unit": "अन्दाजी", "resource_type": "Material" }
+  ]
+}
+,{
+  "id": "N7a-Agrakh-Frame-3mm-Ply",
+  "sNo": "१०-१६(क)",
+  "description": "५०x७५ मि.मि. साईजको अग्रख काठको ०.६० मि.x ०.९० मि.को कोठा (फ्रेम) बनाई ३ मि.मि. कमर्सियल प्लाईउड सिलिङ्ग ठोक्ने काम ।",
+  "unit": "३५.५८ व.मि.",
+  "basis_quantity": 35.58,
+  "type": "DUDBC",
+  "ref_ss": "N7",
+  "resources": [
+    { "name": "सिपालु", "quantity": 23.0, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 2.30, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "अग्रख काठ", "quantity": 0.450, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "३ मि.मि. कमर्सियल प्लाईउड", "quantity": 37.5, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "लिष्टी", "quantity": 1, "unit": "अन्दाजी", "resource_type": "Material" },
+    { "name": "किला", "quantity": 1, "unit": "अन्दाजी", "resource_type": "Material" }
+  ]
+}
+,{
+  "id": "N7b-Agrakh-Frame-12mm-Hardboard",
+  "sNo": "१०-१६(क)",
+  "description": "५०x७५ मि.मि. साईजको अग्रख काठको ०.६० मि.x ०.९० मि.को कोठा (फ्रेम) बनाई १२ मि.मि. हार्डबोर्ड सिलिङ्ग ठोक्ने काम ।",
+  "unit": "३५.५८ व.मि.",
+  "basis_quantity": 35.58,
+  "type": "DUDBC",
+  "ref_ss": "N7",
+  "resources": [
+    { "name": "सिपालु", "quantity": 23.0, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 2.30, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "अग्रख काठ", "quantity": 0.450, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "१२ मि.मि. हार्डबोर्ड", "quantity": 37.5, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "लिष्टी", "quantity": 1, "unit": "अन्दाजी", "resource_type": "Material" },
+    { "name": "किला", "quantity": 1, "unit": "अन्दाजी", "resource_type": "Material" }
+  ]
+}
+,{
+  "id": "N7c-Agrakh-Frame-6mm-Waterproof-Ply",
+  "sNo": "१०-१६(क)",
+  "description": "५०x७५ मि.मि. साईजको अग्रख काठको ०.६० मि.x ०.९० मि.को कोठा (फ्रेम) बनाई ६ मि.मि. वाटरप्रुफ प्लाईउड सिलिङ्ग ठोक्ने काम ।",
+  "unit": "३५.५८ व.मि.",
+  "basis_quantity": 35.58,
+  "type": "DUDBC",
+  "ref_ss": "N7",
+  "resources": [
+    { "name": "सिपालु", "quantity": 23.0, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 2.30, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "अग्रख काठ", "quantity": 0.450, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "६ मि.मि. वाटरप्रुफ प्लाईउड", "quantity": 37.5, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "लिष्टी", "quantity": 1, "unit": "अन्दाजी", "resource_type": "Material" },
+    { "name": "किला", "quantity": 1, "unit": "अन्दाजी", "resource_type": "Material" }
+  ]
+}
+,{
+  "id": "N8-Partition-Single-Side-Teak",
+  "sNo": "१०-१२, १०-१",
+  "description": "७५ X ७५ मी.मी. साईजको अग्रख काठको १.७१ X १.५६ मी. को कोठामा ५० X ७५ मी.मी. साईजको सालको काठले क्रस पार्टिसन गरी १२ मी.मी. कमर्सियल प्लाईउडमा एकातर्फ ४ मी.मी. को टिक प्लाईउड लेमिनेसन गरी जोर्नीमा काठको लिष्टी लगाई पार्टिसन गर्ने ।",
+  "unit": "३५.५८ व.मि.",
+  "basis_quantity": 35.58,
+  "type": "DUDBC",
+  "ref_ss": "N8",
+  "resources": [
+    { "name": "सिपालु", "quantity": 4.26, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 0.426, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "अग्रख काठको चौकोस", "quantity": 0.50, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "१२ मी.मी. कमर्सियल प्लाईउड", "quantity": 35.54, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "४ मी.मी. टिक प्लाई", "quantity": 35.54, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "गम", "quantity": 1.0, "unit": "के.जी.", "resource_type": "Material" },
+    { "name": "लिष्टी", "quantity": 149.6, "unit": "र.मि.", "resource_type": "Material" },
+    { "name": "किला", "quantity": 3.0, "unit": "पाकेट", "resource_type": "Material" }
+  ]
+}
+,{
+  "id": "N9-Partition-Double-Side-Teak",
+  "sNo": "१०-१२, १०-१",
+  "description": "७५ X ७५ मी.मी. साईजको अग्रख काठको १.७१ X १.५६ मी. को कोठामा ५० X ७५ मी.मी. साईजको सालको काठले क्रस पार्टिसन गरी १२ मी.मी. कमर्सियल प्लाईउडमा दुबैतर्फ ४ मी.मी. को टिक प्लाईउड लेमिनेसन गरी जोर्नीमा काठको लिष्टी लगाई पार्टिसन गर्ने ।",
+  "unit": "३५.५८ व.मि.",
+  "basis_quantity": 35.58,
+  "type": "DUDBC",
+  "ref_ss": "N9",
+  "resources": [
+    { "name": "सिपालु", "quantity": 6.39, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 0.639, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "अग्रख काठको चौकोस", "quantity": 0.50, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "१२ मी.मी. कमर्सियल प्लाईउड", "quantity": 35.54, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "४ मी.मी. टिक प्लाई", "quantity": 63.08, "unit": "व.मि.", "resource_type": "Material" },
+    { "name": "गम", "quantity": 2.0, "unit": "के.जी.", "resource_type": "Material" },
+    { "name": "लिष्टी", "quantity": 149.6, "unit": "र.मि.", "resource_type": "Material" },
+    { "name": "किला", "quantity": 3.0, "unit": "पाकेट", "resource_type": "Material" }
+  ]
+},{
+  "id": "N10-Gypsum-False-Ceiling",
+  "sNo": "-",
+  "description": "मालसामान उपलब्ध गरी जि.आइ. फ्रेममा जिप्सम बोर्डको फल्स सिलिङ्ग लगाउने काम (आर.सि.सि. छतमुनि)",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "N10",
+  "resources": [{ "name": "जिप्सम फल्स सिलिङ्गको काम पूरा", "quantity": 10, "unit": "व.मि.", "resource_type": "Material" }]
+}
+,{
+  "id": "N11-Gypsum-Suspended-Ceiling",
+  "sNo": "-",
+  "description": "मालसामान उपलब्ध गरी जि.आइ. फ्रेममा जिप्सम बोर्डको सस्पेन्डेड सिलिङ्ग लगाउने काम (आर.सि.सि. छतमुनि)",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "N11",
+  "resources": [{ "name": "जिप्सम सस्पेन्डेड सिलिङ्गको काम पूरा", "quantity": 10, "unit": "व.मि.", "resource_type": "Material" }]
+}
+,{
+  "id": "N12-Metal-Polyester-Ceiling",
+  "sNo": "-",
+  "description": "मालसामान उपलब्ध गरी जि.आइ. फ्रेममा मेटालाइज्ड पोलिएटर लामिनेटेड बोर्डको सिलिङ्ग लगाउने काम (कर्कट पाताको छानामुनि)",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "N12",
+  "resources": [{ "name": "एम.पि.एल. सिलिङ्गको काम पूरा", "quantity": 10, "unit": "व.मि.", "resource_type": "Material" }]
+}
+,{
+  "id": "N13-Armstrong-Ceiling",
+  "sNo": "-",
+  "description": "मालसामान उपलब्ध गरी आर्मस्ट्रांग बोर्डको सस्पेन्डेड सिलिङ्ग लगाउने काम",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "N13",
+  "resources": [{ "name": "आर्मस्ट्रांग बोर्ड सिलिङ्गको काम पूरा", "quantity": 10, "unit": "व.मि.", "resource_type": "Material" }]
+}
+,{
+  "id": "N14-Flexo-Board-Ceiling",
+  "sNo": "-",
+  "description": "मालसामान उपलब्ध गरी ६ मि.मि. बाक्लो फ्लेक्स-ओ-बोर्ड (वाटरप्रुफ सिमेन्ट बोर्ड) को फल्स सिलिङ्ग लगाउने काम",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "N14",
+  "resources": [{ "name": "फ्लेक्स-ओ-बोर्ड सिलिङ्गको काम पूरा", "quantity": 10, "unit": "व.मि.", "resource_type": "Material" }]
+}
+,{
+  "id": "N15-Gypsum-Board-Partition",
+  "sNo": "-",
+  "description": "मालसामान उपलब्ध गरी जिपस्टिल जि.आइ. अन्डर फ्रेममा १२.५ मि.मि. बाक्लो जिप्सम बोर्डको काठबार लगाउने काम",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "N15",
+  "resources": [{ "name": "जिप्सम बोर्ड पार्टिसनको काम पूरा", "quantity": 10, "unit": "व.मि.", "resource_type": "Material" }]
+}
+,{
+  "id": "N16-Gypsum-Board-Paneling",
+  "sNo": "-",
+  "description": "मालसामान उपलब्ध गरी जिपस्टिल जि.आइ. अन्डर फ्रेममा १२.५ मि.मि. बाक्लो जिप्सम बोर्डको वा प्यानलिङ्ग गर्ने काम",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "N16",
+  "resources": [{ "name": "जिप्सम बोर्ड वाल प्यानलिङ्गको काम पूरा", "quantity": 10, "unit": "व.मि.", "resource_type": "Material" }]
+}
+,{
+  "id": "N17-Aluminium-Partition-Large",
+  "sNo": "-",
+  "description": "मालसामान उपलब्ध गरी ५ मि.मि. शिशा र ९ मि.मि. लामिनेटेड बोर्ड लगाई एल्युमिनियम पार्टिसन लगाउने काम साइज १०१x४५x१.१",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "N17",
+  "resources": [{ "name": "एल्युमिनियम पार्टिसनको काम पूरा", "quantity": 10, "unit": "व.मि.", "resource_type": "Material" }]
+}
+,{
+  "id": "N18-Aluminium-Partition-Small",
+  "sNo": "-",
+  "description": "मालसामान उपलब्ध गरी ५ मि.मि. शिशा र ९ मि.मि. लामिनेटेड बोर्ड लगाई एल्युमिनियम पार्टिसन लगाउने काम साइज ६४x३८x१.१",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "N18",
+  "resources": [{ "name": "एल्युमिनियम पार्टिसनको काम पूरा", "quantity": 10, "unit": "व.मि.", "resource_type": "Material" }]
+}
+,{
+  "id": "N19-Wood-Glass-Paneling",
+  "sNo": "-",
+  "description": "मालसामान उपलब्ध गरी ७५x१६ मि.मि. काठको फ्रेममा शिशाको प्यानलिङ्ग गर्ने काम पालिस लगाउने समेत पूरा",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "N19",
+  "resources": [{ "name": "शिशा प्यानलिङ्गको काम पूरा", "quantity": 10, "unit": "व.मि.", "resource_type": "Material" }]
+}
+,{
+  "id": "N20-Arocon-Panel-35mm",
+  "sNo": "-",
+  "description": "मालसामान उपलब्ध गरी ३५ मि.मि. बाक्लो एरोकोन वा रेपिकोन पिएफ्याब प्यानल लगाउने काम",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "N20",
+  "resources": [{ "name": "पिएफ्याब प्यानलिङ्गको काम पूरा", "quantity": 10, "unit": "व.मि.", "resource_type": "Material" }]
+}
+,{
+  "id": "N21-Arocon-Panel-50mm",
+  "sNo": "-",
+  "description": "मालसामान उपलब्ध गरी ५० मि.मि. बाक्लो एरोकोन वा रेपिकोन पिएफ्याब प्यानल लगाउने काम",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "N21",
+  "resources": [{ "name": "पिएफ्याब प्यानलिङ्गको काम पूरा", "quantity": 10, "unit": "व.मि.", "resource_type": "Material" }]
+}
+,{
+  "id": "N22-Arocon-Panel-40mm",
+  "sNo": "-",
+  "description": "मालसामान उपलब्ध गरी ४० मि.मि. बाक्लो एरोकोन वा रेपिकोन पिएफ्याब प्यानल लगाउने काम",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "N22",
+  "resources": [{ "name": "पिएफ्याब प्यानलिङ्गको काम पूरा", "quantity": 10, "unit": "व.मि.", "resource_type": "Material" }]
+}
+,{
+  "id": "N23-Arocon-Cubical",
+  "sNo": "-",
+  "description": "मालसामान उपलब्ध गरी ४० मि.मि. बाक्लो एरोकोन वा रेपिकोन पिएफ्याब प्यानलको क्यूविकल बनाउने काम",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "N23",
+  "resources": [{ "name": "पिएफ्याब क्यूविकलको काम पूरा", "quantity": 10, "unit": "व.मि.", "resource_type": "Material" }]
+}
+,{
+  "id": "N24-UPVC-Partition-60x60-1",
+  "sNo": "-",
+  "description": "मालसामान उपलब्ध गरी ५ मि.मि. शिशा र दुबैतर्फ ९ मि.मि. लामिनेटेड बोर्ड लगाई यु.पि.भि.सि. पार्टिसन लगाउने काम फ्रेम साइज ६०x६०",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "N24",
+  "resources": [{ "name": "यु.पि.भि.सि. पार्टिसनको काम पूरा", "quantity": 10, "unit": "व.मि.", "resource_type": "Material" }]
+}
+,{
+  "id": "N25-UPVC-Partition-60x60-2",
+  "sNo": "-",
+  "description": "मालसामान उपलब्ध गरी ५ मि.मि. शिशा र ९ मि.मि. पार्टिसन बोर्ड लगाई यु.पि.भि.सि. पार्टिसन लगाउने काम फ्रेम साइज ६०x६०",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "N25",
+  "resources": [{ "name": "यु.पि.भि.सि. पार्टिसनको काम पूरा", "quantity": 10, "unit": "व.मि.", "resource_type": "Material" }]
+}
+,{
+  "id": "N26-Aluminium-Composite-Panel",
+  "sNo": "-",
+  "description": "मालसामान उपलब्ध गरी एल्युमिनियम फ्रेममा ३ वा ४ मि.मि. बाक्लो एल्युमिनियम कम्पोजिट प्यानल लगाउने काम",
+  "unit": "१ व.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "N26",
+  "resources": [
+    { "name": "सिपालु", "quantity": 3.0, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 3.0, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "एल्युमिनियम फ्रेम", "quantity": 5.10, "unit": "के.जी.", "resource_type": "Material" },
+    { "name": "ए.सि. प्यानल", "quantity": 1.0, "unit": "व.मि.", "resource_type": "Material" }
+  ]
+}
+,{
+  "id": "N27-Decorative-Particle-Board",
+  "sNo": "-",
+  "description": "मालसामान उपलब्ध गरी एल्युमिनियम फ्रेममा ३ तह भएको १२ मि.मि. बाक्लो डेकोरेटिभ पिलामिनेशन भएको पार्टिकल बोर्ड लगाउने काम",
+  "unit": "६ व.मि.",
+  "basis_quantity": 6,
+  "type": "DUDBC",
+  "ref_ss": "N27",
+  "resources": [
+    { "name": "सिपालु", "quantity": 0.80, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "ज्यामी", "quantity": 0.80, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "डेकोरेटिभ पार्टिकल बोर्डको काम पूरा", "quantity": 6.30, "unit": "व.मि.", "resource_type": "Material" }
+  ]
+},{
+  "id": "O1-Subgrade-Prep",
+  "sNo": "01",
+  "description": "सामान्य माटोमा माटो काटी सबग्रेड तयार गर्ने काम १० मि. सम्मको ढुवानी र पन्छाउने समेत । (मेसिन औजारको लागि ३% थप)",
+  "unit": "व.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "O1",
+  "resources": [
+    { "name": "ज्यामी", "quantity": 0.15, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "मेसिन औजार", "quantity": 3, "unit": "प्रतिशत", "resource_type": "Equipment" }
+  ]
+}
+,{
+  "id": "O2-Earth-Rolling",
+  "sNo": "02",
+  "description": "भरिएको माटोलाई तह तह गरी रोलिङ्ग गर्ने काम",
+  "unit": "१०० घ.मि.",
+  "basis_quantity": 100,
+  "type": "DUDBC",
+  "ref_ss": "O2",
+  "resources": [
+    { "name": "ज्यामी", "quantity": 0.50, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "रोड रोलर ५-१० मे.ट", "quantity": 1.6, "unit": "घण्टा", "resource_type": "Equipment" }
+  ]
+}
+,{
+  "id": "O3-Sand-Mix-Subbase-10cm",
+  "sNo": "03-क",
+  "description": "बालुवा मिसिएको गेभलको सब बेस ओछ्याउने (१० से.मी. ठोस मोटाई)",
+  "unit": "व.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "O3-Ka",
+  "resources": [
+    { "name": "ज्यामी", "quantity": 0.150, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "गेभल", "quantity": 0.128, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "रोड रोलर ५-१० मे.ट", "quantity": 0.009, "unit": "घण्टा", "resource_type": "Equipment" }
+  ]
+}
+,{
+  "id": "O3-Sand-Mix-Subbase-15cm",
+  "sNo": "03-ग",
+  "description": "बालुवा मिसिएको गेभलको सब बेस ओछ्याउने (१५ से.मी. ठोस मोटाई)",
+  "unit": "व.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "O3-Ga",
+  "resources": [
+    { "name": "ज्यामी", "quantity": 0.190, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "गेभल", "quantity": 0.192, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "रोड रोलर ५-१० मे.ट", "quantity": 0.013, "unit": "घण्टा", "resource_type": "Equipment" }
+  ]
+}
+,{
+  "id": "O3-Sand-Mix-Subbase-20cm",
+  "sNo": "03-घ",
+  "description": "बालुवा मिसिएको गेभलको सब बेस ओछ्याउने (२० से.मी. ठोस मोटाई)",
+  "unit": "व.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "O3-Gha",
+  "resources": [
+    { "name": "ज्यामी", "quantity": 0.210, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "गेभल", "quantity": 0.256, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "रोड रोलर ५-१० मे.ट", "quantity": 0.015, "unit": "घण्टा", "resource_type": "Equipment" }
+  ]
+}
+,{
+  "id": "O4-Stone-Subbase-10cm",
+  "sNo": "04-क",
+  "description": "कुटेको ढुङ्गाको सबग्रेड ओछ्याउने (१० से.मी. ठोस मोटाई)",
+  "unit": "व.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "O4-Ka",
+  "resources": [
+    { "name": "ज्यामी", "quantity": 0.140, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "कोर्स एग्रिगेट", "quantity": 0.1352, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "स्किनिङ्ग", "quantity": 0.0420, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "बाईन्डिङ्ग मेटेरियल", "quantity": 0.0900, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "रोड रोलर ५-१० मे.ट", "quantity": 0.025, "unit": "घण्टा", "resource_type": "Equipment" }
+  ]
+}
+,{
+  "id": "O4-Stone-Subbase-15cm",
+  "sNo": "04-ख",
+  "description": "कुटेको ढुङ्गाको सबग्रेड ओछ्याउने (१५ से.मी. ठोस मोटाई)",
+  "unit": "व.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "O4-Kha",
+  "resources": [
+    { "name": "ज्यामी", "quantity": 0.210, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "कोर्स एग्रिगेट", "quantity": 0.2025, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "स्किनिङ्ग", "quantity": 0.0630, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "बाईन्डिङ्ग मेटेरियल", "quantity": 0.150, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "रोड रोलर ५-१० मे.ट", "quantity": 0.042, "unit": "घण्टा", "resource_type": "Equipment" }
+  ]
+}
+,{
+  "id": "O4-Stone-Subbase-25cm",
+  "sNo": "04-ग",
+  "description": "कुटेको ढुङ्गाको सबग्रेड ओछ्याउने (२५ से.मी. ठोस मोटाई)",
+  "unit": "व.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "O4-Ga",
+  "resources": [
+    { "name": "ज्यामी", "quantity": 0.320, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "कोर्स एग्रिगेट", "quantity": 0.3375, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "स्किनिङ्ग", "quantity": 0.1050, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "बाईन्डिङ्ग मेटेरियल", "quantity": 0.0250, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "रोड रोलर ५-१० मे.ट", "quantity": 0.07, "unit": "घण्टा", "resource_type": "Equipment" }
+  ]
+}
+,{
+  "id": "O5-Stone-Base-Course",
+  "sNo": "05",
+  "description": "कुटेको ढुङ्गाको ठोस मोटाईको बेसकोर्स ओछ्याउने काम (१० से.मी.)",
+  "unit": "व.मि.",
+  "basis_quantity": 1,
+  "type": "DUDBC",
+  "ref_ss": "O5",
+  "resources": [
+    { "name": "ज्यामी", "quantity": 0.15, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "कुटेको ढुङ्गा ३५ मि.मि.", "quantity": 0.148, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "कुटेको ढुङ्गा ५० मि.मि.", "quantity": 0.100, "unit": "घ.मि.", "resource_type": "Material" },
+    { "name": "रोड रोलर ५-१० मे.ट", "quantity": 0.004, "unit": "घण्टा", "resource_type": "Equipment" },
+    { "name": "रोलर (अन्य)", "quantity": 0.003, "unit": "घण्टा", "resource_type": "Equipment" }
+  ]
+}
+,{
+  "id": "O6-Tack-Coat",
+  "sNo": "06",
+  "description": "मालसामान उपलब्ध गरी बेसकोर्स माथि टेककोट लगाउने काम",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "O6",
+  "resources": [
+    { "name": "ज्यामी", "quantity": 0.20, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "बिटुमिन", "quantity": 12.20, "unit": "के.जी.", "resource_type": "Material" },
+    { "name": "मट्टितेल", "quantity": 5.0, "unit": "लि.", "resource_type": "Material" },
+    { "name": "दाउरा", "quantity": 35.0, "unit": "के.जी.", "resource_type": "Material" },
+    { "name": "क्वाइलर स्प्रेयर", "quantity": 0.04, "unit": "घण्टा", "resource_type": "Equipment" }
+  ]
+}
+,{
+  "id": "O7-Prime-Coat",
+  "sNo": "07",
+  "description": "मालसामान उपलब्ध गरी बेसकोर्स माथि प्राईमिङ्ग कोट लगाउने काम",
+  "unit": "१० व.मि.",
+  "basis_quantity": 10,
+  "type": "DUDBC",
+  "ref_ss": "O7",
+  "resources": [
+    { "name": "ज्यामी", "quantity": 0.20, "unit": "संख्या", "resource_type": "Labour" },
+    { "name": "बिटुमिन", "quantity": 9.75, "unit": "के.जी.", "resource_type": "Material" },
+    { "name": "मट्टितेल", "quantity": 4.0, "unit": "लि.", "resource_type": "Material" },
+    { "name": "दाउरा", "quantity": 28.0, "unit": "के.जी.", "resource_type": "Material" },
+    { "name": "व्वाईलर स्प्रेयर", "quantity": 0.04, "unit": "घण्टा", "resource_type": "Equipment" }
+  ]
 }]
-
  
  

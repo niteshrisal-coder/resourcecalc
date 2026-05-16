@@ -21,13 +21,16 @@ export default function RateAnalysis() {
     setRates(loadedRates);
   }, []);
 
+  const safeResourceList = (resources: any): any[] => Array.isArray(resources) ? resources : [];
+
   const calculateRawTotal = (norm: Norm): number => {
+    const resources = safeResourceList(norm.resources);
     let labourTotal = 0;
     let materialTotal = 0;
     let equipmentTotal = 0;
     const percentageResources: any[] = [];
 
-    norm.resources.forEach(res => {
+    resources.forEach(res => {
       if (res.is_percentage) {
         percentageResources.push(res);
       } else {
@@ -55,7 +58,7 @@ export default function RateAnalysis() {
       else if (res.percentage_base === 'MATERIAL') base = materialTotal;
       else if (res.percentage_base === 'EQUIPMENT') base = equipmentTotal;
       else {
-        const baseRes = norm.resources.find(r => r.name === res.percentage_base && !r.is_percentage);
+        const baseRes = safeResourceList(norm.resources).find(r => r.name === res.percentage_base && !r.is_percentage);
         if (baseRes) {
           const rateObj = rates.find(r => r.name.toLowerCase() === baseRes.name.toLowerCase());
           if (rateObj) {
@@ -85,7 +88,7 @@ export default function RateAnalysis() {
   };
 
   const filteredNorms = norms.filter(n => 
-    n.description.toLowerCase().includes(search.toLowerCase()) &&
+    (n.description || '').toLowerCase().includes(search.toLowerCase()) &&
     (normType === 'ALL' || n.type === normType)
   );
 
@@ -141,24 +144,24 @@ export default function RateAnalysis() {
 
                 <AnalysisTableMobile 
                   title="Labour" 
-                  resources={selectedNorm.resources.filter(r => r.resource_type === 'Labour')} 
+                  resources={safeResourceList(selectedNorm.resources).filter(r => r.resource_type === 'Labour')} 
                   rates={rates} 
                   mode={mode}
-                  allResources={selectedNorm.resources}
+                  allResources={safeResourceList(selectedNorm.resources)}
                 />
                 <AnalysisTableMobile 
                   title="Material" 
-                  resources={selectedNorm.resources.filter(r => r.resource_type === 'Material')} 
+                  resources={safeResourceList(selectedNorm.resources).filter(r => r.resource_type === 'Material')} 
                   rates={rates} 
                   mode={mode}
-                  allResources={selectedNorm.resources}
+                  allResources={safeResourceList(selectedNorm.resources)}
                 />
                 <AnalysisTableMobile 
                   title="Equipment" 
-                  resources={selectedNorm.resources.filter(r => r.resource_type === 'Equipment')} 
+                  resources={safeResourceList(selectedNorm.resources).filter(r => r.resource_type === 'Equipment')} 
                   rates={rates} 
                   mode={mode}
-                  allResources={selectedNorm.resources}
+                  allResources={safeResourceList(selectedNorm.resources)}
                 />
 
                 <div className="pt-4 border-t border-black/5 space-y-3">
@@ -359,27 +362,27 @@ export default function RateAnalysis() {
               <div className="p-6 space-y-6">
                 <AnalysisTable 
                   title="Labour Component" 
-                  resources={selectedNorm.resources.filter(r => r.resource_type === 'Labour')} 
+                  resources={safeResourceList(selectedNorm.resources).filter(r => r.resource_type === 'Labour')} 
                   rates={rates} 
                   color="blue"
                   mode={mode}
-                  allResources={selectedNorm.resources}
+                  allResources={safeResourceList(selectedNorm.resources)}
                 />
                 <AnalysisTable 
                   title="Material Component" 
-                  resources={selectedNorm.resources.filter(r => r.resource_type === 'Material')} 
+                  resources={safeResourceList(selectedNorm.resources).filter(r => r.resource_type === 'Material')} 
                   rates={rates} 
                   color="emerald"
                   mode={mode}
-                  allResources={selectedNorm.resources}
+                  allResources={safeResourceList(selectedNorm.resources)}
                 />
                 <AnalysisTable 
                   title="Equipment Component" 
-                  resources={selectedNorm.resources.filter(r => r.resource_type === 'Equipment')} 
+                  resources={safeResourceList(selectedNorm.resources).filter(r => r.resource_type === 'Equipment')} 
                   rates={rates} 
                   color="orange"
                   mode={mode}
-                  allResources={selectedNorm.resources}
+                  allResources={safeResourceList(selectedNorm.resources)}
                 />
 
                 <div className="pt-6 border-t border-slate-100 space-y-3">
@@ -438,7 +441,10 @@ export default function RateAnalysis() {
 }
 
 function AnalysisTable({ title, resources, rates, color, mode, allResources }: { title: string, resources: any[], rates: Rate[], color: string, mode: 'CONTRACTOR' | 'USERS', allResources: any[] }) {
-  const labourTotal = allResources.reduce((acc, res) => {
+  const safeAllResources = Array.isArray(allResources) ? allResources : [];
+  const safeResources = Array.isArray(resources) ? resources : [];
+
+  const labourTotal = safeAllResources.reduce((acc, res) => {
     if (res.is_percentage || res.resource_type !== 'Labour') return acc;
     const rateObj = rates.find(r => r.name.toLowerCase() === res.name.toLowerCase());
     if (!rateObj) return acc;
@@ -447,7 +453,7 @@ function AnalysisTable({ title, resources, rates, color, mode, allResources }: {
     return acc + (res.quantity * rate);
   }, 0);
 
-  const materialTotal = allResources.reduce((acc, res) => {
+  const materialTotal = safeAllResources.reduce((acc, res) => {
     if (res.is_percentage || res.resource_type !== 'Material') return acc;
     const rateObj = rates.find(r => r.name.toLowerCase() === res.name.toLowerCase());
     if (!rateObj) return acc;
@@ -456,7 +462,7 @@ function AnalysisTable({ title, resources, rates, color, mode, allResources }: {
     return acc + (res.quantity * rate);
   }, 0);
 
-  const equipmentTotal = allResources.reduce((acc, res) => {
+  const equipmentTotal = safeAllResources.reduce((acc, res) => {
     if (res.is_percentage || res.resource_type !== 'Equipment') return acc;
     const rateObj = rates.find(r => r.name.toLowerCase() === res.name.toLowerCase());
     if (!rateObj) return acc;
@@ -494,7 +500,7 @@ function AnalysisTable({ title, resources, rates, color, mode, allResources }: {
     return acc + (res.quantity * rate);
   }, 0);
 
-  if (resources.length === 0) return null;
+  if (safeResources.length === 0) return null;
 
   return (
     <div className="space-y-3">
@@ -512,7 +518,7 @@ function AnalysisTable({ title, resources, rates, color, mode, allResources }: {
           </tr>
         </thead>
         <tbody className="divide-y divide-black/5">
-          {resources.map((res, i) => {
+          {safeResources.map((res, i) => {
             let amount = 0;
             let rateDisplay = '';
 
@@ -523,7 +529,7 @@ function AnalysisTable({ title, resources, rates, color, mode, allResources }: {
               else if (res.percentage_base === 'MATERIAL') base = materialTotal;
               else if (res.percentage_base === 'EQUIPMENT') base = equipmentTotal;
               else {
-                const baseRes = allResources.find(r => r.name === res.percentage_base && !r.is_percentage);
+                const baseRes = safeAllResources.find(r => r.name === res.percentage_base && !r.is_percentage);
                 if (baseRes) {
                   const rateObj = rates.find(r => r.name.toLowerCase() === baseRes.name.toLowerCase());
                   if (rateObj) {
@@ -572,7 +578,10 @@ function AnalysisTable({ title, resources, rates, color, mode, allResources }: {
 }
 
 function AnalysisTableMobile({ title, resources, rates, mode, allResources }: { title: string, resources: any[], rates: Rate[], mode: 'CONTRACTOR' | 'USERS', allResources: any[] }) {
-  const labourTotal = allResources.reduce((acc, res) => {
+  const safeAllResources = Array.isArray(allResources) ? allResources : [];
+  const safeResources = Array.isArray(resources) ? resources : [];
+
+  const labourTotal = safeAllResources.reduce((acc, res) => {
     if (res.is_percentage || res.resource_type !== 'Labour') return acc;
     const rateObj = rates.find(r => r.name.toLowerCase() === res.name.toLowerCase());
     if (!rateObj) return acc;
@@ -581,7 +590,7 @@ function AnalysisTableMobile({ title, resources, rates, mode, allResources }: { 
     return acc + (res.quantity * rate);
   }, 0);
 
-  const materialTotal = allResources.reduce((acc, res) => {
+  const materialTotal = safeAllResources.reduce((acc, res) => {
     if (res.is_percentage || res.resource_type !== 'Material') return acc;
     const rateObj = rates.find(r => r.name.toLowerCase() === res.name.toLowerCase());
     if (!rateObj) return acc;
@@ -590,7 +599,7 @@ function AnalysisTableMobile({ title, resources, rates, mode, allResources }: { 
     return acc + (res.quantity * rate);
   }, 0);
 
-  const equipmentTotal = allResources.reduce((acc, res) => {
+  const equipmentTotal = safeAllResources.reduce((acc, res) => {
     if (res.is_percentage || res.resource_type !== 'Equipment') return acc;
     const rateObj = rates.find(r => r.name.toLowerCase() === res.name.toLowerCase());
     if (!rateObj) return acc;
@@ -601,7 +610,7 @@ function AnalysisTableMobile({ title, resources, rates, mode, allResources }: { 
 
   const fixedTotal = labourTotal + materialTotal + equipmentTotal;
 
-  const subtotal = resources.reduce((acc, res) => {
+  const subtotal = safeResources.reduce((acc, res) => {
     if (res.is_percentage) {
       let base = 0;
       if (res.percentage_base === 'TOTAL') base = fixedTotal;
@@ -609,7 +618,7 @@ function AnalysisTableMobile({ title, resources, rates, mode, allResources }: { 
       else if (res.percentage_base === 'MATERIAL') base = materialTotal;
       else if (res.percentage_base === 'EQUIPMENT') base = equipmentTotal;
       else {
-        const baseRes = allResources.find(r => r.name === res.percentage_base && !r.is_percentage);
+        const baseRes = safeAllResources.find(r => r.name === res.percentage_base && !r.is_percentage);
         if (baseRes) {
           const rateObj = rates.find(r => r.name.toLowerCase() === baseRes.name.toLowerCase());
           if (rateObj) {
@@ -628,7 +637,7 @@ function AnalysisTableMobile({ title, resources, rates, mode, allResources }: { 
     return acc + (res.quantity * rate);
   }, 0);
 
-  if (resources.length === 0) return null;
+  if (safeResources.length === 0) return null;
 
   return (
     <div className="space-y-2">
@@ -637,7 +646,7 @@ function AnalysisTableMobile({ title, resources, rates, mode, allResources }: { 
         <span className="text-xs font-bold text-black/40">Rs. {subtotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
       </div>
       <div className="space-y-1">
-        {resources.map((res, i) => {
+        {safeResources.map((res, i) => {
           let amount = 0;
 
           if (res.is_percentage) {
@@ -647,7 +656,7 @@ function AnalysisTableMobile({ title, resources, rates, mode, allResources }: { 
             else if (res.percentage_base === 'MATERIAL') base = materialTotal;
             else if (res.percentage_base === 'EQUIPMENT') base = equipmentTotal;
             else {
-              const baseRes = allResources.find(r => r.name === res.percentage_base && !r.is_percentage);
+              const baseRes = safeAllResources.find(r => r.name === res.percentage_base && !r.is_percentage);
               if (baseRes) {
                 const rateObj = rates.find(r => r.name.toLowerCase() === baseRes.name.toLowerCase());
                 if (rateObj) {

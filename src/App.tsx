@@ -14,7 +14,7 @@ import {
   ChevronRight, Zap, BadgePercent
 } from 'lucide-react';
 import { Norm } from './types';
-import { getNorms } from './utils/storage';
+import { getNorms, getProjectById } from './utils/storage';
 import { useDeviceType } from './utils/device';
 
 export default function App() {
@@ -57,15 +57,24 @@ export default function App() {
   ];
 
   // ── Mobile layout ──────────────────────────────────────────────────────────
+  const selectedProject = selectedProjectId !== null ? getProjectById(selectedProjectId) : null;
+
   if (isMobile) {
     if (selectedProjectId !== null) {
       return (
         <div className="min-h-screen bg-[#F1F5F9]">
           <div className="p-4">
-            <ProjectBOQ
-              projectId={selectedProjectId}
-              onBack={() => { setSelectedProjectId(null); setActiveTab('projects'); }}
-            />
+            {selectedProject ? (
+              <ProjectBOQ
+                project={selectedProject}
+                norms={norms}
+                onBack={() => { setSelectedProjectId(null); setActiveTab('projects'); }}
+              />
+            ) : (
+              <div className="p-6 rounded-3xl bg-white shadow-sm text-center text-sm text-slate-600">
+                Project not found. Please return to Projects and select a valid project.
+              </div>
+            )}
           </div>
         </div>
       );
@@ -258,10 +267,19 @@ export default function App() {
       <main className="flex-1 overflow-auto">
         <div className="w-full h-full p-8">
           {selectedProjectId !== null ? (
-            <ProjectBOQ
-              projectId={selectedProjectId}
-              onBack={() => setSelectedProjectId(null)}
-            />
+            selectedProject ? (
+              <ProjectBOQ
+                project={selectedProject}
+                norms={norms}
+                onBack={() => setSelectedProjectId(null)}
+              />
+            ) : (
+              <div className="min-h-screen flex items-center justify-center">
+                <div className="p-6 rounded-3xl bg-white shadow-sm text-center text-sm text-slate-600">
+                  Project not found. Please return to Projects and select a valid project.
+                </div>
+              </div>
+            )
           ) : (
             <>
               {activeTab === 'dashboard' && <Dashboard onNavigate={setActiveTab} />}

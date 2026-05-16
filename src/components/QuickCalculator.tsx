@@ -10,13 +10,26 @@ export default function QuickCalculator({ norms }: { norms: Norm[] }) {
   const [isSearching, setIsSearching] = useState(false);
   const { isMobile } = useDeviceType();
 
+  // Safe helper function
+  const safeResources = (resources: any): any[] => {
+    if (!Array.isArray(resources)) return [];
+    return resources.filter(res => 
+      res && 
+      typeof res === 'object' && 
+      typeof res.name === 'string' && 
+      res.name.trim() !== '' &&
+      typeof res.quantity === 'number' &&
+      !isNaN(res.quantity)
+    );
+  };
+
   const sortedNorms = [...norms].sort((a, b) => a.id - b.id);
 
   const calculateResourceBreakdown = (norm: Norm, inputQuantity?: number) => {
     const effectiveQuantity = inputQuantity && inputQuantity > 0 ? inputQuantity : norm.basis_quantity;
     const scaleFactor = effectiveQuantity / (norm.basis_quantity || 1);
 
-    return norm.resources.map(resource => {
+    return safeResources(norm.resources).map(resource => {
       if (resource.is_percentage) {
         return {
           ...resource,
@@ -207,8 +220,7 @@ export default function QuickCalculator({ norms }: { norms: Norm[] }) {
                     placeholder="Search work items..."
                     className="flex-1 px-4 py-3 bg-white border border-slate-200 rounded-2xl focus:ring-2 focus:ring-sky-200 focus:border-sky-500 transition-all duration-200 text-sm font-medium text-slate-900 placeholder:text-slate-500/40"
                     value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                  />
+V                  />
                 </div>
 
                 <div className="flex-1 overflow-y-auto p-4">
@@ -376,8 +388,7 @@ export default function QuickCalculator({ norms }: { norms: Norm[] }) {
                   placeholder="Search work items..."
                   className="flex-1 px-4 py-3 bg-white border border-slate-200 rounded-2xl focus:ring-2 focus:ring-sky-200 focus:border-sky-500 transition-all duration-200 text-sm font-medium text-slate-900 placeholder:text-slate-500/40"
                   value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                />
+C                />
               </div>
 
               <div className="max-h-[65vh] overflow-y-auto p-4">

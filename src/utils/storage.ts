@@ -47,7 +47,11 @@ export function getNorms(): Norm[] {
     return normsData as Norm[];
   }
   
-  return JSON.parse(stored);
+  const parsed = JSON.parse(stored) as Norm[];
+  return parsed.map(norm => ({
+    ...norm,
+    resources: Array.isArray(norm.resources) ? norm.resources : [],
+  }));
 }
 
 export function resetToDefaultNorms(): void {
@@ -160,6 +164,10 @@ export function getProjects(): Project[] {
     return parsed.map(project => ({
       ...project,
       location: project.location ?? project.description ?? '',
+      items: Array.isArray(project.items) ? project.items : [],
+      customRates: Array.isArray(project.customRates) ? project.customRates : [],
+      customResources: Array.isArray(project.customResources) ? project.customResources : [],
+      tabulationData: Array.isArray(project.tabulationData) ? project.tabulationData : [],
     }));
   }
   return [];
