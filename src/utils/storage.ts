@@ -155,6 +155,37 @@ export function resetToDefaultRates(): void {
   localStorage.setItem(RATES_STORAGE_KEY, JSON.stringify(ratesData));
 }
 
+const MATERIAL_UNIT_WEIGHTS_KEY = 'resourcecalc_material_unit_weights';
+
+function normalizeMaterialName(name: string): string {
+  return name.trim().toLowerCase();
+}
+
+export function getMaterialUnitWeights(): Record<string, number> {
+  const stored = localStorage.getItem(MATERIAL_UNIT_WEIGHTS_KEY);
+  if (!stored) return {};
+
+  try {
+    return JSON.parse(stored) as Record<string, number>;
+  } catch {
+    return {};
+  }
+}
+
+export function getMaterialUnitWeight(materialName: string): number | undefined {
+  const weights = getMaterialUnitWeights();
+  return weights[normalizeMaterialName(materialName)];
+}
+
+export function setMaterialUnitWeight(materialName: string, unitWeight: number): void {
+  const normalized = normalizeMaterialName(materialName);
+  if (!normalized) return;
+
+  const weights = getMaterialUnitWeights();
+  weights[normalized] = unitWeight;
+  localStorage.setItem(MATERIAL_UNIT_WEIGHTS_KEY, JSON.stringify(weights));
+}
+
 // ============ PROJECTS FUNCTIONS ============
 
 export function getProjects(): Project[] {

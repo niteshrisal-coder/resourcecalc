@@ -11,6 +11,11 @@ export interface Project {
   boqSaved?: boolean;
   tabulationData?: TabulationData[];
   transportMode?: 'Tractor' | 'Truck';
+  transportDistances?: {
+    porterDistance?: number;
+    gravelledDistance?: number;
+    metalledDistance?: number;
+  };
   transportMaterials?: TransportMaterial[];
   transportCoefficients?: TransportCoefficients;
 }
@@ -132,6 +137,8 @@ export interface TransportMaterial {
   material_name: string;
   unit_weight: number;
   load_category: LoadCategoryName;
+  original_cost: number;
+  vat: number;
   metalled_cost_per_unit: number;
   gravelled_cost_per_unit: number;
   porter_cost_per_unit: number;

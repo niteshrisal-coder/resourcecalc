@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Project, BOQItem, CustomRate, CustomResource, TabulationData, TransportMaterial } from '../types/boq';
 import { Norm } from '../types';
 
@@ -26,7 +26,11 @@ export function useProjectData(projectId: number) {
     });
   }, [projectId]);
 
-  const updateProject = (updatedProject: Project) => {
+  const updateProject = useCallback((updatedProject: Project) => {
+    if (project && JSON.stringify(project) === JSON.stringify(updatedProject)) {
+      return;
+    }
+
     const stored = localStorage.getItem('resourcecalc_projects');
     const projects: Project[] = stored ? JSON.parse(stored) : [];
     const index = projects.findIndex((p: Project) => p.id === projectId);
@@ -37,15 +41,15 @@ export function useProjectData(projectId: number) {
 
     localStorage.setItem('resourcecalc_projects', JSON.stringify(projects));
     setProject(updatedProject);
-  };
+  }, [projectId, project]);
 
-  const handleSaveBOQ = () => {
+  const handleSaveBOQ = useCallback(() => {
     if (!project) return;
     const updated = { ...project, boqSaved: true };
     updateProject(updated);
-  };
+  }, [project, updateProject]);
 
-  const updateCustomRate = (resourceName: string, newRate: number, unit: string) => {
+  const updateCustomRate = useCallback((resourceName: string, newRate: number, unit: string) => {
     if (!project) return;
 
     const existingCustomRates = project.customRates || [];
@@ -61,7 +65,7 @@ export function useProjectData(projectId: number) {
 
     const updated = { ...project, customRates: updatedRates };
     updateProject(updated);
-  };
+  }, [project, updateProject]);
 
   const getCustomResourceQuantity = (normId: number, resourceName: string): number | null => {
     if (!project || !project.customResources) return null;
@@ -69,7 +73,7 @@ export function useProjectData(projectId: number) {
     return custom ? custom.quantity : null;
   };
 
-  const updateCustomResourceQuantity = (normId: number, resourceName: string, newQuantity: number, unit: string, resource_type: string) => {
+  const updateCustomResourceQuantity = useCallback((normId: number, resourceName: string, newQuantity: number, unit: string, resource_type: string) => {
     if (!project) return;
 
     const existingCustom = project.customResources || [];
@@ -85,10 +89,13 @@ export function useProjectData(projectId: number) {
 
     const updated = { ...project, customResources: updatedResources };
     updateProject(updated);
-  };
+  }, [project, updateProject]);
 
-  const addItem = (norm: Norm) => {
+  const addItem = useCallback((norm: Norm) => {
     if (!project) return;
+
+    const existingItem = (project.items || []).find((item: BOQItem) => item.normId === norm.id);
+    if (existingItem) return;
 
     const newItem: BOQItem = {
       id: Date.now().toString(),
@@ -103,9 +110,9 @@ export function useProjectData(projectId: number) {
     };
 
     updateProject(updated);
-  };
+  }, [project, updateProject]);
 
-  const removeItem = (itemId: string) => {
+  const removeItem = useCallback((itemId: string) => {
     if (!project || !window.confirm('Delete this item?')) return;
 
     const updated = {
@@ -114,9 +121,9 @@ export function useProjectData(projectId: number) {
     };
 
     updateProject(updated);
-  };
+  }, [project, updateProject]);
 
-  const updateItemQuantity = (itemId: string, newQuantity: number) => {
+  const updateItemQuantity = useCallback((itemId: string, newQuantity: number) => {
     if (!project) return;
 
     const updated = {
@@ -129,9 +136,9 @@ export function useProjectData(projectId: number) {
     };
 
     updateProject(updated);
-  };
+  }, [project, updateProject]);
 
-  const updateMeasurementQuantity = (itemId: string, newQuantity: number) => {
+  const updateMeasurementQuantity = useCallback((itemId: string, newQuantity: number) => {
     if (!project) return;
 
     const updated = {
@@ -144,9 +151,9 @@ export function useProjectData(projectId: number) {
     };
 
     updateProject(updated);
-  };
+  }, [project, updateProject]);
 
-  const updateTabulationBillRate = (resourceName: string, newRate: number) => {
+  const updateTabulationBillRate = useCallback((resourceName: string, newRate: number) => {
     if (!project) return;
 
     const existingTabData = project.tabulationData || [];
@@ -162,9 +169,9 @@ export function useProjectData(projectId: number) {
 
     const updated = { ...project, tabulationData: updatedData };
     updateProject(updated);
-  };
+  }, [project, updateProject]);
 
-  const updateTabulationBillQty = (resourceName: string, newQty: number) => {
+  const updateTabulationBillQty = useCallback((resourceName: string, newQty: number) => {
     if (!project) return;
 
     const existingTabData = project.tabulationData || [];
@@ -180,9 +187,9 @@ export function useProjectData(projectId: number) {
 
     const updated = { ...project, tabulationData: updatedData };
     updateProject(updated);
-  };
+  }, [project, updateProject]);
 
-  const updateTabulationRemarks = (resourceName: string, remarks: string) => {
+  const updateTabulationRemarks = useCallback((resourceName: string, remarks: string) => {
     if (!project) return;
 
     const existingTabData = project.tabulationData || [];
@@ -198,10 +205,10 @@ export function useProjectData(projectId: number) {
 
     const updated = { ...project, tabulationData: updatedData };
     updateProject(updated);
-  };
+  }, [project, updateProject]);
 
   // Transport related functions
-  const updateTransportMaterial = (materialName: string, field: TransportMaterialField, value: any) => {
+  const updateTransportMaterial = useCallback((materialName: string, field: TransportMaterialField, value: any) => {
     if (!project) return;
 
     const updatedMaterials = (project.transportMaterials || []).map((material) =>
@@ -210,9 +217,9 @@ export function useProjectData(projectId: number) {
 
     const updated = { ...project, transportMaterials: updatedMaterials };
     updateProject(updated);
-  };
+  }, [project, updateProject]);
 
-  const updateTransportMaterialByIndex = (index: number, field: TransportMaterialField, value: any) => {
+  const updateTransportMaterialByIndex = useCallback((index: number, field: TransportMaterialField, value: any) => {
     if (!project) return;
 
     const updatedMaterials = [...(project.transportMaterials || [])];
@@ -221,15 +228,17 @@ export function useProjectData(projectId: number) {
       const updated = { ...project, transportMaterials: updatedMaterials };
       updateProject(updated);
     }
-  };
+  }, [project, updateProject]);
 
-  const addTransportMaterial = () => {
+  const addTransportMaterial = useCallback(() => {
     if (!project) return;
 
     const newMaterial: TransportMaterial = {
       material_name: `Material ${Date.now()}`,
       unit_weight: 0,
       load_category: 'Easy',
+      original_cost: 0,
+      vat: 0,
       metalled_cost_per_unit: 0,
       gravelled_cost_per_unit: 0,
       porter_cost_per_unit: 0,
@@ -241,9 +250,9 @@ export function useProjectData(projectId: number) {
       transportMaterials: [...(project.transportMaterials || []), newMaterial]
     };
     updateProject(updated);
-  };
+  }, [project, updateProject]);
 
-  const removeTransportMaterial = (materialName: string) => {
+  const removeTransportMaterial = useCallback((materialName: string) => {
     if (!project) return;
 
     const updated = {
@@ -251,25 +260,25 @@ export function useProjectData(projectId: number) {
       transportMaterials: (project.transportMaterials || []).filter((material) => material.material_name !== materialName)
     };
     updateProject(updated);
-  };
+  }, [project, updateProject]);
 
-  const updateTransportMode = (mode: TransportMode) => {
+  const updateTransportMode = useCallback((mode: TransportMode) => {
     if (!project) return;
     const updated = { ...project, transportMode: mode };
     updateProject(updated);
-  };
+  }, [project, updateProject]);
 
-  const updateTransportCoefficients = (coefficients: any) => {
+  const updateTransportCoefficients = useCallback((coefficients: any) => {
     if (!project) return;
     const updated = { ...project, transportCoefficients: coefficients };
     updateProject(updated);
-  };
+  }, [project, updateProject]);
 
-  const updateTransportDistances = (distances: { porterDistance: number; gravelledDistance: number; metalledDistance: number }) => {
+  const updateTransportDistances = useCallback((distances: { porterDistance: number; gravelledDistance: number; metalledDistance: number }) => {
     if (!project) return;
     const updated = { ...project, transportDistances: distances };
     updateProject(updated);
-  };
+  }, [project, updateProject]);
 
   return {
     project,

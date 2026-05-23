@@ -1,5 +1,5 @@
 import { Norm } from '../types';
-import { Project, BOQItem, CustomRate, CustomResource, Rate, ResourceBreakdownItem, RateAnalysisItem, RateAnalysisResource, MatrixData, MatrixRow, TabulationRow, TabulationData } from '../types/boq';
+import { Project, BOQItem, CustomRate, CustomResource, Rate, ResourceBreakdownItem, RateAnalysisItem, RateAnalysisResource, MatrixData, MatrixRow, TabulationRow, TabulationData, TransportMaterial } from '../types/boq';
 
 export function useBOQCalculations(
   project: Project | null,
@@ -20,19 +20,35 @@ export function useBOQCalculations(
     );
   };
 
-  const getResourceRate = (resourceName: string): { rate: number; unit: string; apply_vat: boolean } => {
+  const getResourceRate = (resourceName: string, resourceType?: string): { rate: number; unit: string; apply_vat: boolean } => {
     if (!project) return { rate: 0, unit: '', apply_vat: false };
 
-    const customRate = project.customRates?.find((r: CustomRate) => r.resourceName === resourceName);
-    if (customRate) {
-      return { rate: customRate.rate, unit: customRate.unit, apply_vat: false };
+    const normalizedName = resourceName.trim().toLowerCase();
+    const customRate = project.customRates?.find((r: CustomRate) => r.resourceName.trim().toLowerCase() === normalizedName);
+    const exactGlobalRate = globalRates.find((r: Rate) => r.name.trim().toLowerCase() === normalizedName && r.resource_type === resourceType);
+    const fallbackGlobalRate = globalRates.find((r: Rate) => r.name.trim().toLowerCase() === normalizedName);
+    const globalRate = exactGlobalRate || fallbackGlobalRate;
+    const rateSource = customRate || globalRate;
+    const unit = rateSource?.unit || '';
+    const apply_vat = customRate ? false : globalRate?.apply_vat || false;
+
+    if (resourceType === 'Material') {
+      const transportMaterial = project.transportMaterials?.find((m: TransportMaterial) => m.material_name.trim().toLowerCase() === normalizedName);
+      const materialBaseRate = rateSource?.rate || 0;
+      const transportCost = transportMaterial?.total_cost_per_unit || 0;
+      const baseRate = materialBaseRate + transportCost;
+      const rate = project.mode === 'USERS'
+        ? baseRate + (transportMaterial?.vat || 0) + (apply_vat ? materialBaseRate * 0.13 : 0)
+        : baseRate;
+
+      return { rate, unit, apply_vat: false };
     }
 
-    const globalRate = globalRates.find((r: Rate) => r.name.toLowerCase() === resourceName.toLowerCase());
+    const baseRate = rateSource?.rate || 0;
     return {
-      rate: globalRate?.rate || 1000,
-      unit: globalRate?.unit || '-',
-      apply_vat: globalRate?.apply_vat || false
+      rate: baseRate,
+      unit,
+      apply_vat
     };
   };
 
@@ -51,7 +67,7 @@ export function useBOQCalculations(
       if (!res.is_percentage) {
         const customQty = getCustomResourceQuantity(normId, res.name);
         const quantity = customQty !== null ? customQty : res.quantity;
-        const rateInfo = getResourceRate(res.name);
+        const rateInfo = getResourceRate(res.name, res.resource_type);
         let rate = rateInfo.rate;
 
         if (project.mode === 'USERS' && rateInfo.apply_vat) {
@@ -103,7 +119,7 @@ export function useBOQCalculations(
       safeResources(norm.resources).forEach((res: any) => {
         if (!res.is_percentage) {
           const key = `${res.resource_type}-${res.name}`;
-          const rateInfo = getResourceRate(res.name);
+          const rateInfo = getResourceRate(res.name, res.resource_type);
           const customQty = getCustomResourceQuantity(item.normId, res.name);
           const quantity = customQty !== null ? customQty : res.quantity;
 
@@ -152,7 +168,7 @@ export function useBOQCalculations(
       safeResources(norm.resources).forEach((res: any) => {
         if (!res.is_percentage) {
           const key = `${res.resource_type}-${res.name}`;
-          const rateInfo = getResourceRate(res.name);
+          const rateInfo = getResourceRate(res.name, res.resource_type);
           const customQty = getCustomResourceQuantity(item.normId, res.name);
           const quantity = customQty !== null ? customQty : res.quantity;
 
@@ -206,7 +222,7 @@ export function useBOQCalculations(
         .map((res: any) => {
           const customQty = getCustomResourceQuantity(item.normId, res.name);
           const quantity = customQty !== null ? customQty : res.quantity;
-          const rateInfo = getResourceRate(res.name);
+          const rateInfo = getResourceRate(res.name, res.resource_type);
           let rate = rateInfo.rate;
 
           if (project.mode === 'USERS' && rateInfo.apply_vat) {
@@ -379,7 +395,8 @@ export function useBOQCalculations(
       matrix.columns.forEach((resourceName: string) => {
         const quantity = row.resources[resourceName];
         if (quantity === undefined) return;
-        const rateInfo = getResourceRate(resourceName);
+        const type = project?.tabulationData?.find((d: TabulationData) => d.resourceName === resourceName)?.resource_type;
+        const rateInfo = getResourceRate(resourceName, type);
         const savedData = project?.tabulationData?.find((d: TabulationData) => d.resourceName === resourceName);
         const existing = resourceMap.get(resourceName);
         const addQty = quantity;

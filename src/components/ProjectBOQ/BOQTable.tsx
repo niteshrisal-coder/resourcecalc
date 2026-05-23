@@ -73,7 +73,9 @@ export default function BOQTable({
                     <tr key={item.id} className="hover:bg-black/5 transition-colors group">
                       <td className="px-3 py-3 text-[11px] text-[#333333]/50">{idx + 1}</td>
                       <td className="px-3 py-3">
-                        <p className="text-xs font-bold line-clamp-2">{norm?.description || 'Unknown'}</p>
+                        <p className="text-xs font-bold whitespace-normal break-words leading-5">
+                          {`${norm?.ref_ss || ''} ${norm?.sNo || ''} - ${norm?.description || 'Unknown'}`.trim()}
+                        </p>
                         <span className="text-[8px] font-bold uppercase tracking-tighter text-black/30">{norm?.type}</span>
                       </td>
                       <td className="px-3 py-3 text-xs">{norm?.unit || '-'}</td>
@@ -136,7 +138,7 @@ export default function BOQTable({
           </div>
         ) : (
           <div className="p-8 text-center text-black/20">
-            <p className="text-sm">No items in BOQ. Tap on a norm above to add.</p>
+            <p className="text-sm">No items in BOQ. Click Add Item above to select a norm.</p>
           </div>
         )}
       </div>
@@ -177,7 +179,9 @@ export default function BOQTable({
                   <tr key={item.id} className="hover:bg-black/5 transition-colors">
                     <td className="px-3 py-3 text-[11px] text-[#333333]/50">{idx + 1}</td>
                     <td className="px-3 py-3">
-                      <p className="text-xs font-bold line-clamp-2">{norm?.description || 'Unknown'}</p>
+                      <p className="text-xs font-bold whitespace-normal break-words leading-5">
+                        {`${norm?.ref_ss || ''} ${norm?.sNo || ''} - ${norm?.description || 'Unknown'}`.trim()}
+                      </p>
                       <span className="text-[8px] font-bold uppercase tracking-tighter text-black/30">{norm?.type}</span>
                     </td>
                     <td className="px-3 py-3 text-xs">{norm?.unit || '-'}</td>

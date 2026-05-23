@@ -38,6 +38,18 @@ export default function Projects({ onSelectProject }: { onSelectProject: (projec
     setNewProject({ name: '', location: '', mode: 'CONTRACTOR' });
   };
 
+  const handleChangeMode = (e: React.MouseEvent<HTMLButtonElement>, projectId: number, mode: 'CONTRACTOR' | 'USERS') => {
+    e.stopPropagation();
+    const updatedProjects = projects.map((project) =>
+      project.id === projectId ? { ...project, mode } : project
+    );
+    const updatedProject = updatedProjects.find((project) => project.id === projectId);
+    if (updatedProject) {
+      saveProject(updatedProject);
+      setProjects(updatedProjects);
+    }
+  };
+
   const handleDeleteClick = (e: React.MouseEvent, projectId: number) => {
     e.stopPropagation();
     setDeleteConfirm(projectId);
@@ -93,13 +105,31 @@ export default function Projects({ onSelectProject }: { onSelectProject: (projec
                     <div className="w-10 h-10 rounded-xl bg-cyan-50 flex items-center justify-center">
                       <FolderOpen size={18} className="text-cyan-600" />
                     </div>
-                    <span className={`px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wide ${
-                      project.mode === 'CONTRACTOR'
-                        ? 'bg-sky-50 text-sky-700'
-                        : 'bg-slate-100 text-slate-700'
-                    }`}>
-                      {project.mode}
-                    </span>
+                    <div className="flex flex-col items-end gap-2">
+                      <span className={`px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wide ${
+                        project.mode === 'CONTRACTOR'
+                          ? 'bg-sky-50 text-sky-700'
+                          : 'bg-slate-100 text-slate-700'
+                      }`}>
+                        {project.mode}
+                      </span>
+                      <div className="inline-flex rounded-xl border border-slate-200 bg-slate-50 overflow-hidden shadow-sm">
+                        {(['CONTRACTOR', 'USERS'] as const).map((mode) => (
+                          <button
+                            key={mode}
+                            type="button"
+                            onClick={(e: React.MouseEvent<HTMLButtonElement>) => handleChangeMode(e, project.id, mode)}
+                            className={`px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest transition-all whitespace-nowrap ${
+                              project.mode === mode
+                                ? 'bg-slate-900 text-white'
+                                : 'text-slate-500 hover:bg-slate-100'
+                            }`}
+                          >
+                            {mode === 'CONTRACTOR' ? 'Contractor' : 'Users'}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
                   </div>
 
                   <h3 className="font-bold text-slate-800 text-base mb-1 line-clamp-1">{project.name}</h3>

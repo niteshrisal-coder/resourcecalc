@@ -1,5 +1,5 @@
 import * as XLSX from 'xlsx';
-import { Project, ResourceBreakdownItem, MatrixData, TabulationRow, RateAnalysisItem, TransportMaterial } from '../types/boq';
+import { Project, BOQItem, ResourceBreakdownItem, MatrixData, TabulationRow, RateAnalysisItem, TransportMaterial } from '../types/boq';
 import { Norm } from '../types';
 
 export function exportToExcel(
@@ -21,31 +21,85 @@ export function exportToExcel(
 ) {
   const wb = XLSX.utils.book_new();
 
-  if (activeTab === 'boq') {
-    exportBOQ(wb, project, norms, calculateItemRate, calculateTotalBOQ);
-  } else if (activeTab === 'breakdown') {
-    if (breakdownSubView === 'summary') {
-      exportSummary(wb, sharedMode, resourceBreakdownEstimate, resourceBreakdownMeasurement, project);
-    } else if (breakdownSubView === 'detailed') {
-      exportDetailed(wb, sharedMode, resourceMatrixData, resourceMatrixMeasurementData);
-    } else if (breakdownSubView === 'tabulation') {
-      exportTabulation(wb, tabulationData);
-    }
-  } else if (activeTab === 'analysis') {
-    exportRateAnalysis(wb, rateAnalysisData, project);
-  } else if (activeTab === 'materials') {
-    exportMaterials(wb, project, transportMaterials);
-  }
+  exportMaterials(
+    wb,
+    project,
+    transportMaterials,
+    'estimate',
+    resourceBreakdownEstimate,
+    resourceBreakdownMeasurement,
+    'Resource and Transportation'
+  );
 
-  XLSX.writeFile(wb, `${project.name}_${activeTab}_${new Date().toISOString().slice(0, 19).replace(/:/g, '-')}.xlsx`);
+  exportRateAnalysis(wb, rateAnalysisData, project);
+
+  exportBOQSheet(
+    wb,
+    project,
+    norms,
+    calculateItemRate,
+    calculateTotalBOQ,
+    'BOQ (Estimate)',
+    (item: BOQItem) => item.estimate_quantity
+  );
+
+  exportDetailed(
+    wb,
+    'estimate',
+    resourceMatrixData,
+    resourceMatrixMeasurementData,
+    'Resource Breakdown Det Est'
+  );
+
+  exportSummary(
+    wb,
+    'estimate',
+    resourceBreakdownEstimate,
+    resourceBreakdownMeasurement,
+    project,
+    'Resource Breakdown Sum Est'
+  );
+
+  exportBOQSheet(
+    wb,
+    project,
+    norms,
+    calculateItemRate,
+    calculateMeasurementTotal,
+    'BOQ (Measurement)',
+    (item: BOQItem) => item.measurement_quantity
+  );
+
+  exportDetailed(
+    wb,
+    'measurement',
+    resourceMatrixData,
+    resourceMatrixMeasurementData,
+    'Resource Breakdown Det Meas'
+  );
+
+  exportSummary(
+    wb,
+    'measurement',
+    resourceBreakdownEstimate,
+    resourceBreakdownMeasurement,
+    project,
+    'Resource Breakdown Sum Meas'
+  );
+
+  exportTabulation(wb, tabulationData);
+
+  XLSX.writeFile(wb, `${project.name}_Combined_${new Date().toISOString().slice(0, 19).replace(/:/g, '-')}.xlsx`);
 }
 
-function exportBOQ(
+function exportBOQSheet(
   wb: XLSX.WorkBook,
   project: Project,
   norms: Norm[],
   calculateItemRate: (normId: number) => number,
-  calculateTotalBOQ: () => number
+  calculateTotalBOQ: () => number,
+  sheetName: string,
+  quantitySelector: (item: BOQItem) => number
 ) {
   const ws: XLSX.WorkSheet = {};
   ws['!cols'] = [{ wch: 5 }, { wch: 40 }, { wch: 10 }, { wch: 12 }, { wch: 12 }, { wch: 15 }, { wch: 15 }];
@@ -101,16 +155,14 @@ function exportBOQ(
   project.items.forEach((item, idx) => {
     const norm = norms.find((n: Norm) => n.id === item.normId);
     const rate = calculateItemRate(item.normId);
-    const total = rate * item.estimate_quantity;
+    const quantity = quantitySelector(item);
+    const safeDescription = (norm?.description || '').replace(/"/g, '""');
 
     const rowData = [
       idx + 1,
       norm?.description || '',
       norm?.unit || '',
-      item.estimate_quantity,
-      parseFloat((isNaN(rate) || !isFinite(rate) ? 0 : rate).toFixed(2)),
-      parseFloat((isNaN(total) || !isFinite(total) ? 0 : total).toFixed(2)),
-      norm?.ref_ss || ''
+      quantity
     ];
 
     rowData.forEach((value, colIndex) => {
@@ -129,6 +181,37 @@ function exportBOQ(
         }
       };
     });
+
+    const rateCell = XLSX.utils.encode_cell({ r: currentRow, c: 4 });
+    ws[rateCell] = {
+      f: `IFERROR(INDEX('Rate Analysis'!$J:$J, MATCH("${safeDescription}", 'Rate Analysis'!$I:$I, 0)), ${parseFloat((isNaN(rate) || !isFinite(rate) ? 0 : rate).toFixed(2))})`,
+      t: 'n',
+      s: {
+        ...cellStyleRight,
+        alignment: { ...cellStyleRight.alignment, wrapText: true }
+      }
+    };
+
+    const amountCell = XLSX.utils.encode_cell({ r: currentRow, c: 5 });
+    ws[amountCell] = {
+      f: `D${currentRow + 1}*E${currentRow + 1}`,
+      t: 'n',
+      s: {
+        ...cellStyleRight,
+        alignment: { ...cellStyleRight.alignment, wrapText: true }
+      }
+    };
+
+    const refCell = XLSX.utils.encode_cell({ r: currentRow, c: 6 });
+    ws[refCell] = {
+      v: norm?.ref_ss || '',
+      t: 's',
+      s: {
+        ...cellStyle,
+        alignment: { ...cellStyle.alignment, wrapText: true }
+      }
+    };
+
     currentRow++;
   });
 
@@ -157,7 +240,7 @@ function exportBOQ(
   });
 
   ws['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: currentRow, c: 6 } });
-  XLSX.utils.book_append_sheet(wb, ws, 'BOQ_Items');
+  XLSX.utils.book_append_sheet(wb, ws, sheetName);
 }
 
 function exportSummary(
@@ -165,7 +248,8 @@ function exportSummary(
   sharedMode: 'estimate' | 'measurement',
   resourceBreakdownEstimate: ResourceBreakdownItem[],
   resourceBreakdownMeasurement: ResourceBreakdownItem[],
-  project: Project
+  project: Project,
+  sheetName: string
 ) {
   const data = (sharedMode === 'estimate' ? resourceBreakdownEstimate : resourceBreakdownMeasurement)
     .map((item: ResourceBreakdownItem) => ({
@@ -279,14 +363,15 @@ function exportSummary(
   });
 
   ws['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: currentRow, c: 5 } });
-  XLSX.utils.book_append_sheet(wb, ws, 'Resource_Summary');
+  XLSX.utils.book_append_sheet(wb, ws, sheetName);
 }
 
 function exportDetailed(
   wb: XLSX.WorkBook,
   sharedMode: 'estimate' | 'measurement',
   resourceMatrixData: MatrixData,
-  resourceMatrixMeasurementData: MatrixData
+  resourceMatrixMeasurementData: MatrixData,
+  sheetName: string
 ) {
   const matrix = sharedMode === 'estimate' ? resourceMatrixData : resourceMatrixMeasurementData;
   const ws: XLSX.WorkSheet = {};
@@ -388,7 +473,7 @@ function exportDetailed(
   });
 
   ws['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: currentRow, c: 3 + matrix.columns.length } });
-  XLSX.utils.book_append_sheet(wb, ws, 'Resource_Detailed');
+  XLSX.utils.book_append_sheet(wb, ws, sheetName);
 }
 
 function exportTabulation(wb: XLSX.WorkBook, tabulationData: TabulationRow[]) {
@@ -547,7 +632,7 @@ function exportTabulation(wb: XLSX.WorkBook, tabulationData: TabulationRow[]) {
   ws['!merges'].push({ s: { r: 0, c: 11 }, e: { r: 0, c: 14 } }); // Actual Cost
 
   ws['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: currentRow, c: 15 } });
-  XLSX.utils.book_append_sheet(wb, ws, 'Tabulation_Chart');
+  XLSX.utils.book_append_sheet(wb, ws, 'Tabulation');
 }
 
 function exportRateAnalysis(wb: XLSX.WorkBook, rateAnalysisData: RateAnalysisItem[], project: Project) {
@@ -565,6 +650,7 @@ function exportRateAnalysis(wb: XLSX.WorkBook, rateAnalysisData: RateAnalysisIte
   ];
 
   let currentRow = 0;
+  const itemUnitRateRows: Array<{ description: string; row: number }> = [];
 
   rateAnalysisData.forEach((item: RateAnalysisItem, itemIndex: number) => {
     // Group resources by type
@@ -629,13 +715,12 @@ function exportRateAnalysis(wb: XLSX.WorkBook, rateAnalysisData: RateAnalysisIte
       const labourStartRow = currentRow;
 
       labourResources.forEach((resource) => {
+        const safeResourceName = resource.resourceName.replace(/"/g, '""');
         const rowData = [
           resource.resourceName + (resource.isCustomizedRate ? ' *' : '') + (resource.isCustomizedQuantity ? ' **' : ''),
           resource.resourceType,
           resource.unit,
-          resource.quantity,
-          resource.rate,
-          resource.amount
+          resource.quantity
         ];
 
         rowData.forEach((value, colIndex) => {
@@ -654,19 +739,43 @@ function exportRateAnalysis(wb: XLSX.WorkBook, rateAnalysisData: RateAnalysisIte
               }
             }
           };
-          if (colIndex === 3 || colIndex === 4 || colIndex === 5) {
+          if (colIndex === 3) {
             ws[cell].t = 'n';
-          }
-          if (colIndex === 5) {
-            ws[cell] = {
-              f: `${XLSX.utils.encode_col(3)}${currentRow + 1}*${XLSX.utils.encode_col(4)}${currentRow + 1}`,
-              t: 'n',
-              s: ws[cell].s
-            };
           }
         });
 
-        // Add empty cell with borders in Sub Total column
+        const rateCell = XLSX.utils.encode_cell({ r: currentRow, c: 4 });
+        ws[rateCell] = {
+          f: `IFERROR(INDEX('Resource and Transportation'!$E:$E, MATCH("${safeResourceName}", 'Resource and Transportation'!$C:$C, 0)), ${resource.rate})`,
+          t: 'n',
+          s: {
+            fill: { fgColor: { rgb: 'DBEAFE' } },
+            alignment: { horizontal: 'right', vertical: 'center' },
+            border: {
+              top: { style: 'thin', color: { rgb: '000000' } },
+              bottom: { style: 'thin', color: { rgb: '000000' } },
+              left: { style: 'thin', color: { rgb: '000000' } },
+              right: { style: 'thin', color: { rgb: '000000' } }
+            }
+          }
+        };
+
+        const amountCell = XLSX.utils.encode_cell({ r: currentRow, c: 5 });
+        ws[amountCell] = {
+          f: `D${currentRow + 1}*E${currentRow + 1}`,
+          t: 'n',
+          s: {
+            fill: { fgColor: { rgb: 'DBEAFE' } },
+            alignment: { horizontal: 'right', vertical: 'center' },
+            border: {
+              top: { style: 'thin', color: { rgb: '000000' } },
+              bottom: { style: 'thin', color: { rgb: '000000' } },
+              left: { style: 'thin', color: { rgb: '000000' } },
+              right: { style: 'thin', color: { rgb: '000000' } }
+            }
+          }
+        };
+
         const subtotalCell = XLSX.utils.encode_cell({ r: currentRow, c: 6 });
         ws[subtotalCell] = {
           v: '',
@@ -716,13 +825,12 @@ function exportRateAnalysis(wb: XLSX.WorkBook, rateAnalysisData: RateAnalysisIte
       const materialStartRow = currentRow;
 
       materialResources.forEach((resource) => {
+        const safeResourceName = resource.resourceName.replace(/"/g, '""');
         const rowData = [
           resource.resourceName + (resource.isCustomizedRate ? ' *' : '') + (resource.isCustomizedQuantity ? ' **' : ''),
           resource.resourceType,
           resource.unit,
-          resource.quantity,
-          resource.rate,
-          resource.amount
+          resource.quantity
         ];
 
         rowData.forEach((value, colIndex) => {
@@ -741,19 +849,43 @@ function exportRateAnalysis(wb: XLSX.WorkBook, rateAnalysisData: RateAnalysisIte
               }
             }
           };
-          if (colIndex === 3 || colIndex === 4 || colIndex === 5) {
+          if (colIndex === 3) {
             ws[cell].t = 'n';
-          }
-          if (colIndex === 5) {
-            ws[cell] = {
-              f: `${XLSX.utils.encode_col(3)}${currentRow + 1}*${XLSX.utils.encode_col(4)}${currentRow + 1}`,
-              t: 'n',
-              s: ws[cell].s
-            };
           }
         });
 
-        // Add empty cell with borders in Sub Total column
+        const rateCell = XLSX.utils.encode_cell({ r: currentRow, c: 4 });
+        ws[rateCell] = {
+          f: `IFERROR(INDEX('Resource and Transportation'!$E:$E, MATCH("${safeResourceName}", 'Resource and Transportation'!$C:$C, 0)), ${resource.rate})`,
+          t: 'n',
+          s: {
+            fill: { fgColor: { rgb: 'D1FAE5' } },
+            alignment: { horizontal: 'right', vertical: 'center' },
+            border: {
+              top: { style: 'thin', color: { rgb: '000000' } },
+              bottom: { style: 'thin', color: { rgb: '000000' } },
+              left: { style: 'thin', color: { rgb: '000000' } },
+              right: { style: 'thin', color: { rgb: '000000' } }
+            }
+          }
+        };
+
+        const amountCell = XLSX.utils.encode_cell({ r: currentRow, c: 5 });
+        ws[amountCell] = {
+          f: `D${currentRow + 1}*E${currentRow + 1}`,
+          t: 'n',
+          s: {
+            fill: { fgColor: { rgb: 'D1FAE5' } },
+            alignment: { horizontal: 'right', vertical: 'center' },
+            border: {
+              top: { style: 'thin', color: { rgb: '000000' } },
+              bottom: { style: 'thin', color: { rgb: '000000' } },
+              left: { style: 'thin', color: { rgb: '000000' } },
+              right: { style: 'thin', color: { rgb: '000000' } }
+            }
+          }
+        };
+
         const subtotalCell = XLSX.utils.encode_cell({ r: currentRow, c: 6 });
         ws[subtotalCell] = {
           v: '',
@@ -803,13 +935,12 @@ function exportRateAnalysis(wb: XLSX.WorkBook, rateAnalysisData: RateAnalysisIte
       const equipmentStartRow = currentRow;
 
       equipmentResources.forEach((resource) => {
+        const safeResourceName = resource.resourceName.replace(/"/g, '""');
         const rowData = [
           resource.resourceName + (resource.isCustomizedRate ? ' *' : '') + (resource.isCustomizedQuantity ? ' **' : ''),
           resource.resourceType,
           resource.unit,
-          resource.quantity,
-          resource.rate,
-          resource.amount
+          resource.quantity
         ];
 
         rowData.forEach((value, colIndex) => {
@@ -828,19 +959,43 @@ function exportRateAnalysis(wb: XLSX.WorkBook, rateAnalysisData: RateAnalysisIte
               }
             }
           };
-          if (colIndex === 3 || colIndex === 4 || colIndex === 5) {
+          if (colIndex === 3) {
             ws[cell].t = 'n';
-          }
-          if (colIndex === 5) {
-            ws[cell] = {
-              f: `${XLSX.utils.encode_col(3)}${currentRow + 1}*${XLSX.utils.encode_col(4)}${currentRow + 1}`,
-              t: 'n',
-              s: ws[cell].s
-            };
           }
         });
 
-        // Add empty cell with borders in Sub Total column
+        const rateCell = XLSX.utils.encode_cell({ r: currentRow, c: 4 });
+        ws[rateCell] = {
+          f: `IFERROR(INDEX('Resource and Transportation'!$E:$E, MATCH("${safeResourceName}", 'Resource and Transportation'!$C:$C, 0)), ${resource.rate})`,
+          t: 'n',
+          s: {
+            fill: { fgColor: { rgb: 'FFEDD5' } },
+            alignment: { horizontal: 'right', vertical: 'center' },
+            border: {
+              top: { style: 'thin', color: { rgb: '000000' } },
+              bottom: { style: 'thin', color: { rgb: '000000' } },
+              left: { style: 'thin', color: { rgb: '000000' } },
+              right: { style: 'thin', color: { rgb: '000000' } }
+            }
+          }
+        };
+
+        const amountCell = XLSX.utils.encode_cell({ r: currentRow, c: 5 });
+        ws[amountCell] = {
+          f: `D${currentRow + 1}*E${currentRow + 1}`,
+          t: 'n',
+          s: {
+            fill: { fgColor: { rgb: 'FFEDD5' } },
+            alignment: { horizontal: 'right', vertical: 'center' },
+            border: {
+              top: { style: 'thin', color: { rgb: '000000' } },
+              bottom: { style: 'thin', color: { rgb: '000000' } },
+              left: { style: 'thin', color: { rgb: '000000' } },
+              right: { style: 'thin', color: { rgb: '000000' } }
+            }
+          }
+        };
+
         const subtotalCell = XLSX.utils.encode_cell({ r: currentRow, c: 6 });
         ws[subtotalCell] = {
           v: '',
@@ -956,6 +1111,7 @@ function exportRateAnalysis(wb: XLSX.WorkBook, rateAnalysisData: RateAnalysisIte
         }
       }
     };
+    itemUnitRateRows.push({ description: item.normDescription || workItemText, row: currentRow + 1 });
     currentRow++;
 
     // Contractor Overhead (if applicable)
@@ -1040,26 +1196,110 @@ function exportRateAnalysis(wb: XLSX.WorkBook, rateAnalysisData: RateAnalysisIte
     currentRow += 2;
   });
 
-  // Set worksheet range
-  ws['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: currentRow - 1, c: 6 } });
+  if (itemUnitRateRows.length > 0) {
+    currentRow += 2;
+    ws[XLSX.utils.encode_cell({ r: currentRow, c: 8 })] = {
+      v: 'BOQ Rate Summary',
+      t: 's',
+      s: {
+        font: { bold: true, color: { rgb: 'FFFFFF' } },
+        fill: { fgColor: { rgb: '1E293B' } },
+        alignment: { horizontal: 'left', vertical: 'center' }
+      }
+    };
+    currentRow++;
 
-  XLSX.utils.book_append_sheet(wb, ws, 'Rate_Analysis');
+    const summaryHeaders = ['Work Item', 'Unit Rate'];
+    summaryHeaders.forEach((header, colIndex) => {
+      const cell = XLSX.utils.encode_cell({ r: currentRow, c: 8 + colIndex });
+      ws[cell] = {
+        v: header,
+        t: 's',
+        s: {
+          font: { bold: true },
+          fill: { fgColor: { rgb: 'F1F5F9' } },
+          alignment: { horizontal: 'center', vertical: 'center' },
+          border: {
+            top: { style: 'thin', color: { rgb: '000000' } },
+            bottom: { style: 'thin', color: { rgb: '000000' } },
+            left: { style: 'thin', color: { rgb: '000000' } },
+            right: { style: 'thin', color: { rgb: '000000' } }
+          }
+        }
+      };
+    });
+    currentRow++;
+
+    itemUnitRateRows.forEach(({ description, row }) => {
+      const descCell = XLSX.utils.encode_cell({ r: currentRow, c: 8 });
+      ws[descCell] = {
+        v: description,
+        t: 's',
+        s: {
+          alignment: { horizontal: 'left', vertical: 'center' }
+        }
+      };
+
+      const rateCell = XLSX.utils.encode_cell({ r: currentRow, c: 9 });
+      ws[rateCell] = {
+        f: `G${row}`,
+        t: 'n',
+        s: {
+          alignment: { horizontal: 'right', vertical: 'center' }
+        }
+      };
+      currentRow++;
+    });
+  }
+
+  // Set worksheet range
+  ws['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: currentRow - 1, c: 9 } });
+
+  XLSX.utils.book_append_sheet(wb, ws, 'Rate Analysis');
 }
 
-function exportMaterials(wb: XLSX.WorkBook, project: Project, transportMaterials: TransportMaterial[]) {
+function exportMaterials(
+  wb: XLSX.WorkBook,
+  project: Project,
+  transportMaterials: TransportMaterial[],
+  sharedMode: 'estimate' | 'measurement',
+  resourceBreakdownEstimate: ResourceBreakdownItem[],
+  resourceBreakdownMeasurement: ResourceBreakdownItem[],
+  sheetName: string
+) {
+  const resourceBreakdown = sharedMode === 'estimate' ? resourceBreakdownEstimate : resourceBreakdownMeasurement;
+  const labourEquipment = resourceBreakdown
+    .filter((item) => item.type === 'Labour' || item.type === 'Equipment')
+    .map((item, idx) => ({
+      sn: idx + 1,
+      type: item.type,
+      name: item.name,
+      unit: item.unit,
+      quantity: item.quantity,
+      rate: item.rate,
+      totalAmount: parseFloat(
+        (item.quantity * (project.mode === 'USERS' && item.apply_vat ? item.rate * 1.13 : item.rate)).toFixed(2)
+      )
+    }));
+
   const materials = transportMaterials
     .map((item, idx) => ({
       sn: idx + 1,
       description: item.material_name,
       category: item.load_category,
       unit: 'kg',
-      originalCost: 0,
-      vat: 0,
+      originalCost: item.original_cost || 0,
+      vat: item.vat || 0,
       gravelledCost: item.gravelled_cost_per_unit,
       metalledCost: item.metalled_cost_per_unit,
       porterCost: item.porter_cost_per_unit,
       loadUnloadCost: 0,
-      totalCost: item.total_cost_per_unit,
+      totalCost:
+        (item.original_cost || 0) +
+        (item.vat || 0) +
+        item.gravelled_cost_per_unit +
+        item.metalled_cost_per_unit +
+        item.porter_cost_per_unit,
       unitWeight: item.unit_weight,
       remarks: ''
     }))
@@ -1091,6 +1331,61 @@ function exportMaterials(wb: XLSX.WorkBook, project: Project, transportMaterials
   ws[XLSX.utils.encode_cell({ r: currentRow, c: 0 })] = { v: 'Location:', t: 's', s: { font: { bold: true } } };
   ws[XLSX.utils.encode_cell({ r: currentRow, c: 1 })] = { v: project.location || 'N/A', t: 's' };
   currentRow += 2;
+
+  // Labour & equipment summary
+  if (labourEquipment.length > 0) {
+    ws[XLSX.utils.encode_cell({ r: currentRow, c: 0 })] = {
+      v: 'Labour & Equipment Summary',
+      t: 's',
+      s: { font: { bold: true, sz: 12 } }
+    };
+    currentRow++;
+
+    const summaryHeaders = ['SN', 'Type', 'Resource Name', 'Unit', 'Rate (Rs.)'];
+    summaryHeaders.forEach((header, colIndex) => {
+      const cell = XLSX.utils.encode_cell({ r: currentRow, c: colIndex });
+      ws[cell] = {
+        v: header,
+        t: 's',
+        s: {
+          font: { bold: true, color: { rgb: 'FFFFFF' } },
+          fill: { fgColor: { rgb: '1E293B' } },
+          alignment: { horizontal: 'center', vertical: 'center' },
+          border: {
+            top: { style: 'thin', color: { rgb: '000000' } },
+            bottom: { style: 'thin', color: { rgb: '000000' } },
+            left: { style: 'thin', color: { rgb: '000000' } },
+            right: { style: 'thin', color: { rgb: '000000' } }
+          }
+        }
+      };
+    });
+    currentRow++;
+
+    labourEquipment.forEach((item) => {
+      const rowValues = [item.sn, item.type, item.name, item.unit, item.rate];
+      rowValues.forEach((value, colIndex) => {
+        const cell = XLSX.utils.encode_cell({ r: currentRow, c: colIndex });
+        const isNumeric = colIndex > 3;
+        ws[cell] = {
+          v: value,
+          t: typeof value === 'number' ? 'n' : 's',
+          s: {
+            alignment: { horizontal: isNumeric ? 'right' : 'left', vertical: 'center' },
+            border: {
+              top: { style: 'thin', color: { rgb: '000000' } },
+              bottom: { style: 'thin', color: { rgb: '000000' } },
+              left: { style: 'thin', color: { rgb: '000000' } },
+              right: { style: 'thin', color: { rgb: '000000' } }
+            }
+          }
+        };
+      });
+      currentRow++;
+    });
+
+    currentRow += 2;
+  }
 
   // Header styling
   const headerStyle = {
@@ -1242,22 +1537,29 @@ function exportMaterials(wb: XLSX.WorkBook, project: Project, transportMaterials
     s: { font: { bold: true }, alignment: { horizontal: 'right' } }
   };
 
-  // Distances - assuming these are passed or calculated
+  const porterDistance = project.transportDistances?.porterDistance ?? 0;
+  const gravelledDistance = project.transportDistances?.gravelledDistance ?? 0;
+  const metalledDistance = project.transportDistances?.metalledDistance ?? 0;
+  const transportMode = project.transportMode || 'Tractor';
+
   currentRow += 2;
+  ws[XLSX.utils.encode_cell({ r: currentRow, c: 0 })] = { v: 'Transport Mode:', t: 's', s: { font: { bold: true } } };
+  ws[XLSX.utils.encode_cell({ r: currentRow, c: 1 })] = { v: transportMode, t: 's' };
+  currentRow++;
   ws[XLSX.utils.encode_cell({ r: currentRow, c: 0 })] = { v: 'Porter Distance (km):', t: 's', s: { font: { bold: true } } };
-  ws[XLSX.utils.encode_cell({ r: currentRow, c: 1 })] = { v: 0, t: 'n' }; // Need to pass these values
-  ws[XLSX.utils.encode_cell({ r: currentRow, c: 2 })] = { v: '0.00 kosh', t: 's' };
+  ws[XLSX.utils.encode_cell({ r: currentRow, c: 1 })] = { v: porterDistance, t: 'n' };
+  ws[XLSX.utils.encode_cell({ r: currentRow, c: 2 })] = { v: `${(porterDistance / 3.218).toFixed(2)} kosh`, t: 's' };
   currentRow++;
   ws[XLSX.utils.encode_cell({ r: currentRow, c: 0 })] = { v: 'Gravelled Distance (km):', t: 's', s: { font: { bold: true } } };
-  ws[XLSX.utils.encode_cell({ r: currentRow, c: 1 })] = { v: 0, t: 'n' };
-  ws[XLSX.utils.encode_cell({ r: currentRow, c: 2 })] = { v: '0.00 kosh', t: 's' };
+  ws[XLSX.utils.encode_cell({ r: currentRow, c: 1 })] = { v: gravelledDistance, t: 'n' };
+  ws[XLSX.utils.encode_cell({ r: currentRow, c: 2 })] = { v: `${(gravelledDistance / 3.218).toFixed(2)} kosh`, t: 's' };
   currentRow++;
   ws[XLSX.utils.encode_cell({ r: currentRow, c: 0 })] = { v: 'Metalled Distance (km):', t: 's', s: { font: { bold: true } } };
-  ws[XLSX.utils.encode_cell({ r: currentRow, c: 1 })] = { v: 0, t: 'n' };
-  ws[XLSX.utils.encode_cell({ r: currentRow, c: 2 })] = { v: '0.00 kosh', t: 's' };
+  ws[XLSX.utils.encode_cell({ r: currentRow, c: 1 })] = { v: metalledDistance, t: 'n' };
+  ws[XLSX.utils.encode_cell({ r: currentRow, c: 2 })] = { v: `${(metalledDistance / 3.218).toFixed(2)} kosh`, t: 's' };
 
   // Set worksheet range
   ws['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: currentRow, c: 12 } });
 
-  XLSX.utils.book_append_sheet(wb, ws, 'Materials_Transportation');
+  XLSX.utils.book_append_sheet(wb, ws, sheetName);
 }
